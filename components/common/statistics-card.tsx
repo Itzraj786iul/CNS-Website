@@ -44,9 +44,9 @@ function StatisticsCard({
       className={cn("h-full", className)}
     >
       <Card className="card-premium card-premium-hover h-full">
-        <CardContent className="flex flex-col gap-2.5 px-7 py-8 sm:px-8 sm:py-9">
+        <CardContent className="flex flex-col gap-2 px-5 py-6 sm:gap-2.5 sm:px-7 sm:py-8">
           <p
-            className="font-heading text-4xl font-semibold tracking-tight sm:text-5xl"
+            className="font-heading text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl"
             aria-label={`${value}${suffix ?? ""} ${label}`}
           >
             <span className="text-gradient-brand" aria-hidden="true">

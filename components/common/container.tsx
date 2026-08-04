@@ -21,7 +21,7 @@ function Container({
     <div
       data-slot="container"
       className={cn(
-        "mx-auto w-full px-5 sm:px-8 lg:px-10",
+        "mx-auto w-full min-w-0 px-4 sm:px-6 lg:px-10",
         sizeClasses[size],
         className
       )}

@@ -93,7 +93,8 @@ function PageHero({ title, description, breadcrumb, eyebrow }: PageHeroProps) {
             <div className="cns-brand-bar" aria-hidden="true" />
             <h1
               className={cn(
-                "font-heading text-3xl font-semibold tracking-[-0.025em] text-cns-navy sm:text-4xl lg:text-[2.75rem] lg:leading-[1.1]"
+                "font-heading font-semibold tracking-[-0.025em] text-cns-navy text-balance",
+                "text-[1.75rem] leading-[1.12] min-[375px]:text-3xl sm:text-4xl lg:text-[2.75rem] lg:leading-[1.1]"
               )}
             >
               {title}

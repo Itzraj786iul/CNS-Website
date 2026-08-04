@@ -72,7 +72,7 @@ function ThemeSwitcher({ className }: { className?: string }) {
   }, [open]);
 
   const activeOption =
-    themeOptions.find((option) => option.value === theme) ?? themeOptions[2];
+    themeOptions.find((option) => option.value === theme) ?? themeOptions[0];
 
   const ActiveIcon =
     resolvedTheme === "dark" && theme !== "light" ? Moon : Sun;
@@ -102,12 +102,12 @@ function ThemeSwitcher({ className }: { className?: string }) {
         aria-controls={open ? "theme-switcher-panel" : undefined}
         onClick={() => setOpen((value) => !value)}
         className={cn(
-          "inline-flex h-10 items-center gap-1.5 rounded-full border border-border bg-card px-3 text-sm font-medium text-foreground shadow-soft transition-all duration-300 hover:border-primary/25 hover:shadow-soft-lg active:scale-[0.98]",
+          "inline-flex h-10 shrink-0 items-center gap-1.5 rounded-full border border-border bg-card px-2.5 text-sm font-medium text-foreground shadow-soft transition-all duration-300 hover:border-primary/25 hover:shadow-soft-lg active:scale-[0.98] xl:px-3",
           open && "border-primary/25 shadow-soft-lg"
         )}
       >
         <ActiveIcon className="size-4 text-primary" aria-hidden="true" />
-        <span className="hidden sm:inline">{activeOption.label}</span>
+        <span className="hidden xl:inline">{activeOption.label}</span>
         <ChevronDown
           className={cn(
             "size-3.5 text-muted-foreground transition-transform duration-300",

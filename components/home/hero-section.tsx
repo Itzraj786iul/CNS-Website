@@ -174,20 +174,20 @@ function HeroSection() {
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_70%_at_50%_40%,transparent_40%,rgb(248_251_253_/_0.85)_100%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_70%_at_50%_40%,transparent_40%,var(--background)_100%)]"
       />
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 bottom-0 h-48 bg-linear-to-t from-background via-background/90 to-transparent"
       />
 
-      <Container className="relative flex min-h-[calc(100svh-5rem)] flex-col justify-center pb-28 pt-12 sm:pt-16 lg:min-h-[calc(100svh-6rem)] lg:pb-32 lg:pt-20">
-        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
+      <Container className="relative flex flex-col justify-center py-10 sm:py-12 lg:min-h-[calc(100svh-6rem)] lg:py-16 xl:py-20">
+        <div className="grid min-w-0 items-center gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-14">
           <motion.div
             initial="hidden"
             animate="visible"
             variants={staggerContainer}
-            className="max-w-xl space-y-10"
+            className="min-w-0 max-w-xl space-y-8 sm:space-y-10"
           >
             <motion.div variants={fadeUp}>
               <Tag variant="blue" className="px-4 py-1.5 text-sm shadow-soft">
@@ -196,7 +196,7 @@ function HeroSection() {
             </motion.div>
 
             <motion.div variants={fadeUp} className="space-y-5">
-              <h1 className="font-heading text-[2.625rem] font-semibold leading-[1.05] tracking-[-0.035em] text-cns-navy sm:text-5xl lg:text-[3.75rem] lg:leading-[1.02]">
+              <h1 className="font-heading text-[1.875rem] font-semibold leading-[1.08] tracking-[-0.035em] text-cns-navy min-[375px]:text-[2.125rem] sm:text-5xl lg:text-[3.75rem] lg:leading-[1.02]">
                 Center for{" "}
                 <span className="text-gradient-brand">Neuroscience</span>
               </h1>
@@ -221,7 +221,7 @@ function HeroSection() {
                     </Link>
                   }
                   size="lg"
-                  className="h-12 min-w-[12rem] bg-secondary font-semibold shadow-glow-green hover:bg-[#527a14]"
+                  className="h-12 w-full min-w-0 sm:w-auto sm:min-w-[12rem] bg-secondary font-semibold shadow-glow-green hover:bg-[#527a14]"
                 />
                 <Button
                   nativeButton={false}
@@ -233,7 +233,7 @@ function HeroSection() {
                   }
                   variant="outline"
                   size="lg"
-                  className="h-12 border-border bg-card px-7 font-semibold text-cns-navy shadow-soft hover:border-primary/35 hover:bg-primary/5"
+                  className="h-12 w-full min-w-0 sm:w-auto border-border bg-card px-7 font-semibold text-cns-navy shadow-soft hover:border-primary/35 hover:bg-primary/5"
                 />
               </div>
               {isTelHref(appointmentHref) ? (
@@ -288,14 +288,14 @@ function HeroSection() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.85, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-            className="relative lg:pl-4"
+            className="relative min-w-0 lg:pl-4"
           >
             <HeroIllustration />
           </motion.div>
         </div>
       </Container>
 
-      <div className="relative z-10 -mt-28 pb-14 lg:-mt-32 lg:pb-16">
+      <div className="relative z-10 -mt-12 pb-10 sm:-mt-16 sm:pb-12 lg:-mt-28 lg:pb-16">
         <Container>
           <motion.div
             initial="hidden"

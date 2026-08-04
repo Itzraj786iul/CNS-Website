@@ -9,7 +9,7 @@ function ThemeProvider({ children, ...props }: ThemeProviderProps) {
   return (
     <NextThemesProvider
       attribute="class"
-      defaultTheme="system"
+      defaultTheme="light"
       enableSystem
       storageKey="cns-theme"
       themes={["light", "dark"]}

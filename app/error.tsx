@@ -19,7 +19,7 @@ export default function Error({
   }, [error]);
 
   return (
-    <section className="flex flex-1 items-center bg-background py-20 md:py-28">
+    <section className="flex flex-1 items-center bg-background py-12 md:py-16">
       <Container className="mx-auto max-w-2xl text-center">
         <p className="text-sm font-semibold uppercase tracking-[0.14em] text-destructive">
           Something went wrong

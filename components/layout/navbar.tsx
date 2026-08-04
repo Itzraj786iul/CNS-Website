@@ -39,8 +39,10 @@ function NavLink({
       href={href}
       aria-current={isActive ? "page" : undefined}
       className={cn(
-        "relative rounded-full font-medium transition-[color,background-color,box-shadow,transform] duration-300 active:scale-[0.98]",
-        compact ? "px-3 py-2 text-[13px]" : "px-3.5 py-2.5 text-sm",
+        "relative shrink-0 rounded-full font-medium transition-[color,background-color,box-shadow,transform] duration-300 active:scale-[0.98]",
+        compact
+          ? "px-2.5 py-1.5 text-xs"
+          : "px-2.5 py-2 text-[13px] xl:px-3.5 xl:py-2.5 xl:text-sm",
         isActive
           ? "text-primary"
           : "text-cns-navy/88 hover:bg-card/85 hover:text-cns-navy hover:shadow-soft dark:hover:bg-card/70"
@@ -120,7 +122,7 @@ function Navbar() {
             <NavMoreMenu isActive={isActive} />
           </nav>
 
-          <div className="flex shrink-0 items-center gap-2.5 lg:gap-3">
+          <div className="flex shrink-0 items-center gap-2 lg:gap-2.5 xl:gap-3">
             <ThemeSwitcher className="hidden lg:inline-flex" />
             <NavAppointmentCta />
 

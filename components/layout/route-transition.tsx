@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 
 import { pageEnter, pageExit } from "@/lib/motion";
 import { cn } from "@/lib/utils";
@@ -13,6 +13,11 @@ type RouteTransitionProps = {
 
 function RouteTransition({ children, className }: RouteTransitionProps) {
   const pathname = usePathname();
+  const prefersReducedMotion = useReducedMotion();
+
+  if (prefersReducedMotion) {
+    return <div className={cn("flex flex-1 flex-col", className)}>{children}</div>;
+  }
 
   return (
     <AnimatePresence mode="wait">

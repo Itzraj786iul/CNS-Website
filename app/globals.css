@@ -215,6 +215,17 @@
     background-attachment: fixed;
   }
 
+  img,
+  video,
+  svg {
+    max-width: 100%;
+  }
+
+  [data-slot="section"] > *,
+  [data-slot="container"] {
+    min-width: 0;
+  }
+
   ::selection {
     background: var(--selection-bg);
     color: var(--selection-text);

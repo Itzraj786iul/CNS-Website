@@ -38,7 +38,7 @@ function SectionHeading({
         className={cn(
           "font-heading font-semibold tracking-[-0.02em] text-cns-navy",
           size === "default" &&
-            "text-3xl sm:text-4xl lg:text-[2.5rem] lg:leading-[1.15]",
+            "text-[1.625rem] leading-[1.15] min-[375px]:text-3xl sm:text-4xl lg:text-[2.5rem] lg:leading-[1.15]",
           size === "lg" &&
             "text-4xl sm:text-5xl lg:text-[3rem] lg:leading-[1.1]"
         )}
