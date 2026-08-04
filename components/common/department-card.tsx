@@ -14,6 +14,12 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import {
+  CARD_VARIANT_DEFAULT,
+  type CardVariant,
+  cardDescClamp,
+  cardIconSize,
+} from "@/lib/card-variants";
 import { hoverLift } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 
@@ -23,6 +29,7 @@ type DepartmentCardProps = {
   icon: LucideIcon;
   href?: string;
   iconVariant?: "blue" | "green" | "orange" | "navy";
+  variant?: CardVariant;
   className?: string;
 };
 
@@ -32,20 +39,34 @@ function DepartmentCard({
   icon,
   href,
   iconVariant = "blue",
+  variant = CARD_VARIANT_DEFAULT,
   className,
 }: DepartmentCardProps) {
+  const isCompact = variant === "compact";
+  const headerPad = isCompact ? "gap-1.5 px-3 pt-3 pb-0" : "gap-1.5 px-4 pt-4 pb-0";
+  const contentPad = isCompact ? "space-y-1.5 px-3 pb-3 pt-1" : "space-y-2 px-4 pb-4 pt-1.5";
+
   const content = (
     <Card className="group/dept h-full card-premium card-premium-hover ring-0">
-      <CardHeader className="gap-1.5 px-4 pt-4 pb-0">
-        <IconBox icon={icon} variant={iconVariant} size="sm" />
-        <CardTitle className="card-title-compact">{title}</CardTitle>
+      <CardHeader className={headerPad}>
+        <IconBox icon={icon} variant={iconVariant} size={cardIconSize[variant]} />
+        <CardTitle className={cn("card-title-compact", !isCompact && "text-base")}>
+          {title}
+        </CardTitle>
       </CardHeader>
       {description ? (
-        <CardContent className="space-y-2 px-4 pb-4 pt-1.5">
-          <CardDescription className="card-desc-compact">{description}</CardDescription>
+        <CardContent className={contentPad}>
+          <CardDescription
+            className={cn(
+              "text-[13px] leading-snug text-muted-foreground",
+              cardDescClamp[variant]
+            )}
+          >
+            {description}
+          </CardDescription>
           {href ? (
             <span className="inline-flex items-center gap-1 text-xs font-semibold text-primary">
-              Explore
+              {isCompact ? "View details" : "Explore"}
               <ArrowUpRight className="size-3.5 transition-transform group-hover/dept:translate-x-0.5 group-hover/dept:-translate-y-0.5" />
             </span>
           ) : null}

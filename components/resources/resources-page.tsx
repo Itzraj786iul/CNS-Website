@@ -2,20 +2,22 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Download, FileText, ShieldCheck, Siren, Users } from "lucide-react";
+import { FileText, ShieldCheck, Siren, Users } from "lucide-react";
 
 import { resourcesContent } from "@/components/resources/data";
 import { AnimatedSection } from "@/components/common/animated-section";
 import { CTASection } from "@/components/common/cta-section";
 import { FAQCard } from "@/components/common/faq-card";
 import { IconBox } from "@/components/common/icon-box";
+import { ResourceCard } from "@/components/common/resource-card";
 import { PageHero } from "@/components/common/page-hero";
 import { Section } from "@/components/common/section";
 import { SectionHeading } from "@/components/common/section-heading";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { getEmergencyTelHref } from "@/lib/contact-links";
-import { fadeUp, hoverLift } from "@/lib/motion";
+import { getCardGridClass } from "@/lib/card-variants";
+import { fadeUp } from "@/lib/motion";
 
 function ResourcesPageContent() {
   const {
@@ -43,24 +45,17 @@ function ResourcesPageContent() {
           <AnimatedSection>
             <SectionHeading eyebrow="Patient Forms" title="Download & Prepare" description="Complete these forms before your visit — save time at registration and help us serve you faster." />
           </AnimatedSection>
-          <AnimatedSection stagger className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <AnimatedSection stagger className={getCardGridClass("standard")}>
             {downloads.map((form) => (
               <motion.div key={form.title} variants={fadeUp}>
-                <motion.div initial="rest" whileHover="hover" variants={hoverLift}>
-                  <Card className="card-premium card-premium-hover ring-0">
-                    <CardContent className="flex items-start gap-4 px-6 py-6">
-                      <IconBox icon={FileText} variant="blue" size="default" className="shrink-0" />
-                      <div className="flex-1 space-y-2">
-                        <h3 className="font-heading text-base font-semibold text-cns-navy">{form.title}</h3>
-                        <p className="text-xs text-muted-foreground">{form.type} · {form.size}</p>
-                        <Button variant="ghost" className="-ml-2 h-auto px-2 py-1 text-primary hover:bg-primary/5">
-                          <Download />
-                          Download
-                        </Button>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
+                <ResourceCard
+                  variant="standard"
+                  title={form.title}
+                  type={form.type}
+                  size={form.size}
+                  icon={FileText}
+                  iconVariant="blue"
+                />
               </motion.div>
             ))}
           </AnimatedSection>

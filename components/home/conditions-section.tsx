@@ -1,15 +1,14 @@
 "use client";
 
-import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
 
 import { conditionsWeTreat } from "@/components/home/data";
 import { AnimatedSection } from "@/components/common/animated-section";
-import { IconBox } from "@/components/common/icon-box";
+import { ConditionCard } from "@/components/common/condition-card";
 import { Section } from "@/components/common/section";
 import { SectionHeading } from "@/components/common/section-heading";
-import { fadeUp, hoverLift } from "@/lib/motion";
+import { getCardGridClass } from "@/lib/card-variants";
+import { fadeUp } from "@/lib/motion";
 
 function ConditionsSection() {
   return (
@@ -24,35 +23,17 @@ function ConditionsSection() {
           />
         </AnimatedSection>
 
-        <AnimatedSection stagger className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+        <AnimatedSection stagger className={getCardGridClass("compact")}>
           {conditionsWeTreat.map((condition) => (
             <motion.div key={condition.title} variants={fadeUp}>
-              <motion.div
-                initial="rest"
-                whileHover="hover"
-                variants={hoverLift}
-              >
-                <Link
-                  href={condition.href}
-                  className="group flex h-full flex-col gap-2 rounded-[20px] border border-cns-border/60 bg-background p-3 transition-colors hover:border-primary/20 hover:bg-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
-                >
-                  <IconBox
-                    icon={condition.icon}
-                    variant={condition.iconVariant}
-                    size="sm"
-                  />
-                  <div className="flex flex-1 flex-col gap-1">
-                    <h3 className="card-title-compact">{condition.title}</h3>
-                    <p className="line-clamp-2 text-[13px] leading-snug text-muted-foreground">
-                      {condition.description}
-                    </p>
-                  </div>
-                  <span className="inline-flex items-center gap-1 text-xs font-semibold text-primary">
-                    Learn more
-                    <ArrowUpRight className="size-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                  </span>
-                </Link>
-              </motion.div>
+              <ConditionCard
+                variant="compact"
+                title={condition.title}
+                description={condition.description}
+                icon={condition.icon}
+                href={condition.href}
+                iconVariant={condition.iconVariant}
+              />
             </motion.div>
           ))}
         </AnimatedSection>

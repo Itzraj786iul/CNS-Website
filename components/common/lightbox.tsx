@@ -6,6 +6,10 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
 import { cn } from "@/lib/utils";
+import {
+  CARD_VARIANT_DEFAULT,
+  type CardVariant,
+} from "@/lib/card-variants";
 
 export type LightboxImage = {
   src: string;
@@ -164,19 +168,32 @@ function LightboxProvider({ children }: { children: React.ReactNode }) {
 
 type MasonryGalleryProps = {
   images: LightboxImage[];
+  variant?: CardVariant;
   className?: string;
 };
 
-function MasonryGallery({ images, className }: MasonryGalleryProps) {
+const galleryTileHeights: Record<CardVariant, [string, string, string]> = {
+  compact: ["max-h-[140px]", "max-h-[130px]", "max-h-[135px]"],
+  standard: ["max-h-[180px]", "max-h-[160px]", "max-h-[170px]"],
+  detailed: ["max-h-[220px]", "max-h-[200px]", "max-h-[210px]"],
+};
+
+function MasonryGallery({
+  images,
+  variant = CARD_VARIANT_DEFAULT,
+  className,
+}: MasonryGalleryProps) {
   const { open } = useLightbox();
+  const heights = galleryTileHeights[variant];
+  const columnClass =
+    variant === "compact"
+      ? "columns-1 gap-3 space-y-3 sm:columns-2 lg:columns-4"
+      : variant === "detailed"
+        ? "columns-1 gap-4 space-y-4 sm:columns-2 lg:columns-3"
+        : "columns-1 gap-3 space-y-3 sm:columns-2 lg:columns-3 xl:columns-4";
 
   return (
-    <div
-      className={cn(
-        "columns-1 gap-3 space-y-3 sm:columns-2 lg:columns-3 xl:columns-4",
-        className
-      )}
-    >
+    <div className={cn(columnClass, className)}>
       {images.map((image, index) => (
         <button
           key={`${image.src}-${index}`}
@@ -188,7 +205,11 @@ function MasonryGallery({ images, className }: MasonryGalleryProps) {
           <div
             className={cn(
               "relative w-full overflow-hidden bg-muted",
-              index % 3 === 0 ? "aspect-[4/5] max-h-[180px]" : index % 3 === 1 ? "aspect-square max-h-[160px]" : "aspect-[4/3] max-h-[170px]"
+              index % 3 === 0
+                ? cn("aspect-[4/5]", heights[0])
+                : index % 3 === 1
+                  ? cn("aspect-square", heights[1])
+                  : cn("aspect-[4/3]", heights[2])
             )}
           >
             <Image

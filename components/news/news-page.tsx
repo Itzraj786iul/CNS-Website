@@ -1,19 +1,19 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight, Calendar, ChevronLeft, ChevronRight, MapPin } from "lucide-react";
+import { Calendar, ChevronLeft, ChevronRight, MapPin } from "lucide-react";
 
 import { newsContent } from "@/components/news/data";
 import { AnimatedSection } from "@/components/common/animated-section";
 import { CTASection } from "@/components/common/cta-section";
+import { NewsCard } from "@/components/common/news-card";
 import { PageHero } from "@/components/common/page-hero";
 import { Section } from "@/components/common/section";
 import { SectionHeading } from "@/components/common/section-heading";
-import { Tag } from "@/components/common/tag";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { fadeUp, hoverLift } from "@/lib/motion";
+import { getCardGridClass } from "@/lib/card-variants";
+import { fadeUp } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 
 const categoryVariant = {
@@ -40,32 +40,21 @@ function NewsPageContent() {
           <AnimatedSection>
             <SectionHeading eyebrow="Latest Updates" title="News from CNS" description="Recent announcements and clinical milestones from across Center for Neuroscience." />
           </AnimatedSection>
-          <AnimatedSection stagger className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          <AnimatedSection stagger className={getCardGridClass("standard")}>
             {news.map((item) => (
-              <motion.article key={item.title} variants={fadeUp}>
-                <motion.div initial="rest" whileHover="hover" variants={hoverLift}>
-                  <Card className="card-premium card-premium-hover overflow-hidden ring-0">
-                    <div className="image-placeholder relative aspect-[16/10] max-h-[140px]">
-                      <Image src={item.image} alt={item.title} fill loading="lazy" className="img-zoom object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
-                    </div>
-                    <CardContent className="space-y-2 px-4 py-4">
-                      <div className="flex flex-wrap items-center gap-2">
-                        <Tag variant={categoryVariant[item.category as keyof typeof categoryVariant] ?? "default"} className="px-2 py-0.5 text-[10px]">{item.category}</Tag>
-                        <span className="inline-flex items-center gap-1 text-[11px] text-muted-foreground">
-                          <Calendar className="size-3" aria-hidden="true" />
-                          {item.date}
-                        </span>
-                      </div>
-                      <h3 className="card-title-compact text-base">{item.title}</h3>
-                      <p className="card-desc-compact">{item.excerpt}</p>
-                      <span className="inline-flex items-center gap-1 text-xs font-semibold text-primary">
-                        Read more
-                        <ArrowRight className="size-3.5" />
-                      </span>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              </motion.article>
+              <motion.div key={item.title} variants={fadeUp}>
+                <NewsCard
+                  variant="standard"
+                  title={item.title}
+                  excerpt={item.excerpt}
+                  image={item.image}
+                  date={item.date}
+                  category={item.category}
+                  categoryVariant={
+                    categoryVariant[item.category as keyof typeof categoryVariant] ?? "default"
+                  }
+                />
+              </motion.div>
             ))}
           </AnimatedSection>
 

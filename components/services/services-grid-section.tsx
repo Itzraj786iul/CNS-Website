@@ -8,6 +8,7 @@ import { AnimatedSection } from "@/components/common/animated-section";
 import { Section } from "@/components/common/section";
 import { SectionHeading } from "@/components/common/section-heading";
 import { fadeUp } from "@/lib/motion";
+import { getCardGridClass } from "@/lib/card-variants";
 
 function OverviewSection() {
   const { overview } = servicesContent;
@@ -23,10 +24,10 @@ function OverviewSection() {
 function ServicesGridSection() {
   return (
     <Section variant="default" spacing="default" className="!pt-6">
-      <AnimatedSection stagger className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <AnimatedSection stagger className={getCardGridClass("standard")}>
         {servicesContent.services.map((service) => (
           <motion.div key={service.title} variants={fadeUp}>
-            <ServiceCard {...service} />
+            <ServiceCard {...service} variant="standard" />
           </motion.div>
         ))}
       </AnimatedSection>

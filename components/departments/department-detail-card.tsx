@@ -13,6 +13,13 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import {
+  CARD_VARIANT_DEFAULT,
+  type CardVariant,
+  cardDescClamp,
+  cardIconSize,
+  cardTagLimit,
+} from "@/lib/card-variants";
 import { hoverLift } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 
@@ -23,6 +30,7 @@ type DepartmentDetailCardProps = {
   iconVariant?: "blue" | "green" | "orange" | "navy";
   treatments: string[];
   href?: string;
+  variant?: CardVariant;
   className?: string;
 };
 
@@ -33,8 +41,13 @@ function DepartmentDetailCard({
   iconVariant = "blue",
   treatments,
   href = "/departments",
+  variant = CARD_VARIANT_DEFAULT,
   className,
 }: DepartmentDetailCardProps) {
+  const visibleTreatments = treatments.slice(0, cardTagLimit[variant] + 1);
+  const headerPad = variant === "compact" ? "gap-2 px-3 pt-3 pb-0" : "gap-2 px-4 pt-4 pb-0";
+  const contentPad = variant === "compact" ? "gap-2 px-3 pb-3 pt-2" : "gap-3 px-4 pb-4 pt-2";
+
   return (
     <motion.div
       initial="rest"
@@ -44,15 +57,24 @@ function DepartmentDetailCard({
     >
       <Link href={href} className="group block h-full focus-visible:outline-none">
         <Card className="flex h-full flex-col card-premium card-premium-hover ring-0">
-          <CardHeader className="gap-2 px-4 pt-4 pb-0">
-            <IconBox icon={icon} variant={iconVariant} size="sm" />
-            <CardTitle className="text-base font-semibold text-cns-navy">{title}</CardTitle>
-            <CardDescription className="card-desc-compact">{description}</CardDescription>
+          <CardHeader className={headerPad}>
+            <IconBox icon={icon} variant={iconVariant} size={cardIconSize[variant]} />
+            <CardTitle className={cn("font-semibold text-cns-navy", variant === "detailed" ? "text-lg" : "text-base")}>
+              {title}
+            </CardTitle>
+            <CardDescription
+              className={cn(
+                "text-[13px] leading-snug text-muted-foreground",
+                cardDescClamp[variant]
+              )}
+            >
+              {description}
+            </CardDescription>
           </CardHeader>
 
-          <CardContent className="flex flex-1 flex-col gap-3 px-4 pb-4 pt-2">
+          <CardContent className={cn("flex flex-1 flex-col", contentPad)}>
             <ul className="space-y-1">
-              {treatments.slice(0, 4).map((treatment) => (
+              {visibleTreatments.map((treatment) => (
                 <li
                   key={treatment}
                   className="flex items-center gap-2 text-xs text-cns-navy/80"

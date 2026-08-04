@@ -12,6 +12,7 @@ import { IconBox } from "@/components/common/icon-box";
 import { Card, CardContent } from "@/components/ui/card";
 import { CTASection } from "@/components/common/cta-section";
 import { fadeUp, hoverLift } from "@/lib/motion";
+import { getCardGridClass } from "@/lib/card-variants";
 
 function OverviewSection() {
   const { overview } = facilitiesContent;
@@ -30,7 +31,7 @@ function GallerySection() {
       <AnimatedSection stagger className="grid gap-4 md:grid-cols-3 md:items-start">
         {facilitiesContent.facilities.map((facility) => (
           <motion.div key={facility.title} variants={fadeUp}>
-            <FacilityGalleryCard facility={facility} />
+            <FacilityGalleryCard facility={facility} variant="standard" />
           </motion.div>
         ))}
       </AnimatedSection>
@@ -46,10 +47,10 @@ function TechnologySection() {
         <AnimatedSection className="mx-auto max-w-3xl text-center">
           <SectionHeading align="center" eyebrow={technology.eyebrow} title={technology.title} description={technology.description} />
         </AnimatedSection>
-        <AnimatedSection stagger className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <AnimatedSection stagger className={getCardGridClass("standard")}>
           {technology.items.map((item) => (
             <motion.div key={item.title} variants={fadeUp}>
-              <FeatureCard icon={item.icon} title={item.title} description={item.description} iconVariant={item.variant} />
+              <FeatureCard icon={item.icon} title={item.title} description={item.description} iconVariant={item.variant} variant="standard" />
             </motion.div>
           ))}
         </AnimatedSection>

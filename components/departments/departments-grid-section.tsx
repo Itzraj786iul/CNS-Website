@@ -7,14 +7,16 @@ import { DepartmentDetailCard } from "@/components/departments/department-detail
 import { AnimatedSection } from "@/components/common/animated-section";
 import { Section } from "@/components/common/section";
 import { fadeUp } from "@/lib/motion";
+import { getCardGridClass } from "@/lib/card-variants";
 
 function DepartmentsGridSection() {
   return (
     <Section variant="default" spacing="default" className="!pt-6">
-      <AnimatedSection stagger className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+      <AnimatedSection stagger className={getCardGridClass("standard")}>
         {departmentsContent.departments.map((dept) => (
           <motion.div key={dept.title} variants={fadeUp}>
             <DepartmentDetailCard
+              variant="standard"
               title={dept.title}
               description={dept.description}
               icon={dept.icon}

@@ -47,10 +47,11 @@ function AboutPreviewSection() {
             />
           </AnimatedSection>
 
-          <AnimatedSection stagger className="grid gap-5 sm:grid-cols-2">
+          <AnimatedSection stagger className="grid gap-4 sm:grid-cols-2">
             {aboutFeatures.map((feature) => (
               <motion.div key={feature.title} variants={fadeUp}>
                 <FeatureCard
+                  variant="compact"
                   icon={feature.icon}
                   title={feature.title}
                   description={feature.description}

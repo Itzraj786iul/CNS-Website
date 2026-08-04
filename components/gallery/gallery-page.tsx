@@ -41,7 +41,7 @@ function GalleryPageContent() {
             </AnimatedSection>
             <AnimatedSection stagger>
               <motion.div variants={fadeUp}>
-                <MasonryGallery images={[...section.images]} />
+                <MasonryGallery images={[...section.images]} variant="standard" />
               </motion.div>
             </AnimatedSection>
           </div>

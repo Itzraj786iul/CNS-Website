@@ -8,6 +8,7 @@ import { FeatureCard } from "@/components/common/feature-card";
 import { Section } from "@/components/common/section";
 import { SectionHeading } from "@/components/common/section-heading";
 import { fadeUp } from "@/lib/motion";
+import { getCardGridClass } from "@/lib/card-variants";
 
 function CoreValuesSection() {
   return (
@@ -22,10 +23,11 @@ function CoreValuesSection() {
           />
         </AnimatedSection>
 
-        <AnimatedSection stagger className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <AnimatedSection stagger className={getCardGridClass("standard")}>
           {aboutContent.coreValues.map((value) => (
             <motion.div key={value.title} variants={fadeUp}>
               <FeatureCard
+                variant="standard"
                 icon={value.icon}
                 title={value.title}
                 description={value.description}

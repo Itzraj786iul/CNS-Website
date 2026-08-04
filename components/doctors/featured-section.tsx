@@ -8,6 +8,7 @@ import { AnimatedSection } from "@/components/common/animated-section";
 import { Section } from "@/components/common/section";
 import { SectionHeading } from "@/components/common/section-heading";
 import { fadeUp } from "@/lib/motion";
+import { getCardGridClass } from "@/lib/card-variants";
 
 function FeaturedSection() {
   return (
@@ -22,10 +23,10 @@ function FeaturedSection() {
           />
         </AnimatedSection>
 
-        <AnimatedSection stagger className="grid gap-4 md:grid-cols-3">
+        <AnimatedSection stagger className={getCardGridClass("standard")}>
           {featuredDoctors.map((doctor) => (
             <motion.div key={doctor.id} variants={fadeUp}>
-              <DoctorProfileCard doctor={doctor} />
+              <DoctorProfileCard doctor={doctor} variant="standard" />
             </motion.div>
           ))}
         </AnimatedSection>

@@ -4,12 +4,17 @@ export type { BreadcrumbItem } from "./breadcrumb";
 export { Container } from "./container";
 export { CTASection } from "./cta-section";
 export { PatientConversionCta } from "./patient-conversion-cta";
+export { ConditionCard } from "./condition-card";
 export { DepartmentCard } from "./department-card";
 export { DoctorCard } from "./doctor-card";
 export { EmergencyBanner } from "./emergency-banner";
 export { FAQCard } from "./faq-card";
 export type { FAQItem } from "./faq-card";
 export { FeatureCard } from "./feature-card";
+export { NewsCard } from "./news-card";
+export { ResearchCard } from "./research-card";
+export { ResourceCard } from "./resource-card";
+export { TestimonialCard } from "./testimonial-card";
 export { IconBox, iconBoxVariants } from "./icon-box";
 export { LightboxProvider, MasonryGallery, useLightbox } from "./lightbox";
 export type { LightboxImage } from "./lightbox";
@@ -22,3 +27,10 @@ export { Skeleton, PageSkeleton } from "./skeleton";
 export { StatisticsCard } from "./statistics-card";
 export { Tag, tagVariants } from "./tag";
 export { TimelineCard } from "./timeline-card";
+export type { CardVariant } from "@/lib/card-variants";
+export {
+  CARD_VARIANT_DEFAULT,
+  cardGridClasses,
+  cardImageHeights,
+  getCardGridClass,
+} from "@/lib/card-variants";

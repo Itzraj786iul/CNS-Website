@@ -11,6 +11,7 @@ import { Section } from "@/components/common/section";
 import { SectionHeading } from "@/components/common/section-heading";
 import { Button } from "@/components/ui/button";
 import { fadeUp } from "@/lib/motion";
+import { getCardGridClass } from "@/lib/card-variants";
 
 function SpecialistsSection() {
   return (
@@ -36,10 +37,11 @@ function SpecialistsSection() {
           />
         </AnimatedSection>
 
-        <AnimatedSection stagger className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <AnimatedSection stagger className={getCardGridClass("compact")}>
           {specialists.map((doctor) => (
             <motion.div key={doctor.name} variants={fadeUp}>
               <DoctorCard
+                variant="compact"
                 name={doctor.name}
                 title={doctor.title}
                 department={doctor.department}

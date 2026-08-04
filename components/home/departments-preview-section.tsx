@@ -11,6 +11,7 @@ import { Section } from "@/components/common/section";
 import { SectionHeading } from "@/components/common/section-heading";
 import { Button } from "@/components/ui/button";
 import { fadeUp } from "@/lib/motion";
+import { getCardGridClass } from "@/lib/card-variants";
 
 function DepartmentsPreviewSection() {
   return (
@@ -25,10 +26,11 @@ function DepartmentsPreviewSection() {
           />
         </AnimatedSection>
 
-        <AnimatedSection stagger className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <AnimatedSection stagger className={getCardGridClass("compact")}>
           {departments.map((dept) => (
             <motion.div key={dept.title} variants={fadeUp}>
               <DepartmentCard
+                variant="compact"
                 title={dept.title}
                 description={dept.description}
                 icon={dept.icon}

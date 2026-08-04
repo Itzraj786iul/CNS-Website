@@ -8,6 +8,7 @@ import { FeatureCard } from "@/components/common/feature-card";
 import { Section } from "@/components/common/section";
 import { SectionHeading } from "@/components/common/section-heading";
 import { fadeUp } from "@/lib/motion";
+import { getCardGridClass } from "@/lib/card-variants";
 
 function TechnologySection() {
   const { technology } = departmentsContent;
@@ -24,10 +25,11 @@ function TechnologySection() {
           />
         </AnimatedSection>
 
-        <AnimatedSection stagger className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <AnimatedSection stagger className={getCardGridClass("standard")}>
           {technology.items.map((item) => (
             <motion.div key={item.title} variants={fadeUp}>
               <FeatureCard
+                variant="standard"
                 icon={item.icon}
                 title={item.title}
                 description={item.description}

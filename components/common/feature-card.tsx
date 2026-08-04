@@ -12,6 +12,12 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import {
+  CARD_VARIANT_DEFAULT,
+  type CardVariant,
+  cardDescClamp,
+  cardIconSize,
+} from "@/lib/card-variants";
 import { hoverLift } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 
@@ -20,6 +26,7 @@ type FeatureCardProps = {
   title: string;
   description?: string;
   iconVariant?: "blue" | "green" | "orange" | "navy";
+  variant?: CardVariant;
   className?: string;
 };
 
@@ -28,8 +35,13 @@ function FeatureCard({
   title,
   description,
   iconVariant = "blue",
+  variant = CARD_VARIANT_DEFAULT,
   className,
 }: FeatureCardProps) {
+  const isCompact = variant === "compact";
+  const headerPad = isCompact ? "gap-1.5 px-3 pt-3 pb-0" : variant === "detailed" ? "gap-2 px-5 pt-5 pb-0" : "gap-1.5 px-4 pt-4 pb-0";
+  const contentPad = isCompact ? "px-3 pb-3 pt-1" : variant === "detailed" ? "px-5 pb-5 pt-1.5" : "px-4 pb-4 pt-1.5";
+
   return (
     <motion.div
       initial="rest"
@@ -38,13 +50,27 @@ function FeatureCard({
       className={cn("h-full", className)}
     >
       <Card className="h-full card-premium card-premium-hover ring-0">
-        <CardHeader className="gap-1.5 px-4 pt-4 pb-0">
-          <IconBox icon={icon} variant={iconVariant} size="sm" />
-          <CardTitle className="card-title-compact">{title}</CardTitle>
+        <CardHeader className={headerPad}>
+          <IconBox icon={icon} variant={iconVariant} size={cardIconSize[variant]} />
+          <CardTitle
+            className={cn(
+              "font-semibold tracking-tight text-cns-navy",
+              isCompact ? "text-sm" : variant === "detailed" ? "text-base" : "text-sm"
+            )}
+          >
+            {title}
+          </CardTitle>
         </CardHeader>
         {description ? (
-          <CardContent className="px-4 pb-4 pt-1.5">
-            <CardDescription className="card-desc-compact">{description}</CardDescription>
+          <CardContent className={contentPad}>
+            <CardDescription
+              className={cn(
+                "text-[13px] leading-snug text-muted-foreground",
+                cardDescClamp[variant]
+              )}
+            >
+              {description}
+            </CardDescription>
           </CardContent>
         ) : null}
       </Card>

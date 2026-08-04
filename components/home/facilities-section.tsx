@@ -8,6 +8,7 @@ import { FeatureCard } from "@/components/common/feature-card";
 import { Section } from "@/components/common/section";
 import { SectionHeading } from "@/components/common/section-heading";
 import { fadeUp } from "@/lib/motion";
+import { getCardGridClass } from "@/lib/card-variants";
 
 function FacilitiesSection() {
   return (
@@ -22,10 +23,11 @@ function FacilitiesSection() {
           />
         </AnimatedSection>
 
-        <AnimatedSection stagger className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <AnimatedSection stagger className={getCardGridClass("compact")}>
           {facilities.map((facility) => (
             <motion.div key={facility.title} variants={fadeUp}>
               <FeatureCard
+                variant="compact"
                 icon={facility.icon}
                 title={facility.title}
                 description={facility.description}
