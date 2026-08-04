@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+import { CnsLogoMark } from "@/components/common/cns-logo-mark";
 import { siteConfig } from "@/lib/constants/site";
 import { cn } from "@/lib/utils";
 
@@ -12,16 +13,10 @@ type LogoProps = {
   priority?: boolean;
 };
 
-const sizeClasses = {
+const footerSizeClasses = {
   sm: "h-9 w-auto max-w-[7.5rem]",
   md: "h-10 w-auto max-w-[8.5rem] sm:h-11 sm:max-w-[9.5rem]",
   lg: "h-14 w-auto max-w-[12rem] sm:h-16 sm:max-w-[14rem]",
-} as const;
-
-const navFrameSizes = {
-  sm: "h-9 w-[6.75rem]",
-  md: "h-10 w-[7.75rem] sm:h-11 sm:w-[8.5rem]",
-  lg: "h-14 w-[10.5rem] sm:h-16 sm:w-[12rem]",
 } as const;
 
 function Logo({
@@ -30,32 +25,20 @@ function Logo({
   variant = "nav",
   priority = false,
 }: LogoProps) {
-  if (variant === "nav") {
+  if (variant === "nav" || variant === "default") {
     return (
-      <span
-        className={cn(
-          "relative inline-flex shrink-0 overflow-hidden rounded-md",
-          navFrameSizes[size],
-          className
-        )}
-      >
-        <Image
-          src="/cns-logo.png"
-          alt={`${siteConfig.name} logo`}
-          fill
-          priority={priority}
-          sizes="(max-width: 640px) 120px, 160px"
-          className="object-cover object-center scale-[1.32]"
-        />
-      </span>
+      <CnsLogoMark
+        size={size}
+        className={cn("text-cns-navy dark:text-foreground", className)}
+      />
     );
   }
 
   return (
     <span
       className={cn(
-        "relative inline-flex shrink-0 items-center overflow-hidden rounded-lg bg-white px-2 py-1.5 shadow-soft",
-        variant === "footer" && "border border-white/10",
+        "relative inline-flex shrink-0 items-center overflow-hidden rounded-lg bg-white px-2.5 py-1.5 shadow-soft",
+        "border border-white/10",
         className
       )}
     >
@@ -65,7 +48,10 @@ function Logo({
         width={512}
         height={512}
         priority={priority}
-        className={cn("w-auto object-contain object-left", sizeClasses[size], "scale-[1.08]")}
+        className={cn(
+          "w-auto object-contain object-left mix-blend-multiply",
+          footerSizeClasses[size]
+        )}
       />
     </span>
   );
