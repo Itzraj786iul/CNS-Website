@@ -14,7 +14,7 @@ function DoctorsCtaSection() {
   const { cta } = doctorsContent;
 
   return (
-    <section className="py-16 md:py-20">
+    <section className="py-12 md:py-16">
       <Container>
         <AnimatedSection>
           <div className="relative overflow-hidden rounded-3xl bg-linear-to-br from-primary via-[#2a8fd4] to-secondary px-6 py-14 sm:px-10 sm:py-16 lg:px-16">

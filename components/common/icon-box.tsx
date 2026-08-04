@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const iconBoxVariants = cva(
-  "inline-flex shrink-0 items-center justify-center rounded-2xl shadow-soft transition-all duration-300 ease-out group-hover/icon:shadow-soft-lg [&_svg]:size-5 [&_svg]:stroke-[1.75]",
+  "inline-flex shrink-0 items-center justify-center rounded-2xl shadow-soft transition-all duration-300 ease-out group-hover/icon:scale-105 group-hover/icon:-translate-y-0.5 group-hover/icon:shadow-soft-lg [&_svg]:size-5 [&_svg]:stroke-[1.75]",
   {
     variants: {
       variant: {

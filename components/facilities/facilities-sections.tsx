@@ -26,7 +26,7 @@ function OverviewSection() {
 
 function GallerySection() {
   return (
-    <Section variant="default" spacing="lg" className="!pt-4">
+    <Section variant="default" spacing="lg" className="!pt-6">
       <AnimatedSection stagger className="grid auto-rows-fr gap-5 md:grid-cols-3">
         {facilitiesContent.facilities.map((facility) => (
           <motion.div key={facility.title} variants={fadeUp} className="h-full">

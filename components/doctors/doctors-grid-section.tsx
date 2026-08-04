@@ -11,7 +11,7 @@ import { fadeUp } from "@/lib/motion";
 
 function IntroductionSection() {
   return (
-    <Section variant="default" spacing="sm" className="!pb-4">
+    <Section variant="default" spacing="sm" className="!pt-8 !pb-0 md:!pt-10">
       <AnimatedSection className="mx-auto max-w-3xl text-center">
         <SectionHeading
           align="center"
@@ -26,7 +26,7 @@ function IntroductionSection() {
 
 function DoctorsGridSection() {
   return (
-    <Section variant="default" spacing="lg" className="!pt-4">
+    <Section variant="default" spacing="lg" className="!pt-8">
       <AnimatedSection stagger className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
         {doctorsContent.doctors.map((doctor) => (
           <motion.div key={doctor.id} id={doctor.id} variants={fadeUp}>

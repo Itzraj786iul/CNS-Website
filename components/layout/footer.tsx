@@ -96,7 +96,7 @@ function Footer() {
         aria-hidden="true"
         className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-primary/50 to-transparent"
       />
-      <Container className="relative py-20 md:py-24">
+      <Container className="relative py-16 md:py-20">
         <div className="grid gap-14 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 xl:gap-14">
           <div className="space-y-6 sm:col-span-2 lg:col-span-1 xl:col-span-2">
             <div className="space-y-5">
@@ -117,7 +117,7 @@ function Footer() {
               <SocialLink href={social.youtube} label="YouTube" icon={YouTubeIcon} />
             </div>
             <form
-              className="space-y-3.5 rounded-2xl border border-white/10 bg-white/[0.04] p-5"
+              className="min-w-0 space-y-3.5 rounded-2xl border border-white/10 bg-white/[0.04] p-5"
               onSubmit={(e) => e.preventDefault()}
               aria-label="Newsletter signup"
             >
@@ -125,14 +125,17 @@ function Footer() {
               <p className="text-xs leading-relaxed text-white/50">
                 Health insights and hospital announcements from CNS.
               </p>
-              <div className="flex flex-col gap-2.5 sm:flex-row">
+              <div className="grid min-w-0 grid-cols-1 gap-2.5 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-stretch">
                 <input
                   type="email"
                   placeholder="Your email address"
                   aria-label="Email for newsletter"
-                  className="h-11 flex-1 rounded-full border border-white/15 bg-white/5 px-4 text-sm text-white placeholder:text-white/40 outline-none transition-all duration-300 focus:border-primary/50 focus:ring-2 focus:ring-primary/30"
+                  className="h-11 min-w-0 w-full rounded-full border border-white/15 bg-white/5 px-4 text-sm text-white placeholder:text-white/40 outline-none transition-all duration-300 focus:border-primary/50 focus:ring-2 focus:ring-primary/30"
                 />
-                <Button type="submit" size="sm" className="h-11 rounded-full bg-secondary px-6 shadow-glow-green hover:bg-secondary/90">
+                <Button
+                  type="submit"
+                  className="h-11 w-full shrink-0 rounded-full bg-secondary px-5 whitespace-nowrap shadow-glow-green hover:bg-secondary/90 sm:w-auto sm:min-w-[7.5rem]"
+                >
                   Subscribe
                 </Button>
               </div>

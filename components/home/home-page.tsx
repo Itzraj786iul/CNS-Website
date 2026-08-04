@@ -21,7 +21,7 @@ function HomePage() {
         variant="white"
         spacing="sm"
         contained={true}
-        className="!pt-8 !pb-14 md:!pt-10 md:!pb-16"
+        className="!pt-6 !pb-12 md:!pt-8 md:!pb-14"
       >
         <EmergencyBanner
           title="Emergency Assistance"

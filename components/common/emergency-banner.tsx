@@ -1,3 +1,5 @@
+"use client";
+
 import { Siren } from "lucide-react";
 
 import { IconBox } from "@/components/common/icon-box";
@@ -36,7 +38,7 @@ function EmergencyBanner({
           <IconBox
             icon={Siren}
             variant="white"
-            className="bg-destructive/20 text-white"
+            className="bg-destructive/20 text-white [&_svg]:animate-emergency-pulse"
           />
           <div>
             <h2 className="font-heading text-xl font-semibold text-white sm:text-2xl">

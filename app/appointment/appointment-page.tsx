@@ -104,7 +104,7 @@ function AppointmentPageContent() {
           </AnimatedSection>
         </Section>
       ) : (
-        <Section variant="default" spacing="lg" className="!pt-4">
+        <Section variant="default" spacing="lg" className="!pt-6">
           <div className="grid gap-12 lg:grid-cols-[1.3fr_0.7fr] lg:gap-16">
             <AnimatedSection>
               <form

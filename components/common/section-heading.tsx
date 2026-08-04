@@ -23,7 +23,7 @@ function SectionHeading({
     <div
       data-slot="section-heading"
       className={cn(
-        "max-w-3xl space-y-5",
+        "max-w-3xl space-y-4",
         align === "center" && "mx-auto text-center",
         className
       )}
@@ -37,8 +37,10 @@ function SectionHeading({
       <h2
         className={cn(
           "font-heading font-semibold tracking-[-0.02em] text-cns-navy",
-          size === "default" && "text-3xl sm:text-4xl lg:text-[2.5rem] lg:leading-[1.15]",
-          size === "lg" && "text-4xl sm:text-5xl lg:text-[3rem] lg:leading-[1.1]"
+          size === "default" &&
+            "text-3xl sm:text-4xl lg:text-[2.5rem] lg:leading-[1.15]",
+          size === "lg" &&
+            "text-4xl sm:text-5xl lg:text-[3rem] lg:leading-[1.1]"
         )}
       >
         {title}

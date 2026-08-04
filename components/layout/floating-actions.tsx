@@ -2,15 +2,57 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { CalendarDays, ChevronUp, MessageCircle } from "lucide-react";
+import {
+  CalendarDays,
+  ChevronUp,
+  MessageCircle,
+  Phone,
+  Sparkles,
+} from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 
-import { Button } from "@/components/ui/button";
-import { WHATSAPP_URL } from "@/lib/contact-links";
+import {
+  WHATSAPP_URL,
+  getAppointmentTelHref,
+  getEmergencyTelHref,
+} from "@/lib/contact-links";
+import { siteConfig } from "@/lib/constants/site";
 import { cn } from "@/lib/utils";
 
+type DockAction = {
+  label: string;
+  href: string;
+  icon: React.ComponentType<{ className?: string }>;
+  external?: boolean;
+  variant?: "default" | "emergency" | "whatsapp" | "appointment";
+};
+
+const dockActions: DockAction[] = [
+  {
+    label: "Call",
+    href: getAppointmentTelHref(),
+    icon: Phone,
+    variant: "default",
+  },
+  {
+    label: "WhatsApp",
+    href: WHATSAPP_URL,
+    icon: MessageCircle,
+    external: true,
+    variant: "whatsapp",
+  },
+  {
+    label: "Appointment",
+    href: "/appointment",
+    icon: CalendarDays,
+    variant: "appointment",
+  },
+];
+
 function FloatingActions() {
+  const [expanded, setExpanded] = React.useState(false);
   const [showScrollTop, setShowScrollTop] = React.useState(false);
+  const dockRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -22,86 +64,154 @@ function FloatingActions() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  return (
-    <>
-      {/* Mobile sticky conversion bar */}
-      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-cns-border/80 bg-white/95 p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] shadow-soft-lg backdrop-blur-xl md:hidden">
-        <div className="flex gap-2.5">
-          <Button
-            nativeButton={false}
-            render={
-              <Link href="/appointment">
-                <CalendarDays />
-                Book Appointment
-              </Link>
-            }
-            className="h-12 min-h-[48px] flex-1 rounded-full bg-secondary shadow-glow-green hover:bg-secondary/90"
-          />
-          <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Chat on WhatsApp"
-            className="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#25D366] text-white shadow-soft transition-all duration-300 hover:scale-[1.02] hover:shadow-soft-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366]/50 focus-visible:ring-offset-2"
-          >
-            <MessageCircle className="size-5" aria-hidden="true" />
-          </a>
-        </div>
-      </div>
+  React.useEffect(() => {
+    const handlePointerDown = (event: MouseEvent) => {
+      if (dockRef.current && !dockRef.current.contains(event.target as Node)) {
+        setExpanded(false);
+      }
+    };
 
-      {/* Floating action buttons — desktop + tablet */}
-      <div
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setExpanded(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handlePointerDown);
+    document.addEventListener("keydown", handleEscape);
+    return () => {
+      document.removeEventListener("mousedown", handlePointerDown);
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, []);
+
+  return (
+    <div
+      ref={dockRef}
+      className={cn(
+        "fixed z-40 flex flex-col items-end gap-3",
+        "bottom-[max(1rem,env(safe-area-inset-bottom))] right-4 sm:right-6"
+      )}
+    >
+      <AnimatePresence>
+        {expanded ? (
+          <motion.div
+            initial={{ opacity: 0, y: 10, scale: 0.96 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 8, scale: 0.96 }}
+            transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
+            className="w-[min(100vw-2rem,15rem)] overflow-hidden rounded-2xl border border-cns-border/80 bg-white/95 p-2 shadow-soft-lg backdrop-blur-xl"
+          >
+            <ul className="space-y-1">
+              {dockActions.map((action, index) => {
+                const Icon = action.icon;
+                const content = (
+                  <>
+                    <Icon className="size-4 shrink-0" aria-hidden="true" />
+                    <span>{action.label}</span>
+                  </>
+                );
+
+                return (
+                  <motion.li
+                    key={action.label}
+                    initial={{ opacity: 0, x: 8 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.04 }}
+                  >
+                    {action.external || action.href.startsWith("tel:") ? (
+                      <a
+                        href={action.href}
+                        target={action.external ? "_blank" : undefined}
+                        rel={action.external ? "noopener noreferrer" : undefined}
+                        onClick={() => setExpanded(false)}
+                        className={cn(
+                          "flex h-11 items-center gap-3 rounded-xl px-3.5 text-sm font-medium transition-all duration-300",
+                          action.variant === "whatsapp" &&
+                            "bg-[#25D366]/10 text-[#128C7E] hover:bg-[#25D366]/15",
+                          action.variant === "appointment" &&
+                            "bg-secondary/10 text-secondary hover:bg-secondary/15",
+                          action.variant === "default" &&
+                            "text-cns-navy hover:bg-muted"
+                        )}
+                      >
+                        {content}
+                      </a>
+                    ) : (
+                      <Link
+                        href={action.href}
+                        onClick={() => setExpanded(false)}
+                        className={cn(
+                          "flex h-11 items-center gap-3 rounded-xl px-3.5 text-sm font-medium transition-all duration-300",
+                          action.variant === "appointment" &&
+                            "bg-secondary/10 text-secondary hover:bg-secondary/15",
+                          action.variant === "default" &&
+                            "text-cns-navy hover:bg-muted"
+                        )}
+                      >
+                        {content}
+                      </Link>
+                    )}
+                  </motion.li>
+                );
+              })}
+              {showScrollTop ? (
+                <motion.li
+                  initial={{ opacity: 0, x: 8 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: dockActions.length * 0.04 }}
+                >
+                  <button
+                    type="button"
+                    onClick={() => {
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                      setExpanded(false);
+                    }}
+                    className="flex h-11 w-full items-center gap-3 rounded-xl px-3.5 text-sm font-medium text-cns-navy transition-all duration-300 hover:bg-muted"
+                  >
+                    <ChevronUp className="size-4 shrink-0" aria-hidden="true" />
+                    Back to Top
+                  </button>
+                </motion.li>
+              ) : null}
+            </ul>
+            <div className="mt-1 border-t border-cns-border/70 px-3.5 py-2">
+              <a
+                href={getEmergencyTelHref()}
+                className="flex items-center gap-2 text-xs font-semibold text-destructive transition-colors hover:text-destructive/80"
+              >
+                Emergency: {siteConfig.contact.emergency}
+              </a>
+            </div>
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
+
+      <motion.button
+        type="button"
+        aria-expanded={expanded}
+        aria-label={expanded ? "Close help menu" : "Open help menu"}
+        onClick={() => setExpanded((value) => !value)}
+        whileTap={{ scale: 0.98 }}
         className={cn(
-          "fixed z-40 flex flex-col items-end gap-3",
-          "bottom-6 right-4 md:bottom-6 md:right-6"
+          "group relative flex h-12 items-center gap-2 overflow-hidden rounded-full border border-cns-border/80 bg-white/95 px-4 text-sm font-semibold text-cns-navy shadow-soft-lg backdrop-blur-xl transition-all duration-300 hover:border-primary/20 hover:shadow-glow-blue",
+          expanded && "border-primary/25 bg-white"
         )}
       >
-        <AnimatePresence>
-          {showScrollTop ? (
-            <motion.button
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 12 }}
-              type="button"
-              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-              className="flex size-11 items-center justify-center rounded-full border border-cns-border bg-white text-cns-navy shadow-soft transition-all duration-300 hover:scale-[1.02] hover:border-primary/20 hover:shadow-soft-lg"
-              aria-label="Scroll to top"
-            >
-              <ChevronUp className="size-5" />
-            </motion.button>
-          ) : null}
-        </AnimatePresence>
-
-        <Button
-          nativeButton={false}
-          render={
-            <Link href="/appointment" aria-label="Book appointment">
-              <CalendarDays />
-              <span className="hidden sm:inline">Book Appointment</span>
-            </Link>
-          }
-          className="hidden h-12 min-h-[48px] rounded-full bg-secondary px-5 shadow-glow-green hover:bg-secondary/90 sm:inline-flex"
+        <span
+          aria-hidden="true"
+          className="absolute inset-0 bg-linear-to-r from-primary/5 via-transparent to-secondary/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
         />
-
-        <div className="group relative">
-          <span
-            role="tooltip"
-            className="pointer-events-none absolute right-full top-1/2 mr-3 -translate-y-1/2 whitespace-nowrap rounded-full bg-cns-navy px-3 py-1.5 text-xs font-medium text-white opacity-0 shadow-soft transition-opacity duration-200 group-hover:opacity-100 group-focus-within:opacity-100"
-          >
-            Chat on WhatsApp
-          </span>
-          <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Chat with Center for Neuroscience on WhatsApp"
-            className="animate-whatsapp-pulse relative flex size-12 items-center justify-center rounded-full bg-[#25D366] text-white shadow-soft transition-all duration-300 hover:scale-[1.02] hover:shadow-soft-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366]/50 focus-visible:ring-offset-2"
-          >
-            <MessageCircle className="size-5" aria-hidden="true" />
-          </a>
-        </div>
-      </div>
-    </>
+        <Sparkles
+          className={cn(
+            "relative size-4 text-primary transition-transform duration-300",
+            expanded && "rotate-90"
+          )}
+          aria-hidden="true"
+        />
+        <span className="relative">{expanded ? "Close" : "Need Help?"}</span>
+      </motion.button>
+    </div>
   );
 }
 

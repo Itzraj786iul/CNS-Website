@@ -1,9 +1,9 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
-import { pageEnter } from "@/lib/motion";
+import { pageEnter, pageExit } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 
 type RouteTransitionProps = {
@@ -15,16 +15,19 @@ function RouteTransition({ children, className }: RouteTransitionProps) {
   const pathname = usePathname();
 
   return (
-    <motion.div
-      key={pathname}
-      data-slot="route-transition"
-      initial="hidden"
-      animate="visible"
-      variants={pageEnter}
-      className={cn("flex flex-1 flex-col", className)}
-    >
-      {children}
-    </motion.div>
+    <AnimatePresence mode="wait">
+      <motion.div
+        key={pathname}
+        data-slot="route-transition"
+        initial="hidden"
+        animate="visible"
+        exit="exit"
+        variants={{ hidden: pageEnter.hidden, visible: pageEnter.visible, exit: pageExit }}
+        className={cn("flex flex-1 flex-col", className)}
+      >
+        {children}
+      </motion.div>
+    </AnimatePresence>
   );
 }
 

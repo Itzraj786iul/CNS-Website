@@ -66,12 +66,18 @@ export const scaleIn: Variants = {
 };
 
 export const pageEnter: Variants = {
-  hidden: { opacity: 0, y: 8 },
+  hidden: { opacity: 0, y: 10 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: fastTransition,
+    transition: { duration: 0.4, ease: easeOut },
   },
+};
+
+export const pageExit = {
+  opacity: 0,
+  y: -6,
+  transition: { duration: 0.25, ease: easeOut },
 };
 
 export const staggerContainer: Variants = {
@@ -101,8 +107,8 @@ export const hoverLift = {
 
 export const viewportOnce = {
   once: true,
-  margin: "-60px" as const,
-  amount: 0.15 as const,
+  margin: "-40px" as const,
+  amount: 0.12 as const,
 };
 
 export type AnimationDirection = "up" | "down" | "left" | "right" | "fade" | "scale";

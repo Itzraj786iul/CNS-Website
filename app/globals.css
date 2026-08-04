@@ -197,7 +197,7 @@
   }
 
   .card-premium {
-    @apply rounded-2xl border border-cns-border/70 bg-white shadow-card ring-0 transition-all duration-500 ease-out;
+    @apply rounded-2xl border border-cns-border/70 bg-white shadow-card ring-0 transition-[transform,box-shadow,border-color] duration-500 ease-out;
   }
 
   .card-body {
@@ -357,5 +357,61 @@
 
   .animate-whatsapp-pulse {
     animation: whatsapp-pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes emergency-pulse {
+    0%,
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.82;
+      transform: scale(1.08);
+    }
+  }
+
+  .animate-emergency-pulse {
+    animation: emergency-pulse 2.4s ease-in-out infinite;
+    transform-origin: center;
+  }
+
+  @keyframes hero-gradient-breathe {
+    0%,
+    100% {
+      opacity: 0.85;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  .hero-gradient-breathe {
+    animation: hero-gradient-breathe 8s ease-in-out infinite;
+  }
+
+  .btn-interactive {
+    @apply relative overflow-hidden;
+  }
+
+  .btn-interactive::after {
+    @apply pointer-events-none absolute inset-0 rounded-[inherit] opacity-0 transition-opacity duration-300 content-[''];
+    background: radial-gradient(circle at center, rgb(255 255 255 / 0.35), transparent 70%);
+  }
+
+  .btn-interactive:hover::after {
+    @apply opacity-100;
+  }
+
+  .icon-box-hover {
+    @apply transition-transform duration-300 ease-out group-hover:scale-105 group-hover:-translate-y-0.5;
+  }
+
+  .card-interactive {
+    @apply transition-[transform,box-shadow,border-color] duration-500 ease-out;
+  }
+
+  .card-interactive:hover {
+    @apply -translate-y-1 border-primary/20 shadow-soft-lg;
   }
 }

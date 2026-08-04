@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 
 function FilterBar() {
   return (
-    <Section variant="white" spacing="sm" className="!py-8">
+    <Section variant="white" spacing="sm" className="!py-5">
       <AnimatedSection>
         <div className="flex flex-col gap-4 rounded-2xl border border-cns-border/80 bg-white p-4 shadow-soft sm:flex-row sm:items-center sm:justify-between sm:p-5">
           <div className="relative flex-1">

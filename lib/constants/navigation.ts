@@ -8,18 +8,28 @@ export type NavItem = {
   external?: boolean;
 };
 
-export const mainNavigation: NavItem[] = [
+export const primaryNavigation: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Departments", href: "/departments" },
   { label: "Doctors", href: "/doctors" },
   { label: "Services", href: "/services" },
+  { label: "Contact", href: "/contact" },
+];
+
+export const moreNavigation: NavItem[] = [
   { label: "Facilities", href: "/facilities" },
   { label: "Gallery", href: "/gallery" },
   { label: "Research", href: "/research" },
   { label: "News", href: "/news" },
   { label: "Resources", href: "/resources" },
-  { label: "Contact", href: "/contact" },
+];
+
+/** Full list for mobile menu and footer references */
+export const mainNavigation: NavItem[] = [
+  ...primaryNavigation.slice(0, -1),
+  ...moreNavigation,
+  primaryNavigation[primaryNavigation.length - 1]!,
 ];
 
 export const ctaNavigation: NavItem = {
