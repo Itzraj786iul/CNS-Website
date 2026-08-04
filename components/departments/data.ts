@@ -24,13 +24,14 @@ export type DepartmentItem = {
 
 export const departmentsContent = {
   hero: {
-    title: "Our Departments",
+    eyebrow: "Clinical Excellence",
+    title: "Integrated Brain & Spine Departments",
     description:
-      "Integrated specialties working together to diagnose, treat, and rehabilitate the full spectrum of neurological conditions.",
+      "Subspecialist-led departments working as one team — to diagnose, treat, and rehabilitate the full spectrum of neurological conditions.",
   },
   overview: {
-    eyebrow: "Overview",
-    title: "Comprehensive Neuroscience Under One Roof",
+    eyebrow: "Comprehensive Neuroscience Care",
+    title: "Every Specialty, One Coordinated Team",
     description:
       "Each department at CNS is staffed by subspecialty-trained clinicians supported by dedicated nursing teams, advanced diagnostics, and coordinated care pathways. From acute emergencies to long-term rehabilitation, patients receive seamless transitions between services.",
   },
@@ -118,7 +119,7 @@ export const departmentsContent = {
     },
   ] satisfies DepartmentItem[],
   whyDepartments: {
-    eyebrow: "Why Our Departments",
+    eyebrow: "Evidence-Based Treatment",
     title: "Integrated Care That Makes a Difference",
     description:
       "Unlike fragmented healthcare models, CNS departments share electronic records, joint rounds, and unified treatment protocols — reducing delays and improving outcomes.",
@@ -146,8 +147,8 @@ export const departmentsContent = {
     ],
   },
   technology: {
-    eyebrow: "Technology",
-    title: "Advanced Tools Across Every Department",
+    eyebrow: "Clinical Technology",
+    title: "Precision Tools Across Every Department",
     description:
       "Our departments are equipped with the latest diagnostic and therapeutic technology to support precision medicine.",
     items: [
@@ -178,10 +179,10 @@ export const departmentsContent = {
     ],
   },
   cta: {
-    title: "Find the Right Department for You",
+    title: "Find the Right Specialist",
     description:
-      "Not sure where to start? Our patient coordinators can guide you to the appropriate specialist based on your symptoms and needs.",
-    primaryLabel: "Book Appointment",
+      "Unsure where to begin? Our coordinators will guide you to the appropriate department based on your symptoms and medical history.",
+    primaryLabel: "Book Your Consultation",
     primaryHref: "/appointment",
     secondaryLabel: "Contact Us",
     secondaryHref: "/contact",

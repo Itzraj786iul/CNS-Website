@@ -16,9 +16,9 @@ function StatisticsSection() {
         <AnimatedSection className="mx-auto max-w-3xl text-center">
           <SectionHeading
             align="center"
-            eyebrow="By the Numbers"
-            title="A Team Built on Experience"
-            description="Our collective expertise translates into better diagnoses, safer procedures, and improved outcomes for every patient we serve."
+            eyebrow="Clinical Credibility"
+            title="Experience You Can Measure"
+            description="Our collective expertise translates into sharper diagnoses, safer procedures, and better outcomes for every patient we serve."
           />
         </AnimatedSection>
 
@@ -29,6 +29,7 @@ function StatisticsSection() {
                 value={stat.value}
                 suffix={stat.suffix}
                 label={stat.label}
+                className="rounded-2xl border border-cns-border/50 bg-white/90 shadow-card backdrop-blur-sm"
               />
             </motion.div>
           ))}

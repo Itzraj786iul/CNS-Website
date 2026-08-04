@@ -108,6 +108,10 @@ function CTASection({
             <>
               <div
                 aria-hidden="true"
+                className="neural-pattern pointer-events-none absolute inset-0 opacity-[0.15]"
+              />
+              <div
+                aria-hidden="true"
                 className="pointer-events-none absolute -right-16 -top-16 size-64 rounded-full bg-primary/20 blur-3xl"
               />
               <div

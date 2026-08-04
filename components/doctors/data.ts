@@ -26,9 +26,10 @@ function doctorImage(name: string, index: number): { src: string; alt: string } 
 
 export const doctorsContent = {
   hero: {
-    title: "Our Doctors",
+    eyebrow: "Our Physicians",
+    title: "Meet Our Neuroscience Specialists",
     description:
-      "Meet the clinicians behind CNS — subspecialists committed to accurate diagnosis, evidence-based treatment, and care that respects every patient.",
+      "Board-certified clinicians with advanced fellowship training — committed to accurate diagnosis, evidence-based treatment, and care that respects every patient.",
   },
   introduction:
     "Our medical team includes board-certified neurologists, neurosurgeons, psychiatrists, and rehabilitation specialists. Each doctor brings subspecialty expertise and a patient-first approach to every consultation.",
@@ -166,16 +167,16 @@ export const doctorsContent = {
     },
   ] satisfies DoctorProfile[],
   statistics: [
-    { value: "20", suffix: "+", label: "Specialist Doctors" },
+    { value: "20", suffix: "+", label: "Subspecialist Physicians" },
     { value: "150", suffix: "+", label: "Years Combined Experience" },
     { value: "12", suffix: "", label: "Subspecialty Areas" },
-    { value: "50", suffix: "K+", label: "Patients Treated Annually" },
+    { value: "50", suffix: "K+", label: "Patients Cared For Annually" },
   ],
   cta: {
-    title: "Schedule a Consultation Today",
+    title: "Consult Our Experts",
     description:
       "Connect with the right specialist for your condition. Our coordinators will help you book at a convenient time.",
-    primaryLabel: "Book Appointment",
+    primaryLabel: "Book Your Consultation",
     primaryHref: "/appointment",
   },
 } as const;

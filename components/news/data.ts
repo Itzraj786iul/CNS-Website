@@ -1,8 +1,9 @@
 export const newsContent = {
   hero: {
+    eyebrow: "News & Insights",
     title: "News & Events",
     description:
-      "Hospital updates, community health initiatives, and clinical milestones from the Center for Neuroscience.",
+      "Hospital updates, community health initiatives, and clinical milestones from Center for Neuroscience.",
   },
   news: [
     {

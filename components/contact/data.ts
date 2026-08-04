@@ -12,9 +12,10 @@ const appointmentDisplay = getAppointmentDisplay();
 
 export const contactContent = {
   hero: {
-    title: "Contact Us",
+    eyebrow: "Reach Our Care Team",
+    title: "Contact Center for Neuroscience",
     description:
-      "Reach our team for appointments, referrals, or billing questions. We respond with clarity — because navigating care should never feel confusing.",
+      "Appointments, referrals, or billing questions — our team responds with clarity, because navigating care should never feel confusing.",
   },
   cards: [
     {

@@ -14,6 +14,7 @@ function AboutPageContent() {
       <PageHero
         title={aboutContent.hero.title}
         description={aboutContent.hero.description}
+        eyebrow={aboutContent.hero.eyebrow}
         breadcrumb={[{ label: "Home", href: "/" }, { label: "About" }]}
       />
       <AboutCnsSection />

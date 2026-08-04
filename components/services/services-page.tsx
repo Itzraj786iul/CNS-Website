@@ -11,6 +11,7 @@ function ServicesPageContent() {
       <PageHero
         title={servicesContent.hero.title}
         description={servicesContent.hero.description}
+        eyebrow={servicesContent.hero.eyebrow}
         breadcrumb={[{ label: "Home", href: "/" }, { label: "Services" }]}
       />
       <OverviewSection />

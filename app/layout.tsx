@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Manrope } from "next/font/google";
 
 import { MainLayout } from "@/components/layout/main-layout";
@@ -19,6 +19,13 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = baseMetadata;
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f8fbfd" },
+    { media: "(prefers-color-scheme: dark)", color: "#16324a" },
+  ],
+};
 
 export default function RootLayout({
   children,

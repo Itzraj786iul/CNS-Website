@@ -65,6 +65,10 @@ function Section({
           <>
             <div
               aria-hidden="true"
+              className="neural-pattern pointer-events-none absolute inset-0 opacity-[0.18]"
+            />
+            <div
+              aria-hidden="true"
               className="section-blob -right-32 top-0 size-80 bg-primary/[0.035]"
             />
             <div

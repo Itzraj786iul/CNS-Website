@@ -66,8 +66,9 @@ function AppointmentPageContent() {
   return (
     <>
       <PageHero
-        title="Book an Appointment"
-        description="Schedule a consultation with our neuroscience specialists. Complete the form below and our team will confirm your appointment promptly."
+        title="Book Your Consultation"
+        description="Schedule with our neuroscience specialists. Complete the form below and our care coordinator will confirm your appointment promptly."
+        eyebrow="Appointments"
         breadcrumb={[{ label: "Home", href: "/" }, { label: "Appointment" }]}
       />
 

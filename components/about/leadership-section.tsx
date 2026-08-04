@@ -19,8 +19,8 @@ function LeadershipSection() {
           <SectionHeading
             align="center"
             eyebrow="Leadership"
-            title="Guided by Experienced Leaders"
-            description="Our leadership team combines deep clinical expertise with a shared commitment to patient-centered care and institutional excellence."
+            title="Leadership You Can Trust"
+            description="Clinicians and administrators united by a shared commitment to patient-centred care, clinical excellence, and institutional integrity."
           />
         </AnimatedSection>
 
@@ -33,13 +33,13 @@ function LeadershipSection() {
                 variants={hoverLift}
                 className="h-full"
               >
-                <Card className="h-full overflow-hidden border-cns-border/80 bg-white shadow-soft ring-0">
-                  <div className="relative aspect-[5/6] overflow-hidden bg-muted">
+                <Card className="card-premium card-premium-hover h-full overflow-hidden ring-0">
+                  <div className="photo-frame relative aspect-[5/6]">
                     <Image
                       src={leader.image.src}
                       alt={leader.image.alt}
                       fill
-                      className="object-cover"
+                      className="img-zoom object-cover object-top"
                       sizes="(max-width: 768px) 100vw, 33vw"
                     />
                   </div>

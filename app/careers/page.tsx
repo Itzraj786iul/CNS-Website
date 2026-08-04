@@ -33,8 +33,9 @@ export default function CareersPage() {
   return (
     <>
       <PageHero
-        title="Careers at CNS"
-        description="Build your career with a multidisciplinary neuroscience team committed to advanced patient care, research, and education."
+        title="Careers at Center for Neuroscience"
+        description="Build your career with a multidisciplinary neuroscience team committed to advanced patient care, research, and clinical education."
+        eyebrow="Join Our Team"
         breadcrumb={[{ label: "Home", href: "/" }, { label: "Careers" }]}
       />
       <Section variant="white" spacing="lg">

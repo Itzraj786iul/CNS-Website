@@ -15,8 +15,8 @@ function IntroductionSection() {
       <AnimatedSection className="mx-auto max-w-3xl text-center">
         <SectionHeading
           align="center"
-          eyebrow="Expert Team"
-          title="Specialists You Can Trust"
+          eyebrow="Our Physicians"
+          title="Meet Our Neuroscience Specialists"
           description={doctorsContent.introduction}
         />
       </AnimatedSection>

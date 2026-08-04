@@ -16,9 +16,9 @@ function FeaturedSection() {
         <AnimatedSection className="mx-auto max-w-3xl text-center">
           <SectionHeading
             align="center"
-            eyebrow="Featured"
-            title="Featured Specialists"
-            description="Recognized leaders in their fields — combining academic excellence with years of hands-on clinical experience."
+            eyebrow="Clinical Leadership"
+            title="Featured Neuroscience Specialists"
+            description="Recognised leaders in their fields — combining fellowship training with years of hands-on clinical practice at CNS."
           />
         </AnimatedSection>
 

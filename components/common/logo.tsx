@@ -54,7 +54,7 @@ function LogoLink({
     <Link
       href="/"
       className={cn(
-        "inline-flex shrink-0 rounded-xl transition-transform duration-300 hover:scale-[1.01] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40",
+        "inline-flex shrink-0 rounded-xl p-1 transition-transform duration-300 hover:scale-[1.01] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40",
         linkClassName
       )}
       aria-label={`${siteConfig.name} homepage`}

@@ -37,8 +37,8 @@ function NavLink({
       className={cn(
         "relative rounded-full px-2.5 py-2 text-xs font-medium transition-all duration-300 xl:px-3 xl:text-sm 2xl:px-3.5",
         isActive
-          ? "bg-primary/8 text-primary shadow-soft"
-          : "text-cns-navy/75 hover:bg-muted/80 hover:text-cns-navy"
+          ? "bg-primary/8 text-primary shadow-soft ring-1 ring-primary/10"
+          : "text-cns-navy/75 hover:bg-white/80 hover:text-cns-navy hover:shadow-soft"
       )}
     >
       {label}
@@ -76,13 +76,13 @@ function Navbar() {
       className={cn(
         "sticky top-0 z-50 transition-all duration-500 ease-out",
         isScrolled
-          ? "glass border-b border-cns-border/40 shadow-soft backdrop-saturate-150"
-          : "border-b border-transparent bg-background/50 backdrop-blur-sm"
+          ? "glass border-b border-cns-border/50 shadow-soft backdrop-saturate-150"
+          : "border-b border-cns-border/20 bg-background/60 backdrop-blur-md"
       )}
     >
       <Container>
         <div className="flex h-[4.5rem] items-center justify-between gap-4 lg:h-20">
-          <LogoLink size="md" priority />
+          <LogoLink size="md" priority linkClassName="mr-1" />
 
           <nav
             aria-label="Main navigation"
@@ -104,7 +104,7 @@ function Navbar() {
               render={
                 <Link href={ctaNavigation.href}>{ctaNavigation.label}</Link>
               }
-              className="hidden h-11 min-h-[44px] rounded-full bg-secondary px-5 text-secondary-foreground shadow-glow-green hover:bg-secondary/90 sm:inline-flex"
+              className="hidden h-11 min-h-[44px] rounded-full bg-secondary px-6 text-secondary-foreground shadow-glow-green hover:bg-secondary/90 sm:inline-flex"
             />
 
             <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
@@ -154,7 +154,7 @@ function Navbar() {
                         {ctaNavigation.label}
                       </Link>
                     }
-              className="hidden h-11 min-h-[44px] rounded-full bg-secondary text-secondary-foreground hover:bg-secondary/90"
+                    className="h-12 w-full rounded-full bg-secondary text-secondary-foreground shadow-glow-green hover:bg-secondary/90"
                   />
                 </div>
               </SheetContent>

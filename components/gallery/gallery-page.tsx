@@ -19,6 +19,7 @@ function GalleryPageContent() {
       <PageHero
         title={hero.title}
         description={hero.description}
+        eyebrow={hero.eyebrow}
         breadcrumb={[{ label: "Home", href: "/" }, { label: "Gallery" }]}
       />
 

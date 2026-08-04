@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "Center for Neuroscience",
   shortName: "CNS",
   description:
-    "Advanced neuroscience care, research, and clinical excellence.",
+    "Patient-centred neuroscience care — neurology, neurosurgery, psychiatry, and rehabilitation at Center for Neuroscience, Raipur.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://cns.org",
   locale: "en_US",
   announcement: null as string | null,

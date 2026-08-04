@@ -58,7 +58,7 @@ function EmergencyBanner({
           render={
             <a href={emergencyHref}>
               <Siren />
-              Call Now
+              Emergency Assistance
             </a>
           }
           className="h-12 shrink-0 rounded-full bg-destructive px-6 text-white hover:bg-destructive/90"

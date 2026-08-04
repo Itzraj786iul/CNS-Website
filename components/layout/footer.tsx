@@ -45,10 +45,10 @@ function FooterSection({
 }) {
   return (
     <div>
-      <h3 className="font-heading text-sm font-semibold uppercase tracking-[0.12em] text-white/90">
+      <h3 className="font-heading text-xs font-semibold uppercase tracking-[0.14em] text-white/90">
         {title}
       </h3>
-      <ul className="mt-4 space-y-2.5">
+      <ul className="mt-5 space-y-3">
         {links.map((link) => (
           <li key={`${title}-${link.label}`}>
             <FooterLink href={link.href}>{link.label}</FooterLink>
@@ -77,7 +77,7 @@ function SocialLink({
       aria-label={label}
       className="inline-flex size-10 items-center justify-center rounded-full border border-white/10 text-white/70 transition-all duration-300 hover:scale-[1.02] hover:border-white/25 hover:bg-white/10 hover:text-white"
     >
-      <Icon className="size-4" />
+      <Icon className="size-4 stroke-[1.75]" />
     </a>
   );
 }
@@ -90,30 +90,41 @@ function Footer() {
     <footer data-slot="footer" className="relative bg-cns-navy text-white">
       <div
         aria-hidden="true"
-        className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-primary/40 to-transparent"
+        className="neural-pattern pointer-events-none absolute inset-0 opacity-[0.12]"
       />
-      <Container className="py-20 md:py-24">
-        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 xl:gap-14">
-          <div className="space-y-5 sm:col-span-2 lg:col-span-1 xl:col-span-2">
-            <div className="space-y-4">
+      <div
+        aria-hidden="true"
+        className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-primary/50 to-transparent"
+      />
+      <Container className="relative py-20 md:py-24">
+        <div className="grid gap-14 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 xl:gap-14">
+          <div className="space-y-6 sm:col-span-2 lg:col-span-1 xl:col-span-2">
+            <div className="space-y-5">
               <LogoLink size="lg" variant="footer" linkClassName="hover:scale-100" />
-              <p className="max-w-sm text-sm leading-[1.75] text-white/70">
-                {siteConfig.name} — precision neurological care, advanced
-                diagnostics, and a team that puts patients and families first.
+              <p className="max-w-xs text-xs font-semibold uppercase tracking-[0.12em] text-secondary">
+                Center for Neuroscience · Raipur
+              </p>
+              <p className="max-w-sm text-sm leading-[1.8] text-white/70">
+                Patient-centred neuroscience care — integrating neurology,
+                neurosurgery, psychiatry, and rehabilitation under one trusted
+                institution.
               </p>
             </div>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2.5">
               <SocialLink href={social.facebook} label="Facebook" icon={FacebookIcon} />
               <SocialLink href={social.instagram} label="Instagram" icon={InstagramIcon} />
               <SocialLink href={social.linkedin} label="LinkedIn" icon={LinkedInIcon} />
               <SocialLink href={social.youtube} label="YouTube" icon={YouTubeIcon} />
             </div>
             <form
-              className="space-y-3.5 rounded-2xl border border-white/10 bg-white/[0.03] p-4"
+              className="space-y-3.5 rounded-2xl border border-white/10 bg-white/[0.04] p-5"
               onSubmit={(e) => e.preventDefault()}
               aria-label="Newsletter signup"
             >
-              <p className="text-sm font-semibold text-white/90">Stay Updated</p>
+              <p className="text-sm font-semibold text-white/95">Clinical Updates & News</p>
+              <p className="text-xs leading-relaxed text-white/50">
+                Health insights and hospital announcements from CNS.
+              </p>
               <div className="flex flex-col gap-2.5 sm:flex-row">
                 <input
                   type="email"
@@ -133,14 +144,20 @@ function Footer() {
           <FooterSection title="Services" links={footerServices} />
 
           <div className="space-y-8">
-            <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
-              <h3 className="font-heading text-sm font-semibold uppercase tracking-[0.12em] text-white/90">
-                Emergency Contact
+            <div className="rounded-2xl border border-destructive/25 bg-destructive/[0.06] p-5 ring-1 ring-destructive/10">
+              <h3 className="font-heading text-xs font-semibold uppercase tracking-[0.14em] text-white/95">
+                Emergency Assistance
               </h3>
+              <p className="mt-2 text-xs leading-relaxed text-white/55">
+                Stroke, seizures, or head injury — call immediately.
+              </p>
               <ul className="mt-4 space-y-3.5">
-                <li className="flex items-start gap-3 text-sm text-white/70">
+                <li className="flex items-start gap-3 text-sm">
                   <Siren className="mt-0.5 size-4 shrink-0 text-destructive" />
-                  <a href={emergencyHref} className="hover:text-white">
+                  <a
+                    href={emergencyHref}
+                    className="font-heading text-base font-semibold text-white hover:text-white/90"
+                  >
                     {contact.emergency}
                   </a>
                 </li>
@@ -166,7 +183,7 @@ function Footer() {
             </div>
 
             <div className="space-y-3">
-              <h3 className="font-heading text-sm font-semibold uppercase tracking-[0.12em] text-white/90">
+              <h3 className="font-heading text-xs font-semibold uppercase tracking-[0.14em] text-white/90">
                 Working Hours
               </h3>
               <ul className="space-y-2.5 text-sm leading-relaxed text-white/70">
@@ -187,13 +204,13 @@ function Footer() {
           </div>
         </div>
 
-        <Separator className="my-10 bg-white/10" />
+        <Separator className="my-12 bg-white/10" />
 
-        <div className="flex flex-col gap-3 text-sm text-white/50 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex flex-col gap-4 text-sm text-white/50 sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
           </p>
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-5">
             <FooterLink href="/resources">Patient Resources</FooterLink>
             <FooterLink href="/contact">Privacy Policy</FooterLink>
             <FooterLink href="/contact">Terms of Use</FooterLink>

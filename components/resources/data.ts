@@ -4,9 +4,10 @@ import { siteConfig } from "@/lib/constants/site";
 
 export const resourcesContent = {
   hero: {
-    title: "Patient Resources",
+    eyebrow: "Patient Resources",
+    title: "Prepare for Your Visit",
     description:
-      "Forms, insurance guidance, visitor policies, and practical information to help you prepare for care at CNS.",
+      "Forms, insurance guidance, visitor policies, and practical information to help you arrive informed and confident at CNS.",
   },
   downloads: [
     { title: "New Patient Registration Form", type: "PDF", size: "245 KB" },

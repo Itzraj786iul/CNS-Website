@@ -31,20 +31,21 @@ function NewsPageContent() {
       <PageHero
         title={hero.title}
         description={hero.description}
+        eyebrow={hero.eyebrow}
         breadcrumb={[{ label: "Home", href: "/" }, { label: "News" }]}
       />
 
       <Section variant="white" spacing="lg">
         <div className="space-y-12">
           <AnimatedSection>
-            <SectionHeading eyebrow="Latest" title="News & Updates" description="Recent announcements and stories from across the Center for Neuroscience." />
+            <SectionHeading eyebrow="Latest Updates" title="News from CNS" description="Recent announcements and clinical milestones from across Center for Neuroscience." />
           </AnimatedSection>
           <AnimatedSection stagger className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             {news.map((item) => (
               <motion.article key={item.title} variants={fadeUp}>
                 <motion.div initial="rest" whileHover="hover" variants={hoverLift} className="h-full">
                   <Card className="card-premium card-premium-hover h-full overflow-hidden ring-0">
-                    <div className="relative aspect-[16/10] overflow-hidden bg-muted">
+                    <div className="image-placeholder relative aspect-[16/10]">
                       <Image src={item.image} alt={item.title} fill loading="lazy" className="img-zoom object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
                     </div>
                     <CardContent className="space-y-3 px-6 py-6">

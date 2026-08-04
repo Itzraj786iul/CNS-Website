@@ -17,12 +17,12 @@ function WhyDepartmentsSection() {
     <Section variant="white" spacing="lg">
       <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
         <AnimatedSection className="relative">
-          <div className="relative aspect-[4/3] overflow-hidden rounded-3xl bg-muted shadow-soft-lg">
+          <div className="relative image-placeholder aspect-[4/3]">
             <Image
               src="https://placehold.co/720x540/F8FBFD/1F7CC6/png?font=roboto&text=Multidisciplinary+Care"
               alt="Multidisciplinary neuroscience team at CNS"
               fill
-              className="object-cover"
+              className="img-zoom object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
           </div>

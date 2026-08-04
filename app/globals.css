@@ -150,6 +150,25 @@
       transition-duration: 0.01ms !important;
     }
   }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgb(238 244 249 / 0.6);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgb(31 124 198 / 0.25);
+    border-radius: 9999px;
+    border: 2px solid rgb(248 251 253);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(31 124 198 / 0.4);
+  }
 }
 
 @layer utilities {
@@ -208,6 +227,29 @@
       rgb(255 255 255 / 0.06) 50%,
       transparent 60%
     );
+  }
+
+  /* Subtle neural-network motif — abstract, not illustrative */
+  .neural-pattern {
+    background-image:
+      radial-gradient(circle at center, rgb(31 124 198 / 0.14) 1px, transparent 1px),
+      radial-gradient(circle at center, rgb(125 189 36 / 0.1) 1px, transparent 1px);
+    background-size: 32px 32px, 32px 32px;
+    background-position:
+      0 0,
+      16px 16px;
+    mask-image: radial-gradient(ellipse 90% 80% at 50% 30%, black 20%, transparent 75%);
+  }
+
+  .cns-brand-bar {
+    @apply h-1 w-12 rounded-full bg-linear-to-r from-primary to-secondary;
+  }
+
+  .brand-surface-page {
+    background:
+      radial-gradient(ellipse 70% 55% at 100% 0%, rgb(31 124 198 / 0.06), transparent 65%),
+      radial-gradient(ellipse 50% 45% at 0% 100%, rgb(125 189 36 / 0.05), transparent 60%),
+      #f8fbfd;
   }
 
   .prose-lead {

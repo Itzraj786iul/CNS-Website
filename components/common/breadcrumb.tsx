@@ -16,23 +16,23 @@ type BreadcrumbProps = {
 function Breadcrumb({ items, className }: BreadcrumbProps) {
   return (
     <nav aria-label="Breadcrumb" className={cn(className)}>
-      <ol className="flex flex-wrap items-center gap-1.5 text-sm">
+      <ol className="inline-flex flex-wrap items-center gap-1 rounded-full border border-cns-border/60 bg-white/70 px-3 py-1.5 shadow-soft backdrop-blur-sm">
         {items.map((item, index) => {
           const isLast = index === items.length - 1;
           const isHome = index === 0 && item.href === "/";
 
           return (
-            <li key={`${item.label}-${index}`} className="flex items-center gap-1.5">
+            <li key={`${item.label}-${index}`} className="flex items-center gap-1">
               {index > 0 ? (
                 <ChevronRight
-                  className="size-3.5 shrink-0 text-muted-foreground/60"
+                  className="size-3 shrink-0 text-muted-foreground/50"
                   aria-hidden="true"
                 />
               ) : null}
               {isLast || !item.href ? (
                 <span
                   className={cn(
-                    "font-medium",
+                    "text-xs font-medium sm:text-sm",
                     isLast ? "text-cns-navy" : "text-muted-foreground"
                   )}
                   aria-current={isLast ? "page" : undefined}
@@ -43,8 +43,8 @@ function Breadcrumb({ items, className }: BreadcrumbProps) {
                 <Link
                   href={item.href}
                   className={cn(
-                    "inline-flex items-center gap-1.5 text-muted-foreground transition-colors hover:text-primary",
-                    isHome && "font-medium"
+                    "inline-flex items-center gap-1 text-xs font-medium text-muted-foreground transition-colors hover:text-primary sm:text-sm",
+                    isHome && "text-cns-navy/80"
                   )}
                 >
                   {isHome ? <Home className="size-3.5" aria-hidden="true" /> : null}

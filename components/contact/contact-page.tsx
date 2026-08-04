@@ -14,6 +14,7 @@ function ContactPageContent() {
       <PageHero
         title={contactContent.hero.title}
         description={contactContent.hero.description}
+        eyebrow={contactContent.hero.eyebrow}
         breadcrumb={[{ label: "Home", href: "/" }, { label: "Contact" }]}
       />
       <ContactCardsSection />

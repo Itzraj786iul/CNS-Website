@@ -16,12 +16,12 @@ function AboutCnsSection() {
     <Section variant="white" spacing="lg">
       <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
         <AnimatedSection className="relative order-2 lg:order-1">
-          <div className="relative aspect-[5/6] overflow-hidden rounded-3xl bg-muted shadow-soft-lg">
+          <div className="relative image-placeholder aspect-[5/6]">
             <Image
               src={aboutCns.image.src}
               alt={aboutCns.image.alt}
               fill
-              className="object-cover"
+              className="img-zoom object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
           </div>

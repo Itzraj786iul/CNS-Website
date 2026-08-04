@@ -24,12 +24,13 @@ export type FacilityItem = {
 
 export const facilitiesContent = {
   hero: {
-    title: "Our Facilities",
+    eyebrow: "Clinical Infrastructure",
+    title: "Technology Supporting Better Outcomes",
     description:
-      "State-of-the-art infrastructure designed to support accurate diagnosis, safe surgery, critical care, and comprehensive recovery.",
+      "Purpose-built facilities for accurate diagnosis, safe surgery, critical care, and comprehensive neurological recovery.",
   },
   overview: {
-    eyebrow: "Infrastructure",
+    eyebrow: "Clinical Excellence",
     title: "Built for Advanced Neuro Care",
     description:
       "Every facility at CNS is purpose-built for neurological patients — from high-field imaging and digital monitoring to sterile surgical environments and 24×7 emergency response.",
@@ -47,8 +48,8 @@ export const facilitiesContent = {
     { title: "Ambulance", description: "Advanced life support ambulances with pre-hospital stroke notification capability.", icon: Ambulance, iconVariant: "green", image: "https://placehold.co/800x500/F8FBFD/16324A/png?font=roboto&text=Ambulance", size: "large" },
   ] satisfies FacilityItem[],
   technology: {
-    eyebrow: "Technology",
-    title: "Cutting-Edge Medical Technology",
+    eyebrow: "Clinical Technology",
+    title: "Precision Diagnostic & Surgical Systems",
     description: "Our facilities are continuously upgraded to incorporate the latest advances in neurological diagnosis and treatment.",
     items: [
       { icon: Scan, title: "3T MRI Suite", description: "High-resolution imaging with advanced neuro protocols.", variant: "blue" as const },

@@ -15,12 +15,13 @@ import {
 
 export const servicesContent = {
   hero: {
-    title: "Our Services",
+    eyebrow: "Patient-Centred Neuroscience Care",
+    title: "Integrated Brain & Spine Services",
     description:
-      "Comprehensive neurological services — from urgent stroke care to long-term rehabilitation — delivered by subspecialty experts under one roof.",
+      "Comprehensive neurological services — from urgent stroke care to long-term rehabilitation — delivered by subspecialist experts under one roof.",
   },
   overview: {
-    eyebrow: "Overview",
+    eyebrow: "Clinical Excellence",
     title: "Complete Care for Brain & Spine Conditions",
     description:
       "From the first consultation to recovery and follow-up, CNS offers an integrated care pathway. Our services are designed to address complex neurological conditions with precision, compassion, and the latest medical advances.",
@@ -51,7 +52,7 @@ export const servicesContent = {
   },
   whyChoose: {
     eyebrow: "Why CNS",
-    title: "Why Patients Choose Our Services",
+    title: "Evidence-Based Care You Can Trust",
     description: "Every service at CNS is backed by subspecialty expertise, advanced technology, and a commitment to patient-centered care.",
     points: [
       "Subspecialty-trained clinicians across all neurological disciplines",
@@ -63,7 +64,7 @@ export const servicesContent = {
   cta: {
     title: "Begin Your Care Journey",
     description: "Schedule with the right specialist. Our coordinators handle scheduling, records, and insurance verification — so you can focus on your health.",
-    primaryLabel: "Book Appointment",
+    primaryLabel: "Book Your Consultation",
     primaryHref: "/appointment",
     secondaryLabel: "Contact Us",
     secondaryHref: "/contact",

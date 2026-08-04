@@ -34,13 +34,14 @@ function ResourcesPageContent() {
       <PageHero
         title={hero.title}
         description={hero.description}
+        eyebrow={hero.eyebrow}
         breadcrumb={[{ label: "Home", href: "/" }, { label: "Resources" }]}
       />
 
       <Section variant="white" spacing="lg">
         <div className="space-y-10">
           <AnimatedSection>
-            <SectionHeading eyebrow="Forms" title="Download Forms" description="Complete these forms before your visit to save time at registration." />
+            <SectionHeading eyebrow="Patient Forms" title="Download & Prepare" description="Complete these forms before your visit — save time at registration and help us serve you faster." />
           </AnimatedSection>
           <AnimatedSection stagger className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {downloads.map((form) => (
@@ -109,7 +110,7 @@ function ResourcesPageContent() {
       <Section variant="white" spacing="lg" divider>
         <AnimatedSection>
           <div className="rounded-3xl border border-cns-border/80 bg-white p-6 shadow-soft sm:p-8">
-            <SectionHeading eyebrow="Visitors" title="Visitor Guidelines" description="Help us maintain a healing environment for all patients." />
+            <SectionHeading eyebrow="Visitor Information" title="Visitor Guidelines" description="Help us maintain a calm, healing environment for every patient and family." />
             <ul className="mt-8 space-y-3">
               {visitorGuidelines.map((rule) => (
                 <li key={rule} className="flex gap-3 text-sm leading-relaxed text-cns-navy/85">
@@ -154,7 +155,7 @@ function ResourcesPageContent() {
       <Section variant="white" spacing="lg" divider>
         <div className="grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:items-start lg:gap-16">
           <AnimatedSection className="lg:sticky lg:top-28">
-            <SectionHeading eyebrow="FAQ" title="Frequently Asked Questions" description="Common questions about visits, records, insurance, and hospital policies." />
+            <SectionHeading eyebrow="Your Questions" title="Clear Guidance Before You Visit" description="Practical answers about visits, medical records, insurance, and hospital policies at CNS." />
           </AnimatedSection>
           <AnimatedSection>
             <FAQCard items={[...faq]} />

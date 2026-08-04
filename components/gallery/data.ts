@@ -11,9 +11,10 @@ function galleryImage(
 
 export const galleryContent = {
   hero: {
-    title: "Gallery",
+    eyebrow: "Life at CNS",
+    title: "Our Hospital Environment",
     description:
-      "Explore our hospital environment — from advanced infrastructure and surgical suites to compassionate patient care and community events.",
+      "A visual journey through Center for Neuroscience — from advanced clinical infrastructure to compassionate patient care and community engagement.",
   },
   sections: [
     {

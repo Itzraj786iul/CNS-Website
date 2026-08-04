@@ -41,8 +41,8 @@ function ContactCardsSection() {
           return (
             <motion.div key={card.title} variants={fadeUp}>
               <motion.div initial="rest" whileHover="hover" variants={hoverLift} className="h-full">
-                <Card className="h-full border-cns-border/80 bg-white shadow-soft ring-0">
-                  <CardContent className="space-y-4 px-6 py-8">
+                <Card className="card-premium card-premium-hover h-full ring-0">
+                  <CardContent className="space-y-5 px-7 py-9">
                     <IconBox icon={Icon} variant={variant} />
                     <div className="space-y-2">
                       <p className="text-sm font-semibold uppercase tracking-[0.12em] text-muted-foreground">{card.title}</p>
@@ -70,7 +70,7 @@ function ContactFormSection() {
       <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:gap-16">
         <AnimatedSection>
           <div className="mb-8 space-y-5">
-            <SectionHeading eyebrow="Send a Message" title="Contact Form" description="Fill out the form below and our team will respond within one business day." />
+            <SectionHeading eyebrow="Get in Touch" title="Send Us a Message" description="Our care team responds within one business day — with clear, helpful guidance." />
             <a
               href={WHATSAPP_URL}
               target="_blank"
@@ -143,7 +143,7 @@ function DepartmentsContactSection() {
     <Section variant="white" spacing="lg">
       <div className="space-y-10">
         <AnimatedSection className="mx-auto max-w-3xl text-center">
-          <SectionHeading align="center" eyebrow="Direct Lines" title="Department Contacts" description="Reach the right team directly for faster assistance with your specific inquiry." />
+          <SectionHeading align="center" eyebrow="Direct Lines" title="Reach the Right Team" description="Department contacts for faster assistance with referrals, records, and specialist inquiries." />
         </AnimatedSection>
         <AnimatedSection stagger className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {contactContent.departments.map((dept) => (
@@ -182,7 +182,7 @@ function FaqSection() {
     <Section variant="white" spacing="lg">
       <div className="grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:items-start lg:gap-16">
         <AnimatedSection className="lg:sticky lg:top-28">
-          <SectionHeading eyebrow="FAQ" title="Common Questions" description="Quick answers to frequently asked questions about contacting and visiting CNS." />
+          <SectionHeading eyebrow="Your Questions" title="Clear Guidance Before You Visit" description="Practical answers about contacting CNS, visiting our campus, and preparing for care." />
         </AnimatedSection>
         <AnimatedSection>
           <FAQCard items={[...contactContent.faq]} />

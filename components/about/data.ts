@@ -14,9 +14,10 @@ import {
 
 export const aboutContent = {
   hero: {
-    title: "About Us",
+    eyebrow: "Our Institution",
+    title: "About Center for Neuroscience",
     description:
-      "Discover the people, values, and clinical standards behind the Center for Neuroscience — where brain and spine care is delivered with precision and compassion.",
+      "The people, values, and clinical standards behind Raipur's trusted centre for brain and spine care — where precision medicine meets genuine compassion.",
   },
   aboutCns: {
     title: "A Legacy of Neuroscience Excellence",

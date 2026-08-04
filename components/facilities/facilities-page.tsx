@@ -16,6 +16,7 @@ function FacilitiesPageContent() {
       <PageHero
         title={facilitiesContent.hero.title}
         description={facilitiesContent.hero.description}
+        eyebrow={facilitiesContent.hero.eyebrow}
         breadcrumb={[{ label: "Home", href: "/" }, { label: "Facilities" }]}
       />
       <OverviewSection />

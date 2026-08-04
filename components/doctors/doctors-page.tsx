@@ -15,6 +15,7 @@ function DoctorsPageContent() {
       <PageHero
         title={doctorsContent.hero.title}
         description={doctorsContent.hero.description}
+        eyebrow={doctorsContent.hero.eyebrow}
         breadcrumb={[{ label: "Home", href: "/" }, { label: "Doctors" }]}
       />
       <IntroductionSection />
