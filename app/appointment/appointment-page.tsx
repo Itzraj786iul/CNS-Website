@@ -40,23 +40,28 @@ const processSteps = [
 
 function AppointmentPageContent() {
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState<FormData | null>(null);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsSubmitting(true);
     const fd = new FormData(e.currentTarget);
-    setFormData({
-      name: fd.get("name") as string,
-      phone: fd.get("phone") as string,
-      email: fd.get("email") as string,
-      department: fd.get("department") as string,
-      doctor: fd.get("doctor") as string,
-      date: fd.get("date") as string,
-      time: fd.get("time") as string,
-      message: (fd.get("message") as string) || "",
-    });
-    setSubmitted(true);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.setTimeout(() => {
+      setFormData({
+        name: fd.get("name") as string,
+        phone: fd.get("phone") as string,
+        email: fd.get("email") as string,
+        department: fd.get("department") as string,
+        doctor: fd.get("doctor") as string,
+        date: fd.get("date") as string,
+        time: fd.get("time") as string,
+        message: (fd.get("message") as string) || "",
+      });
+      setSubmitted(true);
+      setIsSubmitting(false);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, 600);
   };
 
   return (
@@ -146,15 +151,21 @@ function AppointmentPageContent() {
                 <FormField label="Message" htmlFor="appt-message">
                   <FormTextarea id="appt-message" name="message" placeholder="Brief description of your symptoms or reason for visit..." rows={4} />
                 </FormField>
-                <Button type="submit" size="lg" className="h-12 w-full bg-secondary shadow-glow-green hover:bg-secondary/90 sm:w-auto sm:px-10">
+                <Button
+                  type="submit"
+                  size="lg"
+                  aria-busy={isSubmitting}
+                  disabled={isSubmitting}
+                  className="h-12 w-full bg-secondary shadow-glow-green hover:bg-secondary/90 sm:w-auto sm:px-10"
+                >
                   <CalendarDays />
-                  Book Appointment
+                  {isSubmitting ? "Submitting..." : "Book Appointment"}
                 </Button>
               </form>
             </AnimatedSection>
 
             <AnimatedSection className="space-y-6">
-              <Card className="border-cns-border/80 bg-white shadow-soft ring-0">
+              <Card className="card-premium card-premium-hover ring-0">
                 <CardContent className="space-y-6 px-6 py-8">
                   <div>
                     <h2 className="font-heading text-xl font-semibold text-cns-navy">How It Works</h2>

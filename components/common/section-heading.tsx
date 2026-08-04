@@ -44,7 +44,7 @@ function SectionHeading({
         {title}
       </h2>
       {description ? (
-        <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
+        <p className="text-base leading-[1.7] text-muted-foreground sm:text-lg">
           {description}
         </p>
       ) : null}

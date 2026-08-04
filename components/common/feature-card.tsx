@@ -37,7 +37,7 @@ function FeatureCard({
       variants={hoverLift}
       className={cn("h-full", className)}
     >
-      <Card className="h-full border-cns-border/80 bg-white shadow-soft ring-0">
+      <Card className="h-full card-premium card-premium-hover ring-0">
         <CardHeader className="gap-4">
           <IconBox icon={icon} variant={iconVariant} />
           <CardTitle className="text-lg font-semibold text-cns-navy">

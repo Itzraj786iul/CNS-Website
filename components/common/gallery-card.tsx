@@ -47,7 +47,7 @@ function GalleryCard({
             src={image.src}
             alt={image.alt}
             fill
-            className="object-cover transition-transform duration-500 group-hover/gallery:scale-[1.04]"
+            className="img-zoom object-cover transition-transform duration-500 group-hover/gallery:scale-[1.04]"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
           />
           <div className="absolute inset-0 bg-cns-navy/0 transition-colors duration-300 group-hover/gallery:bg-cns-navy/20" />

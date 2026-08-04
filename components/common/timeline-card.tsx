@@ -30,7 +30,7 @@ function TimelineCard({
         ) : null}
       </div>
 
-      <Card className="flex-1 border-cns-border/80 bg-white shadow-soft ring-0">
+      <Card className="flex-1 card-premium card-premium-hover ring-0">
         <CardContent className="space-y-2 px-6 py-5">
           <p className="text-sm font-semibold uppercase tracking-[0.12em] text-primary">
             {year}

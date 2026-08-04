@@ -56,16 +56,20 @@ function NavLink({
     <Link
       href={href}
       onClick={onClick}
+      aria-current={isActive ? "page" : undefined}
       className={cn(
-        "relative rounded-full px-3.5 py-2 text-sm font-medium transition-colors",
+        "relative rounded-full px-3.5 py-2 text-sm font-medium transition-all duration-300",
         isActive
-          ? "text-primary"
-          : "text-cns-navy/75 hover:text-cns-navy"
+          ? "bg-primary/8 text-primary shadow-soft"
+          : "text-cns-navy/75 hover:bg-muted/80 hover:text-cns-navy"
       )}
     >
       {label}
       {isActive ? (
-        <span className="absolute inset-x-3.5 -bottom-px h-0.5 rounded-full bg-primary" />
+        <span
+          aria-hidden="true"
+          className="absolute inset-x-4 -bottom-0.5 h-0.5 rounded-full bg-primary"
+        />
       ) : null}
     </Link>
   );
@@ -97,8 +101,10 @@ function Navbar() {
     <header
       data-slot="navbar"
       className={cn(
-        "sticky top-0 z-50 transition-all duration-300",
-        isScrolled ? "glass shadow-soft" : "bg-transparent"
+        "sticky top-0 z-50 transition-all duration-500 ease-out",
+        isScrolled
+          ? "glass border-b border-cns-border/50 shadow-soft backdrop-saturate-150"
+          : "bg-transparent"
       )}
     >
       <Container>

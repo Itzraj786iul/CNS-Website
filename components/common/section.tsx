@@ -1,5 +1,6 @@
 import * as React from "react";
 
+import { SectionDivider } from "@/components/common/section-divider";
 import { cn } from "@/lib/utils";
 import { Container } from "@/components/common/container";
 
@@ -8,6 +9,7 @@ type SectionProps = React.ComponentProps<"section"> & {
   spacing?: "sm" | "default" | "lg" | "xl";
   containerSize?: "default" | "narrow" | "wide";
   contained?: boolean;
+  divider?: boolean;
 };
 
 const variantClasses = {
@@ -25,28 +27,55 @@ const spacingClasses = {
   xl: "py-24 md:py-32",
 } as const;
 
+const dividerVariantMap = {
+  default: "default",
+  muted: "muted",
+  white: "white",
+  navy: "default",
+  gradient: "default",
+} as const;
+
 function Section({
   className,
   variant = "default",
   spacing = "default",
   containerSize = "default",
   contained = true,
+  divider = false,
   children,
   ...props
 }: SectionProps) {
   return (
-    <section
-      data-slot="section"
-      data-variant={variant}
-      className={cn(variantClasses[variant], spacingClasses[spacing], className)}
-      {...props}
-    >
-      {contained ? (
-        <Container size={containerSize}>{children}</Container>
-      ) : (
-        children
-      )}
-    </section>
+    <>
+      {divider ? (
+        <SectionDivider variant={dividerVariantMap[variant]} />
+      ) : null}
+      <section
+        data-slot="section"
+        data-variant={variant}
+        className={cn(
+          "relative overflow-hidden",
+          variantClasses[variant],
+          spacingClasses[spacing],
+          className
+        )}
+        {...props}
+      >
+        {variant !== "navy" ? (
+          <div
+            aria-hidden="true"
+            className="section-blob -right-24 top-0 size-64 bg-primary/5"
+          />
+        ) : null}
+        {contained ? (
+          <Container size={containerSize} className="relative">
+            {children}
+          </Container>
+        ) : (
+          children
+        )}
+      </section>
+    </>
   );
 }
 

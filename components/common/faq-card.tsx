@@ -25,7 +25,7 @@ function FAQCard({ items, className }: FAQCardProps) {
     <div
       data-slot="faq-card"
       className={cn(
-        "overflow-hidden rounded-2xl border border-cns-border/80 bg-white shadow-soft",
+        "overflow-hidden rounded-2xl card-premium card-premium-hover",
         className
       )}
     >

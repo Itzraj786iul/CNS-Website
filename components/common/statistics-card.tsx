@@ -3,6 +3,11 @@
 import * as React from "react";
 import { motion } from "framer-motion";
 
+import {
+  formatStatValue,
+  parseStatValue,
+  useCountUp,
+} from "@/hooks/use-count-up";
 import { Card, CardContent } from "@/components/ui/card";
 import { hoverLift } from "@/lib/motion";
 import { cn } from "@/lib/utils";
@@ -12,6 +17,7 @@ type StatisticsCardProps = {
   label: string;
   suffix?: string;
   className?: string;
+  animate?: boolean;
 };
 
 function StatisticsCard({
@@ -19,20 +25,35 @@ function StatisticsCard({
   label,
   suffix,
   className,
+  animate = true,
 }: StatisticsCardProps) {
+  const numericValue = parseStatValue(value);
+  const { count, ref } = useCountUp({
+    end: numericValue,
+    enabled: animate,
+  });
+
+  const displayValue = animate ? formatStatValue(count, value) : value;
+
   return (
     <motion.div
+      ref={ref}
       initial="rest"
       whileHover="hover"
       variants={hoverLift}
       className={cn("h-full", className)}
     >
-      <Card className="h-full border-cns-border/80 bg-white shadow-soft ring-0">
+      <Card className="card-premium card-premium-hover h-full">
         <CardContent className="flex flex-col gap-2 px-6 py-8">
-          <p className="font-heading text-4xl font-semibold tracking-tight text-cns-navy sm:text-5xl">
-            {value}
+          <p
+            className="font-heading text-4xl font-semibold tracking-tight text-cns-navy sm:text-5xl"
+            aria-label={`${value}${suffix ?? ""} ${label}`}
+          >
+            <span aria-hidden="true">{displayValue}</span>
             {suffix ? (
-              <span className="text-2xl text-primary sm:text-3xl">{suffix}</span>
+              <span className="text-2xl text-primary sm:text-3xl" aria-hidden="true">
+                {suffix}
+              </span>
             ) : null}
           </p>
           <p className="text-sm font-medium text-muted-foreground">{label}</p>

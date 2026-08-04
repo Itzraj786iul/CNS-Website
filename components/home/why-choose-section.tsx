@@ -15,7 +15,7 @@ function WhyChooseSection() {
   return (
     <Section variant="white" spacing="lg">
       <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
-        <AnimatedSection className="relative order-2 lg:order-1">
+        <AnimatedSection className="relative order-2 lg:order-1" direction="left">
           <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-muted shadow-soft-lg">
             <Image
               src="https://placehold.co/640x800/F8FBFD/1F7CC6/png?font=roboto&text=Advanced+Neuro+Care"
@@ -32,7 +32,7 @@ function WhyChooseSection() {
         </AnimatedSection>
 
         <div className="order-1 space-y-10 lg:order-2">
-          <AnimatedSection>
+          <AnimatedSection direction="right">
             <SectionHeading
               eyebrow="Why Choose CNS"
               title="Trusted Excellence in Every Detail"

@@ -15,16 +15,17 @@ import { fadeUp } from "@/lib/motion";
 
 function AboutPreviewSection() {
   return (
-    <Section variant="white" spacing="lg">
+    <Section variant="white" spacing="lg" divider>
       <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
-        <AnimatedSection className="relative">
+        <AnimatedSection className="relative" direction="left">
           <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-muted shadow-soft-lg">
             <Image
               src="https://placehold.co/640x800/EEF4F9/16324A/png?font=roboto&text=CNS+Medical+Team"
               alt="Center for Neuroscience medical team"
               fill
-              className="object-cover"
+              className="img-zoom object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"
+              loading="lazy"
             />
             <div
               aria-hidden="true"

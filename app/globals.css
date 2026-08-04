@@ -108,7 +108,7 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground overflow-x-hidden;
   }
 
   h1,
@@ -118,6 +118,24 @@
   h5,
   h6 {
     @apply font-heading tracking-tight text-foreground;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-primary/40 ring-offset-2 ring-offset-background;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
 
@@ -152,5 +170,41 @@
 
   .shadow-glow-green {
     box-shadow: var(--shadow-glow-green);
+  }
+
+  .card-premium {
+    @apply border-cns-border/80 bg-white shadow-soft ring-0 transition-all duration-300 ease-out;
+  }
+
+  .card-premium-hover {
+    @apply hover:border-primary/15 hover:shadow-soft-lg;
+  }
+
+  .link-underline {
+    @apply relative inline-flex text-primary transition-colors hover:text-primary/80;
+  }
+
+  .link-underline::after {
+    @apply absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-current transition-transform duration-300 content-[''];
+  }
+
+  .link-underline:hover::after,
+  .link-underline:focus-visible::after {
+    @apply scale-x-100;
+  }
+
+  .img-zoom {
+    @apply transition-transform duration-500 ease-out;
+  }
+
+  .group:hover .img-zoom,
+  .group\/doctor:hover .img-zoom,
+  .group\/blog:hover .img-zoom,
+  .group\/gallery:hover .img-zoom {
+    @apply scale-[1.04];
+  }
+
+  .section-blob {
+    @apply pointer-events-none absolute rounded-full blur-3xl;
   }
 }

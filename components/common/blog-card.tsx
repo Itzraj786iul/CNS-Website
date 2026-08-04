@@ -42,13 +42,13 @@ function BlogCard({
   className,
 }: BlogCardProps) {
   const content = (
-    <Card className="group/blog h-full overflow-hidden border-cns-border/80 bg-white shadow-soft ring-0">
+    <Card className="group/blog h-full overflow-hidden card-premium card-premium-hover ring-0">
       <div className="relative aspect-[16/10] overflow-hidden bg-muted">
         <Image
           src={image.src}
           alt={image.alt}
           fill
-          className="object-cover transition-transform duration-500 group-hover/blog:scale-[1.03]"
+          className="img-zoom object-cover transition-transform duration-500 group-hover/blog:scale-[1.03]"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
       </div>

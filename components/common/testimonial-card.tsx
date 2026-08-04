@@ -28,7 +28,7 @@ function TestimonialCard({
       variants={hoverLift}
       className={cn("h-full", className)}
     >
-      <Card className="h-full border-cns-border/80 bg-white shadow-soft ring-0">
+      <Card className="h-full card-premium card-premium-hover ring-0">
         <CardContent className="flex h-full flex-col gap-6 px-6 py-8">
           <Quote
             aria-hidden="true"

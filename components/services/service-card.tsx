@@ -28,7 +28,7 @@ function ServiceCard({
 }) {
   return (
     <motion.div initial="rest" whileHover="hover" variants={hoverLift} className={cn("h-full", className)}>
-      <Card className="group flex h-full flex-col border-cns-border/80 bg-white shadow-soft ring-0">
+      <Card className="group flex h-full flex-col card-premium card-premium-hover ring-0">
         <CardHeader className="gap-4">
           <IconBox icon={icon} variant={iconVariant} size="lg" />
           <CardTitle className="text-xl font-semibold text-cns-navy">{title}</CardTitle>
