@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { CalendarDays, CheckCircle2, Clock, FileText, Phone, Siren } from "lucide-react";
+import { CalendarDays, CheckCircle2, Clock, FileText, MessageCircle, Phone, Siren } from "lucide-react";
 
 import { PageHero } from "@/components/common/page-hero";
 import { PatientConversionCta } from "@/components/common/patient-conversion-cta";
@@ -17,23 +17,16 @@ import { IconBox } from "@/components/common/icon-box";
 import { Section } from "@/components/common/section";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import {
+  openAppointmentWhatsApp,
+  type AppointmentBooking,
+} from "@/lib/appointment-whatsapp";
 import { getEmergencyTelHref } from "@/lib/contact-links";
 import { siteConfig } from "@/lib/constants/site";
 
-type FormData = {
-  name: string;
-  phone: string;
-  email: string;
-  department: string;
-  doctor: string;
-  date: string;
-  time: string;
-  message: string;
-};
-
 const processSteps = [
-  { icon: FileText, title: "Submit Request", description: "Share your details and preferred time — it takes just a few minutes." },
-  { icon: Phone, title: "Confirmation Call", description: "Our coordinator calls within 24 hours to confirm and answer your questions." },
+  { icon: FileText, title: "Submit Request", description: "Fill in your details and preferred time — it takes just a few minutes." },
+  { icon: Phone, title: "Send on WhatsApp", description: "WhatsApp opens with your booking pre-filled. Tap Send from your number to complete." },
   { icon: CalendarDays, title: "Visit CNS", description: "Arrive 15 minutes early with ID, insurance, and any prior reports you have." },
   { icon: CheckCircle2, title: "Begin Your Care", description: "Meet your specialist, understand your condition, and leave with a clear plan." },
 ];
@@ -41,27 +34,28 @@ const processSteps = [
 function AppointmentPageContent() {
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formData, setFormData] = useState<FormData | null>(null);
+  const [formData, setFormData] = useState<AppointmentBooking | null>(null);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     const fd = new FormData(e.currentTarget);
-    window.setTimeout(() => {
-      setFormData({
-        name: fd.get("name") as string,
-        phone: fd.get("phone") as string,
-        email: fd.get("email") as string,
-        department: fd.get("department") as string,
-        doctor: fd.get("doctor") as string,
-        date: fd.get("date") as string,
-        time: fd.get("time") as string,
-        message: (fd.get("message") as string) || "",
-      });
-      setSubmitted(true);
-      setIsSubmitting(false);
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }, 600);
+    const booking: AppointmentBooking = {
+      name: fd.get("name") as string,
+      phone: fd.get("phone") as string,
+      email: fd.get("email") as string,
+      department: fd.get("department") as string,
+      doctor: fd.get("doctor") as string,
+      date: fd.get("date") as string,
+      time: fd.get("time") as string,
+      message: (fd.get("message") as string) || "",
+    };
+
+    openAppointmentWhatsApp(booking);
+    setFormData(booking);
+    setSubmitted(true);
+    setIsSubmitting(false);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -81,11 +75,13 @@ function AppointmentPageContent() {
                 <CheckCircle2 className="size-8 text-secondary" />
               </div>
               <h2 className="mt-6 font-heading text-2xl font-semibold text-cns-navy sm:text-3xl">
-                Appointment Request Received
+                Send Your Booking on WhatsApp
               </h2>
               <p className="mt-3 text-base leading-relaxed text-muted-foreground">
-                Thank you, {formData.name}. We have received your request and will contact you at{" "}
-                <span className="font-medium text-cns-navy">{formData.phone}</span> within one business day to confirm your appointment.
+                Thank you, {formData.name}. WhatsApp should have opened with your appointment details
+                pre-filled. Tap <span className="font-medium text-cns-navy">Send</span> from{" "}
+                <span className="font-medium text-cns-navy">{formData.phone}</span> to complete your
+                booking. Our team will confirm your slot shortly.
               </p>
               <div className="mt-8 rounded-2xl border border-cns-border/80 bg-card p-6 text-left">
                 <h3 className="font-heading text-sm font-semibold uppercase tracking-[0.12em] text-muted-foreground">Request Summary</h3>
@@ -97,8 +93,16 @@ function AppointmentPageContent() {
                 </dl>
               </div>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
-                <Button nativeButton={false} render={<Link href="/">Return Home</Link>} size="lg" className="h-12 px-6" />
-                <Button nativeButton={false} render={<Link href="/contact">Contact Us</Link>} variant="outline" size="lg" className="h-12 border-cns-border px-6" />
+                <Button
+                  type="button"
+                  size="lg"
+                  className="h-12 bg-[#25D366] px-6 font-semibold text-white hover:bg-[#1da851]"
+                  onClick={() => openAppointmentWhatsApp(formData)}
+                >
+                  <MessageCircle />
+                  Open WhatsApp Again
+                </Button>
+                <Button nativeButton={false} render={<Link href="/">Return Home</Link>} variant="outline" size="lg" className="h-12 border-cns-border px-6" />
               </div>
             </div>
           </AnimatedSection>
@@ -151,7 +155,7 @@ function AppointmentPageContent() {
                   className="h-12 w-full bg-secondary font-semibold shadow-glow-green hover:bg-[#527a14] sm:w-auto sm:px-10"
                 >
                   <CalendarDays />
-                  {isSubmitting ? "Submitting..." : "Book Appointment"}
+                  {isSubmitting ? "Opening WhatsApp..." : "Book Appointment on WhatsApp"}
                 </Button>
                 <Button
                   nativeButton={false}
