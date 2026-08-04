@@ -5,6 +5,11 @@ import Link from "next/link";
 import { siteConfig } from "@/lib/constants/site";
 import { cn } from "@/lib/utils";
 
+/** Trimmed client logo with transparent background — generated via scripts/process-cns-logo.mjs */
+const LOGO_SRC = "/cns-logo-nav.png";
+const LOGO_WIDTH = 590;
+const LOGO_HEIGHT = 275;
+
 type LogoProps = {
   className?: string;
   size?: "sm" | "md" | "lg";
@@ -12,18 +17,10 @@ type LogoProps = {
   priority?: boolean;
 };
 
-/** Visible frame — crops excess whitespace baked into the square PNG */
-const logoFrameClasses = {
-  sm: "h-9 w-[10.25rem] sm:h-10 sm:w-[11rem]",
-  md: "h-10 w-[11rem] sm:h-11 sm:w-[12rem] lg:h-12 lg:w-[13rem]",
-  lg: "h-12 w-[13rem] sm:h-14 sm:w-[15rem]",
-} as const;
-
-/** Zoom into artwork so tagline stays legible in the header */
-const logoZoomClasses = {
-  sm: "scale-[1.72]",
-  md: "scale-[1.78] lg:scale-[1.82]",
-  lg: "scale-[1.85]",
+const logoSizeClasses = {
+  sm: "h-8 w-auto max-w-[9.5rem] sm:h-9 sm:max-w-[10.5rem]",
+  md: "h-9 w-auto max-w-[10.5rem] sm:h-10 sm:max-w-[11.5rem] lg:h-11 lg:max-w-[12.5rem]",
+  lg: "h-11 w-auto max-w-[12rem] sm:h-12 sm:max-w-[14rem]",
 } as const;
 
 function Logo({
@@ -32,37 +29,28 @@ function Logo({
   variant = "nav",
   priority = false,
 }: LogoProps) {
-  const isFooter = variant === "footer";
-
   const image = (
-    <span
-      className={cn(
-        "relative block shrink-0 overflow-hidden",
-        logoFrameClasses[size],
-        className
-      )}
-    >
-      <Image
-        src="/cns-logo.png"
-        alt={`${siteConfig.name} logo`}
-        fill
-        priority={priority}
-        quality={95}
-        sizes="(max-width: 640px) 160px, (max-width: 1024px) 180px, 208px"
-        className={cn("object-contain object-center", logoZoomClasses[size])}
-      />
-    </span>
+    <Image
+      src={LOGO_SRC}
+      alt={`${siteConfig.name} logo`}
+      width={LOGO_WIDTH}
+      height={LOGO_HEIGHT}
+      priority={priority}
+      quality={95}
+      sizes="(max-width: 640px) 152px, (max-width: 1024px) 176px, 200px"
+      className={cn("w-auto object-contain object-left", logoSizeClasses[size], className)}
+    />
   );
 
-  if (isFooter) {
+  if (variant === "footer") {
     return (
-      <span className="inline-flex shrink-0 items-center rounded-lg border border-white/10 bg-white px-2 py-1.5 shadow-soft">
+      <span className="inline-flex shrink-0 items-center rounded-lg border border-white/10 bg-white px-2.5 py-1.5 shadow-soft">
         {image}
       </span>
     );
   }
 
-  return image;
+  return <span className="inline-flex shrink-0 items-center">{image}</span>;
 }
 
 type LogoLinkProps = LogoProps & {
@@ -80,7 +68,7 @@ function LogoLink({
     <Link
       href="/"
       className={cn(
-        "inline-flex shrink-0 transition-opacity duration-300 hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background",
+        "inline-flex shrink-0 items-center transition-opacity duration-300 hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background",
         linkClassName
       )}
       aria-label={`${siteConfig.name} homepage`}
