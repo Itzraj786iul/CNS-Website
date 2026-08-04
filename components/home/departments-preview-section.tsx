@@ -14,18 +14,18 @@ import { fadeUp } from "@/lib/motion";
 
 function DepartmentsPreviewSection() {
   return (
-    <Section variant="default" spacing="lg">
-      <div className="space-y-12">
+    <Section variant="default" spacing="xl">
+      <div className="space-y-14">
         <AnimatedSection className="mx-auto max-w-3xl text-center">
           <SectionHeading
             align="center"
-            eyebrow="Departments"
+            eyebrow="Comprehensive Neuroscience Care"
             title="Integrated Brain & Spine Specialties"
-            description="From acute emergencies to long-term rehabilitation — coordinated care across every neuroscience discipline, under one trusted institution."
+            description="From acute emergencies to long-term rehabilitation — every discipline works together under one roof, so your care never falls through the gaps."
           />
         </AnimatedSection>
 
-        <AnimatedSection stagger className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <AnimatedSection stagger className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {departments.map((dept) => (
             <motion.div key={dept.title} variants={fadeUp}>
               <DepartmentCard
@@ -44,7 +44,7 @@ function DepartmentsPreviewSection() {
             nativeButton={false}
             render={
               <Link href="/departments">
-                View All Departments
+                Explore All Specialties
                 <ArrowRight />
               </Link>
             }

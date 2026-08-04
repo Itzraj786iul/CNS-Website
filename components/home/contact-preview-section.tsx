@@ -31,18 +31,18 @@ const variantMap = {
 
 function ContactPreviewSection() {
   return (
-    <Section variant="muted" spacing="lg">
-      <div className="space-y-12">
+    <Section variant="muted" spacing="xl" className="!pb-28 md:!pb-32">
+      <div className="space-y-14">
         <AnimatedSection className="mx-auto max-w-3xl text-center">
           <SectionHeading
             align="center"
-            eyebrow="Contact"
-            title="We're Here to Help"
-            description="Appointments, referrals, or questions about your care — our team responds promptly with clear, helpful guidance."
+            eyebrow="Reach Our Care Team"
+            title="We Are Here When You Need Us"
+            description="Whether you need an appointment, a referral, or directions to our campus — our team responds with clarity and care."
           />
         </AnimatedSection>
 
-        <AnimatedSection stagger className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <AnimatedSection stagger className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {contactCards.map((card) => {
             const Icon = iconMap[card.icon];
             const variant = variantMap[card.icon];
@@ -56,7 +56,7 @@ function ContactPreviewSection() {
                   className="h-full"
                 >
                   <Card className="card-premium card-premium-hover h-full">
-                    <CardContent className="space-y-4 px-6 py-8">
+                    <CardContent className="space-y-5 px-7 py-9">
                       <IconBox icon={Icon} variant={variant} />
                       <div className="space-y-2">
                         <p className="text-sm font-semibold uppercase tracking-[0.12em] text-muted-foreground">
@@ -91,7 +91,7 @@ function ContactPreviewSection() {
 
         <AnimatedSection>
           <div className="grid gap-6 lg:grid-cols-2 lg:items-stretch">
-            <div className="overflow-hidden rounded-3xl border border-cns-border/80 bg-muted shadow-soft">
+            <div className="image-placeholder overflow-hidden rounded-3xl">
               <div className="relative aspect-[4/3] w-full sm:aspect-[16/10] lg:aspect-auto lg:min-h-[320px] lg:h-full">
                 <iframe
                   title="Center for Neuroscience location map"
@@ -132,7 +132,7 @@ function ContactPreviewSection() {
                   nativeButton={false}
                   render={
                     <Link href="/contact">
-                      Contact & Directions
+                      Get Directions
                       <ArrowRight />
                     </Link>
                   }

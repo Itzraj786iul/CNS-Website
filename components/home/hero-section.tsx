@@ -10,7 +10,11 @@ import {
   Stethoscope,
   Users,
 } from "lucide-react";
-import { getAppointmentDisplay, getAppointmentTelHref, isTelHref } from "@/lib/contact-links";
+import {
+  getAppointmentDisplay,
+  getAppointmentTelHref,
+  isTelHref,
+} from "@/lib/contact-links";
 
 import { heroStats } from "@/components/home/data";
 import { Container } from "@/components/common/container";
@@ -21,37 +25,41 @@ import { fadeUp, staggerContainer } from "@/lib/motion";
 
 function HeroIllustration() {
   return (
-    <div className="relative mx-auto aspect-square w-full max-w-lg lg:max-w-none">
+    <div className="relative mx-auto aspect-square w-full max-w-md sm:max-w-lg lg:max-w-none">
       <motion.div
         aria-hidden="true"
-        animate={{ y: [0, -12, 0] }}
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute -left-8 top-8 size-48 rounded-full bg-primary/15 blur-3xl"
+        animate={{ y: [0, -10, 0] }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute -left-8 top-8 size-48 rounded-full bg-primary/12 blur-3xl"
       />
       <motion.div
         aria-hidden="true"
-        animate={{ y: [0, 14, 0] }}
-        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-        className="absolute -right-6 bottom-12 size-56 rounded-full bg-secondary/20 blur-3xl"
+        animate={{ y: [0, 12, 0] }}
+        transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+        className="absolute -right-6 bottom-12 size-56 rounded-full bg-secondary/15 blur-3xl"
       />
       <motion.div
         aria-hidden="true"
-        animate={{ y: [0, -8, 0] }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-        className="absolute right-12 top-4 size-24 rounded-full bg-accent/15 blur-2xl"
+        animate={{ y: [0, -6, 0] }}
+        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+        className="absolute right-12 top-4 size-24 rounded-full bg-accent/10 blur-2xl"
       />
 
       <motion.div
-        initial={{ opacity: 0, scale: 0.96 }}
+        initial={{ opacity: 0, scale: 0.98 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-        className="relative flex h-full items-center justify-center"
+        transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+        className="relative flex h-full items-center justify-center lg:scale-[1.02] lg:translate-x-2"
       >
+        <div
+          aria-hidden="true"
+          className="absolute inset-[8%] rounded-full bg-linear-to-br from-primary/[0.08] via-transparent to-secondary/[0.06] blur-2xl"
+        />
         <svg
           viewBox="0 0 480 480"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="h-full w-full [filter:drop-shadow(0_20px_40px_rgba(31,124,198,0.15))]"
+          className="relative h-full w-full [filter:drop-shadow(0_24px_48px_rgba(31,124,198,0.12))]"
           aria-hidden="true"
         >
           <circle cx="240" cy="240" r="200" fill="url(#heroGradient)" opacity="0.12" />
@@ -103,21 +111,29 @@ function HeroIllustration() {
         </svg>
 
         <motion.div
-          animate={{ y: [0, -6, 0] }}
-          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute bottom-8 left-4 rounded-2xl border border-cns-border/80 bg-white/90 px-4 py-3 shadow-soft backdrop-blur-sm"
+          animate={{ y: [0, -5, 0] }}
+          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+          className="glass absolute bottom-6 left-0 rounded-2xl px-4 py-3.5 sm:bottom-8 sm:left-4"
         >
-          <p className="text-xs font-medium text-muted-foreground">Neuro ICU</p>
-          <p className="font-heading text-sm font-semibold text-cns-navy">24×7 Critical Care</p>
+          <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+            Neuro ICU
+          </p>
+          <p className="font-heading text-sm font-semibold text-cns-navy">
+            24×7 Critical Care
+          </p>
         </motion.div>
 
         <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
-          className="absolute right-0 top-16 rounded-2xl border border-cns-border/80 bg-white/90 px-4 py-3 shadow-soft backdrop-blur-sm"
+          animate={{ y: [0, 6, 0] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
+          className="glass absolute right-0 top-12 rounded-2xl px-4 py-3.5 sm:top-16"
         >
-          <p className="text-xs font-medium text-muted-foreground">3T MRI</p>
-          <p className="font-heading text-sm font-semibold text-primary">Same-Day Imaging</p>
+          <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+            3T MRI
+          </p>
+          <p className="font-heading text-sm font-semibold text-primary">
+            Same-Day Imaging
+          </p>
         </motion.div>
       </motion.div>
     </div>
@@ -130,118 +146,136 @@ function HeroSection() {
 
   const trustItems = [
     { icon: ShieldCheck, label: "24×7 Stroke & Trauma Response" },
-    { icon: Stethoscope, label: "Subspecialist-Led Care" },
-    { icon: Users, label: "Integrated Neuro Team" },
+    { icon: Stethoscope, label: "Board-Certified Specialists" },
+    { icon: Users, label: "One Integrated Care Team" },
   ];
 
   return (
     <section className="relative overflow-hidden section-surface-default">
       <div
         aria-hidden="true"
-        className="hero-grid pointer-events-none absolute inset-0 opacity-80"
+        className="hero-grid pointer-events-none absolute inset-0 opacity-70"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-linear-to-br from-primary/[0.06] via-transparent to-secondary/[0.05]"
+        className="pointer-events-none absolute inset-0 bg-linear-to-br from-primary/[0.05] via-transparent to-secondary/[0.04]"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-32 top-0 size-[36rem] rounded-full bg-primary/[0.06] blur-3xl"
+        className="pointer-events-none absolute -right-32 top-0 size-[36rem] rounded-full bg-primary/[0.05] blur-3xl"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -left-24 bottom-0 size-80 rounded-full bg-secondary/[0.05] blur-3xl"
+        className="pointer-events-none absolute -left-24 bottom-0 size-80 rounded-full bg-secondary/[0.04] blur-3xl"
       />
       <div
         aria-hidden="true"
-        className="hero-light-beam pointer-events-none absolute inset-0 opacity-60"
+        className="hero-light-beam pointer-events-none absolute inset-0 opacity-50"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-linear-to-t from-background via-background/80 to-transparent"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_70%_at_50%_40%,transparent_40%,rgb(248_251_253_/_0.85)_100%)]"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-48 bg-linear-to-t from-background via-background/90 to-transparent"
       />
 
-      <Container className="relative flex min-h-[calc(100vh-5rem)] flex-col justify-center pb-36 pt-14 lg:min-h-[calc(100vh-6rem)] lg:pb-44 lg:pt-20">
-        <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
+      <Container className="relative flex min-h-[calc(100svh-5rem)] flex-col justify-center pb-40 pt-16 sm:pt-20 lg:min-h-[calc(100svh-6rem)] lg:pb-48 lg:pt-24">
+        <div className="grid items-center gap-16 lg:grid-cols-2 lg:gap-24 xl:gap-28">
           <motion.div
             initial="hidden"
             animate="visible"
             variants={staggerContainer}
-            className="max-w-xl space-y-9"
+            className="max-w-xl space-y-10"
           >
             <motion.div variants={fadeUp}>
               <Tag variant="blue" className="px-4 py-1.5 text-sm shadow-soft">
-                Raipur · Brain &amp; Spine Specialists
+                Trusted Neuroscience Care · Raipur
               </Tag>
             </motion.div>
 
-            <motion.div variants={fadeUp} className="space-y-6">
-              <h1 className="font-heading text-4xl font-semibold leading-[1.06] tracking-[-0.03em] text-cns-navy sm:text-5xl lg:text-[3.625rem] lg:leading-[1.04]">
+            <motion.div variants={fadeUp} className="space-y-5">
+              <h1 className="font-heading text-[2.625rem] font-semibold leading-[1.05] tracking-[-0.035em] text-cns-navy sm:text-5xl lg:text-[3.75rem] lg:leading-[1.02]">
                 Center for{" "}
                 <span className="text-gradient-brand">Neuroscience</span>
               </h1>
-              <p className="prose-lead max-w-lg">
-                From stroke emergencies to complex neurosurgery — subspecialist
-                care, advanced imaging, and a team that sees the person behind
-                every diagnosis.
+              <p className="font-heading text-lg font-medium tracking-tight text-cns-navy/90 sm:text-xl">
+                Your health is in safe hands.
+              </p>
+              <p className="prose-lead max-w-lg pt-1">
+                Subspecialist-led care for stroke, brain, and spine conditions —
+                with advanced imaging, round-the-clock emergency support, and
+                clinicians who take time to listen.
               </p>
             </motion.div>
 
-            <motion.div variants={fadeUp} className="space-y-4">
-              <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+            <motion.div variants={fadeUp} className="space-y-5">
+              <div className="flex flex-col gap-3.5 sm:flex-row sm:items-center">
                 <Button
                   nativeButton={false}
                   render={
                     <Link href="/appointment">
                       <CalendarDays />
-                      Book Appointment
+                      Book Your Consultation
                     </Link>
                   }
                   size="lg"
-                  className="h-12 min-w-[11rem] bg-secondary px-6 shadow-glow-green hover:bg-secondary/90"
+                  className="h-12 min-w-[12rem] bg-secondary px-7 shadow-glow-green hover:bg-secondary/90"
                 />
                 <Button
                   nativeButton={false}
                   render={
                     <Link href="/departments">
-                      Explore Departments
+                      Talk to a Specialist
                       <ArrowRight />
                     </Link>
                   }
                   variant="outline"
                   size="lg"
-                  className="h-12 border-cns-border bg-white/80 px-6 shadow-soft backdrop-blur-sm"
+                  className="h-12 border-cns-border/80 bg-white/85 px-7 shadow-soft backdrop-blur-sm"
                 />
               </div>
               {isTelHref(appointmentHref) ? (
                 <a
                   href={appointmentHref}
-                  className="inline-flex items-center gap-2 text-sm font-medium text-cns-navy/75 transition-colors hover:text-primary"
+                  className="inline-flex items-center gap-2.5 text-sm font-medium text-cns-navy/70 transition-colors hover:text-primary"
                 >
-                  <Phone className="size-4 text-primary" aria-hidden="true" />
+                  <span className="flex size-8 items-center justify-center rounded-full bg-white shadow-soft ring-1 ring-cns-border/60">
+                    <Phone className="size-3.5 text-primary" aria-hidden="true" />
+                  </span>
                   <span>
-                    Or call{" "}
-                    <span className="font-semibold text-cns-navy">{appointmentDisplay}</span>
+                    Prefer to speak now?{" "}
+                    <span className="font-semibold text-cns-navy">
+                      {appointmentDisplay}
+                    </span>
                   </span>
                 </a>
               ) : (
                 <Link
                   href={appointmentHref}
-                  className="inline-flex items-center gap-2 text-sm font-medium text-cns-navy/75 transition-colors hover:text-primary"
+                  className="inline-flex items-center gap-2.5 text-sm font-medium text-cns-navy/70 transition-colors hover:text-primary"
                 >
-                  <Phone className="size-4 text-primary" aria-hidden="true" />
-                  <span className="font-semibold text-cns-navy">{appointmentDisplay}</span>
+                  <span className="flex size-8 items-center justify-center rounded-full bg-white shadow-soft ring-1 ring-cns-border/60">
+                    <Phone className="size-3.5 text-primary" aria-hidden="true" />
+                  </span>
+                  <span className="font-semibold text-cns-navy">
+                    {appointmentDisplay}
+                  </span>
                 </Link>
               )}
             </motion.div>
 
             <motion.ul
               variants={fadeUp}
-              className="flex flex-col gap-3.5 border-t border-cns-border/50 pt-7 sm:flex-row sm:flex-wrap sm:gap-x-8 sm:gap-y-3"
+              className="flex flex-col gap-4 border-t border-cns-border/40 pt-8 sm:flex-row sm:flex-wrap sm:gap-x-10 sm:gap-y-4"
             >
               {trustItems.map(({ icon: Icon, label }) => (
-                <li key={label} className="flex items-center gap-2.5 text-sm font-medium text-cns-navy/80">
-                  <span className="flex size-9 items-center justify-center rounded-full bg-white shadow-soft ring-1 ring-cns-border/60 text-primary">
+                <li
+                  key={label}
+                  className="flex items-center gap-3 text-sm font-medium text-cns-navy/80"
+                >
+                  <span className="flex size-10 items-center justify-center rounded-full bg-white/90 shadow-soft ring-1 ring-cns-border/50 text-primary">
                     <Icon className="size-4" aria-hidden="true" />
                   </span>
                   {label}
@@ -251,35 +285,43 @@ function HeroSection() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 24 }}
+            initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="relative"
+            transition={{ duration: 0.85, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+            className="relative lg:pl-4"
           >
             <HeroIllustration />
           </motion.div>
         </div>
       </Container>
 
-      <div className="relative z-10 -mt-24 pb-10 lg:-mt-28">
+      <div className="relative z-10 -mt-28 pb-14 lg:-mt-32 lg:pb-16">
         <Container>
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-40px" }}
             variants={staggerContainer}
-            className="grid gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4"
+            className="space-y-6"
           >
-            {heroStats.map((stat) => (
-              <motion.div key={stat.label} variants={fadeUp}>
-                <StatisticsCard
-                  value={stat.value}
-                  suffix={stat.suffix}
-                  label={stat.label}
-                  className="glass rounded-2xl shadow-card ring-1 ring-white/70 backdrop-blur-md"
-                />
-              </motion.div>
-            ))}
+            <motion.div variants={fadeUp} className="text-center">
+              <p className="eyebrow-pill mx-auto">Clinical Credibility</p>
+              <p className="mt-4 font-heading text-lg font-medium text-cns-navy/85 sm:text-xl">
+                Trusted by families across Chhattisgarh
+              </p>
+            </motion.div>
+            <div className="grid gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4">
+              {heroStats.map((stat) => (
+                <motion.div key={stat.label} variants={fadeUp}>
+                  <StatisticsCard
+                    value={stat.value}
+                    suffix={stat.suffix}
+                    label={stat.label}
+                    className="rounded-2xl border border-white/70 bg-white/80 shadow-card ring-1 ring-cns-border/30 backdrop-blur-xl"
+                  />
+                </motion.div>
+              ))}
+            </div>
           </motion.div>
         </Container>
       </div>

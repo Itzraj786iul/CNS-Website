@@ -15,8 +15,8 @@ import { fadeUp } from "@/lib/motion";
 
 function AboutPreviewSection() {
   return (
-    <Section variant="white" spacing="lg" divider>
-      <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+    <Section variant="white" spacing="xl" divider>
+      <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-24">
         <AnimatedSection className="relative" direction="left">
           <div className="relative image-placeholder aspect-[4/5]">
             <Image
@@ -29,7 +29,7 @@ function AboutPreviewSection() {
             />
             <div
               aria-hidden="true"
-              className="absolute inset-0 bg-linear-to-t from-cns-navy/20 via-transparent to-transparent"
+              className="absolute inset-0 bg-linear-to-t from-cns-navy/30 via-cns-navy/5 to-transparent"
             />
           </div>
           <div
@@ -38,16 +38,16 @@ function AboutPreviewSection() {
           />
         </AnimatedSection>
 
-        <div className="space-y-10">
+        <div className="space-y-12">
           <AnimatedSection>
             <SectionHeading
-              eyebrow="About CNS"
+              eyebrow="Who We Are"
               title="Two Decades of Neuroscience Leadership"
-              description="For over twenty years, CNS has united expert clinicians, precision diagnostics, and compassionate support to treat the full spectrum of brain and spine conditions."
+              description="For over twenty years, CNS has united expert clinicians, precision diagnostics, and compassionate support — so every patient receives care that is both clinically rigorous and deeply human."
             />
           </AnimatedSection>
 
-          <AnimatedSection stagger className="grid gap-4 sm:grid-cols-2">
+          <AnimatedSection stagger className="grid gap-5 sm:grid-cols-2">
             {aboutFeatures.map((feature) => (
               <motion.div key={feature.title} variants={fadeUp}>
                 <FeatureCard
@@ -65,7 +65,7 @@ function AboutPreviewSection() {
               nativeButton={false}
               render={
                 <Link href="/about">
-                  Learn Our Story
+                  Discover Our Approach
                   <ArrowRight />
                 </Link>
               }

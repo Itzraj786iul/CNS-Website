@@ -12,19 +12,19 @@ import { Button } from "@/components/ui/button";
 
 function FaqPreviewSection() {
   return (
-    <Section variant="white" spacing="lg">
-      <div className="grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:items-start lg:gap-16">
-        <AnimatedSection className="space-y-8 lg:sticky lg:top-28">
+    <Section variant="white" spacing="xl">
+      <div className="grid gap-14 lg:grid-cols-[1fr_1.2fr] lg:items-start lg:gap-20">
+        <AnimatedSection className="space-y-10 lg:sticky lg:top-28">
           <SectionHeading
-            eyebrow="FAQ"
-            title="Common Questions, Clear Answers"
-            description="Quick guidance on appointments, insurance, emergency care, and what to expect at your first visit."
+            eyebrow="Your Questions Answered"
+            title="Clear Guidance Before You Visit"
+            description="Practical answers about appointments, insurance, emergencies, and what to expect — so you arrive informed and confident."
           />
           <Button
             nativeButton={false}
             render={
               <Link href="/contact">
-                Contact Us
+                Speak With Our Team
                 <ArrowRight />
               </Link>
             }

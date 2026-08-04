@@ -15,8 +15,16 @@ function HomePage() {
   return (
     <>
       <HeroSection />
-      <Section variant="white" spacing="sm" contained={true} className="!pt-0">
-        <EmergencyBanner />
+      <Section
+        variant="white"
+        spacing="sm"
+        contained={true}
+        className="!pt-8 !pb-14 md:!pt-10 md:!pb-16"
+      >
+        <EmergencyBanner
+          title="Emergency Assistance"
+          description="Stroke symptoms, severe headache, seizures, or head injury — call immediately. Our neuro emergency team is ready 24 hours a day, every day."
+        />
       </Section>
       <AboutPreviewSection />
       <DepartmentsPreviewSection />

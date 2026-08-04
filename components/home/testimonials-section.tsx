@@ -89,18 +89,18 @@ function HomeTestimonialCard({
 
 function TestimonialsSection() {
   return (
-    <Section variant="default" spacing="lg">
-      <div className="space-y-12">
+    <Section variant="default" spacing="xl">
+      <div className="space-y-14">
         <AnimatedSection className="mx-auto max-w-3xl text-center">
           <SectionHeading
             align="center"
-            eyebrow="Testimonials"
-            title="Patient Stories"
-            description="Honest accounts from individuals and families who chose CNS for neurological care and recovery."
+            eyebrow="Patient Voices"
+            title="Stories of Recovery & Trust"
+            description="Real experiences from patients and families who placed their most important health decisions in our care."
           />
         </AnimatedSection>
 
-        <AnimatedSection stagger className="grid gap-6 md:grid-cols-3">
+        <AnimatedSection stagger className="grid gap-6 md:grid-cols-3 md:gap-7">
           {testimonials.map((testimonial) => (
             <motion.div key={testimonial.author} variants={fadeUp}>
               <HomeTestimonialCard {...testimonial} />

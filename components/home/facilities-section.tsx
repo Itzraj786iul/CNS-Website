@@ -11,18 +11,18 @@ import { fadeUp } from "@/lib/motion";
 
 function FacilitiesSection() {
   return (
-    <Section variant="white" spacing="lg">
-      <div className="space-y-12">
+    <Section variant="white" spacing="xl">
+      <div className="space-y-14">
         <AnimatedSection className="mx-auto max-w-3xl text-center">
           <SectionHeading
             align="center"
-            eyebrow="Facilities"
-            title="Advanced Clinical Infrastructure"
-            description="Diagnostic, surgical, and critical care facilities purpose-built for complex brain and spine conditions."
+            eyebrow="Clinical Excellence"
+            title="Technology Supporting Better Outcomes"
+            description="Every facility is designed for complex neurological care — from rapid emergency imaging to precision surgery and critical recovery."
           />
         </AnimatedSection>
 
-        <AnimatedSection stagger className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <AnimatedSection stagger className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {facilities.map((facility) => (
             <motion.div key={facility.title} variants={fadeUp}>
               <FeatureCard

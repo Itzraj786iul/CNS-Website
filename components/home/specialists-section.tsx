@@ -14,19 +14,19 @@ import { fadeUp } from "@/lib/motion";
 
 function SpecialistsSection() {
   return (
-    <Section variant="default" spacing="lg" divider>
-      <div className="space-y-12">
-        <AnimatedSection className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+    <Section variant="default" spacing="xl" divider>
+      <div className="space-y-14">
+        <AnimatedSection className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
           <SectionHeading
-            eyebrow="Our Team"
-            title="Physicians You Can Trust"
-            description="Board-certified specialists with advanced training — committed to precision medicine and patient-first care."
+            eyebrow="Our Physicians"
+            title="Meet Our Neuroscience Specialists"
+            description="Board-certified clinicians with advanced fellowship training — chosen for their expertise, and remembered for how they treat people."
           />
           <Button
             nativeButton={false}
             render={
               <Link href="/doctors">
-                View All Doctors
+                Consult Our Experts
                 <ArrowRight />
               </Link>
             }
@@ -55,7 +55,7 @@ function SpecialistsSection() {
             nativeButton={false}
             render={
               <Link href="/doctors">
-                View All Doctors
+                Consult Our Experts
                 <ArrowRight />
               </Link>
             }

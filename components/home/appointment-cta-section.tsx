@@ -7,15 +7,14 @@ import { motion } from "framer-motion";
 import { AnimatedSection } from "@/components/common/animated-section";
 import { Container } from "@/components/common/container";
 import { Button } from "@/components/ui/button";
-import { getAppointmentDisplay, getAppointmentTelHref, isTelHref } from "@/lib/contact-links";
+import { getAppointmentTelHref, isTelHref } from "@/lib/contact-links";
 import { fadeUp } from "@/lib/motion";
 
 function AppointmentCtaSection() {
   const appointmentHref = getAppointmentTelHref();
-  const appointmentDisplay = getAppointmentDisplay();
 
   return (
-    <section className="py-20 md:py-28">
+    <section className="py-24 md:py-32">
       <Container>
         <AnimatedSection>
           <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-linear-to-br from-primary via-primary to-secondary px-7 py-16 shadow-soft-lg sm:px-12 sm:py-16 lg:px-16 lg:py-20">
@@ -40,13 +39,13 @@ function AppointmentCtaSection() {
               className="relative z-10 mx-auto max-w-2xl space-y-8 text-center"
             >
               <div className="space-y-4">
-                <h2 className="font-heading text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-[2.75rem] lg:leading-[1.12]">
-                  Schedule Your Consultation
+                <h2 className="font-heading text-3xl font-semibold tracking-[-0.02em] text-white sm:text-4xl lg:text-[2.875rem] lg:leading-[1.1]">
+                  Book Your Consultation
                 </h2>
-                <p className="text-base leading-[1.8] text-white/90 sm:text-lg">
-                  Speak with a care coordinator today. Same-week appointments
-                  are available for most specialties — including urgent
-                  neurological evaluations.
+                <p className="text-base leading-[1.85] text-white/90 sm:text-lg">
+                  A care coordinator will help you find the right specialist,
+                  prepare your records, and answer any questions — usually within
+                  one business day.
                 </p>
               </div>
               <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
@@ -55,7 +54,7 @@ function AppointmentCtaSection() {
                   render={
                     <Link href="/appointment">
                       <CalendarDays />
-                      Book Appointment
+                      Book Your Consultation
                     </Link>
                   }
                   size="lg"
@@ -67,7 +66,7 @@ function AppointmentCtaSection() {
                     render={
                       <a href={appointmentHref}>
                         <Phone />
-                        Call {appointmentDisplay}
+                        Talk to a Coordinator
                       </a>
                     }
                     variant="outline"
@@ -80,7 +79,7 @@ function AppointmentCtaSection() {
                     render={
                       <Link href={appointmentHref}>
                         <Phone />
-                        {appointmentDisplay}
+                        Talk to a Coordinator
                       </Link>
                     }
                     variant="outline"

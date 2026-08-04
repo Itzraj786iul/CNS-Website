@@ -23,10 +23,10 @@ import { getAppointmentDisplay, getEmergencyTelHref, toTelHref } from "@/lib/con
 import { siteConfig } from "@/lib/constants/site";
 
 export const heroStats = [
-  { value: "20", suffix: "+", label: "Subspecialist Doctors" },
-  { value: "50,000", suffix: "+", label: "Lives Treated" },
-  { value: "24", suffix: "×7", label: "Emergency Neuro Care" },
-  { value: "95", suffix: "%", label: "Would Recommend CNS" },
+  { value: "20", suffix: "+", label: "Subspecialist Physicians" },
+  { value: "50,000", suffix: "+", label: "Patients Cared For" },
+  { value: "24", suffix: "×7", label: "Emergency Neuro Response" },
+  { value: "95", suffix: "%", label: "Patient Recommendation Rate" },
 ] as const;
 
 export const aboutFeatures = [
@@ -304,7 +304,7 @@ export const faqItems: FAQItem[] = [
 export const contactCards = [
   {
     icon: "phone" as const,
-    title: "Phone",
+    title: "Appointments",
     value: getAppointmentDisplay(),
     href: siteConfig.contact.phone
       ? toTelHref(siteConfig.contact.phone)
@@ -327,7 +327,7 @@ export const contactCards = [
   },
   {
     icon: "emergency" as const,
-    title: "Emergency",
+    title: "Emergency Line",
     value: siteConfig.contact.emergency,
     href: getEmergencyTelHref(),
     description: "24×7 neurological emergency line",

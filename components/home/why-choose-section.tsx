@@ -13,8 +13,8 @@ import { cn } from "@/lib/utils";
 
 function WhyChooseSection() {
   return (
-    <Section variant="muted" spacing="lg">
-      <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+    <Section variant="muted" spacing="xl">
+      <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-24">
         <AnimatedSection className="relative order-2 lg:order-1" direction="left">
           <div className="relative image-placeholder aspect-[4/5]">
             <Image
@@ -24,6 +24,10 @@ function WhyChooseSection() {
               className="img-zoom object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 bg-linear-to-t from-cns-navy/25 via-cns-navy/5 to-transparent"
+            />
           </div>
           <div
             aria-hidden="true"
@@ -31,12 +35,12 @@ function WhyChooseSection() {
           />
         </AnimatedSection>
 
-        <div className="order-1 space-y-10 lg:order-2">
+        <div className="order-1 space-y-12 lg:order-2">
           <AnimatedSection direction="right">
             <SectionHeading
-              eyebrow="Why Choose CNS"
-              title="Why Patients Trust CNS"
-              description="Depth of expertise, precision technology, and care that treats you as an individual — not a case file."
+              eyebrow="Why Families Choose CNS"
+              title="Care You Can Rely On"
+              description="Depth of expertise, precision technology, and clinicians who explain clearly, decide together, and stay with you through recovery."
             />
           </AnimatedSection>
 
@@ -46,7 +50,7 @@ function WhyChooseSection() {
                 key={feature.title}
                 variants={fadeUp}
                 className={cn(
-                  "group flex gap-4 rounded-2xl border border-cns-border/60 bg-background p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/20 hover:bg-white hover:shadow-soft",
+                  "group flex gap-4 rounded-2xl border border-cns-border/60 bg-background p-5 transition-all duration-500 hover:-translate-y-0.5 hover:border-primary/15 hover:bg-white hover:shadow-soft",
                   index === whyChooseFeatures.length - 1 &&
                     "sm:col-span-2 sm:max-w-md"
                 )}
