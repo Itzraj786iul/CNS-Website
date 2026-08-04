@@ -9,7 +9,6 @@ import { IconBox } from "@/components/common/icon-box";
 import { Section } from "@/components/common/section";
 import { SectionHeading } from "@/components/common/section-heading";
 import { fadeUp } from "@/lib/motion";
-import { cn } from "@/lib/utils";
 
 function WhyChooseSection() {
   return (
@@ -38,22 +37,18 @@ function WhyChooseSection() {
         <div className="order-1 space-y-12 lg:order-2">
           <AnimatedSection direction="right">
             <SectionHeading
-              eyebrow="Why Families Choose CNS"
-              title="Care You Can Rely On"
-              description="Depth of expertise, precision technology, and clinicians who explain clearly, decide together, and stay with you through recovery."
+              eyebrow="Why Patients Choose CNS"
+              title="Care You Can Trust"
+              description="Real reassurance — not marketing slogans. Depth of expertise, precision technology, and clinicians who explain clearly, decide together, and stay with you through recovery."
             />
           </AnimatedSection>
 
           <AnimatedSection stagger className="grid gap-5 sm:grid-cols-2">
-            {whyChooseFeatures.map((feature, index) => (
+            {whyChooseFeatures.map((feature) => (
               <motion.div
                 key={feature.title}
                 variants={fadeUp}
-                className={cn(
-                  "group flex gap-4 rounded-2xl border border-cns-border/60 bg-background p-5 transition-all duration-500 hover:-translate-y-0.5 hover:border-primary/15 hover:bg-white hover:shadow-soft",
-                  index === whyChooseFeatures.length - 1 &&
-                    "sm:col-span-2 sm:max-w-md"
-                )}
+                className="group flex gap-4 rounded-2xl border border-cns-border/60 bg-background p-5 transition-all duration-500 hover:-translate-y-0.5 hover:border-primary/15 hover:bg-white hover:shadow-soft"
               >
                 <IconBox
                   icon={feature.icon}

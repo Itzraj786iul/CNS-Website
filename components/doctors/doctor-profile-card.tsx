@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, CalendarDays } from "lucide-react";
+import { ArrowUpRight, CalendarDays, MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
 
 import type { DoctorProfile } from "@/components/doctors/data";
@@ -16,6 +16,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { WHATSAPP_URL } from "@/lib/contact-links";
 import { hoverLift } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 
@@ -25,6 +26,8 @@ type DoctorProfileCardProps = {
 };
 
 function DoctorProfileCard({ doctor, className }: DoctorProfileCardProps) {
+  const isAvailable = doctor.available !== false;
+
   return (
     <motion.div
       initial="rest"
@@ -43,10 +46,27 @@ function DoctorProfileCard({ doctor, className }: DoctorProfileCardProps) {
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
             <div className="absolute inset-x-0 bottom-0 h-2/5 bg-linear-to-t from-cns-navy/65 to-transparent" />
-            <div className="absolute bottom-4 left-4">
+            <div className="absolute bottom-4 left-4 flex flex-col gap-2">
               <Tag variant="green" className="shadow-soft backdrop-blur-sm">
                 {doctor.experience}
               </Tag>
+              <span
+                className={cn(
+                  "inline-flex w-fit items-center gap-1.5 rounded-full px-2.5 py-1 text-[11px] font-semibold shadow-soft backdrop-blur-sm",
+                  isAvailable
+                    ? "bg-secondary/90 text-white"
+                    : "bg-white/90 text-muted-foreground"
+                )}
+              >
+                <span
+                  className={cn(
+                    "size-1.5 rounded-full",
+                    isAvailable ? "bg-white" : "bg-muted-foreground"
+                  )}
+                  aria-hidden="true"
+                />
+                {isAvailable ? "Accepting Appointments" : "Limited Availability"}
+              </span>
             </div>
           </div>
         </div>
@@ -74,7 +94,7 @@ function DoctorProfileCard({ doctor, className }: DoctorProfileCardProps) {
           <p className="text-sm leading-[1.75] text-muted-foreground">{doctor.bio}</p>
         </CardContent>
 
-        <CardFooter className="flex flex-col gap-2.5 border-t-0 bg-transparent px-6 pb-6 pt-0 sm:flex-row">
+        <CardFooter className="flex flex-col gap-2 border-t-0 bg-transparent px-6 pb-6 pt-0">
           <Button
             nativeButton={false}
             render={
@@ -84,19 +104,33 @@ function DoctorProfileCard({ doctor, className }: DoctorProfileCardProps) {
               </Link>
             }
             variant="ghost"
-            className="group/btn h-11 flex-1 rounded-full px-4 text-primary hover:bg-primary/5"
+            className="group/btn h-10 w-full justify-start rounded-full px-3 text-primary hover:bg-primary/5"
           />
-          <Button
-            nativeButton={false}
-            render={
-              <Link href="/appointment">
-                <CalendarDays />
-                Book Appointment
-              </Link>
-            }
-            size="sm"
-            className="h-11 flex-1 rounded-full bg-secondary text-secondary-foreground shadow-glow-green hover:bg-secondary/90"
-          />
+          <div className="flex w-full flex-col gap-2 sm:flex-row">
+            <Button
+              nativeButton={false}
+              render={
+                <Link href="/appointment">
+                  <CalendarDays />
+                  Book Appointment
+                </Link>
+              }
+              size="sm"
+              className="h-10 flex-1 rounded-full bg-secondary text-secondary-foreground shadow-glow-green hover:bg-secondary/90"
+            />
+            <Button
+              nativeButton={false}
+              render={
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                  <MessageCircle />
+                  WhatsApp
+                </a>
+              }
+              variant="outline"
+              size="sm"
+              className="h-10 flex-1 rounded-full border-cns-border"
+            />
+          </div>
         </CardFooter>
       </Card>
     </motion.div>

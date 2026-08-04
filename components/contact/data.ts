@@ -70,8 +70,20 @@ export const contactContent = {
   ],
   faq: [
     {
+      question: "How quickly can I get an appointment?",
+      answer: "Most non-emergency appointments are scheduled within a few days. For urgent neurological concerns, call our emergency line — available 24×7.",
+    },
+    {
+      question: "What should I bring to my first consultation?",
+      answer: "Please bring a valid ID, insurance details, a list of current medications, and any prior medical records or imaging CDs. Writing down your questions in advance helps too.",
+    },
+    {
       question: "How do I schedule an appointment?",
-      answer: "You can book online via our Appointment page, call our appointments desk, or visit the front desk during outpatient hours. Emergency cases should go directly to our 24×7 emergency department.",
+      answer: "Book online via our Appointment page, call our appointments desk, message us on WhatsApp, or visit the front desk during outpatient hours. Emergency cases should go directly to our 24×7 emergency department.",
+    },
+    {
+      question: "When should I seek emergency neurological care?",
+      answer: "Call immediately for sudden weakness, facial drooping, slurred speech, severe headache, seizures, loss of consciousness, or head injury. In a stroke, every minute matters.",
     },
     {
       question: "What are the visiting hours?",

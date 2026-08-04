@@ -5,6 +5,38 @@ import { Container } from "@/components/common/container";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
+function isExternalHref(href: string) {
+  return href.startsWith("http") || href.startsWith("tel:") || href.startsWith("mailto:");
+}
+
+function CtaHref({
+  href,
+  children,
+  className,
+}: {
+  href: string;
+  children: React.ReactNode;
+  className?: string;
+}) {
+  if (isExternalHref(href)) {
+    return (
+      <a
+        href={href}
+        target={href.startsWith("http") ? "_blank" : undefined}
+        rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+        className={className}
+      >
+        {children}
+      </a>
+    );
+  }
+  return (
+    <Link href={href} className={className}>
+      {children}
+    </Link>
+  );
+}
+
 type CTASectionProps = {
   title: string;
   description?: string;
@@ -73,7 +105,9 @@ function CTASection({
                   <Button
                     nativeButton={false}
                     render={
-                      <Link href={primaryAction.href}>{primaryAction.label}</Link>
+                      <CtaHref href={primaryAction.href}>
+                        {primaryAction.label}
+                      </CtaHref>
                     }
                     size="lg"
                     className={cn(
@@ -87,9 +121,9 @@ function CTASection({
                   <Button
                     nativeButton={false}
                     render={
-                      <Link href={secondaryAction.href}>
+                      <CtaHref href={secondaryAction.href}>
                         {secondaryAction.label}
-                      </Link>
+                      </CtaHref>
                     }
                     variant="outline"
                     size="lg"

@@ -61,11 +61,12 @@ export const newsContent = {
     "Expanded neuro ICU capacity with 12 additional monitored beds",
   ],
   cta: {
-    title: "Stay Connected",
-    description: "Subscribe to our newsletter or follow us on social media for the latest updates from CNS.",
-    primaryLabel: "Contact Us",
-    primaryHref: "/contact",
-    secondaryLabel: "View Gallery",
-    secondaryHref: "/gallery",
+    title: "Need Neurological Care?",
+    description:
+      "Stay informed about CNS — and when you are ready, our specialists are here to help you and your family take the next step.",
+    primaryLabel: "Book Your Consultation",
+    primaryHref: "/appointment",
+    secondaryLabel: "Chat With Our Care Team",
+    secondaryHref: "https://wa.me/917389321886?text=Hello%20I%20would%20like%20to%20know%20more%20about%20the%20services%20offered%20by%20Center%20for%20Neuroscience.",
   },
 } as const;

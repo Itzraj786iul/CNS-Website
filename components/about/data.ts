@@ -175,13 +175,13 @@ export const aboutContent = {
     },
   ],
   cta: {
-    title: "Experience the CNS Difference",
+    title: "Ready to Begin Your Care Journey?",
     description:
-      "Whether you are seeking a consultation, a second opinion, or emergency care, our team is ready to support you.",
-    primaryLabel: "Book Appointment",
+      "Whether you need a first consultation, a second opinion, or emergency care — our team is here to guide you and your family with clarity and compassion.",
+    primaryLabel: "Book Your Consultation",
     primaryHref: "/appointment",
-    secondaryLabel: "Contact Us",
-    secondaryHref: "/contact",
+    secondaryLabel: "Chat With Our Care Team",
+    secondaryHref: "https://wa.me/917389321886?text=Hello%20I%20would%20like%20to%20know%20more%20about%20the%20services%20offered%20by%20Center%20for%20Neuroscience.",
   },
 } as const;
 

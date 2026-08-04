@@ -43,6 +43,10 @@ function SpecialistsSection() {
                 name={doctor.name}
                 title={doctor.title}
                 department={doctor.department}
+                specializations={doctor.specializations}
+                intro={doctor.intro}
+                available={doctor.available}
+                showQuickActions
                 image={doctor.image}
                 href={doctor.href}
               />

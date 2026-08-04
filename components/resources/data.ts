@@ -70,11 +70,12 @@ export const resourcesContent = {
     ],
   },
   cta: {
-    title: "Need Help Preparing for Your Visit?",
-    description: "Our patient services team is available to answer questions about forms, insurance, and appointment preparation.",
-    primaryLabel: "Book Appointment",
+    title: "Questions About Your Care?",
+    description:
+      "Our patient services team can help you prepare for your visit, understand insurance, and connect you with the right specialist.",
+    primaryLabel: "Book Your Consultation",
     primaryHref: "/appointment",
-    secondaryLabel: "Contact Us",
-    secondaryHref: "/contact",
+    secondaryLabel: "Chat With Our Care Team",
+    secondaryHref: "https://wa.me/917389321886?text=Hello%20I%20would%20like%20to%20know%20more%20about%20the%20services%20offered%20by%20Center%20for%20Neuroscience.",
   },
 } as const;

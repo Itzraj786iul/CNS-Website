@@ -89,12 +89,13 @@ export const galleryContent = {
     },
   ],
   cta: {
-    title: "Experience CNS in Person",
-    description: "Schedule a visit to tour our facilities or book a consultation with our specialists.",
-    primaryLabel: "Book Appointment",
+    title: "Ready to Visit CNS?",
+    description:
+      "Schedule a consultation or tour our facilities in person — our team will help you prepare for your visit.",
+    primaryLabel: "Book Your Consultation",
     primaryHref: "/appointment",
-    secondaryLabel: "Contact Us",
-    secondaryHref: "/contact",
+    secondaryLabel: "Chat With Our Care Team",
+    secondaryHref: "https://wa.me/917389321886?text=Hello%20I%20would%20like%20to%20know%20more%20about%20the%20services%20offered%20by%20Center%20for%20Neuroscience.",
   },
 } as const;
 

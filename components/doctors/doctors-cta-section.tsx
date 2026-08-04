@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { CalendarDays } from "lucide-react";
+import { CalendarDays, MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
 
 import { doctorsContent } from "@/components/doctors/data";
@@ -40,17 +40,37 @@ function DoctorsCtaSection() {
               <p className="text-base leading-relaxed text-white/85 sm:text-lg">
                 {cta.description}
               </p>
-              <Button
-                nativeButton={false}
-                render={
-                  <Link href={cta.primaryHref}>
-                    <CalendarDays />
-                    {cta.primaryLabel}
-                  </Link>
-                }
-                size="lg"
-                className="h-12 bg-white px-8 text-primary hover:bg-white/90"
-              />
+              <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
+                <Button
+                  nativeButton={false}
+                  render={
+                    <Link href={cta.primaryHref}>
+                      <CalendarDays />
+                      {cta.primaryLabel}
+                    </Link>
+                  }
+                  size="lg"
+                  className="h-12 bg-white px-8 text-primary hover:bg-white/90"
+                />
+                {"secondaryHref" in cta && cta.secondaryHref ? (
+                  <Button
+                    nativeButton={false}
+                    render={
+                      <a
+                        href={cta.secondaryHref}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <MessageCircle />
+                        {cta.secondaryLabel}
+                      </a>
+                    }
+                    variant="outline"
+                    size="lg"
+                    className="h-12 border-white/30 bg-transparent px-8 text-white hover:bg-white/10 hover:text-white"
+                  />
+                ) : null}
+              </div>
             </motion.div>
           </div>
         </AnimatedSection>

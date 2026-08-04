@@ -179,12 +179,12 @@ export const departmentsContent = {
     ],
   },
   cta: {
-    title: "Find the Right Specialist",
+    title: "Talk to a Neuroscience Specialist",
     description:
-      "Unsure where to begin? Our coordinators will guide you to the appropriate department based on your symptoms and medical history.",
+      "Unsure where to begin? Describe your symptoms to our care team — we will guide you to the right department and specialist.",
     primaryLabel: "Book Your Consultation",
     primaryHref: "/appointment",
-    secondaryLabel: "Contact Us",
-    secondaryHref: "/contact",
+    secondaryLabel: "Chat With Our Care Team",
+    secondaryHref: "https://wa.me/917389321886?text=Hello%20I%20would%20like%20to%20know%20more%20about%20the%20services%20offered%20by%20Center%20for%20Neuroscience.",
   },
 } as const;

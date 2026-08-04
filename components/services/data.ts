@@ -62,11 +62,12 @@ export const servicesContent = {
     ],
   },
   cta: {
-    title: "Begin Your Care Journey",
-    description: "Schedule with the right specialist. Our coordinators handle scheduling, records, and insurance verification — so you can focus on your health.",
+    title: "Book Your Consultation",
+    description:
+      "Our coordinators handle scheduling, records, and insurance verification — so you can focus on getting the care you need.",
     primaryLabel: "Book Your Consultation",
     primaryHref: "/appointment",
-    secondaryLabel: "Contact Us",
-    secondaryHref: "/contact",
+    secondaryLabel: "Chat With Our Care Team",
+    secondaryHref: "https://wa.me/917389321886?text=Hello%20I%20would%20like%20to%20know%20more%20about%20the%20services%20offered%20by%20Center%20for%20Neuroscience.",
   },
 } as const;

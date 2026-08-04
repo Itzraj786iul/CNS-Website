@@ -6,6 +6,7 @@ export type DoctorProfile = {
   experience: string;
   specializations: string[];
   bio: string;
+  available?: boolean;
   featured?: boolean;
   image: {
     src: string;
@@ -29,10 +30,10 @@ export const doctorsContent = {
     eyebrow: "Our Physicians",
     title: "Meet Our Neuroscience Specialists",
     description:
-      "Board-certified clinicians with advanced fellowship training — committed to accurate diagnosis, evidence-based treatment, and care that respects every patient.",
+      "When you or someone you love needs neurological care, you deserve specialists who listen, explain clearly, and treat you like family — not a case file.",
   },
   introduction:
-    "Our medical team includes board-certified neurologists, neurosurgeons, psychiatrists, and rehabilitation specialists. Each doctor brings subspecialty expertise and a patient-first approach to every consultation.",
+    "Our team includes neurologists, neurosurgeons, psychiatrists, and rehabilitation specialists. Each doctor brings deep subspecialty expertise — and the patience to walk you through every step of your care.",
   filterDepartments: [
     "All Departments",
     "Neurology",
@@ -49,7 +50,7 @@ export const doctorsContent = {
       qualification: "MD, DM (Neurology)",
       experience: "15+ years",
       specializations: ["Stroke", "Epilepsy", "Movement Disorders"],
-      bio: "Specializes in acute stroke management and long-term epilepsy care with expertise in advanced EEG interpretation.",
+      bio: "Walks patients and families through stroke and epilepsy care with clarity — helping you understand every decision before it is made.",
       featured: true,
       image: doctorImage("Dr. Ananya Sharma", 0),
     },
@@ -60,7 +61,7 @@ export const doctorsContent = {
       qualification: "MCh (Neurosurgery)",
       experience: "18+ years",
       specializations: ["Brain Tumors", "Spine Surgery", "Vascular"],
-      bio: "Leads the neurosurgery program with focus on minimally invasive spine procedures and awake craniotomy.",
+      bio: "Explains every surgical option in plain language so you and your family feel informed and confident before any procedure.",
       featured: true,
       image: doctorImage("Dr. Rajesh Menon", 1),
     },
@@ -71,7 +72,7 @@ export const doctorsContent = {
       qualification: "MD (Psychiatry)",
       experience: "12+ years",
       specializations: ["Mood Disorders", "Anxiety", "Neuropsychiatry"],
-      bio: "Integrates pharmacological and psychotherapeutic approaches for complex psychiatric and neurological comorbidities.",
+      bio: "Creates a safe, supportive space for patients and families navigating mental health alongside neurological conditions.",
       featured: true,
       image: doctorImage("Dr. Priya Nair", 2),
     },
@@ -82,7 +83,7 @@ export const doctorsContent = {
       qualification: "DM (Neuro Rehabilitation)",
       experience: "10+ years",
       specializations: ["Stroke Rehab", "Gait Training", "Cognitive Recovery"],
-      bio: "Designs individualized rehabilitation programs combining physiotherapy, robotics, and cognitive therapy.",
+      bio: "Guides recovery with realistic goals — helping patients regain mobility, speech, and independence step by step.",
       image: doctorImage("Dr. Vikram Patel", 3),
     },
     {
@@ -173,11 +174,13 @@ export const doctorsContent = {
     { value: "50", suffix: "K+", label: "Patients Cared For Annually" },
   ],
   cta: {
-    title: "Consult Our Experts",
+    title: "Talk to a Neuroscience Specialist",
     description:
-      "Connect with the right specialist for your condition. Our coordinators will help you book at a convenient time.",
+      "Not sure which doctor you need? Our coordinators will listen to your concerns and connect you with the right specialist — usually within a few days.",
     primaryLabel: "Book Your Consultation",
     primaryHref: "/appointment",
+    secondaryLabel: "Chat With Our Care Team",
+    secondaryHref: "https://wa.me/917389321886?text=Hello%20I%20would%20like%20to%20know%20more%20about%20the%20services%20offered%20by%20Center%20for%20Neuroscience.",
   },
 } as const;
 

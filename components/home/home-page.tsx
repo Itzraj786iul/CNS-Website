@@ -1,5 +1,7 @@
 import { AboutPreviewSection } from "@/components/home/about-preview-section";
 import { AppointmentCtaSection } from "@/components/home/appointment-cta-section";
+import { CareJourneySection } from "@/components/home/care-journey-section";
+import { ConditionsSection } from "@/components/home/conditions-section";
 import { ContactPreviewSection } from "@/components/home/contact-preview-section";
 import { DepartmentsPreviewSection } from "@/components/home/departments-preview-section";
 import { FacilitiesSection } from "@/components/home/facilities-section";
@@ -27,7 +29,9 @@ function HomePage() {
         />
       </Section>
       <AboutPreviewSection />
+      <ConditionsSection />
       <DepartmentsPreviewSection />
+      <CareJourneySection />
       <WhyChooseSection />
       <SpecialistsSection />
       <FacilitiesSection />

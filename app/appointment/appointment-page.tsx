@@ -5,6 +5,7 @@ import Link from "next/link";
 import { CalendarDays, CheckCircle2, Clock, FileText, Phone, Siren } from "lucide-react";
 
 import { PageHero } from "@/components/common/page-hero";
+import { PatientConversionCta } from "@/components/common/patient-conversion-cta";
 import {
   appointmentDepartments,
   appointmentDoctors,
@@ -31,10 +32,10 @@ type FormData = {
 };
 
 const processSteps = [
-  { icon: FileText, title: "Submit Request", description: "Complete the form with your details and preferred schedule." },
-  { icon: Phone, title: "Confirmation Call", description: "Our coordinator will call to confirm your appointment within 24 hours." },
-  { icon: CalendarDays, title: "Visit CNS", description: "Arrive 15 minutes early with ID, insurance, and prior records." },
-  { icon: CheckCircle2, title: "Begin Your Care", description: "Meet your specialist and start your personalized treatment plan." },
+  { icon: FileText, title: "Submit Request", description: "Share your details and preferred time — it takes just a few minutes." },
+  { icon: Phone, title: "Confirmation Call", description: "Our coordinator calls within 24 hours to confirm and answer your questions." },
+  { icon: CalendarDays, title: "Visit CNS", description: "Arrive 15 minutes early with ID, insurance, and any prior reports you have." },
+  { icon: CheckCircle2, title: "Begin Your Care", description: "Meet your specialist, understand your condition, and leave with a clear plan." },
 ];
 
 function AppointmentPageContent() {
@@ -67,7 +68,7 @@ function AppointmentPageContent() {
     <>
       <PageHero
         title="Book Your Consultation"
-        description="Schedule with our neuroscience specialists. Complete the form below and our care coordinator will confirm your appointment promptly."
+        description="Tell us about your concern. Our care coordinator will call to confirm your appointment — usually within one business day — and help you prepare."
         eyebrow="Appointments"
         breadcrumb={[{ label: "Home", href: "/" }, { label: "Appointment" }]}
       />
@@ -215,6 +216,7 @@ function AppointmentPageContent() {
           </div>
         </Section>
       )}
+      <PatientConversionCta variant="emergency" />
     </>
   );
 }

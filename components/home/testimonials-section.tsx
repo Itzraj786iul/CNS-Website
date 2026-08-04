@@ -35,12 +35,14 @@ function HomeTestimonialCard({
   quote,
   author,
   role,
+  outcome,
   avatar,
   rating,
 }: {
   quote: string;
   author: string;
   role?: string;
+  outcome?: string;
   avatar: string;
   rating: number;
 }) {
@@ -54,6 +56,11 @@ function HomeTestimonialCard({
       <Card className="h-full card-premium card-premium-hover ring-0">
         <CardContent className="flex h-full flex-col gap-6 px-7 py-8 sm:px-8 sm:py-9">
           <StarRating rating={rating} />
+          {outcome ? (
+            <p className="text-xs font-semibold uppercase tracking-[0.1em] text-secondary">
+              {outcome}
+            </p>
+          ) : null}
           <blockquote className="relative flex-1 space-y-3">
             <span className="quote-mark" aria-hidden="true">
               &ldquo;
@@ -96,7 +103,7 @@ function TestimonialsSection() {
             align="center"
             eyebrow="Patient Voices"
             title="Stories of Recovery & Trust"
-            description="Real experiences from patients and families who placed their most important health decisions in our care."
+            description="Recovery stories from patients and families — focused on outcomes, communication, and the trust built along the way."
           />
         </AnimatedSection>
 

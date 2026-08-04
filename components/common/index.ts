@@ -3,6 +3,7 @@ export { Breadcrumb } from "./breadcrumb";
 export type { BreadcrumbItem } from "./breadcrumb";
 export { Container } from "./container";
 export { CTASection } from "./cta-section";
+export { PatientConversionCta } from "./patient-conversion-cta";
 export { DepartmentCard } from "./department-card";
 export { DoctorCard } from "./doctor-card";
 export { EmergencyBanner } from "./emergency-banner";

@@ -7,6 +7,7 @@ import {
   FaqSection,
 } from "@/components/contact/contact-sections";
 import { PageHero } from "@/components/common/page-hero";
+import { PatientConversionCta } from "@/components/common/patient-conversion-cta";
 
 function ContactPageContent() {
   return (
@@ -22,6 +23,7 @@ function ContactPageContent() {
       <DepartmentsContactSection />
       <EmergencyBannerSection />
       <FaqSection />
+      <PatientConversionCta variant="contact" />
     </>
   );
 }

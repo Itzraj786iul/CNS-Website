@@ -83,12 +83,12 @@ export const researchContent = {
     { value: "12", suffix: "", label: "National Awards" },
   ],
   cta: {
-    title: "Collaborate With Our Research Team",
+    title: "Need Clinical Care or Research Collaboration?",
     description:
-      "Researchers, clinicians, and institutions interested in neuroscience research are welcome to connect with our academic affairs office.",
-    primaryLabel: "Contact Research Office",
-    primaryHref: "/contact",
-    secondaryLabel: "View News & Events",
-    secondaryHref: "/news",
+      "Patients seeking treatment can book a consultation with our specialists. Researchers and institutions are welcome to connect with our academic affairs office.",
+    primaryLabel: "Book Your Consultation",
+    primaryHref: "/appointment",
+    secondaryLabel: "Chat With Our Care Team",
+    secondaryHref: "https://wa.me/917389321886?text=Hello%20I%20would%20like%20to%20know%20more%20about%20the%20services%20offered%20by%20Center%20for%20Neuroscience.",
   },
 } as const;
