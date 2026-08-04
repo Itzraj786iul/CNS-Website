@@ -27,7 +27,7 @@ export default function NotFound() {
           The page you are looking for may have been moved, removed, or is
           temporarily unavailable. Let us help you find the right path.
         </p>
-        <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <div className="mt-8 flex w-full flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center sm:justify-center">
           <Button
             nativeButton={false}
             render={
@@ -37,7 +37,7 @@ export default function NotFound() {
               </Link>
             }
             size="lg"
-            className="h-12 px-6"
+            className="h-12 w-full px-6 sm:w-auto"
           />
           <Button
             nativeButton={false}
@@ -49,7 +49,7 @@ export default function NotFound() {
             }
             variant="outline"
             size="lg"
-            className="h-12 border-cns-border px-6"
+            className="h-12 w-full border-cns-border px-6 sm:w-auto"
           />
         </div>
       </Container>

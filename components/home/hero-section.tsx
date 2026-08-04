@@ -196,7 +196,7 @@ function HeroSection() {
             </motion.div>
 
             <motion.div variants={fadeUp} className="space-y-2">
-              <h1 className="font-heading text-[1.625rem] font-semibold leading-[1.08] tracking-[-0.035em] text-cns-navy min-[375px]:text-[1.875rem] sm:text-[2rem] lg:text-[2.25rem] lg:leading-[1.06]">
+              <h1 className="heading-hero">
                 Center for{" "}
                 <span className="text-gradient-brand">Neuroscience</span>
               </h1>
@@ -303,7 +303,7 @@ function HeroSection() {
             <motion.div variants={fadeUp} className="text-center">
               <p className="eyebrow-pill mx-auto">Clinical Credibility</p>
             </motion.div>
-            <div className="grid gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4">
+            <div className="grid gap-3 sm:grid-cols-2 sm:gap-4 md:grid-cols-4 lg:grid-cols-4">
               {heroStatistics.map((stat) => (
                 <motion.div key={stat.id} variants={fadeUp}>
                   <StatisticsCardFromStat

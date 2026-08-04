@@ -35,7 +35,7 @@ const variantMap = {
 function ContactCardsSection() {
   return (
     <Section variant="white" spacing="default" className="!pt-0">
-      <AnimatedSection stagger className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <AnimatedSection stagger className="grid gap-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4">
         {contactContent.cards.map((card) => {
           const Icon = iconMap[card.type];
           const variant = variantMap[card.type];
@@ -68,8 +68,8 @@ function ContactCardsSection() {
 function ContactFormSection() {
   return (
     <Section variant="default" spacing="default">
-      <div className="grid gap-5 lg:grid-cols-12 lg:items-start lg:gap-6">
-        <AnimatedSection className="lg:col-span-7">
+      <div className="grid gap-5 md:grid-cols-12 md:items-start md:gap-6 lg:gap-6">
+        <AnimatedSection className="min-w-0 md:col-span-7">
           <div className="mb-5 space-y-3">
             <SectionHeading
               eyebrow="Get in Touch"
@@ -114,7 +114,7 @@ function ContactFormSection() {
           </form>
         </AnimatedSection>
 
-        <AnimatedSection className="lg:col-span-5 lg:self-stretch">
+        <AnimatedSection className="min-w-0 md:col-span-5 md:self-stretch lg:col-span-5">
           <LocationMapPanel
             className="h-full"
             hours={contactContent.timings.schedules}
@@ -172,7 +172,7 @@ function EmergencyBannerSection() {
 function FaqSection() {
   return (
     <Section variant="white" spacing="default">
-      <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr] lg:items-stretch lg:gap-6">
+      <div className="grid gap-5 md:grid-cols-[0.9fr_1.1fr] md:items-stretch md:gap-6 lg:gap-6">
         <AnimatedSection className="flex flex-col justify-center">
           <SectionHeading
             eyebrow="Your Questions"

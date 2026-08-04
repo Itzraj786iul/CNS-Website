@@ -22,7 +22,7 @@ function StatisticsSection() {
           />
         </AnimatedSection>
 
-        <AnimatedSection stagger className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <AnimatedSection stagger className="grid gap-4 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4">
           {doctorsStatistics.map((stat) => (
             <motion.div key={stat.id} variants={fadeUp}>
               <StatisticsCardFromStat

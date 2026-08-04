@@ -90,10 +90,10 @@ function AppointmentPageContent() {
               <div className="mt-8 rounded-2xl border border-cns-border/80 bg-card p-6 text-left">
                 <h3 className="font-heading text-sm font-semibold uppercase tracking-[0.12em] text-muted-foreground">Request Summary</h3>
                 <dl className="mt-4 space-y-3 text-sm">
-                  <div className="flex justify-between gap-4"><dt className="text-muted-foreground">Department</dt><dd className="font-medium text-cns-navy">{formData.department}</dd></div>
-                  <div className="flex justify-between gap-4"><dt className="text-muted-foreground">Doctor</dt><dd className="font-medium text-cns-navy">{formData.doctor}</dd></div>
-                  <div className="flex justify-between gap-4"><dt className="text-muted-foreground">Preferred Date</dt><dd className="font-medium text-cns-navy">{formData.date}</dd></div>
-                  <div className="flex justify-between gap-4"><dt className="text-muted-foreground">Preferred Time</dt><dd className="font-medium text-cns-navy">{formData.time}</dd></div>
+                  <div className="flex flex-col gap-0.5 sm:flex-row sm:justify-between sm:gap-4"><dt className="shrink-0 text-muted-foreground">Department</dt><dd className="min-w-0 font-medium text-cns-navy sm:text-right">{formData.department}</dd></div>
+                  <div className="flex flex-col gap-0.5 sm:flex-row sm:justify-between sm:gap-4"><dt className="shrink-0 text-muted-foreground">Doctor</dt><dd className="min-w-0 font-medium text-cns-navy sm:text-right">{formData.doctor}</dd></div>
+                  <div className="flex flex-col gap-0.5 sm:flex-row sm:justify-between sm:gap-4"><dt className="shrink-0 text-muted-foreground">Preferred Date</dt><dd className="min-w-0 font-medium text-cns-navy sm:text-right">{formData.date}</dd></div>
+                  <div className="flex flex-col gap-0.5 sm:flex-row sm:justify-between sm:gap-4"><dt className="shrink-0 text-muted-foreground">Preferred Time</dt><dd className="min-w-0 font-medium text-cns-navy sm:text-right">{formData.time}</dd></div>
                 </dl>
               </div>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
@@ -105,7 +105,7 @@ function AppointmentPageContent() {
         </Section>
       ) : (
         <Section variant="default" spacing="default" className="!pt-6">
-          <div className="grid gap-5 lg:grid-cols-[1.3fr_0.7fr] lg:items-start lg:gap-6">
+          <div className="grid gap-5 md:grid-cols-[1.3fr_0.7fr] md:items-start md:gap-6 lg:gap-6">
             <AnimatedSection>
               <form
                 className="space-y-4 rounded-[20px] border border-cns-border/80 bg-card p-5 shadow-soft sm:p-6"
@@ -158,7 +158,8 @@ function AppointmentPageContent() {
                   render={
                     <Link href={getEmergencyTelHref()}>
                       <Siren />
-                      Need Immediate Help? Call Emergency
+                      <span className="sm:hidden">Call Emergency</span>
+                      <span className="hidden sm:inline">Need Immediate Help? Call Emergency</span>
                     </Link>
                   }
                   variant="destructive"

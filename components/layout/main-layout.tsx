@@ -27,7 +27,7 @@ function MainLayout({ children }: MainLayoutProps) {
       <RouteTransition className="flex flex-1 flex-col">
         <main
           id="main-content"
-          className="flex flex-1 flex-col pb-[calc(3.5rem+max(0.5rem,env(safe-area-inset-bottom)))] md:pb-0"
+          className="flex flex-1 flex-col pb-[calc(3.5rem+max(0.5rem,env(safe-area-inset-bottom)))] lg:pb-0"
         >
           {children}
         </main>

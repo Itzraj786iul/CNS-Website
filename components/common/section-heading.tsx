@@ -36,11 +36,7 @@ function SectionHeading({
       ) : null}
       <h2
         className={cn(
-          "font-heading font-semibold tracking-[-0.02em] text-cns-navy",
-          size === "default" &&
-            "text-[1.375rem] leading-[1.2] min-[375px]:text-[1.625rem] sm:text-[1.875rem] lg:text-[1.875rem] lg:leading-[1.18]",
-          size === "lg" &&
-            "text-[1.625rem] sm:text-[2rem] lg:text-[2.25rem] lg:leading-[1.14]"
+          size === "lg" ? "heading-section text-[1.625rem] sm:text-[2rem] lg:text-[2.25rem]" : "heading-section"
         )}
       >
         {title}

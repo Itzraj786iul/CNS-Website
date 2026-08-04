@@ -17,7 +17,7 @@ function TreatmentProcessSection() {
         <AnimatedSection className="mx-auto max-w-3xl text-center">
           <SectionHeading align="center" eyebrow={process.eyebrow} title={process.title} description={process.description} />
         </AnimatedSection>
-        <AnimatedSection stagger className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <AnimatedSection stagger className="grid gap-4 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4">
           {process.steps.map((step) => (
             <motion.div key={step.step} variants={fadeUp}>
               <motion.div initial="rest" whileHover="hover" variants={hoverLift}>

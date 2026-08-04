@@ -39,10 +39,10 @@ function NavLink({
       href={href}
       aria-current={isActive ? "page" : undefined}
       className={cn(
-        "relative shrink-0 rounded-full font-medium transition-[color,background-color,box-shadow,transform] duration-300 active:scale-[0.98]",
+        "relative min-w-0 rounded-full font-medium transition-[color,background-color,box-shadow,transform] duration-300 active:scale-[0.98]",
         compact
-          ? "px-2.5 py-1.5 text-xs"
-          : "px-2.5 py-2 text-[13px] xl:px-3.5 xl:py-2.5 xl:text-sm",
+          ? "px-2 py-1.5 text-xs"
+          : "px-2 py-1.5 text-xs lg:px-2.5 lg:py-2 lg:text-[13px] xl:px-3.5 xl:py-2.5 xl:text-sm",
         isActive
           ? "text-primary"
           : "text-cns-navy/88 hover:bg-card/85 hover:text-cns-navy hover:shadow-soft dark:hover:bg-card/70"
@@ -108,7 +108,7 @@ function Navbar() {
 
           <nav
             aria-label="Main navigation"
-            className="hidden min-w-0 flex-1 items-center justify-center gap-1 lg:flex xl:gap-1.5"
+            className="hidden min-w-0 flex-1 items-center justify-center gap-0.5 overflow-hidden lg:flex xl:gap-1.5"
           >
             {primaryNavigation.map((item) => (
               <NavLink

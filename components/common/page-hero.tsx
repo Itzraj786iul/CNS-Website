@@ -6,7 +6,6 @@ import * as React from "react";
 import { Breadcrumb, type BreadcrumbItem } from "@/components/common/breadcrumb";
 import { Container } from "@/components/common/container";
 import { fadeUp, staggerContainer } from "@/lib/motion";
-import { cn } from "@/lib/utils";
 
 type PageHeroProps = {
   title: string;
@@ -92,10 +91,7 @@ function PageHero({ title, description, breadcrumb, eyebrow }: PageHeroProps) {
           <motion.div variants={fadeUp} className="space-y-3">
             <div className="cns-brand-bar" aria-hidden="true" />
             <h1
-              className={cn(
-                "font-heading font-semibold tracking-[-0.025em] text-cns-navy text-balance",
-                "text-[1.5rem] leading-[1.14] min-[375px]:text-[1.75rem] sm:text-[1.875rem] lg:text-[2.125rem] lg:leading-[1.12]"
-              )}
+              className="heading-page"
             >
               {title}
             </h1>

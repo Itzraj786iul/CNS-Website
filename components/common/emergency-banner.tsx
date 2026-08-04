@@ -64,7 +64,7 @@ function EmergencyBanner({
             </a>
           }
           variant="destructiveSolid"
-          className="h-11 shrink-0 rounded-full px-6"
+          className="h-11 w-full shrink-0 rounded-full px-6 sm:w-auto"
         />
       </div>
     </div>

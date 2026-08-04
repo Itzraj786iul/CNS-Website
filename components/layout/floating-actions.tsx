@@ -99,7 +99,7 @@ function MobileBarItem({ action }: { action: QuickAction }) {
   const Icon = action.icon;
 
   const className = cn(
-    "flex min-h-[2.75rem] flex-1 items-center justify-center gap-2 rounded-xl px-3 py-2.5 text-sm font-semibold transition-all duration-200 active:scale-[0.98]",
+    "flex min-h-[2.75rem] min-w-0 flex-1 items-center justify-center gap-2 rounded-xl px-2 py-2.5 text-sm font-semibold transition-all duration-200 active:scale-[0.98] sm:px-3",
     variantStyles[action.variant].mobile
   );
 
@@ -130,7 +130,7 @@ function FloatingActions() {
     <>
       <aside
         aria-label="Quick actions"
-        className="fixed bottom-20 right-4 z-40 hidden flex-col items-end gap-2 md:flex xl:right-5"
+        className="fixed bottom-20 right-4 z-40 hidden flex-col items-end gap-2 lg:flex xl:right-5"
       >
         {quickActions.map((action) => (
           <DesktopDockItem key={action.label} action={action} />
@@ -139,7 +139,7 @@ function FloatingActions() {
 
       <nav
         aria-label="Quick actions"
-        className="fixed inset-x-0 bottom-0 z-40 border-t border-border/80 bg-card/95 shadow-[0_-4px_24px_-8px_rgba(22,50,74,0.15)] backdrop-blur-xl md:hidden dark:shadow-[0_-4px_24px_-8px_rgba(0,0,0,0.4)]"
+        className="fixed inset-x-0 bottom-0 z-40 border-t border-border/80 bg-card/95 shadow-[0_-4px_24px_-8px_rgba(22,50,74,0.15)] backdrop-blur-xl lg:hidden dark:shadow-[0_-4px_24px_-8px_rgba(0,0,0,0.4)]"
       >
         <div
           className="flex gap-2 px-3 py-2"

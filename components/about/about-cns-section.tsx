@@ -13,7 +13,7 @@ function AboutCnsSection() {
 
   return (
     <Section variant="white" spacing="default">
-      <div className="grid items-start gap-5 lg:grid-cols-2 lg:gap-6">
+      <div className="grid items-start gap-5 md:grid-cols-2 md:gap-6 lg:gap-6">
         <AnimatedSection className="relative order-2 lg:order-1 lg:flex lg:flex-col lg:justify-center">
           <HospitalImage
             src={aboutCns.image.src}

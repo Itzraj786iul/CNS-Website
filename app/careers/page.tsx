@@ -44,7 +44,7 @@ export default function CareersPage() {
           title="Join a team advancing brain health"
           description="We welcome experienced clinicians, emerging researchers, and dedicated support professionals who share our commitment to neuroscience excellence."
         />
-        <div className="mt-8 grid gap-5 md:grid-cols-3">
+        <div className="mt-8 grid gap-5 sm:grid-cols-2 md:grid-cols-3">
           {careerAreas.map((area) => (
             <article
               key={area.title}

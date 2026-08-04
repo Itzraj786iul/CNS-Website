@@ -35,18 +35,18 @@ export function resolveContentDensity(
 
 /** Shared image ratios for split / media sections */
 export const mediaImageClasses = {
-  preview: "relative image-placeholder aspect-[3/2] lg:max-h-[150px] lg:w-full",
-  listing: "relative image-placeholder aspect-[3/2] lg:max-h-[190px] lg:w-full",
-  detail: "relative image-placeholder aspect-[3/2] lg:max-h-[240px] lg:w-full",
+  preview: "relative image-placeholder aspect-[3/2] w-full md:max-h-[170px] lg:max-h-[150px]",
+  listing: "relative image-placeholder aspect-[3/2] w-full md:max-h-[210px] lg:max-h-[190px]",
+  detail: "relative image-placeholder aspect-[3/2] w-full md:max-h-[250px] lg:max-h-[240px]",
 } as const;
 
-/** Split column ratios for SplitContentSection */
+/** Split column ratios — tablet (md) uses 2-col where noted; desktop (lg) uses ratio presets */
 export const splitColumnClasses = {
-  equal: "lg:grid-cols-2",
-  narrowWide: "lg:grid-cols-[0.9fr_1.1fr]",
-  wideNarrow: "lg:grid-cols-[1.1fr_0.9fr]",
-  contentAside: "lg:grid-cols-[1fr_1.4fr]",
-  contentWide: "lg:grid-cols-[1fr_1.2fr]",
+  equal: "md:grid-cols-2 lg:grid-cols-2",
+  narrowWide: "md:grid-cols-2 lg:grid-cols-[0.9fr_1.1fr]",
+  wideNarrow: "md:grid-cols-2 lg:grid-cols-[1.1fr_0.9fr]",
+  contentAside: "md:grid-cols-2 lg:grid-cols-[1fr_1.4fr]",
+  contentWide: "md:grid-cols-2 lg:grid-cols-[1fr_1.2fr]",
 } as const;
 
 export type SplitRatio = keyof typeof splitColumnClasses;

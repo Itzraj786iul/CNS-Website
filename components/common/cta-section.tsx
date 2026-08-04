@@ -132,7 +132,7 @@ function CTASection({
         {(primaryAction || secondaryAction) && (
           <div
             className={cn(
-              "flex flex-col gap-3 sm:flex-row sm:items-center",
+              "flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:items-center",
               isCentered && "sm:justify-center"
             )}
           >
@@ -147,7 +147,7 @@ function CTASection({
                 }
                 size={size === "compact" ? "default" : "lg"}
                 className={cn(
-                  "rounded-full px-6",
+                  "w-full rounded-full px-6 sm:w-auto",
                   variant === "brand" &&
                     "bg-white text-primary shadow-soft hover:bg-white/90",
                   variant === "navy" &&
@@ -167,7 +167,7 @@ function CTASection({
                 variant="outline"
                 size={size === "compact" ? "default" : "lg"}
                 className={cn(
-                  "rounded-full px-6",
+                  "w-full rounded-full px-6 sm:w-auto",
                   variant === "brand" &&
                     "border-white/30 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 hover:text-white",
                   variant === "navy" &&

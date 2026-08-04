@@ -120,7 +120,7 @@ function StatisticsCard({
               </span>
             ) : null}
           </p>
-          <p className={cn("font-semibold tracking-wide text-muted-foreground", styles.label)}>
+          <p className={cn("line-clamp-2 font-semibold tracking-wide text-muted-foreground", styles.label)}>
             {label}
           </p>
         </CardContent>

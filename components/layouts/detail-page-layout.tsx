@@ -33,11 +33,11 @@ function DetailPageLayout({
       <Section variant="default" spacing="default">
         <div
           className={cn(
-            sidebar ? "grid gap-6 lg:grid-cols-[1fr_320px] lg:items-start lg:gap-8" : undefined
+            sidebar ? "grid min-w-0 gap-6 md:grid-cols-1 lg:grid-cols-[1fr_320px] lg:items-start lg:gap-8" : undefined
           )}
         >
-          <main>{children}</main>
-          {sidebar ? <aside className="space-y-4">{sidebar}</aside> : null}
+          <main className="min-w-0">{children}</main>
+          {sidebar ? <aside className="min-w-0 space-y-4">{sidebar}</aside> : null}
         </div>
       </Section>
       {related ? (

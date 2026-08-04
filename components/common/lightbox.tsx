@@ -173,9 +173,9 @@ type MasonryGalleryProps = {
 };
 
 const galleryTileHeights: Record<CardVariant, [string, string, string]> = {
-  compact: ["max-h-[140px]", "max-h-[130px]", "max-h-[135px]"],
-  standard: ["max-h-[180px]", "max-h-[160px]", "max-h-[170px]"],
-  detailed: ["max-h-[220px]", "max-h-[200px]", "max-h-[210px]"],
+  compact: ["max-h-[120px] sm:max-h-[140px]", "max-h-[115px] sm:max-h-[130px]", "max-h-[118px] sm:max-h-[135px]"],
+  standard: ["max-h-[150px] sm:max-h-[180px]", "max-h-[140px] sm:max-h-[160px]", "max-h-[145px] sm:max-h-[170px]"],
+  detailed: ["max-h-[180px] sm:max-h-[220px]", "max-h-[170px] sm:max-h-[200px]", "max-h-[175px] sm:max-h-[210px]"],
 };
 
 function MasonryGallery({
@@ -187,10 +187,10 @@ function MasonryGallery({
   const heights = galleryTileHeights[variant];
   const columnClass =
     variant === "compact"
-      ? "columns-1 gap-3 space-y-3 sm:columns-2 lg:columns-4"
+      ? "columns-1 gap-3 space-y-3 sm:columns-2 md:columns-3 lg:columns-4"
       : variant === "detailed"
-        ? "columns-1 gap-4 space-y-4 sm:columns-2 lg:columns-3"
-        : "columns-1 gap-3 space-y-3 sm:columns-2 lg:columns-3 xl:columns-4";
+        ? "columns-1 gap-4 space-y-4 sm:columns-2 md:columns-2 lg:columns-3"
+        : "columns-1 gap-3 space-y-3 sm:columns-2 md:columns-2 lg:columns-3 xl:columns-4";
 
   return (
     <div className={cn(columnClass, className)}>

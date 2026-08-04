@@ -78,7 +78,7 @@ function DepartmentDetailPageContent({ slug }: DepartmentDetailPageContentProps)
             title="Related Departments"
             description="CNS departments work together so your care stays coordinated."
           />
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
             {relatedDepartments.map((item) => (
               <DepartmentDetailCard key={item.slug} {...item} variant="compact" />
             ))}

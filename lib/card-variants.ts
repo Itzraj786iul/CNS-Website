@@ -4,9 +4,9 @@ export const CARD_VARIANT_DEFAULT: CardVariant = "standard";
 
 /** Responsive grid columns per variant (mobile 1, tablet 2, desktop per spec). */
 export const cardGridClasses: Record<CardVariant, string> = {
-  compact: "grid gap-3 sm:grid-cols-2 lg:grid-cols-4",
-  standard: "grid gap-3.5 sm:grid-cols-2 lg:grid-cols-3",
-  detailed: "grid gap-4 sm:grid-cols-2 xl:grid-cols-3",
+  compact: "grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4",
+  standard: "grid gap-3.5 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3",
+  detailed: "grid gap-4 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3",
 };
 
 /** Portrait image max-heights per variant (px). */

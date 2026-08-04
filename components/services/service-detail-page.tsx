@@ -81,7 +81,7 @@ function ServiceDetailPageContent({ slug }: ServiceDetailPageContentProps) {
             title="Other Services You May Need"
             description="Explore additional neurological services available at CNS."
           />
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
             {relatedServices.map((item) => (
               <ServiceCard key={item.slug} {...item} variant="compact" />
             ))}

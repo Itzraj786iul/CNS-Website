@@ -24,7 +24,7 @@ function ImageWithContentSection({
     <AnimatedSection
       className={cn(
         "relative lg:flex lg:flex-col lg:justify-center",
-        imagePosition === "right" && "lg:order-2"
+        imagePosition === "right" && "md:order-2 lg:order-2"
       )}
       direction={imagePosition === "left" ? "left" : "right"}
     >
@@ -36,7 +36,7 @@ function ImageWithContentSection({
     <div
       className={cn(
         "section-stack",
-        imagePosition === "right" ? "lg:order-1" : "lg:order-2"
+        imagePosition === "right" ? "md:order-1 lg:order-1" : "md:order-2 lg:order-2"
       )}
     >
       {body}
@@ -45,7 +45,7 @@ function ImageWithContentSection({
 
   return (
     <Section className={className} {...sectionProps}>
-      <div className="grid items-start gap-5 lg:grid-cols-2 lg:gap-6">
+      <div className="grid items-start gap-5 md:grid-cols-2 md:gap-6 lg:gap-6">
         {imagePosition === "left" ? (
           <>
             {imageColumn}

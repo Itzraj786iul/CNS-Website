@@ -47,7 +47,7 @@ function SplitContentSection({
       ) : null}
       <div
         className={cn(
-          "grid gap-5 lg:items-stretch lg:gap-6",
+          "grid gap-5 md:grid-cols-2 md:items-stretch md:gap-6 lg:items-stretch lg:gap-6",
           splitColumnClasses[ratio]
         )}
       >

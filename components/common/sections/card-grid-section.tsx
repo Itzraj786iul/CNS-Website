@@ -59,7 +59,7 @@ function CardGridSection({
         <AnimatedSection
           className={cn(
             headerAction
-              ? "flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between"
+              ? "flex min-w-0 flex-col gap-4 sm:flex-row sm:items-end sm:justify-between"
               : heading.align === "center" && "mx-auto max-w-3xl text-center"
           )}
         >

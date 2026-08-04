@@ -45,8 +45,8 @@ function LocationMapPanel({
         className
       )}
     >
-      <div className="grid lg:grid-cols-2 lg:items-stretch">
-        <div className="relative min-h-[160px] sm:min-h-[180px] lg:min-h-[220px]">
+      <div className="grid md:grid-cols-2 lg:grid-cols-2 lg:items-stretch">
+        <div className="relative min-h-[160px] sm:min-h-[180px] md:min-h-[200px] lg:min-h-[220px]">
           <iframe
             title={`${siteConfig.name} location on Google Maps`}
             src={embedUrl}
@@ -56,7 +56,7 @@ function LocationMapPanel({
             allowFullScreen
           />
         </div>
-        <div className="flex flex-col justify-center gap-3.5 border-t border-border p-5 sm:p-6 lg:border-t-0 lg:border-l">
+        <div className="flex flex-col justify-center gap-3.5 border-t border-border p-5 sm:p-6 md:border-t-0 md:border-l lg:border-l">
           <div className="space-y-2">
             <IconBox icon={MapPin} variant="orange" size="sm" />
             <h3 className="font-heading text-lg font-semibold text-cns-navy">
@@ -90,7 +90,7 @@ function LocationMapPanel({
                 </Link>
               }
               variant="outline"
-              className="h-[46px] w-fit rounded-full px-5"
+              className="h-[46px] w-full rounded-full px-5 sm:w-fit"
               aria-label={`Get directions to ${siteConfig.name}`}
             />
           ) : null}

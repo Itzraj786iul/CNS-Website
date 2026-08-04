@@ -76,7 +76,7 @@ function PatientSafetySection() {
         <AnimatedSection className="mx-auto max-w-3xl text-center">
           <SectionHeading align="center" eyebrow={safety.eyebrow} title={safety.title} description={safety.description} />
         </AnimatedSection>
-        <AnimatedSection stagger className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <AnimatedSection stagger className="grid gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {safety.items.map((item, index) => (
             <motion.div key={item.title} variants={fadeUp}>
               <motion.div initial="rest" whileHover="hover" variants={hoverLift}>
