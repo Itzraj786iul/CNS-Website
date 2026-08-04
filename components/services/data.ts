@@ -13,6 +13,13 @@ import {
   Zap,
 } from "lucide-react";
 
+import { standardAppointmentCta, standardWhatsAppCta } from "@/lib/content/cta";
+import {
+  homeImagePath,
+  hospitalImage,
+  IMAGE_CATEGORIES,
+} from "@/lib/content/images";
+
 export const servicesContent = {
   hero: {
     eyebrow: "Patient-Centred Neuroscience Care",
@@ -61,13 +68,16 @@ export const servicesContent = {
       "Transparent communication and shared decision-making",
     ],
   },
+  sectionImage: hospitalImage(
+    homeImagePath("patient-care"),
+    "Patient receiving neurological care at Center for Neuroscience",
+    IMAGE_CATEGORIES.patientCare
+  ),
   cta: {
     title: "Book Your Consultation",
     description:
       "Our coordinators handle scheduling, records, and insurance verification — so you can focus on getting the care you need.",
-    primaryLabel: "Book Your Consultation",
-    primaryHref: "/appointment",
-    secondaryLabel: "Chat With Our Care Team",
-    secondaryHref: "https://wa.me/917389321886?text=Hello%20I%20would%20like%20to%20know%20more%20about%20the%20services%20offered%20by%20Center%20for%20Neuroscience.",
+    ...standardAppointmentCta,
+    ...standardWhatsAppCta(),
   },
 } as const;

@@ -35,3 +35,12 @@ export function YouTubeIcon(props: IconProps) {
     </svg>
   );
 }
+
+export function TwitterIcon(props: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
+      <path d="M17.687 3H20.5l-6.563 7.5L21.5 21h-6.25l-4.875-6.375L4.75 21H1.937l7.031-8.042L2.5 3h6.406l4.406 5.833L17.687 3Zm-2.188 16.2h1.719L8.594 5.63H6.75l8.749 13.57Z" />
+    </svg>
+  );
+}
+

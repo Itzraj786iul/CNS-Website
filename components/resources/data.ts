@@ -1,5 +1,6 @@
 import type { FAQItem } from "@/components/common/faq-card";
 
+import { standardAppointmentCta, standardWhatsAppCta } from "@/lib/content/cta";
 import { siteConfig } from "@/lib/constants/site";
 
 export const resourcesContent = {
@@ -73,9 +74,7 @@ export const resourcesContent = {
     title: "Questions About Your Care?",
     description:
       "Our patient services team can help you prepare for your visit, understand insurance, and connect you with the right specialist.",
-    primaryLabel: "Book Your Consultation",
-    primaryHref: "/appointment",
-    secondaryLabel: "Chat With Our Care Team",
-    secondaryHref: "https://wa.me/917389321886?text=Hello%20I%20would%20like%20to%20know%20more%20about%20the%20services%20offered%20by%20Center%20for%20Neuroscience.",
+    ...standardAppointmentCta,
+    ...standardWhatsAppCta(),
   },
 } as const;

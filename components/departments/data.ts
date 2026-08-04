@@ -13,6 +13,13 @@ import {
   Users,
 } from "lucide-react";
 
+import { standardAppointmentCta, standardWhatsAppCta } from "@/lib/content/cta";
+import {
+  homeImagePath,
+  hospitalImage,
+  IMAGE_CATEGORIES,
+} from "@/lib/content/images";
+
 export type DepartmentItem = {
   title: string;
   description: string;
@@ -178,13 +185,16 @@ export const departmentsContent = {
       },
     ],
   },
+  sectionImage: hospitalImage(
+    homeImagePath("integrated-departments"),
+    "Integrated neuroscience departments at Center for Neuroscience",
+    IMAGE_CATEGORIES.consultationRoom
+  ),
   cta: {
     title: "Talk to a Neuroscience Specialist",
     description:
       "Unsure where to begin? Describe your symptoms to our care team — we will guide you to the right department and specialist.",
-    primaryLabel: "Book Your Consultation",
-    primaryHref: "/appointment",
-    secondaryLabel: "Chat With Our Care Team",
-    secondaryHref: "https://wa.me/917389321886?text=Hello%20I%20would%20like%20to%20know%20more%20about%20the%20services%20offered%20by%20Center%20for%20Neuroscience.",
+    ...standardAppointmentCta,
+    ...standardWhatsAppCta(),
   },
 } as const;

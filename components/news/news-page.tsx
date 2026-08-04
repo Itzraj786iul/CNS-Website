@@ -127,13 +127,21 @@ function NewsPageContent() {
               description="Highlights from our continued pursuit of excellence in neuroscience care."
             />
             <AnimatedSection stagger className="space-y-3">
-              {achievements.map((item) => (
-                <motion.div key={item} variants={fadeUp}>
-                  <div className="rounded-xl border border-cns-border/60 bg-card px-4 py-3 shadow-soft">
-                    <p className="line-clamp-3 text-[13px] leading-snug text-cns-navy/85">{item}</p>
-                  </div>
-                </motion.div>
-              ))}
+              {achievements.length > 0
+                ? achievements.map((item) => (
+                    <motion.div key={item} variants={fadeUp}>
+                      <div className="rounded-xl border border-cns-border/60 bg-card px-4 py-3 shadow-soft">
+                        <p className="line-clamp-3 text-[13px] leading-snug text-cns-navy/85">
+                          {item}
+                        </p>
+                      </div>
+                    </motion.div>
+                  ))
+                : (
+                    <p className="text-sm text-muted-foreground">
+                      Hospital milestones will appear here once verified by communications.
+                    </p>
+                  )}
             </AnimatedSection>
           </div>
         }

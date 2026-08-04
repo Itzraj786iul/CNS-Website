@@ -1,9 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import { ArrowRight, Calendar } from "lucide-react";
 import { motion } from "framer-motion";
 
+import { HospitalImage } from "@/components/common/hospital-image";
 import { Tag } from "@/components/common/tag";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -42,21 +42,14 @@ function NewsCard({
   return (
     <motion.article initial="rest" whileHover="hover" variants={hoverLift} className={className}>
       <Card className="card-premium card-premium-hover overflow-hidden ring-0">
-        <div
-          className={cn(
-            "image-placeholder relative aspect-[16/10] w-full",
-            cardLandscapeImageHeights[variant]
-          )}
-        >
-          <Image
-            src={image}
-            alt={title}
-            fill
-            loading="lazy"
-            className="img-zoom object-cover"
-            sizes="(max-width: 768px) 100vw, 33vw"
-          />
-        </div>
+        <HospitalImage
+          src={image}
+          alt={title}
+          aspect="landscape"
+          className={cn("w-full", cardLandscapeImageHeights[variant])}
+          imageClassName="object-cover"
+          sizes="(max-width: 768px) 100vw, 33vw"
+        />
         <CardContent className={contentPad}>
           <div className="flex flex-wrap items-center gap-2">
             <Tag variant={categoryVariant} className="px-2 py-0.5 text-[10px]">

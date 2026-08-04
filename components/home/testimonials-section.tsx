@@ -2,9 +2,11 @@
 
 import { TestimonialCard } from "@/components/common/testimonial-card";
 import { CardGridItem, CardGridSection } from "@/components/common/sections";
-import { testimonials } from "@/components/home/data";
+import { getPublishedTestimonials } from "@/lib/content/testimonials";
 
 function TestimonialsSection() {
+  const items = getPublishedTestimonials();
+
   return (
     <CardGridSection
       variant="default"
@@ -15,12 +17,22 @@ function TestimonialsSection() {
         eyebrow: "Patient Voices",
         title: "Stories of Recovery & Trust",
         description:
-          "Recovery stories from patients and families — focused on outcomes, communication, and the trust built along the way.",
+          "Patient and family experiences — shared with consent. Replace sample entries in lib/content/testimonials.ts with verified stories.",
       }}
     >
-      {testimonials.map((testimonial) => (
-        <CardGridItem key={testimonial.author}>
-          <TestimonialCard variant="compact" {...testimonial} />
+      {items.map((testimonial) => (
+        <CardGridItem key={testimonial.id}>
+          <TestimonialCard
+            variant="compact"
+            quote={testimonial.quote}
+            author={testimonial.name}
+            city={testimonial.city}
+            condition={testimonial.condition}
+            outcome={testimonial.outcome}
+            photo={testimonial.photo}
+            verified={testimonial.verified}
+            rating={testimonial.rating}
+          />
         </CardGridItem>
       ))}
     </CardGridSection>

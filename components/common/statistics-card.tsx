@@ -9,6 +9,11 @@ import {
   useCountUp,
 } from "@/hooks/use-count-up";
 import { Card, CardContent } from "@/components/ui/card";
+import {
+  getStatisticDisplayValue,
+  shouldAnimateStatistic,
+  type SiteStatistic,
+} from "@/lib/content/statistics";
 import { hoverLift } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 
@@ -20,6 +25,8 @@ type StatisticsCardProps = {
   size?: "small" | "standard" | "hero";
   className?: string;
   animate?: boolean;
+  /** When false, displays placeholder without count-up */
+  confirmed?: boolean;
 };
 
 const sizeStyles = {
@@ -43,6 +50,28 @@ const sizeStyles = {
   },
 } as const;
 
+function StatisticsCardFromStat({
+  stat,
+  size = "standard",
+  className,
+}: {
+  stat: SiteStatistic;
+  size?: StatisticsCardProps["size"];
+  className?: string;
+}) {
+  return (
+    <StatisticsCard
+      value={getStatisticDisplayValue(stat)}
+      suffix={stat.suffix}
+      label={stat.label}
+      size={size}
+      className={className}
+      animate={shouldAnimateStatistic(stat)}
+      confirmed={stat.confirmed}
+    />
+  );
+}
+
 function StatisticsCard({
   value,
   label,
@@ -50,15 +79,18 @@ function StatisticsCard({
   size = "standard",
   className,
   animate = true,
+  confirmed = true,
 }: StatisticsCardProps) {
   const styles = sizeStyles[size];
+  const isPlaceholder = !confirmed || value === "—";
   const numericValue = parseStatValue(value);
   const { count, ref } = useCountUp({
     end: numericValue,
-    enabled: animate,
+    enabled: animate && !isPlaceholder,
   });
 
-  const displayValue = animate ? formatStatValue(count, value) : value;
+  const displayValue =
+    animate && !isPlaceholder ? formatStatValue(count, value) : value;
 
   return (
     <motion.div
@@ -74,10 +106,15 @@ function StatisticsCard({
             className={cn("font-heading font-semibold tracking-tight", styles.value)}
             aria-label={`${value}${suffix ?? ""} ${label}`}
           >
-            <span className="text-gradient-brand" aria-hidden="true">
+            <span
+              className={cn(
+                isPlaceholder ? "text-muted-foreground" : "text-gradient-brand"
+              )}
+              aria-hidden="true"
+            >
               {displayValue}
             </span>
-            {suffix ? (
+            {suffix && !isPlaceholder ? (
               <span className={cn("text-primary", styles.suffix)} aria-hidden="true">
                 {suffix}
               </span>
@@ -92,4 +129,4 @@ function StatisticsCard({
   );
 }
 
-export { StatisticsCard };
+export { StatisticsCard, StatisticsCardFromStat };

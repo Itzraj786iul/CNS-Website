@@ -1,11 +1,11 @@
 "use client";
 
 import * as React from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, CalendarDays, MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
 
+import { HospitalImage } from "@/components/common/hospital-image";
 import { Tag } from "@/components/common/tag";
 import { Button } from "@/components/ui/button";
 import {
@@ -17,6 +17,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { WHATSAPP_URL } from "@/lib/contact-links";
+import type { ImageCategory } from "@/lib/content/images";
 import {
   CARD_VARIANT_DEFAULT,
   type CardVariant,
@@ -42,6 +43,7 @@ type DoctorCardProps = {
   image: {
     src: string;
     alt: string;
+    category?: ImageCategory;
   };
   href?: string;
   className?: string;
@@ -70,23 +72,23 @@ function DoctorCard({
 
   const content = (
     <Card className="group/doctor flex h-full flex-col overflow-hidden card-premium card-premium-hover ring-0">
-      <div className={shell.image}>
+      <div className={cn("relative", shell.image)}>
+        <HospitalImage
+          src={image.src}
+          alt={image.alt}
+          category={image.category ?? "doctors"}
+          aspect="portrait"
+          overlay={false}
+          className={cn("photo-frame w-full", cardImageHeights[variant])}
+          imageClassName="object-top"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        />
         <div
-          className={cn(
-            "photo-frame relative aspect-[3/4] w-full",
-            cardImageHeights[variant]
-          )}
-        >
-          <Image
-            src={image.src}
-            alt={image.alt}
-            fill
-            className="img-zoom object-cover object-top"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          />
-          <div className="absolute inset-x-0 bottom-0 h-2/5 bg-linear-to-t from-black/55 to-transparent" />
-          {isDetailed && (experience || available !== undefined) ? (
-            <div className="absolute bottom-2.5 left-2.5 flex flex-wrap items-center gap-1.5">
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-2/5 bg-linear-to-t from-black/55 to-transparent"
+        />
+        {isDetailed && (experience || available !== undefined) ? (
+          <div className="absolute bottom-2.5 left-2.5 z-10 flex flex-wrap items-center gap-1.5">
               {experience ? (
                 <Tag variant="green" className="px-2 py-0.5 text-[10px] shadow-soft backdrop-blur-sm">
                   {experience}
@@ -113,7 +115,7 @@ function DoctorCard({
               ) : null}
             </div>
           ) : showQuickActions && available !== undefined && !isDetailed ? (
-            <div className="absolute left-2.5 top-2.5">
+            <div className="absolute left-2.5 top-2.5 z-10">
               <span
                 className={cn(
                   "inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-semibold shadow-soft backdrop-blur-sm",
@@ -133,7 +135,6 @@ function DoctorCard({
               </span>
             </div>
           ) : null}
-        </div>
       </div>
 
       <CardHeader className={shell.header}>

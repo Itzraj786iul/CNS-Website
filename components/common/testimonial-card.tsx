@@ -1,9 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { Star } from "lucide-react";
+import { BadgeCheck, Star } from "lucide-react";
 import { motion } from "framer-motion";
 
+import { AvatarPlaceholder } from "@/components/common/avatar-placeholder";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   CARD_VARIANT_DEFAULT,
@@ -35,10 +36,14 @@ function StarRating({ rating }: { rating: number }) {
 type TestimonialCardProps = {
   quote: string;
   author: string;
+  city?: string;
+  condition?: string;
   role?: string;
   outcome?: string;
-  avatar: string;
-  rating: number;
+  photo?: string | null;
+  verified?: boolean;
+  avatar?: string;
+  rating?: number;
   variant?: CardVariant;
   className?: string;
 };
@@ -46,21 +51,36 @@ type TestimonialCardProps = {
 function TestimonialCard({
   quote,
   author,
+  city,
+  condition,
   role,
   outcome,
+  photo,
+  verified,
   avatar,
-  rating,
+  rating = 5,
   variant = CARD_VARIANT_DEFAULT,
   className,
 }: TestimonialCardProps) {
   const isCompact = variant === "compact";
   const pad = isCompact ? "px-3 py-3.5" : "px-4 py-4";
+  const photoSrc = photo ?? avatar ?? null;
+  const subtitle = condition ?? role;
+  const locationLine = [city, subtitle].filter(Boolean).join(" · ");
 
   return (
     <motion.div initial="rest" whileHover="hover" variants={hoverLift} className={className}>
       <Card className="card-premium card-premium-hover ring-0">
         <CardContent className={cn("flex flex-col gap-2", pad)}>
-          <StarRating rating={rating} />
+          <div className="flex items-center justify-between gap-2">
+            <StarRating rating={rating} />
+            {verified ? (
+              <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-secondary">
+                <BadgeCheck className="size-3.5" aria-hidden="true" />
+                Verified
+              </span>
+            ) : null}
+          </div>
           {outcome && !isCompact ? (
             <p className="text-[11px] font-semibold uppercase tracking-[0.1em] text-secondary">
               {outcome}
@@ -77,12 +97,25 @@ function TestimonialCard({
             </p>
           </blockquote>
           <footer className="flex items-center gap-2 border-t border-cns-border/80 pt-2">
-            <div className="photo-frame relative size-8 shrink-0 rounded-full ring-2 ring-white">
-              <Image src={avatar} alt={author} fill className="object-cover" sizes="32px" />
-            </div>
+            {photoSrc ? (
+              <div className="photo-frame relative size-8 shrink-0 overflow-hidden rounded-full ring-2 ring-white">
+                <Image
+                  src={photoSrc}
+                  alt={`${author}${city ? `, ${city}` : ""}`}
+                  fill
+                  className="object-cover"
+                  sizes="32px"
+                  loading="lazy"
+                />
+              </div>
+            ) : (
+              <AvatarPlaceholder name={author} size="sm" />
+            )}
             <cite className="not-italic">
               <p className="font-heading text-sm font-semibold text-cns-navy">{author}</p>
-              {role ? <p className="text-xs text-muted-foreground">{role}</p> : null}
+              {locationLine ? (
+                <p className="text-xs text-muted-foreground">{locationLine}</p>
+              ) : null}
             </cite>
           </footer>
         </CardContent>

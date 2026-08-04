@@ -1,4 +1,7 @@
+export { AccreditationStrip } from "./accreditation-strip";
 export { AnimatedSection } from "./animated-section";
+export { AvatarPlaceholder } from "./avatar-placeholder";
+export { HospitalImage, HospitalImageFallback } from "./hospital-image";
 export { Breadcrumb } from "./breadcrumb";
 export type { BreadcrumbItem } from "./breadcrumb";
 export { ConditionCard } from "./condition-card";

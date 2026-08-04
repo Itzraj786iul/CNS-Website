@@ -1,13 +1,12 @@
 "use client";
 
-import Image from "next/image";
-import { motion } from "framer-motion";
-
 import { aboutContent } from "@/components/about/data";
 import { AnimatedSection } from "@/components/common/animated-section";
+import { HospitalImage } from "@/components/common/hospital-image";
 import { Section } from "@/components/common/section";
 import { SectionHeading } from "@/components/common/section-heading";
 import { fadeUp } from "@/lib/motion";
+import { motion } from "framer-motion";
 
 function AboutCnsSection() {
   const { aboutCns } = aboutContent;
@@ -16,15 +15,14 @@ function AboutCnsSection() {
     <Section variant="white" spacing="default">
       <div className="grid items-start gap-5 lg:grid-cols-2 lg:gap-6">
         <AnimatedSection className="relative order-2 lg:order-1 lg:flex lg:flex-col lg:justify-center">
-          <div className="relative image-placeholder aspect-[3/2] lg:max-h-[170px] lg:w-full">
-            <Image
-              src={aboutCns.image.src}
-              alt={aboutCns.image.alt}
-              fill
-              className="img-zoom object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
-          </div>
+          <HospitalImage
+            src={aboutCns.image.src}
+            alt={aboutCns.image.alt}
+            category={aboutCns.image.category}
+            aspect="landscape"
+            className="lg:max-h-[170px] lg:w-full"
+            sizes="(max-width: 1024px) 100vw, 50vw"
+          />
           <div
             aria-hidden="true"
             className="absolute -bottom-4 -right-4 -z-10 size-32 rounded-full bg-primary/10 blur-2xl"

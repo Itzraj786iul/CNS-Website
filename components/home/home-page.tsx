@@ -11,6 +11,7 @@ import { SpecialistsSection } from "@/components/home/specialists-section";
 import { TestimonialsSection } from "@/components/home/testimonials-section";
 import { WhyChooseSection } from "@/components/home/why-choose-section";
 import { EmergencyBanner } from "@/components/common/emergency-banner";
+import { AccreditationStrip } from "@/components/common/accreditation-strip";
 import { Section } from "@/components/common/section";
 
 function HomePage() {
@@ -28,6 +29,7 @@ function HomePage() {
           description="Stroke symptoms, severe headache, seizures, or head injury — call immediately. Our neuro emergency team is ready 24 hours a day, every day."
         />
       </Section>
+      <AccreditationStrip variant="compact" />
       <AboutPreviewSection />
       <ConditionsSection />
       <DepartmentsPreviewSection />

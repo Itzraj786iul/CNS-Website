@@ -12,6 +12,13 @@ import {
   Users,
 } from "lucide-react";
 
+import { standardAppointmentCta, standardWhatsAppCta } from "@/lib/content/cta";
+import {
+  homeImagePath,
+  hospitalImage,
+  IMAGE_CATEGORIES,
+} from "@/lib/content/images";
+
 export const aboutContent = {
   hero: {
     eyebrow: "Our Institution",
@@ -25,10 +32,11 @@ export const aboutContent = {
       "Founded with a vision to make world-class neurological care accessible, the Center for Neuroscience has grown into a comprehensive institution serving patients across the region. Our integrated model brings neurology, neurosurgery, psychiatry, and rehabilitation together under one roof — ensuring seamless, coordinated treatment at every stage of care.",
     secondaryDescription:
       "We invest continuously in clinical talent, research partnerships, and advanced technology so that every patient receives care grounded in evidence, delivered with empathy, and tailored to their unique needs.",
-    image: {
-      src: "https://placehold.co/640x720/EEF4F9/16324A/png?font=roboto&text=CNS+Campus",
-      alt: "Center for Neuroscience campus and facilities",
-    },
+    image: hospitalImage(
+      homeImagePath("campus"),
+      "Center for Neuroscience hospital campus",
+      IMAGE_CATEGORIES.hospitalExterior
+    ),
   },
   visionMission: [
     {
@@ -118,34 +126,37 @@ export const aboutContent = {
   ],
   leadership: [
     {
-      name: "Dr. Srinivas Rao",
+      name: "Clinical Director",
       role: "Director",
-      qualification: "MD, DM (Neurology), FIAN",
-      bio: "Leading CNS with over 25 years of experience in academic neurology and healthcare administration.",
-      image: {
-        src: "https://placehold.co/400x480/16324A/FFFFFF/png?font=roboto&text=Director",
-        alt: "Dr. Srinivas Rao, Director",
-      },
+      qualification: "Pending client verification",
+      bio: "Provides overall clinical leadership and governance for neuroscience programs at CNS.",
+      image: hospitalImage(
+        homeImagePath("leader-01"),
+        "Clinical Director portrait at Center for Neuroscience",
+        IMAGE_CATEGORIES.doctors
+      ),
     },
     {
-      name: "Dr. Kavitha Reddy",
+      name: "Medical Director",
       role: "Medical Director",
-      qualification: "MCh (Neurosurgery), FACS",
-      bio: "Oversees clinical standards, surgical programs, and quality initiatives across all departments.",
-      image: {
-        src: "https://placehold.co/400x480/1F7CC6/FFFFFF/png?font=roboto&text=Medical+Director",
-        alt: "Dr. Kavitha Reddy, Medical Director",
-      },
+      qualification: "Pending client verification",
+      bio: "Oversees clinical standards, surgical programs, and quality initiatives across departments.",
+      image: hospitalImage(
+        homeImagePath("leader-02"),
+        "Medical Director portrait at Center for Neuroscience",
+        IMAGE_CATEGORIES.doctors
+      ),
     },
     {
-      name: "Mr. Arun Mehta",
+      name: "Hospital Administrator",
       role: "Administrator",
-      qualification: "MBA (Healthcare Management)",
-      bio: "Manages operations, patient services, and strategic partnerships to support clinical excellence.",
-      image: {
-        src: "https://placehold.co/400x480/7DBD24/FFFFFF/png?font=roboto&text=Administrator",
-        alt: "Mr. Arun Mehta, Administrator",
-      },
+      qualification: "Pending client verification",
+      bio: "Manages operations, patient services, and strategic partnerships supporting clinical care.",
+      image: hospitalImage(
+        homeImagePath("leader-03"),
+        "Hospital Administrator portrait at Center for Neuroscience",
+        IMAGE_CATEGORIES.doctors
+      ),
     },
   ],
   infrastructure: [
@@ -178,10 +189,8 @@ export const aboutContent = {
     title: "Ready to Begin Your Care Journey?",
     description:
       "Whether you need a first consultation, a second opinion, or emergency care — our team is here to guide you and your family with clarity and compassion.",
-    primaryLabel: "Book Your Consultation",
-    primaryHref: "/appointment",
-    secondaryLabel: "Chat With Our Care Team",
-    secondaryHref: "https://wa.me/917389321886?text=Hello%20I%20would%20like%20to%20know%20more%20about%20the%20services%20offered%20by%20Center%20for%20Neuroscience.",
+    ...standardAppointmentCta,
+    ...standardWhatsAppCta(),
   },
 } as const;
 

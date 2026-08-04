@@ -5,6 +5,7 @@ import { ArrowRight, MapPin } from "lucide-react";
 
 import { IconBox } from "@/components/common/icon-box";
 import { Button } from "@/components/ui/button";
+import { getMapsDirectionsUrl, getMapsEmbedUrl } from "@/lib/contact-links";
 import { siteConfig } from "@/lib/constants/site";
 import { cn } from "@/lib/utils";
 
@@ -24,7 +25,7 @@ function LocationMapPanel({
   className,
   hours,
   showDirections = false,
-  directionsHref = "/contact",
+  directionsHref,
 }: LocationMapPanelProps) {
   const schedule =
     hours ??
@@ -33,6 +34,9 @@ function LocationMapPanel({
       { label: "Emergency", hours: siteConfig.hours.emergency },
       { label: "Diagnostics", hours: siteConfig.hours.diagnostics },
     ] satisfies ScheduleItem[]);
+
+  const embedUrl = getMapsEmbedUrl();
+  const directionsUrl = directionsHref ?? getMapsDirectionsUrl();
 
   return (
     <div
@@ -44,11 +48,12 @@ function LocationMapPanel({
       <div className="grid lg:grid-cols-2 lg:items-stretch">
         <div className="relative min-h-[160px] sm:min-h-[180px] lg:min-h-[220px]">
           <iframe
-            title="Center for Neuroscience location"
-            src="https://maps.google.com/maps?q=Raipur+Chhattisgarh&output=embed"
+            title={`${siteConfig.name} location on Google Maps`}
+            src={embedUrl}
             className="absolute inset-0 h-full w-full border-0 grayscale-[30%]"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
+            allowFullScreen
           />
         </div>
         <div className="flex flex-col justify-center gap-3.5 border-t border-border p-5 sm:p-6 lg:border-t-0 lg:border-l">
@@ -79,13 +84,14 @@ function LocationMapPanel({
             <Button
               nativeButton={false}
               render={
-                <Link href={directionsHref}>
+                <Link href={directionsUrl} target="_blank" rel="noopener noreferrer">
                   Get Directions
                   <ArrowRight />
                 </Link>
               }
               variant="outline"
               className="h-[46px] w-fit rounded-full px-5"
+              aria-label={`Get directions to ${siteConfig.name}`}
             />
           ) : null}
         </div>

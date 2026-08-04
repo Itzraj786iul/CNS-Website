@@ -1,3 +1,5 @@
+import { standardAppointmentCta, standardWhatsAppCta } from "@/lib/content/cta";
+
 export const researchContent = {
   hero: {
     eyebrow: "Research Driven Care",
@@ -70,25 +72,13 @@ export const researchContent = {
       description: "Comparative analysis of spinal cord stimulation versus medical management.",
     },
   ],
-  awards: [
-    { year: "2025", title: "Excellence in Stroke Care", organization: "National Neuroscience Association" },
-    { year: "2024", title: "Best Neuro ICU", organization: "Healthcare Innovation Awards" },
-    { year: "2023", title: "Research Publication Award", organization: "Indian Academy of Neurology" },
-    { year: "2022", title: "Patient Safety Certification", organization: "NABH Accreditation" },
-  ],
-  statistics: [
-    { value: "120", suffix: "+", label: "Published Papers" },
-    { value: "35", suffix: "+", label: "Active Studies" },
-    { value: "18", suffix: "", label: "Research Collaborations" },
-    { value: "12", suffix: "", label: "National Awards" },
-  ],
+  /** TODO: Add verified awards only after client approval */
+  awards: [] as { year: string; title: string; organization: string }[],
   cta: {
     title: "Need Clinical Care or Research Collaboration?",
     description:
       "Patients seeking treatment can book a consultation with our specialists. Researchers and institutions are welcome to connect with our academic affairs office.",
-    primaryLabel: "Book Your Consultation",
-    primaryHref: "/appointment",
-    secondaryLabel: "Chat With Our Care Team",
-    secondaryHref: "https://wa.me/917389321886?text=Hello%20I%20would%20like%20to%20know%20more%20about%20the%20services%20offered%20by%20Center%20for%20Neuroscience.",
+    ...standardAppointmentCta,
+    ...standardWhatsAppCta(),
   },
 } as const;

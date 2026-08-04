@@ -1,31 +1,30 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
 
 import { departmentsContent } from "@/components/departments/data";
 import { AnimatedSection } from "@/components/common/animated-section";
+import { HospitalImage } from "@/components/common/hospital-image";
 import { Section } from "@/components/common/section";
 import { SectionHeading } from "@/components/common/section-heading";
 import { fadeUp } from "@/lib/motion";
 
 function WhyDepartmentsSection() {
-  const { whyDepartments } = departmentsContent;
+  const { whyDepartments, sectionImage } = departmentsContent;
 
   return (
     <Section variant="white" spacing="default">
       <div className="grid items-center gap-5 lg:grid-cols-2 lg:gap-6">
         <AnimatedSection className="relative lg:flex lg:flex-col lg:justify-center">
-          <div className="relative image-placeholder aspect-[3/2] lg:max-h-[160px] lg:w-full">
-            <Image
-              src="https://placehold.co/720x540/F8FBFD/1F7CC6/png?font=roboto&text=Multidisciplinary+Care"
-              alt="Multidisciplinary neuroscience team at CNS"
-              fill
-              className="img-zoom object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
-          </div>
+          <HospitalImage
+            src={sectionImage.src}
+            alt={sectionImage.alt}
+            category={sectionImage.category}
+            aspect="landscape"
+            className="lg:max-h-[160px] lg:w-full"
+            sizes="(max-width: 1024px) 100vw, 50vw"
+          />
         </AnimatedSection>
 
         <div className="section-stack">

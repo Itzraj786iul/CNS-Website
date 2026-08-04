@@ -10,6 +10,7 @@ import {
   FacebookIcon,
   InstagramIcon,
   LinkedInIcon,
+  TwitterIcon,
   YouTubeIcon,
 } from "@/components/common/social-icons";
 import { Button } from "@/components/ui/button";
@@ -98,7 +99,7 @@ function Footer() {
           <div className="min-w-0 space-y-2.5 sm:col-span-2 lg:col-span-4">
             <LogoLink size="sm" variant="footer" linkClassName="hover:scale-100" />
             <p className="max-w-xs text-[11px] font-semibold uppercase tracking-[0.12em] text-secondary">
-              Center for Neuroscience · Raipur
+              {siteConfig.name} · {siteConfig.location}
             </p>
             <p className="max-w-sm text-[13px] leading-snug text-white/75">
               Integrated neurology, neurosurgery, psychiatry, and rehabilitation under one trusted institution.
@@ -129,10 +130,11 @@ function Footer() {
               />
             </div>
             <div className="flex flex-wrap gap-1.5">
-              <SocialLink href={social.facebook} label="Facebook" icon={FacebookIcon} />
-              <SocialLink href={social.instagram} label="Instagram" icon={InstagramIcon} />
-              <SocialLink href={social.linkedin} label="LinkedIn" icon={LinkedInIcon} />
-              <SocialLink href={social.youtube} label="YouTube" icon={YouTubeIcon} />
+              <SocialLink href={social.facebook ?? ""} label="Facebook" icon={FacebookIcon} />
+              <SocialLink href={social.instagram ?? ""} label="Instagram" icon={InstagramIcon} />
+              <SocialLink href={social.linkedin ?? ""} label="LinkedIn" icon={LinkedInIcon} />
+              <SocialLink href={social.youtube ?? ""} label="YouTube" icon={YouTubeIcon} />
+              <SocialLink href={social.twitter ?? ""} label="X (Twitter)" icon={TwitterIcon} />
             </div>
           </div>
 

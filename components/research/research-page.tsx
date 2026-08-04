@@ -6,15 +6,15 @@ import { CTASection } from "@/components/common/cta-section";
 import { PageHero } from "@/components/common/page-hero";
 import { Section } from "@/components/common/section";
 import { SectionHeading } from "@/components/common/section-heading";
-import { StatisticsCard } from "@/components/common/statistics-card";
+import { researchStatistics } from "@/lib/content/statistics";
+import { StatisticsCardFromStat } from "@/components/common/statistics-card";
 import { AnimatedSection } from "@/components/common/animated-section";
 import { researchContent } from "@/components/research/data";
 import { fadeUp } from "@/lib/motion";
 import { motion } from "framer-motion";
 
 function ResearchPageContent() {
-  const { hero, highlights, publications, studies, awards, statistics, cta } =
-    researchContent;
+  const { hero, highlights, publications, studies, awards, cta } = researchContent;
 
   return (
     <>
@@ -109,31 +109,33 @@ function ResearchPageContent() {
         ))}
       </CardGridSection>
 
-      <CardGridSection
-        variant="default"
-        spacing="default"
-        divider
-        density="preview"
-        heading={{
-          align: "center",
-          eyebrow: "Recognition",
-          title: "Awards & Recognition",
-          description:
-            "Honors reflecting our commitment to clinical excellence and research leadership.",
-        }}
-      >
-        {awards.map((award) => (
-          <CardGridItem key={award.title}>
-            <ResearchCard
-              kind="award"
-              variant="compact"
-              year={award.year}
-              title={award.title}
-              meta={award.organization}
-            />
-          </CardGridItem>
-        ))}
-      </CardGridSection>
+      {awards.length > 0 ? (
+        <CardGridSection
+          variant="default"
+          spacing="default"
+          divider
+          density="preview"
+          heading={{
+            align: "center",
+            eyebrow: "Recognition",
+            title: "Awards & Recognition",
+            description:
+              "Honors reflecting our commitment to clinical excellence and research leadership.",
+          }}
+        >
+          {awards.map((award) => (
+            <CardGridItem key={award.title}>
+              <ResearchCard
+                kind="award"
+                variant="compact"
+                year={award.year}
+                title={award.title}
+                meta={award.organization}
+              />
+            </CardGridItem>
+          ))}
+        </CardGridSection>
+      ) : null}
 
       <CardGridSection
         variant="white"
@@ -145,12 +147,12 @@ function ResearchPageContent() {
           eyebrow: "Impact",
           title: "Research by the Numbers",
           description:
-            "Measurable contributions to neuroscience knowledge and patient care.",
+            "Verified metrics appear once confirmed by the research department.",
         }}
       >
-        {statistics.map((stat) => (
-          <CardGridItem key={stat.label}>
-            <StatisticsCard value={stat.value} suffix={stat.suffix} label={stat.label} size="small" />
+        {researchStatistics.map((stat) => (
+          <CardGridItem key={stat.id}>
+            <StatisticsCardFromStat stat={stat} size="small" />
           </CardGridItem>
         ))}
       </CardGridSection>

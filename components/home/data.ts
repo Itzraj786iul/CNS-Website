@@ -21,15 +21,29 @@ import {
 } from "lucide-react";
 
 import type { FAQItem } from "@/components/common/faq-card";
+import {
+  doctorImagePath,
+  homeImagePath,
+  hospitalImage,
+  IMAGE_CATEGORIES,
+  type HospitalImageRef,
+} from "@/lib/content/images";
 import { getAppointmentDisplay, getEmergencyTelHref, toTelHref } from "@/lib/contact-links";
 import { siteConfig } from "@/lib/constants/site";
 
-export const heroStats = [
-  { value: "20", suffix: "+", label: "Subspecialist Physicians" },
-  { value: "50,000", suffix: "+", label: "Patients Cared For" },
-  { value: "24", suffix: "×7", label: "Emergency Neuro Response" },
-  { value: "95", suffix: "%", label: "Patient Recommendation Rate" },
-] as const;
+/** Homepage section images — replace JPGs in /public/images/home/ */
+export const sectionImages = {
+  aboutPreview: hospitalImage(
+    homeImagePath("medical-team"),
+    "Center for Neuroscience clinical team in consultation",
+    IMAGE_CATEGORIES.patientCare
+  ),
+  whyChoose: hospitalImage(
+    homeImagePath("integrated-care"),
+    "Integrated neuroscience care environment at CNS",
+    IMAGE_CATEGORIES.consultationRoom
+  ),
+} satisfies Record<string, HospitalImageRef>;
 
 export const conditionsWeTreat = [
   {
@@ -289,62 +303,67 @@ export const whyChooseFeatures: {
   },
 ];
 
+/** Featured specialists preview — photos: /public/images/doctors/doctor-0N.jpg */
 export const specialists = [
   {
     name: "Dr. Ananya Sharma",
     title: "MD, DM (Neurology)",
-    department: "15+ Years Experience",
+    department: "Neurology",
     specializations: ["Stroke", "Epilepsy", "Movement Disorders"],
     intro:
       "Walks patients and families through stroke and epilepsy care with clarity, patience, and compassion.",
     available: true,
-    image: {
-      src: "https://placehold.co/400x500/EEF4F9/16324A/png?font=roboto&text=Dr.+Sharma",
-      alt: "Dr. Ananya Sharma, Neurologist",
-    },
-    href: "/doctors",
+    image: hospitalImage(
+      doctorImagePath(1),
+      "Dr. Ananya Sharma, neurologist at Center for Neuroscience",
+      IMAGE_CATEGORIES.doctors
+    ),
+    href: "/doctors#dr-sharma",
   },
   {
     name: "Dr. Rajesh Menon",
     title: "MCh (Neurosurgery)",
-    department: "18+ Years Experience",
+    department: "Neurosurgery",
     specializations: ["Brain Tumors", "Spine Surgery", "Vascular"],
     intro:
       "Explains every surgical option in plain language so you feel informed and confident before treatment.",
     available: true,
-    image: {
-      src: "https://placehold.co/400x500/E7EEF5/1F7CC6/png?font=roboto&text=Dr.+Menon",
-      alt: "Dr. Rajesh Menon, Neurosurgeon",
-    },
-    href: "/doctors",
+    image: hospitalImage(
+      doctorImagePath(2),
+      "Dr. Rajesh Menon, neurosurgeon at Center for Neuroscience",
+      IMAGE_CATEGORIES.doctors
+    ),
+    href: "/doctors#dr-menon",
   },
   {
     name: "Dr. Priya Nair",
     title: "MD (Psychiatry)",
-    department: "12+ Years Experience",
+    department: "Psychiatry",
     specializations: ["Mood Disorders", "Anxiety", "Neuropsychiatry"],
     intro:
       "Creates a safe space for patients and families navigating mental health alongside neurological conditions.",
     available: true,
-    image: {
-      src: "https://placehold.co/400x500/F8FBFD/7DBD24/png?font=roboto&text=Dr.+Nair",
-      alt: "Dr. Priya Nair, Psychiatrist",
-    },
-    href: "/doctors",
+    image: hospitalImage(
+      doctorImagePath(3),
+      "Dr. Priya Nair, psychiatrist at Center for Neuroscience",
+      IMAGE_CATEGORIES.doctors
+    ),
+    href: "/doctors#dr-nair",
   },
   {
     name: "Dr. Vikram Patel",
     title: "DM (Neuro Rehabilitation)",
-    department: "10+ Years Experience",
+    department: "Neuro Rehabilitation",
     specializations: ["Stroke Recovery", "Mobility", "Speech Therapy"],
     intro:
       "Guides recovery with realistic goals — helping patients regain independence step by step.",
     available: true,
-    image: {
-      src: "https://placehold.co/400x500/FFFFFF/16324A/png?font=roboto&text=Dr.+Patel",
-      alt: "Dr. Vikram Patel, Rehabilitation Specialist",
-    },
-    href: "/doctors",
+    image: hospitalImage(
+      doctorImagePath(4),
+      "Dr. Vikram Patel, rehabilitation specialist at Center for Neuroscience",
+      IMAGE_CATEGORIES.doctors
+    ),
+    href: "/doctors#dr-patel",
   },
 ];
 
@@ -390,39 +409,6 @@ export const facilities = [
     description:
       "In-house neuro diagnostic testing — so you spend less time waiting and more time starting treatment.",
     iconVariant: "green" as const,
-  },
-];
-
-export const testimonials = [
-  {
-    quote:
-      "After my stroke, the CNS team explained every step in words we could understand. We never felt alone — and today I am walking again.",
-    author: "Meera Krishnan",
-    role: "Stroke Recovery Patient",
-    outcome: "Returned to daily activities within 3 months",
-    avatar:
-      "https://placehold.co/80x80/1F7CC6/FFFFFF/png?font=roboto&text=MK",
-    rating: 5,
-  },
-  {
-    quote:
-      "Before surgery, the neurosurgery team walked us through every option. We felt prepared, not scared — and recovery went better than we hoped.",
-    author: "Arjun Desai",
-    role: "Spine Surgery Patient",
-    outcome: "Back to work within 6 weeks",
-    avatar:
-      "https://placehold.co/80x80/7DBD24/FFFFFF/png?font=roboto&text=AD",
-    rating: 5,
-  },
-  {
-    quote:
-      "From diagnosis to rehabilitation, every department worked as one team. They listened to us — and that made all the difference for our family.",
-    author: "Sunita Rao",
-    role: "Epilepsy Care Patient",
-    outcome: "Seizures controlled, quality of life restored",
-    avatar:
-      "https://placehold.co/80x80/F7941D/FFFFFF/png?font=roboto&text=SR",
-    rating: 5,
   },
 ];
 
@@ -477,7 +463,7 @@ export const contactCards = [
     href: siteConfig.contact.phone
       ? toTelHref(siteConfig.contact.phone)
       : "/appointment",
-    description: "Mon–Sat, 8:00 AM – 8:00 PM",
+    description: siteConfig.hours.outpatient,
   },
   {
     icon: "email" as const,
@@ -498,6 +484,6 @@ export const contactCards = [
     title: "Emergency Line",
     value: siteConfig.contact.emergency,
     href: getEmergencyTelHref(),
-    description: "24×7 neurological emergency line",
+    description: siteConfig.hours.emergency,
   },
 ];

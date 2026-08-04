@@ -1,4 +1,10 @@
 import type { LucideIcon } from "lucide-react";
+import { standardAppointmentCta, standardWhatsAppCta } from "@/lib/content/cta";
+import {
+  facilityImagePath,
+  IMAGE_CATEGORIES,
+  type ImageCategory,
+} from "@/lib/content/images";
 import {
   Ambulance,
   FlaskConical,
@@ -19,6 +25,7 @@ export type FacilityItem = {
   icon: LucideIcon;
   iconVariant: "blue" | "green" | "orange" | "navy";
   image: string;
+  imageCategory: ImageCategory;
   size: "large" | "medium" | "small";
 };
 
@@ -36,16 +43,16 @@ export const facilitiesContent = {
       "Every facility at CNS is purpose-built for neurological patients — from high-field imaging and digital monitoring to sterile surgical environments and 24×7 emergency response.",
   },
   facilities: [
-    { title: "MRI", description: "High-resolution 3T MRI for faster, more accurate neurological diagnosis — often with same-day reporting.", icon: Scan, iconVariant: "blue", image: "https://placehold.co/800x600/EEF4F9/1F7CC6/png?font=roboto&text=MRI+Suite", size: "large" },
-    { title: "CT Scan", description: "Rapid low-dose CT for stroke and trauma emergencies — critical when every minute saves brain tissue.", icon: ScanLine, iconVariant: "green", image: "https://placehold.co/600x400/F8FBFD/16324A/png?font=roboto&text=CT+Scan", size: "medium" },
-    { title: "EEG", description: "Digital EEG to pinpoint seizure activity and guide the right treatment — without guesswork.", icon: Activity, iconVariant: "orange", image: "https://placehold.co/600x400/E7EEF5/7DBD24/png?font=roboto&text=EEG+Lab", size: "small" },
-    { title: "EMG", description: "Nerve studies that identify the source of weakness or pain — so treatment targets the real problem.", icon: Microscope, iconVariant: "navy", image: "https://placehold.co/600x400/FFFFFF/16324A/png?font=roboto&text=EMG+Lab", size: "small" },
-    { title: "ICU", description: "Dedicated neuro ICU with continuous monitoring — for patients who need the closest medical attention.", icon: HeartPulse, iconVariant: "blue", image: "https://placehold.co/800x600/16324A/FFFFFF/png?font=roboto&text=Neuro+ICU", size: "large" },
-    { title: "Modular OT", description: "Neuro-navigation in sterile theatres — so complex brain and spine surgery is safer and more precise.", icon: Syringe, iconVariant: "green", image: "https://placehold.co/600x500/EEF4F9/1F7CC6/png?font=roboto&text=Modular+OT", size: "medium" },
-    { title: "Emergency", description: "24×7 stroke pathway and triage — our team is ready the moment you or your family needs urgent help.", icon: Siren, iconVariant: "orange", image: "https://placehold.co/600x400/F8FBFD/F7941D/png?font=roboto&text=Emergency", size: "medium" },
-    { title: "Laboratory", description: "In-house neuro diagnostic testing — so you spend less time waiting and more time starting treatment.", icon: FlaskConical, iconVariant: "navy", image: "https://placehold.co/600x400/E7EEF5/16324A/png?font=roboto&text=Laboratory", size: "small" },
-    { title: "Pharmacy", description: "Neurological medications available on campus — so your treatment is not delayed after your visit.", icon: Pill, iconVariant: "blue", image: "https://placehold.co/600x400/FFFFFF/7DBD24/png?font=roboto&text=Pharmacy", size: "small" },
-    { title: "Ambulance", description: "ALS-equipped ambulances with pre-hospital stroke notification — care begins before you arrive.", icon: Ambulance, iconVariant: "green", image: "https://placehold.co/800x500/F8FBFD/16324A/png?font=roboto&text=Ambulance", size: "large" },
+    { title: "MRI", description: "High-resolution 3T MRI for faster, more accurate neurological diagnosis — often with same-day reporting.", icon: Scan, iconVariant: "blue", image: facilityImagePath("mri-suite"), imageCategory: IMAGE_CATEGORIES.mriSuite, size: "large" },
+    { title: "CT Scan", description: "Rapid low-dose CT for stroke and trauma emergencies — critical when every minute saves brain tissue.", icon: ScanLine, iconVariant: "green", image: facilityImagePath("ct-scan"), imageCategory: IMAGE_CATEGORIES.ctScanRoom, size: "medium" },
+    { title: "EEG", description: "Digital EEG to pinpoint seizure activity and guide the right treatment — without guesswork.", icon: Activity, iconVariant: "orange", image: facilityImagePath("eeg-lab"), imageCategory: IMAGE_CATEGORIES.diagnostics, size: "small" },
+    { title: "EMG", description: "Nerve studies that identify the source of weakness or pain — so treatment targets the real problem.", icon: Microscope, iconVariant: "navy", image: facilityImagePath("emg-lab"), imageCategory: IMAGE_CATEGORIES.diagnostics, size: "small" },
+    { title: "ICU", description: "Dedicated neuro ICU with continuous monitoring — for patients who need the closest medical attention.", icon: HeartPulse, iconVariant: "blue", image: facilityImagePath("neuro-icu"), imageCategory: IMAGE_CATEGORIES.icu, size: "large" },
+    { title: "Modular OT", description: "Neuro-navigation in sterile theatres — so complex brain and spine surgery is safer and more precise.", icon: Syringe, iconVariant: "green", image: facilityImagePath("modular-ot"), imageCategory: IMAGE_CATEGORIES.operationTheatre, size: "medium" },
+    { title: "Emergency", description: "24×7 stroke pathway and triage — our team is ready the moment you or your family needs urgent help.", icon: Siren, iconVariant: "orange", image: facilityImagePath("emergency"), imageCategory: IMAGE_CATEGORIES.emergency, size: "medium" },
+    { title: "Laboratory", description: "In-house neuro diagnostic testing — so you spend less time waiting and more time starting treatment.", icon: FlaskConical, iconVariant: "navy", image: facilityImagePath("laboratory"), imageCategory: IMAGE_CATEGORIES.diagnostics, size: "small" },
+    { title: "Pharmacy", description: "Neurological medications available on campus — so your treatment is not delayed after your visit.", icon: Pill, iconVariant: "blue", image: facilityImagePath("pharmacy"), imageCategory: IMAGE_CATEGORIES.pharmacy, size: "small" },
+    { title: "Ambulance", description: "ALS-equipped ambulances with pre-hospital stroke notification — care begins before you arrive.", icon: Ambulance, iconVariant: "green", image: facilityImagePath("ambulance"), imageCategory: IMAGE_CATEGORIES.ambulance, size: "large" },
   ] satisfies FacilityItem[],
   technology: {
     eyebrow: "Clinical Technology",
@@ -73,9 +80,7 @@ export const facilitiesContent = {
     title: "See How Our Technology Supports Your Care",
     description:
       "Schedule a visit to tour our facilities or speak with our team about the diagnostic and treatment options available for your condition.",
-    primaryLabel: "Book Your Consultation",
-    primaryHref: "/appointment",
-    secondaryLabel: "Chat With Our Care Team",
-    secondaryHref: "https://wa.me/917389321886?text=Hello%20I%20would%20like%20to%20know%20more%20about%20the%20services%20offered%20by%20Center%20for%20Neuroscience.",
+    ...standardAppointmentCta,
+    ...standardWhatsAppCta(),
   },
 } as const;

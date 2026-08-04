@@ -1,9 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 
 import type { FacilityItem } from "@/components/facilities/data";
+import { HospitalImage } from "@/components/common/hospital-image";
 import { IconBox } from "@/components/common/icon-box";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -66,15 +66,18 @@ function FacilityGalleryCard({
             aspectByVariant[variant][facility.size]
           )}
         >
-          <Image
+          <HospitalImage
             src={facility.image}
-            alt={`${facility.title} facility at CNS`}
-            fill
-            className="object-cover img-zoom"
+            alt={`${facility.title} at Center for Neuroscience`}
+            category={facility.imageCategory}
+            aspect="landscape"
+            overlay={false}
+            className="absolute inset-0 h-full"
+            imageClassName="object-cover"
             sizes="(max-width: 768px) 100vw, 50vw"
           />
           <div className="absolute inset-0 bg-linear-to-t from-black/85 via-black/30 to-transparent" />
-          <CardContent className={cn("absolute inset-x-0 bottom-0 space-y-1.5", captionPad)}>
+          <CardContent className={cn("absolute inset-x-0 bottom-0 z-10 space-y-1.5", captionPad)}>
             <IconBox
               icon={facility.icon}
               variant={facility.iconVariant}

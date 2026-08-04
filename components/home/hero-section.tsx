@@ -16,9 +16,9 @@ import {
   isTelHref,
 } from "@/lib/contact-links";
 
-import { heroStats } from "@/components/home/data";
 import { Container } from "@/components/common/container";
-import { StatisticsCard } from "@/components/common/statistics-card";
+import { heroStatistics } from "@/lib/content/statistics";
+import { StatisticsCardFromStat } from "@/components/common/statistics-card";
 import { Tag } from "@/components/common/tag";
 import { Button } from "@/components/ui/button";
 import { fadeUp, staggerContainer } from "@/lib/motion";
@@ -311,12 +311,10 @@ function HeroSection() {
               </p>
             </motion.div>
             <div className="grid gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4">
-              {heroStats.map((stat) => (
-                <motion.div key={stat.label} variants={fadeUp}>
-                  <StatisticsCard
-                    value={stat.value}
-                    suffix={stat.suffix}
-                    label={stat.label}
+              {heroStatistics.map((stat) => (
+                <motion.div key={stat.id} variants={fadeUp}>
+                  <StatisticsCardFromStat
+                    stat={stat}
                     className="rounded-2xl border border-border/70 bg-card/80 shadow-card ring-1 ring-cns-border/30 backdrop-blur-xl"
                   />
                 </motion.div>

@@ -2,6 +2,7 @@ import type { FAQItem } from "@/components/common/faq-card";
 import {
   getAppointmentDisplay,
   getEmergencyTelHref,
+  getMapsDirectionsUrl,
   toTelHref,
 } from "@/lib/contact-links";
 import { siteConfig } from "@/lib/constants/site";
@@ -25,7 +26,7 @@ export const contactContent = {
       href: siteConfig.contact.phone
         ? toTelHref(siteConfig.contact.phone)
         : "/appointment",
-      description: "Mon–Sat, 8:00 AM – 8:00 PM",
+      description: siteConfig.hours.outpatient,
     },
     {
       type: "email" as const,
@@ -39,13 +40,13 @@ export const contactContent = {
       title: "Emergency",
       value: emergencyPhone,
       href: emergencyHref,
-      description: "24×7 stroke & neurotrauma line",
+      description: siteConfig.hours.emergency,
     },
     {
       type: "address" as const,
       title: "Address",
       value: siteConfig.contact.address,
-      href: "https://maps.google.com/maps?q=Raipur+Chhattisgarh",
+      href: getMapsDirectionsUrl(),
       description: "Parking & wheelchair access available",
     },
   ],
@@ -53,20 +54,50 @@ export const contactContent = {
     eyebrow: "Hospital Hours",
     title: "Visiting & Outpatient Timings",
     schedules: [
-      { label: "Outpatient Clinics", hours: "Mon – Sat, 8:00 AM – 8:00 PM" },
-      { label: "Emergency Department", hours: "Open 24 hours, every day" },
-      { label: "Diagnostics & Imaging", hours: "Mon – Sat, 7:00 AM – 9:00 PM" },
-      { label: "Pharmacy", hours: "Mon – Sat, 7:30 AM – 9:30 PM" },
-      { label: "Visiting Hours (Wards)", hours: "Daily, 11:00 AM – 1:00 PM & 5:00 PM – 7:00 PM" },
+      { label: "Outpatient Clinics", hours: siteConfig.hours.outpatient },
+      { label: "Emergency Department", hours: siteConfig.hours.emergency },
+      { label: "Diagnostics & Imaging", hours: siteConfig.hours.diagnostics },
+      { label: "Pharmacy", hours: siteConfig.hours.pharmacy },
+      { label: "Visiting Hours (Wards)", hours: siteConfig.hours.visiting },
     ],
   },
   departments: [
-    { name: "Appointments", phone: appointmentDisplay, email: "appointments@cns.org", href: siteConfig.contact.phone ? toTelHref(siteConfig.contact.phone) : "/appointment" },
-    { name: "Neurology OPD", phone: emergencyPhone, email: "neurology@cns.org", href: emergencyHref },
-    { name: "Neurosurgery", phone: emergencyPhone, email: "neurosurgery@cns.org", href: emergencyHref },
-    { name: "Psychiatry", phone: emergencyPhone, email: "psychiatry@cns.org", href: emergencyHref },
-    { name: "Billing & Insurance", phone: emergencyPhone, email: "billing@cns.org", href: emergencyHref },
-    { name: "Medical Records", phone: emergencyPhone, email: "records@cns.org", href: emergencyHref },
+    {
+      name: "Appointments",
+      phone: appointmentDisplay,
+      email: siteConfig.contact.departments.appointments,
+      href: siteConfig.contact.phone ? toTelHref(siteConfig.contact.phone) : "/appointment",
+    },
+    {
+      name: "Neurology OPD",
+      phone: siteConfig.contact.phone ?? appointmentDisplay,
+      email: siteConfig.contact.departments.neurology,
+      href: siteConfig.contact.phone ? toTelHref(siteConfig.contact.phone) : "/appointment",
+    },
+    {
+      name: "Neurosurgery",
+      phone: siteConfig.contact.phone ?? appointmentDisplay,
+      email: siteConfig.contact.departments.neurosurgery,
+      href: siteConfig.contact.phone ? toTelHref(siteConfig.contact.phone) : "/appointment",
+    },
+    {
+      name: "Psychiatry",
+      phone: siteConfig.contact.phone ?? appointmentDisplay,
+      email: siteConfig.contact.departments.psychiatry,
+      href: siteConfig.contact.phone ? toTelHref(siteConfig.contact.phone) : "/appointment",
+    },
+    {
+      name: "Billing & Insurance",
+      phone: siteConfig.contact.phone ?? appointmentDisplay,
+      email: siteConfig.contact.departments.billing,
+      href: siteConfig.contact.phone ? toTelHref(siteConfig.contact.phone) : "/appointment",
+    },
+    {
+      name: "Medical Records",
+      phone: siteConfig.contact.phone ?? appointmentDisplay,
+      email: siteConfig.contact.departments.medicalRecords,
+      href: `mailto:${siteConfig.contact.departments.medicalRecords}`,
+    },
   ],
   faq: [
     {
@@ -91,7 +122,7 @@ export const contactContent = {
     },
     {
       question: "How do I obtain medical records?",
-      answer: "Submit a request to medicalrecords@cns.org with valid ID and authorization. Records are typically available within 3–5 business days.",
+      answer: `Submit a request to ${siteConfig.contact.departments.medicalRecords} with valid ID and authorization. Records are typically available within 3–5 business days.`,
     },
     {
       question: "Is parking available on campus?",
