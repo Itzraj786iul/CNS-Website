@@ -2,7 +2,6 @@ import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import { CnsLogoMark } from "@/components/common/cns-logo-mark";
 import { siteConfig } from "@/lib/constants/site";
 import { cn } from "@/lib/utils";
 
@@ -13,10 +12,10 @@ type LogoProps = {
   priority?: boolean;
 };
 
-const footerSizeClasses = {
-  sm: "h-9 w-auto max-w-[7.5rem]",
+const logoSizeClasses = {
+  sm: "h-9 w-auto max-w-[7.5rem] sm:h-10 sm:max-w-[8.5rem]",
   md: "h-10 w-auto max-w-[8.5rem] sm:h-11 sm:max-w-[9.5rem]",
-  lg: "h-14 w-auto max-w-[12rem] sm:h-16 sm:max-w-[14rem]",
+  lg: "h-12 w-auto max-w-[10rem] sm:h-14 sm:max-w-[12rem]",
 } as const;
 
 function Logo({
@@ -25,20 +24,13 @@ function Logo({
   variant = "nav",
   priority = false,
 }: LogoProps) {
-  if (variant === "nav" || variant === "default") {
-    return (
-      <CnsLogoMark
-        size={size}
-        className={cn("text-cns-navy dark:text-foreground", className)}
-      />
-    );
-  }
+  const isFooter = variant === "footer";
 
   return (
     <span
       className={cn(
-        "relative inline-flex shrink-0 items-center overflow-hidden rounded-lg bg-white px-2.5 py-1.5 shadow-soft",
-        "border border-white/10",
+        "relative inline-flex shrink-0 items-center overflow-hidden rounded-lg bg-white",
+        isFooter ? "border border-white/10 px-2.5 py-1.5 shadow-soft" : "px-2 py-1 shadow-soft",
         className
       )}
     >
@@ -48,10 +40,7 @@ function Logo({
         width={512}
         height={512}
         priority={priority}
-        className={cn(
-          "w-auto object-contain object-left mix-blend-multiply",
-          footerSizeClasses[size]
-        )}
+        className={cn("w-auto object-contain object-left", logoSizeClasses[size])}
       />
     </span>
   );
