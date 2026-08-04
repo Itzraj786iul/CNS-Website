@@ -36,7 +36,7 @@ function NewsPageContent() {
       />
 
       <Section variant="white" spacing="default">
-        <div className="space-y-8">
+        <div className="section-stack">
           <AnimatedSection>
             <SectionHeading eyebrow="Latest Updates" title="News from CNS" description="Recent announcements and clinical milestones from across Center for Neuroscience." />
           </AnimatedSection>
@@ -95,7 +95,7 @@ function NewsPageContent() {
 
       <Section variant="default" spacing="default" divider>
         <div className="grid gap-8 lg:grid-cols-2 lg:gap-10">
-          <div className="space-y-8">
+          <div className="section-stack">
             <AnimatedSection direction="left">
               <SectionHeading eyebrow="Calendar" title="Upcoming Events" description="Join us for community programs, support groups, and awareness initiatives." />
             </AnimatedSection>
@@ -122,7 +122,7 @@ function NewsPageContent() {
             </AnimatedSection>
           </div>
 
-          <div className="space-y-8">
+          <div className="section-stack">
             <AnimatedSection direction="right">
               <SectionHeading eyebrow="Milestones" title="Recent Achievements" description="Highlights from our continued pursuit of excellence in neuroscience care." />
             </AnimatedSection>

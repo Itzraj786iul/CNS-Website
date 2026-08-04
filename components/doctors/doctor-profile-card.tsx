@@ -37,7 +37,7 @@ function DoctorProfileCard({ doctor, className }: DoctorProfileCardProps) {
     >
       <Card className="group/doctor flex h-full flex-col overflow-hidden card-premium card-premium-hover ring-0">
         <div className="p-4 pb-0">
-          <div className="photo-frame relative aspect-[4/5]">
+          <div className="photo-frame relative aspect-[5/6]">
             <Image
               src={doctor.image.src}
               alt={doctor.image.alt}

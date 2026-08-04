@@ -18,7 +18,7 @@ function SectionDivider({ variant = "default", className }: SectionDividerProps)
     <div
       aria-hidden="true"
       className={cn(
-        "pointer-events-none relative -mt-px h-14 w-full overflow-hidden md:h-20",
+        "pointer-events-none relative -mt-px h-10 w-full overflow-hidden md:h-14",
         className
       )}
     >

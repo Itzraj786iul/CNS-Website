@@ -15,7 +15,7 @@ import { fadeUp, hoverLift } from "@/lib/motion";
 function CareJourneySection() {
   return (
     <Section variant="default" spacing="default">
-      <div className="space-y-8">
+      <div className="section-stack">
         <AnimatedSection className="mx-auto max-w-3xl text-center">
           <SectionHeading
             align="center"
@@ -35,7 +35,7 @@ function CareJourneySection() {
                 className="relative"
               >
                 <Card className="card-premium card-premium-hover ring-0">
-                  <CardContent className="space-y-4 px-5 py-6 sm:px-6">
+                  <CardContent className="space-y-3 px-4 py-5 sm:px-5">
                     <div className="flex items-center gap-3">
                       <span className="flex size-9 items-center justify-center rounded-full bg-primary/10 font-heading text-sm font-semibold text-primary">
                         {step.step}
@@ -47,7 +47,7 @@ function CareJourneySection() {
                         />
                       ) : null}
                     </div>
-                    <h3 className="font-heading text-lg font-semibold text-cns-navy">
+                    <h3 className="font-heading text-base font-semibold text-cns-navy">
                       {step.title}
                     </h3>
                     <p className="text-sm leading-[1.75] text-muted-foreground">
@@ -70,7 +70,7 @@ function CareJourneySection() {
               </Link>
             }
             size="lg"
-            className="h-12 rounded-full bg-secondary px-7 shadow-glow-green hover:bg-secondary/90"
+            className="h-11 rounded-full bg-secondary px-7 shadow-glow-green hover:bg-secondary/90"
           />
         </AnimatedSection>
       </div>

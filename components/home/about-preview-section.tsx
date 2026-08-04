@@ -16,9 +16,9 @@ import { fadeUp } from "@/lib/motion";
 function AboutPreviewSection() {
   return (
     <Section variant="white" spacing="default" divider>
-      <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
+      <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-10">
         <AnimatedSection className="relative" direction="left">
-          <div className="relative image-placeholder aspect-[4/5]">
+          <div className="relative image-placeholder aspect-[4/3]">
             <Image
               src="https://placehold.co/640x800/EEF4F9/16324A/png?font=roboto&text=CNS+Medical+Team"
               alt="Center for Neuroscience medical team"
@@ -38,7 +38,7 @@ function AboutPreviewSection() {
           />
         </AnimatedSection>
 
-        <div className="space-y-8">
+        <div className="space-y-6">
           <AnimatedSection>
             <SectionHeading
               eyebrow="Who We Are"
@@ -70,7 +70,7 @@ function AboutPreviewSection() {
                 </Link>
               }
               size="lg"
-              className="h-12 px-6"
+              className="h-11 px-6"
             />
           </AnimatedSection>
         </div>

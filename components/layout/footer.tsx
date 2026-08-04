@@ -96,8 +96,8 @@ function Footer() {
         aria-hidden="true"
         className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-primary/50 to-transparent"
       />
-      <Container className="relative py-12 md:py-14">
-        <div className="grid min-w-0 gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 xl:gap-10">
+      <Container className="relative py-9 md:py-11">
+        <div className="grid min-w-0 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 xl:gap-8">
           <div className="min-w-0 space-y-5 sm:col-span-2 lg:col-span-1 xl:col-span-2">
             <div className="space-y-4">
               <LogoLink size="lg" variant="footer" linkClassName="hover:scale-100" />

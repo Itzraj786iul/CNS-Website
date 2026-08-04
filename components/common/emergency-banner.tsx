@@ -25,7 +25,7 @@ function EmergencyBanner({
     <div
       data-slot="emergency-banner"
       className={cn(
-        "relative overflow-hidden rounded-3xl border border-white/10 footer-surface px-6 py-8 shadow-soft-lg sm:px-10 sm:py-10",
+        "relative overflow-hidden rounded-3xl border border-white/10 footer-surface px-5 py-6 shadow-soft-lg sm:px-8 sm:py-7",
         className
       )}
     >
@@ -33,15 +33,15 @@ function EmergencyBanner({
         aria-hidden="true"
         className="pointer-events-none absolute -right-12 -top-12 size-48 rounded-full bg-destructive/20 blur-3xl"
       />
-      <div className="relative z-10 flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
-        <div className="flex items-start gap-4">
+      <div className="relative z-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex items-start gap-3.5">
           <IconBox
             icon={Siren}
             variant="white"
             className="bg-destructive/20 text-white [&_svg]:animate-emergency-pulse"
           />
           <div>
-            <h2 className="font-heading text-xl font-semibold text-white sm:text-2xl">
+            <h2 className="font-heading text-lg font-semibold text-white sm:text-xl">
               {title}
             </h2>
             <p className="mt-2 max-w-xl text-sm leading-relaxed text-white/88 sm:text-base">
@@ -64,7 +64,7 @@ function EmergencyBanner({
             </a>
           }
           variant="destructiveSolid"
-          className="h-12 shrink-0 rounded-full px-6"
+          className="h-11 shrink-0 rounded-full px-6"
         />
       </div>
     </div>

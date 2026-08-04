@@ -13,9 +13,9 @@ import { fadeUp } from "@/lib/motion";
 function WhyChooseSection() {
   return (
     <Section variant="muted" spacing="default">
-      <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
+      <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-10">
         <AnimatedSection className="relative order-2 lg:order-1" direction="left">
-          <div className="relative image-placeholder aspect-[4/5]">
+          <div className="relative image-placeholder aspect-[4/3]">
             <Image
               src="https://placehold.co/640x800/F8FBFD/1F7CC6/png?font=roboto&text=Advanced+Neuro+Care"
               alt="Advanced neuroscience care at CNS"
@@ -34,7 +34,7 @@ function WhyChooseSection() {
           />
         </AnimatedSection>
 
-        <div className="order-1 space-y-8 lg:order-2">
+        <div className="order-1 space-y-6 lg:order-2">
           <AnimatedSection direction="right">
             <SectionHeading
               eyebrow="Why Patients Choose CNS"
@@ -48,7 +48,7 @@ function WhyChooseSection() {
               <motion.div
                 key={feature.title}
                 variants={fadeUp}
-                className="group flex gap-4 rounded-2xl border border-cns-border/60 bg-background p-5 transition-all duration-500 hover:-translate-y-0.5 hover:border-primary/15 hover:bg-card hover:shadow-soft"
+                className="group flex gap-3.5 rounded-2xl border border-cns-border/60 bg-background p-4 transition-all duration-500 hover:-translate-y-0.5 hover:border-primary/15 hover:bg-card hover:shadow-soft"
               >
                 <IconBox
                   icon={feature.icon}

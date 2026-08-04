@@ -39,7 +39,7 @@ function ResourcesPageContent() {
       />
 
       <Section variant="white" spacing="default">
-        <div className="space-y-8">
+        <div className="section-stack">
           <AnimatedSection>
             <SectionHeading eyebrow="Patient Forms" title="Download & Prepare" description="Complete these forms before your visit — save time at registration and help us serve you faster." />
           </AnimatedSection>

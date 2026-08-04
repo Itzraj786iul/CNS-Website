@@ -50,8 +50,8 @@ function DoctorCard({
 }: DoctorCardProps) {
   const content = (
     <Card className="group/doctor flex h-full flex-col overflow-hidden card-premium card-premium-hover ring-0">
-      <div className="p-4 pb-0">
-        <div className="photo-frame relative aspect-[4/5]">
+      <div className="p-3.5 pb-0">
+        <div className="photo-frame relative aspect-[5/6]">
           <Image
             src={image.src}
             alt={image.alt}
@@ -83,17 +83,17 @@ function DoctorCard({
           ) : null}
         </div>
       </div>
-      <CardHeader className="gap-3 px-6 pb-2 pt-5">
+      <CardHeader className="gap-2 px-5 pb-1 pt-4">
         {department ? <Tag variant="green">{department}</Tag> : null}
-        <CardTitle className="text-xl font-semibold tracking-tight text-cns-navy">
+        <CardTitle className="text-lg font-semibold tracking-tight text-cns-navy">
           {name}
         </CardTitle>
-        <CardDescription className="text-base font-medium leading-relaxed text-primary">
+        <CardDescription className="text-sm font-medium leading-relaxed text-primary">
           {title}
         </CardDescription>
       </CardHeader>
       {specializations?.length || intro ? (
-        <CardContent className="flex flex-1 flex-col gap-3 px-6 pb-2 pt-0">
+        <CardContent className="flex flex-1 flex-col gap-2 px-5 pb-1 pt-0">
           {specializations?.length ? (
             <div className="flex flex-wrap gap-1.5">
               {specializations.map((spec) => (
@@ -109,7 +109,7 @@ function DoctorCard({
         </CardContent>
       ) : null}
       {showQuickActions ? (
-        <CardFooter className="mt-auto flex flex-col gap-2 border-t-0 bg-transparent px-6 pb-6 pt-2">
+        <CardFooter className="mt-auto flex flex-col gap-2 border-t-0 bg-transparent px-5 pb-5 pt-1">
           {href ? (
             <Button
               nativeButton={false}
@@ -150,7 +150,7 @@ function DoctorCard({
           </div>
         </CardFooter>
       ) : href ? (
-        <CardFooter className="border-t-0 bg-transparent px-6 pb-6 pt-0">
+        <CardFooter className="border-t-0 bg-transparent px-5 pb-5 pt-0">
           <Button
             variant="ghost"
             className="group/btn -ml-2 h-10 rounded-full px-3 font-semibold text-primary hover:bg-primary/10"

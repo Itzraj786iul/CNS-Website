@@ -44,16 +44,16 @@ function StatisticsCard({
       className={cn("h-full", className)}
     >
       <Card className="card-premium card-premium-hover h-full">
-        <CardContent className="flex flex-col gap-2 px-5 py-6 sm:gap-2.5 sm:px-7 sm:py-8">
+        <CardContent className="flex flex-col gap-1.5 px-4 py-4 sm:gap-2 sm:px-5 sm:py-5">
           <p
-            className="font-heading text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl"
+            className="font-heading text-2xl font-semibold tracking-tight sm:text-3xl lg:text-[2rem]"
             aria-label={`${value}${suffix ?? ""} ${label}`}
           >
             <span className="text-gradient-brand" aria-hidden="true">
               {displayValue}
             </span>
             {suffix ? (
-              <span className="text-2xl text-primary sm:text-3xl" aria-hidden="true">
+              <span className="text-xl text-primary sm:text-2xl" aria-hidden="true">
                 {suffix}
               </span>
             ) : null}

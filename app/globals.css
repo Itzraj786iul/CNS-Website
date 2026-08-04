@@ -333,7 +333,7 @@
   }
 
   .eyebrow-pill {
-    @apply inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/8 px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-primary;
+    @apply inline-flex items-center gap-1.5 rounded-full border border-primary/20 bg-primary/8 px-3 py-0.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-primary;
   }
 
   .dark .eyebrow-pill {
@@ -367,7 +367,7 @@
   }
 
   .card-body {
-    @apply px-5 py-5 sm:px-6 sm:py-6;
+    @apply px-4 py-4 sm:px-5 sm:py-5;
   }
 
   .photo-frame {
@@ -405,7 +405,7 @@
   }
 
   .quote-mark {
-    @apply font-heading text-5xl leading-none text-primary/15 select-none;
+    @apply font-heading text-4xl leading-none text-primary/15 select-none;
   }
 
   .hero-light-beam {
@@ -446,7 +446,11 @@
   }
 
   .prose-lead {
-    @apply text-base leading-[1.8] text-muted-foreground sm:text-lg;
+    @apply text-sm leading-[1.75] text-muted-foreground sm:text-base;
+  }
+
+  .section-stack {
+    @apply space-y-6;
   }
 
   .section-surface-white {

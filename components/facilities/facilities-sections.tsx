@@ -42,7 +42,7 @@ function TechnologySection() {
   const { technology } = facilitiesContent;
   return (
     <Section variant="white" spacing="default">
-      <div className="space-y-8">
+      <div className="section-stack">
         <AnimatedSection className="mx-auto max-w-3xl text-center">
           <SectionHeading align="center" eyebrow={technology.eyebrow} title={technology.title} description={technology.description} />
         </AnimatedSection>
@@ -62,7 +62,7 @@ function PatientSafetySection() {
   const { safety } = facilitiesContent;
   return (
     <Section variant="default" spacing="default">
-      <div className="space-y-8">
+      <div className="section-stack">
         <AnimatedSection className="mx-auto max-w-3xl text-center">
           <SectionHeading align="center" eyebrow={safety.eyebrow} title={safety.title} description={safety.description} />
         </AnimatedSection>

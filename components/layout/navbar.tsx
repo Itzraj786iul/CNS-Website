@@ -94,7 +94,7 @@ function Navbar() {
         <div
           className={cn(
             "flex items-center justify-between gap-5 transition-[height] duration-500 ease-out lg:gap-8",
-            isCompact ? "h-14 lg:h-[3.75rem]" : "h-[4.25rem] lg:h-20"
+            isCompact ? "h-12 lg:h-14" : "h-14 lg:h-16"
           )}
         >
           <LogoLink

@@ -21,7 +21,7 @@ function TimelineCard({
   return (
     <div
       data-slot="timeline-card"
-      className={cn("relative flex gap-6 pb-10", className)}
+      className={cn("relative flex gap-5 pb-7", className)}
     >
       <div className="flex flex-col items-center">
         <div className="flex size-3 shrink-0 rounded-full bg-primary ring-4 ring-primary/15" />
@@ -31,11 +31,11 @@ function TimelineCard({
       </div>
 
       <Card className="flex-1 card-premium card-premium-hover ring-0">
-        <CardContent className="space-y-2 px-6 py-5">
-          <p className="text-sm font-semibold uppercase tracking-[0.12em] text-primary">
+        <CardContent className="space-y-1.5 px-5 py-4">
+          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-primary">
             {year}
           </p>
-          <h3 className="font-heading text-lg font-semibold text-cns-navy">
+          <h3 className="font-heading text-base font-semibold text-cns-navy">
             {title}
           </h3>
           {description ? (

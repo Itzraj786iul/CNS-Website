@@ -53,7 +53,7 @@ function HomeTestimonialCard({
       variants={hoverLift}
     >
       <Card className="card-premium card-premium-hover ring-0">
-        <CardContent className="flex flex-col gap-5 px-5 py-6 sm:px-6">
+        <CardContent className="flex flex-col gap-4 px-4 py-5 sm:px-5">
           <StarRating rating={rating} />
           {outcome ? (
             <p className="text-xs font-semibold uppercase tracking-[0.1em] text-secondary">
@@ -64,12 +64,12 @@ function HomeTestimonialCard({
             <span className="quote-mark" aria-hidden="true">
               &ldquo;
             </span>
-            <p className="text-base leading-[1.8] text-cns-navy/90">
+            <p className="text-sm leading-[1.75] text-cns-navy/90">
               {quote}
             </p>
           </blockquote>
-          <footer className="flex items-center gap-4 border-t border-cns-border/80 pt-5">
-            <div className="photo-frame relative size-12 shrink-0 rounded-full ring-2 ring-white">
+          <footer className="flex items-center gap-3 border-t border-cns-border/80 pt-4">
+            <div className="photo-frame relative size-10 shrink-0 rounded-full ring-2 ring-white">
               <Image
                 src={avatar}
                 alt={author}
@@ -79,7 +79,7 @@ function HomeTestimonialCard({
               />
             </div>
             <cite className="not-italic">
-              <p className="font-heading text-base font-semibold text-cns-navy">
+              <p className="font-heading text-sm font-semibold text-cns-navy">
                 {author}
               </p>
               {role ? (
@@ -96,7 +96,7 @@ function HomeTestimonialCard({
 function TestimonialsSection() {
   return (
     <Section variant="default" spacing="default">
-      <div className="space-y-8">
+      <div className="section-stack">
         <AnimatedSection className="mx-auto max-w-3xl text-center">
           <SectionHeading
             align="center"
@@ -106,7 +106,7 @@ function TestimonialsSection() {
           />
         </AnimatedSection>
 
-        <AnimatedSection stagger className="grid gap-6 md:grid-cols-3 md:gap-7">
+        <AnimatedSection stagger className="grid gap-5 md:grid-cols-3 md:gap-5">
           {testimonials.map((testimonial) => (
             <motion.div key={testimonial.author} variants={fadeUp}>
               <HomeTestimonialCard {...testimonial} />

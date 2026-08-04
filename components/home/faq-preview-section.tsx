@@ -13,8 +13,8 @@ import { Button } from "@/components/ui/button";
 function FaqPreviewSection() {
   return (
     <Section variant="white" spacing="default">
-      <div className="grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:items-start lg:gap-12">
-        <AnimatedSection className="space-y-6 lg:sticky lg:top-28">
+      <div className="grid gap-8 lg:grid-cols-[1fr_1.2fr] lg:items-start lg:gap-8">
+        <AnimatedSection className="space-y-5 lg:sticky lg:top-24">
           <SectionHeading
             eyebrow="Your Questions Answered"
             title="Clear Guidance Before You Visit"
@@ -30,7 +30,7 @@ function FaqPreviewSection() {
             }
             variant="outline"
             size="lg"
-            className="h-12 border-cns-border px-6"
+            className="h-11 border-cns-border px-6"
           />
         </AnimatedSection>
 

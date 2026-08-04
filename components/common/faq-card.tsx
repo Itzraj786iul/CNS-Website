@@ -34,12 +34,12 @@ function FAQCard({ items, className }: FAQCardProps) {
           <AccordionItem
             key={`${item.question}-${index}`}
             value={`faq-${index}`}
-            className="border-border px-5 last:border-b-0 sm:px-7"
+            className="border-border px-5 last:border-b-0 sm:px-6"
           >
-            <AccordionTrigger className="py-5 text-left font-heading text-base font-semibold text-cns-navy transition-colors hover:text-primary hover:no-underline sm:py-6 [&[data-state=open]]:text-primary">
+            <AccordionTrigger className="py-4 text-left font-heading text-[15px] font-semibold text-cns-navy transition-colors hover:text-primary hover:no-underline sm:py-4 [&[data-state=open]]:text-primary">
               {item.question}
             </AccordionTrigger>
-            <AccordionContent className="pb-5 text-base leading-[1.8] text-muted-foreground sm:pb-6">
+            <AccordionContent className="pb-4 text-sm leading-[1.75] text-muted-foreground sm:pb-5">
               {item.answer}
             </AccordionContent>
           </AccordionItem>

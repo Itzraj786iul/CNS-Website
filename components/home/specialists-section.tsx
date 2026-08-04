@@ -15,8 +15,8 @@ import { fadeUp } from "@/lib/motion";
 function SpecialistsSection() {
   return (
     <Section variant="default" spacing="default" divider>
-      <div className="space-y-8">
-        <AnimatedSection className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
+      <div className="section-stack">
+        <AnimatedSection className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <SectionHeading
             eyebrow="Our Physicians"
             title="Meet Our Neuroscience Specialists"
@@ -32,11 +32,11 @@ function SpecialistsSection() {
             }
             variant="outline"
             size="lg"
-            className="hidden h-12 shrink-0 border-cns-border px-6 sm:inline-flex"
+            className="hidden h-11 shrink-0 border-cns-border px-6 sm:inline-flex"
           />
         </AnimatedSection>
 
-        <AnimatedSection stagger className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <AnimatedSection stagger className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {specialists.map((doctor) => (
             <motion.div key={doctor.name} variants={fadeUp}>
               <DoctorCard
@@ -65,7 +65,7 @@ function SpecialistsSection() {
             }
             variant="outline"
             size="lg"
-            className="h-12 border-cns-border px-6"
+            className="h-11 border-cns-border px-6"
           />
         </AnimatedSection>
       </div>

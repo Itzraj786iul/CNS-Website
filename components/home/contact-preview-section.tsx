@@ -32,7 +32,7 @@ const variantMap = {
 function ContactPreviewSection() {
   return (
     <Section variant="muted" spacing="default">
-      <div className="space-y-8">
+      <div className="section-stack">
         <AnimatedSection className="mx-auto max-w-3xl text-center">
           <SectionHeading
             align="center"
@@ -42,7 +42,7 @@ function ContactPreviewSection() {
           />
         </AnimatedSection>
 
-        <AnimatedSection stagger className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <AnimatedSection stagger className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {contactCards.map((card) => {
             const Icon = iconMap[card.icon];
             const variant = variantMap[card.icon];
@@ -55,7 +55,7 @@ function ContactPreviewSection() {
                   variants={hoverLift}
                 >
                   <Card className="card-premium card-premium-hover">
-                    <CardContent className="space-y-4 px-5 py-6 sm:px-6">
+                    <CardContent className="space-y-3 px-4 py-5 sm:px-5">
                       <IconBox icon={Icon} variant={variant} />
                       <div className="space-y-2">
                         <p className="text-sm font-semibold uppercase tracking-[0.12em] text-muted-foreground">
@@ -64,14 +64,14 @@ function ContactPreviewSection() {
                         {isTelHref(card.href) || card.href.startsWith("mailto:") ? (
                           <a
                             href={card.href}
-                            className="block font-heading text-lg font-semibold text-cns-navy transition-colors hover:text-primary"
+                            className="block font-heading text-base font-semibold text-cns-navy transition-colors hover:text-primary"
                           >
                             {card.value}
                           </a>
                         ) : (
                           <Link
                             href={card.href}
-                            className="block font-heading text-lg font-semibold text-cns-navy transition-colors hover:text-primary"
+                            className="block font-heading text-base font-semibold text-cns-navy transition-colors hover:text-primary"
                           >
                             {card.value}
                           </Link>
@@ -89,9 +89,9 @@ function ContactPreviewSection() {
         </AnimatedSection>
 
         <AnimatedSection>
-          <div className="grid gap-6 lg:grid-cols-2 lg:items-start">
+          <div className="grid gap-5 lg:grid-cols-2 lg:items-start">
             <div className="image-placeholder overflow-hidden rounded-3xl">
-              <div className="relative h-48 w-full sm:h-52">
+              <div className="relative h-40 w-full sm:h-44">
                 <iframe
                   title="Center for Neuroscience location map"
                   src="https://maps.google.com/maps?q=Raipur+Chhattisgarh&output=embed"
@@ -104,10 +104,10 @@ function ContactPreviewSection() {
             </div>
 
             <Card className="card-premium card-premium-hover ring-0">
-              <CardContent className="space-y-5 px-5 py-6 sm:px-6">
-                <div className="space-y-3">
+              <CardContent className="space-y-4 px-4 py-5 sm:px-5">
+                <div className="space-y-2.5">
                   <IconBox icon={MapPin} variant="orange" />
-                  <h3 className="font-heading text-2xl font-semibold text-cns-navy">
+                  <h3 className="font-heading text-xl font-semibold text-cns-navy">
                     Visit {siteConfig.shortName}
                   </h3>
                   <p className="text-base leading-relaxed text-muted-foreground">

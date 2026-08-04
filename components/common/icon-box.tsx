@@ -16,9 +16,9 @@ const iconBoxVariants = cva(
         white: "bg-white/10 text-white dark:bg-white/10 dark:text-white",
       },
       size: {
-        sm: "size-10 rounded-xl [&_svg]:size-4",
-        default: "size-12",
-        lg: "size-14 [&_svg]:size-6",
+        sm: "size-9 rounded-xl [&_svg]:size-4",
+        default: "size-11",
+        lg: "size-12 [&_svg]:size-5",
       },
     },
     defaultVariants: {

@@ -12,7 +12,7 @@ import { fadeUp } from "@/lib/motion";
 function FacilitiesSection() {
   return (
     <Section variant="white" spacing="default">
-      <div className="space-y-8">
+      <div className="section-stack">
         <AnimatedSection className="mx-auto max-w-3xl text-center">
           <SectionHeading
             align="center"
@@ -22,7 +22,7 @@ function FacilitiesSection() {
           />
         </AnimatedSection>
 
-        <AnimatedSection stagger className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <AnimatedSection stagger className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {facilities.map((facility) => (
             <motion.div key={facility.title} variants={fadeUp}>
               <FeatureCard

@@ -13,7 +13,7 @@ import { fadeUp, hoverLift } from "@/lib/motion";
 function VisionMissionSection() {
   return (
     <Section variant="default" spacing="default">
-      <div className="space-y-8">
+      <div className="section-stack">
         <AnimatedSection className="mx-auto max-w-3xl text-center">
           <SectionHeading
             align="center"

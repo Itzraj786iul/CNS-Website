@@ -15,7 +15,7 @@ import { fadeUp } from "@/lib/motion";
 function DepartmentsPreviewSection() {
   return (
     <Section variant="default" spacing="default">
-      <div className="space-y-8">
+      <div className="section-stack">
         <AnimatedSection className="mx-auto max-w-3xl text-center">
           <SectionHeading
             align="center"
@@ -50,7 +50,7 @@ function DepartmentsPreviewSection() {
             }
             variant="outline"
             size="lg"
-            className="h-12 border-cns-border px-6"
+            className="h-11 border-cns-border px-6"
           />
         </AnimatedSection>
       </div>

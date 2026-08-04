@@ -28,7 +28,7 @@ function WhyDepartmentsSection() {
           </div>
         </AnimatedSection>
 
-        <div className="space-y-8">
+        <div className="section-stack">
           <AnimatedSection>
             <SectionHeading
               eyebrow={whyDepartments.eyebrow}

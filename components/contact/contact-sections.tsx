@@ -42,7 +42,7 @@ function ContactCardsSection() {
             <motion.div key={card.title} variants={fadeUp}>
               <motion.div initial="rest" whileHover="hover" variants={hoverLift}>
                 <Card className="card-premium card-premium-hover ring-0">
-                  <CardContent className="space-y-4 px-5 py-6 sm:px-6">
+                  <CardContent className="space-y-3 px-4 py-5 sm:px-5">
                     <IconBox icon={Icon} variant={variant} />
                     <div className="space-y-1.5">
                       <p className="text-sm font-semibold uppercase tracking-[0.12em] text-muted-foreground">{card.title}</p>
@@ -67,7 +67,7 @@ function ContactCardsSection() {
 function ContactFormSection() {
   return (
     <Section variant="default" spacing="default">
-      <div className="grid gap-8 lg:grid-cols-12 lg:items-start lg:gap-8">
+      <div className="grid gap-6 lg:grid-cols-12 lg:items-start lg:gap-8">
         <AnimatedSection className="lg:col-span-7">
           <div className="mb-6 space-y-4">
             <SectionHeading
@@ -115,7 +115,7 @@ function ContactFormSection() {
 
         <AnimatedSection className="flex flex-col gap-4 lg:col-span-5">
           <div className="overflow-hidden rounded-2xl border border-border bg-muted shadow-soft">
-            <div className="relative h-48 w-full sm:h-52">
+            <div className="relative h-40 w-full sm:h-44">
               <iframe
                 title="Center for Neuroscience location"
                 src="https://maps.google.com/maps?q=Raipur+Chhattisgarh&output=embed"
@@ -147,7 +147,7 @@ function ContactFormSection() {
 function DepartmentsContactSection() {
   return (
     <Section variant="white" spacing="default">
-      <div className="space-y-8">
+      <div className="section-stack">
         <AnimatedSection className="mx-auto max-w-3xl text-center">
           <SectionHeading
             align="center"
@@ -191,7 +191,7 @@ function EmergencyBannerSection() {
 function FaqSection() {
   return (
     <Section variant="white" spacing="default">
-      <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start lg:gap-10">
+      <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-start lg:gap-8">
         <AnimatedSection>
           <SectionHeading
             eyebrow="Your Questions"

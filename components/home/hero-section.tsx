@@ -25,7 +25,7 @@ import { fadeUp, staggerContainer } from "@/lib/motion";
 
 function HeroIllustration() {
   return (
-    <div className="relative mx-auto aspect-square w-full max-w-md sm:max-w-lg lg:max-w-none">
+    <div className="relative mx-auto aspect-[6/5] w-full max-w-sm sm:max-w-md lg:max-w-none lg:max-h-[380px]">
       <motion.div
         aria-hidden="true"
         animate={{ y: [0, -10, 0] }}
@@ -178,16 +178,16 @@ function HeroSection() {
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-48 bg-linear-to-t from-background via-background/90 to-transparent"
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-linear-to-t from-background via-background/90 to-transparent"
       />
 
-      <Container className="relative flex flex-col justify-center py-10 sm:py-12 lg:min-h-[calc(100svh-6rem)] lg:py-16 xl:py-20">
-        <div className="grid min-w-0 items-center gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-14">
+      <Container className="relative flex flex-col justify-center py-8 sm:py-9 lg:py-10 xl:py-11">
+        <div className="grid min-w-0 items-center gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-10">
           <motion.div
             initial="hidden"
             animate="visible"
             variants={staggerContainer}
-            className="min-w-0 max-w-xl space-y-8 sm:space-y-10"
+            className="min-w-0 max-w-xl space-y-6"
           >
             <motion.div variants={fadeUp}>
               <Tag variant="blue" className="px-4 py-1.5 text-sm shadow-soft">
@@ -195,23 +195,23 @@ function HeroSection() {
               </Tag>
             </motion.div>
 
-            <motion.div variants={fadeUp} className="space-y-5">
-              <h1 className="font-heading text-[1.875rem] font-semibold leading-[1.08] tracking-[-0.035em] text-cns-navy min-[375px]:text-[2.125rem] sm:text-5xl lg:text-[3.75rem] lg:leading-[1.02]">
+            <motion.div variants={fadeUp} className="space-y-4">
+              <h1 className="font-heading text-[1.75rem] font-semibold leading-[1.08] tracking-[-0.035em] text-cns-navy min-[375px]:text-[2rem] sm:text-[2.375rem] lg:text-[2.875rem] lg:leading-[1.04]">
                 Center for{" "}
                 <span className="text-gradient-brand">Neuroscience</span>
               </h1>
-              <p className="font-heading text-lg font-medium tracking-tight text-cns-navy/90 sm:text-xl">
+              <p className="font-heading text-base font-medium tracking-tight text-cns-navy/90 sm:text-lg">
                 Your health is in safe hands.
               </p>
-              <p className="prose-lead max-w-lg pt-1">
+              <p className="prose-lead max-w-lg">
                 Subspecialist-led care for stroke, brain, and spine conditions —
                 with advanced imaging, round-the-clock emergency support, and
                 clinicians who take time to listen.
               </p>
             </motion.div>
 
-            <motion.div variants={fadeUp} className="space-y-5">
-              <div className="flex flex-col gap-3.5 sm:flex-row sm:items-center">
+            <motion.div variants={fadeUp} className="space-y-4">
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
                 <Button
                   nativeButton={false}
                   render={
@@ -221,7 +221,7 @@ function HeroSection() {
                     </Link>
                   }
                   size="lg"
-                  className="h-12 w-full min-w-0 sm:w-auto sm:min-w-[12rem] bg-secondary font-semibold shadow-glow-green hover:bg-[#527a14]"
+                  className="h-11 w-full min-w-0 sm:w-auto sm:min-w-[11rem] bg-secondary font-semibold shadow-glow-green hover:bg-[#527a14]"
                 />
                 <Button
                   nativeButton={false}
@@ -233,7 +233,7 @@ function HeroSection() {
                   }
                   variant="outline"
                   size="lg"
-                  className="h-12 w-full min-w-0 sm:w-auto border-border bg-card px-7 font-semibold text-cns-navy shadow-soft hover:border-primary/35 hover:bg-primary/5"
+                  className="h-11 w-full min-w-0 sm:w-auto border-border bg-card px-6 font-semibold text-cns-navy shadow-soft hover:border-primary/35 hover:bg-primary/5"
                 />
               </div>
               {isTelHref(appointmentHref) ? (
@@ -268,14 +268,14 @@ function HeroSection() {
 
             <motion.ul
               variants={fadeUp}
-              className="flex flex-col gap-4 border-t border-border/70 pt-8 sm:flex-row sm:flex-wrap sm:gap-x-10 sm:gap-y-4"
+              className="flex flex-col gap-3 border-t border-border/70 pt-6 sm:flex-row sm:flex-wrap sm:gap-x-8 sm:gap-y-3"
             >
               {trustItems.map(({ icon: Icon, label }) => (
                 <li
                   key={label}
-                  className="flex items-center gap-3 text-sm font-medium text-cns-navy/90"
+                  className="flex items-center gap-2.5 text-sm font-medium text-cns-navy/90"
                 >
-                  <span className="flex size-10 items-center justify-center rounded-full bg-card/90 shadow-soft ring-1 ring-cns-border/50 text-primary">
+                  <span className="flex size-9 items-center justify-center rounded-full bg-card/90 shadow-soft ring-1 ring-cns-border/50 text-primary">
                     <Icon className="size-4" aria-hidden="true" />
                   </span>
                   {label}
@@ -295,22 +295,22 @@ function HeroSection() {
         </div>
       </Container>
 
-      <div className="relative z-10 -mt-12 pb-10 sm:-mt-16 sm:pb-12 lg:-mt-28 lg:pb-16">
+      <div className="relative z-10 -mt-8 pb-8 sm:-mt-10 sm:pb-9 lg:-mt-14 lg:pb-10">
         <Container>
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-40px" }}
             variants={staggerContainer}
-            className="space-y-6"
+            className="space-y-4"
           >
             <motion.div variants={fadeUp} className="text-center">
               <p className="eyebrow-pill mx-auto">Clinical Credibility</p>
-              <p className="mt-4 font-heading text-lg font-medium text-cns-navy/85 sm:text-xl">
+              <p className="mt-3 font-heading text-base font-medium text-cns-navy/85 sm:text-lg">
                 Trusted by families across Chhattisgarh
               </p>
             </motion.div>
-            <div className="grid gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4">
+            <div className="grid gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4">
               {heroStats.map((stat) => (
                 <motion.div key={stat.label} variants={fadeUp}>
                   <StatisticsCard

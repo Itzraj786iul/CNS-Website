@@ -29,7 +29,7 @@ function ResearchPageContent() {
       />
 
       <Section variant="white" spacing="default">
-        <div className="space-y-8">
+        <div className="section-stack">
           <AnimatedSection className="mx-auto max-w-3xl text-center">
             <SectionHeading
               align="center"
@@ -57,7 +57,7 @@ function ResearchPageContent() {
       </Section>
 
       <Section variant="default" spacing="default" divider>
-        <div className="space-y-8">
+        <div className="section-stack">
           <AnimatedSection>
             <SectionHeading eyebrow="Publications" title="Recent Publications" description="Peer-reviewed contributions from our clinical and research teams." />
           </AnimatedSection>
@@ -109,7 +109,7 @@ function ResearchPageContent() {
       </Section>
 
       <Section variant="default" spacing="default" divider>
-        <div className="space-y-8">
+        <div className="section-stack">
           <AnimatedSection className="mx-auto max-w-3xl text-center">
             <SectionHeading align="center" eyebrow="Recognition" title="Awards & Recognition" description="Honors reflecting our commitment to clinical excellence and research leadership." />
           </AnimatedSection>
@@ -130,7 +130,7 @@ function ResearchPageContent() {
       </Section>
 
       <Section variant="white" spacing="default" divider>
-        <div className="space-y-8">
+        <div className="section-stack">
           <AnimatedSection className="mx-auto max-w-3xl text-center">
             <SectionHeading align="center" eyebrow="Impact" title="Research by the Numbers" description="Measurable contributions to neuroscience knowledge and patient care." />
           </AnimatedSection>
