@@ -1,24 +1,27 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 
-import { aboutFeatures } from "@/components/home/data";
 import { AnimatedSection } from "@/components/common/animated-section";
 import { FeatureCard } from "@/components/common/feature-card";
-import { Section } from "@/components/common/section";
+import { CardGridItem } from "@/components/common/sections";
+import { ImageWithContentSection } from "@/components/common/sections";
 import { SectionHeading } from "@/components/common/section-heading";
 import { Button } from "@/components/ui/button";
-import { fadeUp } from "@/lib/motion";
+import { aboutFeatures } from "@/components/home/data";
+import { mediaImageClasses } from "@/lib/design-system";
 
 function AboutPreviewSection() {
   return (
-    <Section variant="white" spacing="default" divider>
-      <div className="grid items-start gap-5 lg:grid-cols-2 lg:gap-6">
-        <AnimatedSection className="relative lg:flex lg:flex-col lg:justify-center" direction="left">
-          <div className="relative image-placeholder aspect-[3/2] lg:max-h-[170px] lg:w-full">
+    <ImageWithContentSection
+      variant="white"
+      spacing="default"
+      divider
+      image={
+        <>
+          <div className={mediaImageClasses.preview}>
             <Image
               src="https://placehold.co/640x800/EEF4F9/16324A/png?font=roboto&text=CNS+Medical+Team"
               alt="Center for Neuroscience medical team"
@@ -36,9 +39,10 @@ function AboutPreviewSection() {
             aria-hidden="true"
             className="absolute -bottom-4 -right-4 -z-10 size-32 rounded-full bg-secondary/10 blur-2xl"
           />
-        </AnimatedSection>
-
-        <div className="section-stack">
+        </>
+      }
+      body={
+        <>
           <AnimatedSection>
             <SectionHeading
               eyebrow="Who We Are"
@@ -49,7 +53,7 @@ function AboutPreviewSection() {
 
           <AnimatedSection stagger className="grid gap-4 sm:grid-cols-2">
             {aboutFeatures.map((feature) => (
-              <motion.div key={feature.title} variants={fadeUp}>
+              <CardGridItem key={feature.title}>
                 <FeatureCard
                   variant="compact"
                   icon={feature.icon}
@@ -57,7 +61,7 @@ function AboutPreviewSection() {
                   description={feature.description}
                   iconVariant={feature.iconVariant}
                 />
-              </motion.div>
+              </CardGridItem>
             ))}
           </AnimatedSection>
 
@@ -74,9 +78,9 @@ function AboutPreviewSection() {
               className="px-6"
             />
           </AnimatedSection>
-        </div>
-      </div>
-    </Section>
+        </>
+      }
+    />
   );
 }
 

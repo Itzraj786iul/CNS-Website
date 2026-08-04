@@ -11,8 +11,8 @@ import { SectionHeading } from "@/components/common/section-heading";
 import { IconBox } from "@/components/common/icon-box";
 import { Card, CardContent } from "@/components/ui/card";
 import { CTASection } from "@/components/common/cta-section";
+import { CardGridItem, CardGridSection } from "@/components/common/sections";
 import { fadeUp, hoverLift } from "@/lib/motion";
-import { getCardGridClass } from "@/lib/card-variants";
 
 function OverviewSection() {
   const { overview } = facilitiesContent;
@@ -42,20 +42,29 @@ function GallerySection() {
 function TechnologySection() {
   const { technology } = facilitiesContent;
   return (
-    <Section variant="white" spacing="default">
-      <div className="section-stack">
-        <AnimatedSection className="mx-auto max-w-3xl text-center">
-          <SectionHeading align="center" eyebrow={technology.eyebrow} title={technology.title} description={technology.description} />
-        </AnimatedSection>
-        <AnimatedSection stagger className={getCardGridClass("standard")}>
-          {technology.items.map((item) => (
-            <motion.div key={item.title} variants={fadeUp}>
-              <FeatureCard icon={item.icon} title={item.title} description={item.description} iconVariant={item.variant} variant="standard" />
-            </motion.div>
-          ))}
-        </AnimatedSection>
-      </div>
-    </Section>
+    <CardGridSection
+      variant="white"
+      spacing="default"
+      density="listing"
+      heading={{
+        align: "center",
+        eyebrow: technology.eyebrow,
+        title: technology.title,
+        description: technology.description,
+      }}
+    >
+      {technology.items.map((item) => (
+        <CardGridItem key={item.title}>
+          <FeatureCard
+            icon={item.icon}
+            title={item.title}
+            description={item.description}
+            iconVariant={item.variant}
+            variant="standard"
+          />
+        </CardGridItem>
+      ))}
+    </CardGridSection>
   );
 }
 

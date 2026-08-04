@@ -1,62 +1,43 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
-import { specialists } from "@/components/home/data";
-import { AnimatedSection } from "@/components/common/animated-section";
 import { DoctorCard } from "@/components/common/doctor-card";
-import { Section } from "@/components/common/section";
-import { SectionHeading } from "@/components/common/section-heading";
+import { CardGridItem, CardGridSection } from "@/components/common/sections";
 import { Button } from "@/components/ui/button";
-import { fadeUp } from "@/lib/motion";
-import { getCardGridClass } from "@/lib/card-variants";
+import { specialists } from "@/components/home/data";
 
 function SpecialistsSection() {
   return (
-    <Section variant="default" spacing="default" divider>
-      <div className="section-stack">
-        <AnimatedSection className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-          <SectionHeading
-            eyebrow="Our Physicians"
-            title="Meet Our Neuroscience Specialists"
-            description="Board-certified clinicians with advanced fellowship training — chosen for their expertise, and remembered for how they treat people."
-          />
-          <Button
-            nativeButton={false}
-            render={
-              <Link href="/doctors">
-                Consult Our Experts
-                <ArrowRight />
-              </Link>
-            }
-            variant="outline"
-            size="lg"
-            className="hidden shrink-0 border-cns-border px-5 sm:inline-flex"
-          />
-        </AnimatedSection>
-
-        <AnimatedSection stagger className={getCardGridClass("compact")}>
-          {specialists.map((doctor) => (
-            <motion.div key={doctor.name} variants={fadeUp}>
-              <DoctorCard
-                variant="compact"
-                name={doctor.name}
-                title={doctor.title}
-                department={doctor.department}
-                specializations={doctor.specializations}
-                intro={doctor.intro}
-                available={doctor.available}
-                showQuickActions
-                image={doctor.image}
-                href={doctor.href}
-              />
-            </motion.div>
-          ))}
-        </AnimatedSection>
-
-        <AnimatedSection className="flex justify-center sm:hidden">
+    <CardGridSection
+      variant="default"
+      spacing="default"
+      divider
+      density="preview"
+      heading={{
+        eyebrow: "Our Physicians",
+        title: "Meet Our Neuroscience Specialists",
+        description:
+          "Board-certified clinicians with advanced fellowship training — chosen for their expertise, and remembered for how they treat people.",
+        align: "left",
+      }}
+      headerAction={
+        <Button
+          nativeButton={false}
+          render={
+            <Link href="/doctors">
+              Consult Our Experts
+              <ArrowRight />
+            </Link>
+          }
+          variant="outline"
+          size="lg"
+          className="hidden shrink-0 border-cns-border px-5 sm:inline-flex"
+        />
+      }
+      footer={
+        <div className="flex justify-center sm:hidden">
           <Button
             nativeButton={false}
             render={
@@ -69,9 +50,26 @@ function SpecialistsSection() {
             size="lg"
             className="border-cns-border px-5"
           />
-        </AnimatedSection>
-      </div>
-    </Section>
+        </div>
+      }
+    >
+      {specialists.map((doctor) => (
+        <CardGridItem key={doctor.name}>
+          <DoctorCard
+            variant="compact"
+            name={doctor.name}
+            title={doctor.title}
+            department={doctor.department}
+            specializations={doctor.specializations}
+            intro={doctor.intro}
+            available={doctor.available}
+            showQuickActions
+            image={doctor.image}
+            href={doctor.href}
+          />
+        </CardGridItem>
+      ))}
+    </CardGridSection>
   );
 }
 

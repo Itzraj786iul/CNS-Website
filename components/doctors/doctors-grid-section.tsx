@@ -1,14 +1,11 @@
 "use client";
 
-import { motion } from "framer-motion";
-
-import { doctorsContent } from "@/components/doctors/data";
 import { DoctorProfileCard } from "@/components/doctors/doctor-profile-card";
-import { AnimatedSection } from "@/components/common/animated-section";
+import { CardGridItem, CardGridSection } from "@/components/common/sections";
 import { Section } from "@/components/common/section";
 import { SectionHeading } from "@/components/common/section-heading";
-import { fadeUp } from "@/lib/motion";
-import { getCardGridClass } from "@/lib/card-variants";
+import { AnimatedSection } from "@/components/common/animated-section";
+import { doctorsContent } from "@/components/doctors/data";
 
 function IntroductionSection() {
   return (
@@ -27,15 +24,20 @@ function IntroductionSection() {
 
 function DoctorsGridSection() {
   return (
-    <Section variant="default" spacing="default" className="!pt-6">
-      <AnimatedSection stagger className={getCardGridClass("detailed")}>
-        {doctorsContent.doctors.map((doctor) => (
-          <motion.div key={doctor.id} id={doctor.id} variants={fadeUp}>
+    <CardGridSection
+      variant="default"
+      spacing="default"
+      className="!pt-6"
+      density="detail"
+    >
+      {doctorsContent.doctors.map((doctor) => (
+        <CardGridItem key={doctor.id}>
+          <div id={doctor.id}>
             <DoctorProfileCard doctor={doctor} variant="detailed" />
-          </motion.div>
-        ))}
-      </AnimatedSection>
-    </Section>
+          </div>
+        </CardGridItem>
+      ))}
+    </CardGridSection>
   );
 }
 

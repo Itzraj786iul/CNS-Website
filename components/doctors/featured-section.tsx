@@ -1,37 +1,29 @@
 "use client";
 
-import { motion } from "framer-motion";
-
-import { featuredDoctors } from "@/components/doctors/data";
 import { DoctorProfileCard } from "@/components/doctors/doctor-profile-card";
-import { AnimatedSection } from "@/components/common/animated-section";
-import { Section } from "@/components/common/section";
-import { SectionHeading } from "@/components/common/section-heading";
-import { fadeUp } from "@/lib/motion";
-import { getCardGridClass } from "@/lib/card-variants";
+import { CardGridItem, CardGridSection } from "@/components/common/sections";
+import { featuredDoctors } from "@/components/doctors/data";
 
 function FeaturedSection() {
   return (
-    <Section variant="white" spacing="default">
-      <div className="section-stack">
-        <AnimatedSection className="mx-auto max-w-3xl text-center">
-          <SectionHeading
-            align="center"
-            eyebrow="Clinical Leadership"
-            title="Featured Neuroscience Specialists"
-            description="Recognised leaders in their fields — combining fellowship training with years of hands-on clinical practice at CNS."
-          />
-        </AnimatedSection>
-
-        <AnimatedSection stagger className={getCardGridClass("standard")}>
-          {featuredDoctors.map((doctor) => (
-            <motion.div key={doctor.id} variants={fadeUp}>
-              <DoctorProfileCard doctor={doctor} variant="standard" />
-            </motion.div>
-          ))}
-        </AnimatedSection>
-      </div>
-    </Section>
+    <CardGridSection
+      variant="white"
+      spacing="default"
+      density="listing"
+      heading={{
+        align: "center",
+        eyebrow: "Clinical Leadership",
+        title: "Featured Neuroscience Specialists",
+        description:
+          "Recognised leaders in their fields — combining fellowship training with years of hands-on clinical practice at CNS.",
+      }}
+    >
+      {featuredDoctors.map((doctor) => (
+        <CardGridItem key={doctor.id}>
+          <DoctorProfileCard doctor={doctor} variant="standard" />
+        </CardGridItem>
+      ))}
+    </CardGridSection>
   );
 }
 

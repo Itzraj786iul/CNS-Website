@@ -8,11 +8,10 @@ import { AnimatedSection } from "@/components/common/animated-section";
 import { CTASection } from "@/components/common/cta-section";
 import { NewsCard } from "@/components/common/news-card";
 import { PageHero } from "@/components/common/page-hero";
-import { Section } from "@/components/common/section";
 import { SectionHeading } from "@/components/common/section-heading";
+import { CardGridItem, CardGridSection, SplitContentSection } from "@/components/common/sections";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { getCardGridClass } from "@/lib/card-variants";
 import { fadeUp } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 
@@ -35,31 +34,18 @@ function NewsPageContent() {
         breadcrumb={[{ label: "Home", href: "/" }, { label: "News" }]}
       />
 
-      <Section variant="white" spacing="default">
-        <div className="section-stack">
-          <AnimatedSection>
-            <SectionHeading eyebrow="Latest Updates" title="News from CNS" description="Recent announcements and clinical milestones from across Center for Neuroscience." />
-          </AnimatedSection>
-          <AnimatedSection stagger className={getCardGridClass("standard")}>
-            {news.map((item) => (
-              <motion.div key={item.title} variants={fadeUp}>
-                <NewsCard
-                  variant="standard"
-                  title={item.title}
-                  excerpt={item.excerpt}
-                  image={item.image}
-                  date={item.date}
-                  category={item.category}
-                  categoryVariant={
-                    categoryVariant[item.category as keyof typeof categoryVariant] ?? "default"
-                  }
-                />
-              </motion.div>
-            ))}
-          </AnimatedSection>
-
-          {/* Pagination UI only */}
-          <AnimatedSection className="flex items-center justify-center gap-2">
+      <CardGridSection
+        variant="white"
+        spacing="default"
+        density="listing"
+        heading={{
+          eyebrow: "Latest Updates",
+          title: "News from CNS",
+          description:
+            "Recent announcements and clinical milestones from across Center for Neuroscience.",
+        }}
+        footer={
+          <div className="flex items-center justify-center gap-2">
             <Button variant="outline" size="icon" className="rounded-full border-cns-border" aria-label="Previous page" disabled>
               <ChevronLeft />
             </Button>
@@ -78,16 +64,38 @@ function NewsPageContent() {
             <Button variant="outline" size="icon" className="rounded-full border-cns-border" aria-label="Next page">
               <ChevronRight />
             </Button>
-          </AnimatedSection>
-        </div>
-      </Section>
+          </div>
+        }
+      >
+        {news.map((item) => (
+          <CardGridItem key={item.title}>
+            <NewsCard
+              variant="standard"
+              title={item.title}
+              excerpt={item.excerpt}
+              image={item.image}
+              date={item.date}
+              category={item.category}
+              categoryVariant={
+                categoryVariant[item.category as keyof typeof categoryVariant] ?? "default"
+              }
+            />
+          </CardGridItem>
+        ))}
+      </CardGridSection>
 
-      <Section variant="default" spacing="default" divider>
-        <div className="grid gap-5 lg:grid-cols-2 lg:items-start lg:gap-6">
+      <SplitContentSection
+        variant="default"
+        spacing="default"
+        divider
+        ratio="equal"
+        left={
           <div className="section-stack">
-            <AnimatedSection direction="left">
-              <SectionHeading eyebrow="Calendar" title="Upcoming Events" description="Join us for community programs, support groups, and awareness initiatives." />
-            </AnimatedSection>
+            <SectionHeading
+              eyebrow="Calendar"
+              title="Upcoming Events"
+              description="Join us for community programs, support groups, and awareness initiatives."
+            />
             <AnimatedSection stagger className="space-y-4">
               {upcomingEvents.map((event) => (
                 <motion.div key={event.title} variants={fadeUp}>
@@ -110,11 +118,14 @@ function NewsPageContent() {
               ))}
             </AnimatedSection>
           </div>
-
+        }
+        right={
           <div className="section-stack">
-            <AnimatedSection direction="right">
-              <SectionHeading eyebrow="Milestones" title="Recent Achievements" description="Highlights from our continued pursuit of excellence in neuroscience care." />
-            </AnimatedSection>
+            <SectionHeading
+              eyebrow="Milestones"
+              title="Recent Achievements"
+              description="Highlights from our continued pursuit of excellence in neuroscience care."
+            />
             <AnimatedSection stagger className="space-y-3">
               {achievements.map((item) => (
                 <motion.div key={item} variants={fadeUp}>
@@ -125,8 +136,8 @@ function NewsPageContent() {
               ))}
             </AnimatedSection>
           </div>
-        </div>
-      </Section>
+        }
+      />
 
       <CTASection
         title={cta.title}

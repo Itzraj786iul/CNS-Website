@@ -75,3 +75,12 @@ export function getCardGridClass(variant: CardVariant = CARD_VARIANT_DEFAULT) {
 export function getCardImageHeight(variant: CardVariant = CARD_VARIANT_DEFAULT) {
   return cardImageHeights[variant];
 }
+
+export {
+  resolveCardVariant,
+  resolveContentDensity,
+  type ContentDensity,
+  mediaImageClasses,
+  splitColumnClasses,
+  type SplitRatio,
+} from "@/lib/design-system";

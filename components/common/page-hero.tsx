@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 
 type PageHeroProps = {
   title: string;
-  description: string;
+  description?: string;
   breadcrumb: BreadcrumbItem[];
   eyebrow?: string;
 };
@@ -100,9 +100,11 @@ function PageHero({ title, description, breadcrumb, eyebrow }: PageHeroProps) {
               {title}
             </h1>
           </motion.div>
-          <motion.p variants={fadeUp} className="prose-lead max-w-2xl">
-            {description}
-          </motion.p>
+          {description ? (
+            <motion.p variants={fadeUp} className="prose-lead max-w-2xl">
+              {description}
+            </motion.p>
+          ) : null}
         </motion.div>
       </Container>
     </section>
@@ -110,3 +112,4 @@ function PageHero({ title, description, breadcrumb, eyebrow }: PageHeroProps) {
 }
 
 export { PageHero };
+export type { PageHeroProps };
