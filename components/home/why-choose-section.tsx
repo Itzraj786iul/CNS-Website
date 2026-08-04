@@ -12,8 +12,8 @@ import { fadeUp } from "@/lib/motion";
 
 function WhyChooseSection() {
   return (
-    <Section variant="muted" spacing="xl">
-      <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-24">
+    <Section variant="muted" spacing="default">
+      <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
         <AnimatedSection className="relative order-2 lg:order-1" direction="left">
           <div className="relative image-placeholder aspect-[4/5]">
             <Image
@@ -34,7 +34,7 @@ function WhyChooseSection() {
           />
         </AnimatedSection>
 
-        <div className="order-1 space-y-12 lg:order-2">
+        <div className="order-1 space-y-8 lg:order-2">
           <AnimatedSection direction="right">
             <SectionHeading
               eyebrow="Why Patients Choose CNS"

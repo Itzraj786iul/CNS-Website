@@ -13,8 +13,8 @@ function AboutCnsSection() {
   const { aboutCns } = aboutContent;
 
   return (
-    <Section variant="white" spacing="lg">
-      <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+    <Section variant="white" spacing="default">
+      <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
         <AnimatedSection className="relative order-2 lg:order-1">
           <div className="relative image-placeholder aspect-[5/6]">
             <Image

@@ -38,16 +38,16 @@ function ResourcesPageContent() {
         breadcrumb={[{ label: "Home", href: "/" }, { label: "Resources" }]}
       />
 
-      <Section variant="white" spacing="lg">
-        <div className="space-y-10">
+      <Section variant="white" spacing="default">
+        <div className="space-y-8">
           <AnimatedSection>
             <SectionHeading eyebrow="Patient Forms" title="Download & Prepare" description="Complete these forms before your visit — save time at registration and help us serve you faster." />
           </AnimatedSection>
           <AnimatedSection stagger className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {downloads.map((form) => (
               <motion.div key={form.title} variants={fadeUp}>
-                <motion.div initial="rest" whileHover="hover" variants={hoverLift} className="h-full">
-                  <Card className="card-premium card-premium-hover h-full ring-0">
+                <motion.div initial="rest" whileHover="hover" variants={hoverLift}>
+                  <Card className="card-premium card-premium-hover ring-0">
                     <CardContent className="flex items-start gap-4 px-6 py-6">
                       <IconBox icon={FileText} variant="blue" size="default" className="shrink-0" />
                       <div className="flex-1 space-y-2">
@@ -67,8 +67,8 @@ function ResourcesPageContent() {
         </div>
       </Section>
 
-      <Section variant="default" spacing="lg" divider>
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
+      <Section variant="default" spacing="default" divider>
+        <div className="grid gap-8 lg:grid-cols-2 lg:gap-10">
           <AnimatedSection direction="left">
             <div className="space-y-6">
               <SectionHeading eyebrow="Insurance" title={insurance.title} description={insurance.description} />
@@ -107,7 +107,7 @@ function ResourcesPageContent() {
         </div>
       </Section>
 
-      <Section variant="white" spacing="lg" divider>
+      <Section variant="white" spacing="default" divider>
         <AnimatedSection>
           <div className="rounded-3xl border border-cns-border/80 bg-white p-6 shadow-soft sm:p-8">
             <SectionHeading eyebrow="Visitor Information" title="Visitor Guidelines" description="Help us maintain a calm, healing environment for every patient and family." />
@@ -123,7 +123,7 @@ function ResourcesPageContent() {
         </AnimatedSection>
       </Section>
 
-      <Section variant="default" spacing="lg" divider>
+      <Section variant="default" spacing="default" divider>
         <div className="rounded-3xl border border-destructive/20 bg-destructive/5 p-6 sm:p-10">
           <AnimatedSection>
             <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
@@ -152,8 +152,8 @@ function ResourcesPageContent() {
         </div>
       </Section>
 
-      <Section variant="white" spacing="lg" divider>
-        <div className="grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:items-start lg:gap-16">
+      <Section variant="white" spacing="default" divider>
+        <div className="grid gap-8 lg:grid-cols-[1fr_1.2fr] lg:items-start lg:gap-10">
           <AnimatedSection className="lg:sticky lg:top-28">
             <SectionHeading eyebrow="Your Questions" title="Clear Guidance Before You Visit" description="Practical answers about visits, medical records, insurance, and hospital policies at CNS." />
           </AnimatedSection>

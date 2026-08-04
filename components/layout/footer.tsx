@@ -96,10 +96,10 @@ function Footer() {
         aria-hidden="true"
         className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-primary/50 to-transparent"
       />
-      <Container className="relative py-16 md:py-20">
-        <div className="grid gap-14 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 xl:gap-14">
-          <div className="space-y-6 sm:col-span-2 lg:col-span-1 xl:col-span-2">
-            <div className="space-y-5">
+      <Container className="relative py-12 md:py-14">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 xl:gap-10">
+          <div className="space-y-5 sm:col-span-2 lg:col-span-1 xl:col-span-2">
+            <div className="space-y-4">
               <LogoLink size="lg" variant="footer" linkClassName="hover:scale-100" />
               <p className="max-w-xs text-xs font-semibold uppercase tracking-[0.12em] text-secondary">
                 Center for Neuroscience · Raipur
@@ -117,7 +117,7 @@ function Footer() {
               <SocialLink href={social.youtube} label="YouTube" icon={YouTubeIcon} />
             </div>
             <form
-              className="min-w-0 space-y-3.5 rounded-2xl border border-white/10 bg-white/[0.04] p-5"
+              className="min-w-0 space-y-3 rounded-2xl border border-white/10 bg-white/[0.04] p-4"
               onSubmit={(e) => e.preventDefault()}
               aria-label="Newsletter signup"
             >
@@ -146,7 +146,7 @@ function Footer() {
           <FooterSection title="Departments" links={footerDepartments} />
           <FooterSection title="Services" links={footerServices} />
 
-          <div className="space-y-8">
+          <div className="space-y-6">
             <div className="rounded-2xl border border-destructive/25 bg-destructive/[0.06] p-5 ring-1 ring-destructive/10">
               <h3 className="font-heading text-xs font-semibold uppercase tracking-[0.14em] text-white/95">
                 Emergency Assistance
@@ -207,7 +207,7 @@ function Footer() {
           </div>
         </div>
 
-        <Separator className="my-12 bg-white/10" />
+        <Separator className="my-8 bg-white/10" />
 
         <div className="flex flex-col gap-4 text-sm text-white/65 sm:flex-row sm:items-center sm:justify-between">
           <p>

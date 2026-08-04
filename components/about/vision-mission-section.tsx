@@ -12,8 +12,8 @@ import { fadeUp, hoverLift } from "@/lib/motion";
 
 function VisionMissionSection() {
   return (
-    <Section variant="default" spacing="lg">
-      <div className="space-y-12">
+    <Section variant="default" spacing="default">
+      <div className="space-y-8">
         <AnimatedSection className="mx-auto max-w-3xl text-center">
           <SectionHeading
             align="center"
@@ -30,10 +30,9 @@ function VisionMissionSection() {
                 initial="rest"
                 whileHover="hover"
                 variants={hoverLift}
-                className="h-full"
               >
-                <Card className="h-full border-cns-border/80 bg-white shadow-soft ring-0">
-                  <CardContent className="space-y-5 px-8 py-10">
+                <Card className="border-cns-border/80 bg-white shadow-soft ring-0">
+                  <CardContent className="space-y-4 px-5 py-6 sm:px-6">
                     <IconBox icon={item.icon} variant={item.variant} size="lg" />
                     <div className="space-y-3">
                       <h3 className="font-heading text-2xl font-semibold text-cns-navy">

@@ -15,8 +15,8 @@ import { fadeUp } from "@/lib/motion";
 
 function AboutPreviewSection() {
   return (
-    <Section variant="white" spacing="xl" divider>
-      <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-24">
+    <Section variant="white" spacing="default" divider>
+      <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
         <AnimatedSection className="relative" direction="left">
           <div className="relative image-placeholder aspect-[4/5]">
             <Image
@@ -38,7 +38,7 @@ function AboutPreviewSection() {
           />
         </AnimatedSection>
 
-        <div className="space-y-12">
+        <div className="space-y-8">
           <AnimatedSection>
             <SectionHeading
               eyebrow="Who We Are"

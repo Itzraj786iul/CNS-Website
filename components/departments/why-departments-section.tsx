@@ -14,8 +14,8 @@ function WhyDepartmentsSection() {
   const { whyDepartments } = departmentsContent;
 
   return (
-    <Section variant="white" spacing="lg">
-      <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+    <Section variant="white" spacing="default">
+      <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
         <AnimatedSection className="relative">
           <div className="relative image-placeholder aspect-[4/3]">
             <Image
@@ -28,7 +28,7 @@ function WhyDepartmentsSection() {
           </div>
         </AnimatedSection>
 
-        <div className="space-y-10">
+        <div className="space-y-8">
           <AnimatedSection>
             <SectionHeading
               eyebrow={whyDepartments.eyebrow}

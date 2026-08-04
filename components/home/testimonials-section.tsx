@@ -51,17 +51,16 @@ function HomeTestimonialCard({
       initial="rest"
       whileHover="hover"
       variants={hoverLift}
-      className="h-full"
     >
-      <Card className="h-full card-premium card-premium-hover ring-0">
-        <CardContent className="flex h-full flex-col gap-6 px-7 py-8 sm:px-8 sm:py-9">
+      <Card className="card-premium card-premium-hover ring-0">
+        <CardContent className="flex flex-col gap-5 px-5 py-6 sm:px-6">
           <StarRating rating={rating} />
           {outcome ? (
             <p className="text-xs font-semibold uppercase tracking-[0.1em] text-secondary">
               {outcome}
             </p>
           ) : null}
-          <blockquote className="relative flex-1 space-y-3">
+          <blockquote className="relative space-y-3">
             <span className="quote-mark" aria-hidden="true">
               &ldquo;
             </span>
@@ -96,8 +95,8 @@ function HomeTestimonialCard({
 
 function TestimonialsSection() {
   return (
-    <Section variant="default" spacing="xl">
-      <div className="space-y-14">
+    <Section variant="default" spacing="default">
+      <div className="space-y-8">
         <AnimatedSection className="mx-auto max-w-3xl text-center">
           <SectionHeading
             align="center"

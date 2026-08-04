@@ -33,18 +33,18 @@ const variantMap = {
 
 function ContactCardsSection() {
   return (
-    <Section variant="white" spacing="default">
-      <AnimatedSection stagger className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+    <Section variant="white" spacing="default" className="!pt-0">
+      <AnimatedSection stagger className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {contactContent.cards.map((card) => {
           const Icon = iconMap[card.type];
           const variant = variantMap[card.type];
           return (
             <motion.div key={card.title} variants={fadeUp}>
-              <motion.div initial="rest" whileHover="hover" variants={hoverLift} className="h-full">
-                <Card className="card-premium card-premium-hover h-full ring-0">
-                  <CardContent className="space-y-5 px-7 py-9">
+              <motion.div initial="rest" whileHover="hover" variants={hoverLift}>
+                <Card className="card-premium card-premium-hover ring-0">
+                  <CardContent className="space-y-4 px-5 py-6 sm:px-6">
                     <IconBox icon={Icon} variant={variant} />
-                    <div className="space-y-2">
+                    <div className="space-y-1.5">
                       <p className="text-sm font-semibold uppercase tracking-[0.12em] text-muted-foreground">{card.title}</p>
                       {isTelHref(card.href) || card.href.startsWith("mailto:") || card.href.startsWith("http") ? (
                         <a href={card.href} className="block font-heading text-base font-semibold text-cns-navy transition-colors hover:text-primary">{card.value}</a>
@@ -66,27 +66,31 @@ function ContactCardsSection() {
 
 function ContactFormSection() {
   return (
-    <Section variant="default" spacing="lg">
-      <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:gap-16">
-        <AnimatedSection>
-          <div className="mb-8 space-y-5">
-            <SectionHeading eyebrow="Get in Touch" title="Send Us a Message" description="Our care team responds within one business day — with clear, helpful guidance." />
+    <Section variant="default" spacing="default">
+      <div className="grid gap-8 lg:grid-cols-12 lg:items-start lg:gap-8">
+        <AnimatedSection className="lg:col-span-7">
+          <div className="mb-6 space-y-4">
+            <SectionHeading
+              eyebrow="Get in Touch"
+              title="Send Us a Message"
+              description="Our care team responds within one business day — with clear, helpful guidance."
+            />
             <a
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#25D366] px-6 text-sm font-semibold text-white shadow-soft transition-all duration-300 hover:scale-[1.02] hover:shadow-soft-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366]/50 focus-visible:ring-offset-2"
+              className="inline-flex h-11 items-center justify-center gap-2 rounded-full bg-[#25D366] px-5 text-sm font-semibold text-white shadow-soft transition-all duration-300 hover:scale-[1.02] hover:shadow-soft-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366]/50 focus-visible:ring-offset-2"
               aria-label="Chat on WhatsApp with Center for Neuroscience"
             >
-              <MessageCircle className="size-5" aria-hidden="true" />
+              <MessageCircle className="size-4" aria-hidden="true" />
               Chat on WhatsApp
             </a>
           </div>
           <form
-            className="space-y-5 rounded-3xl border border-cns-border/80 bg-white p-6 shadow-soft sm:p-8"
+            className="space-y-4 rounded-2xl border border-border bg-white p-5 shadow-soft sm:p-6"
             onSubmit={(e) => e.preventDefault()}
           >
-            <div className="grid gap-5 sm:grid-cols-2">
+            <div className="grid gap-4 sm:grid-cols-2">
               <FormField label="Full Name" htmlFor="contact-name" required>
                 <FormInput id="contact-name" name="name" placeholder="Your full name" required />
               </FormField>
@@ -101,15 +105,17 @@ function ContactFormSection() {
               <FormInput id="contact-subject" name="subject" placeholder="How can we help?" required />
             </FormField>
             <FormField label="Message" htmlFor="contact-message" required>
-              <FormTextarea id="contact-message" name="message" placeholder="Describe your inquiry..." rows={5} />
+              <FormTextarea id="contact-message" name="message" placeholder="Describe your inquiry..." rows={4} />
             </FormField>
-            <Button type="submit" size="lg" className="h-12 w-full sm:w-auto sm:px-8">Send Message</Button>
+            <Button type="submit" size="lg" className="h-11 w-full sm:w-auto sm:px-8">
+              Send Message
+            </Button>
           </form>
         </AnimatedSection>
 
-        <AnimatedSection className="space-y-6">
-          <div className="overflow-hidden rounded-3xl border border-cns-border/80 bg-muted shadow-soft">
-            <div className="relative aspect-square w-full lg:aspect-auto lg:min-h-[360px]">
+        <AnimatedSection className="flex flex-col gap-4 lg:col-span-5">
+          <div className="overflow-hidden rounded-2xl border border-border bg-muted shadow-soft">
+            <div className="relative h-48 w-full sm:h-52">
               <iframe
                 title="Center for Neuroscience location"
                 src="https://maps.google.com/maps?q=Raipur+Chhattisgarh&output=embed"
@@ -119,12 +125,12 @@ function ContactFormSection() {
               />
             </div>
           </div>
-          <Card className="border-cns-border/80 bg-white shadow-soft ring-0">
-            <CardContent className="space-y-4 px-6 py-6">
+          <Card className="border-border bg-white shadow-soft ring-0">
+            <CardContent className="space-y-3 px-5 py-5 sm:px-6">
               <h3 className="font-heading text-lg font-semibold text-cns-navy">{contactContent.timings.title}</h3>
-              <ul className="space-y-3">
+              <ul className="space-y-2.5">
                 {contactContent.timings.schedules.map((item) => (
-                  <li key={item.label} className="flex flex-col gap-0.5 border-b border-cns-border/60 pb-3 last:border-0 last:pb-0">
+                  <li key={item.label} className="flex flex-col gap-0.5 border-b border-border/70 pb-2.5 last:border-0 last:pb-0">
                     <span className="text-sm font-medium text-cns-navy">{item.label}</span>
                     <span className="text-sm text-muted-foreground">{item.hours}</span>
                   </li>
@@ -140,16 +146,21 @@ function ContactFormSection() {
 
 function DepartmentsContactSection() {
   return (
-    <Section variant="white" spacing="lg">
-      <div className="space-y-10">
+    <Section variant="white" spacing="default">
+      <div className="space-y-8">
         <AnimatedSection className="mx-auto max-w-3xl text-center">
-          <SectionHeading align="center" eyebrow="Direct Lines" title="Reach the Right Team" description="Department contacts for faster assistance with referrals, records, and specialist inquiries." />
+          <SectionHeading
+            align="center"
+            eyebrow="Direct Lines"
+            title="Reach the Right Team"
+            description="Department contacts for faster assistance with referrals, records, and specialist inquiries."
+          />
         </AnimatedSection>
         <AnimatedSection stagger className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {contactContent.departments.map((dept) => (
             <motion.div key={dept.name} variants={fadeUp}>
-              <Card className="h-full border-cns-border/80 bg-white shadow-soft ring-0">
-                <CardContent className="space-y-3 px-6 py-6">
+              <Card className="border-border bg-white shadow-soft ring-0">
+                <CardContent className="space-y-2 px-5 py-5">
                   <h3 className="font-heading text-base font-semibold text-cns-navy">{dept.name}</h3>
                   {isTelHref(dept.href) ? (
                     <a href={dept.href} className="block text-sm text-primary hover:underline">{dept.phone}</a>
@@ -169,7 +180,7 @@ function DepartmentsContactSection() {
 
 function EmergencyBannerSection() {
   return (
-    <Section variant="default" spacing="sm" contained={true}>
+    <Section variant="default" spacing="sm">
       <AnimatedSection>
         <EmergencyBanner title="Neurological Emergency?" />
       </AnimatedSection>
@@ -179,10 +190,14 @@ function EmergencyBannerSection() {
 
 function FaqSection() {
   return (
-    <Section variant="white" spacing="lg">
-      <div className="grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:items-start lg:gap-16">
-        <AnimatedSection className="lg:sticky lg:top-28">
-          <SectionHeading eyebrow="Your Questions" title="Clear Guidance Before You Visit" description="Practical answers about contacting CNS, visiting our campus, and preparing for care." />
+    <Section variant="white" spacing="default">
+      <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start lg:gap-10">
+        <AnimatedSection>
+          <SectionHeading
+            eyebrow="Your Questions"
+            title="Clear Guidance Before You Visit"
+            description="Practical answers about contacting CNS, visiting our campus, and preparing for care."
+          />
         </AnimatedSection>
         <AnimatedSection>
           <FAQCard items={[...contactContent.faq]} />

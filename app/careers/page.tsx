@@ -38,17 +38,17 @@ export default function CareersPage() {
         eyebrow="Join Our Team"
         breadcrumb={[{ label: "Home", href: "/" }, { label: "Careers" }]}
       />
-      <Section variant="white" spacing="lg">
+      <Section variant="white" spacing="default">
         <SectionHeading
           eyebrow="Opportunities"
           title="Join a team advancing brain health"
           description="We welcome experienced clinicians, emerging researchers, and dedicated support professionals who share our commitment to neuroscience excellence."
         />
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
+        <div className="mt-8 grid gap-5 md:grid-cols-3">
           {careerAreas.map((area) => (
             <article
               key={area.title}
-              className="card-premium rounded-2xl p-6"
+              className="card-premium rounded-2xl p-5"
             >
               <h2 className="font-heading text-lg font-semibold text-cns-navy">
                 {area.title}

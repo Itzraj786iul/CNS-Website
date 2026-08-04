@@ -36,7 +36,7 @@ function PageHero({ title, description, breadcrumb, eyebrow }: PageHeroProps) {
 
   return (
     <section
-      className="relative overflow-hidden border-b border-cns-border/40 brand-surface-page pb-12 pt-8 md:pb-14 md:pt-10"
+      className="relative overflow-hidden border-b border-cns-border/40 brand-surface-page pb-8 pt-6 md:pb-10 md:pt-8"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
@@ -72,14 +72,14 @@ function PageHero({ title, description, breadcrumb, eyebrow }: PageHeroProps) {
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-linear-to-t from-background to-transparent md:h-20"
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-12 bg-linear-to-t from-background to-transparent"
       />
       <Container className="relative">
         <motion.div
           initial="hidden"
           animate="visible"
           variants={staggerContainer}
-          className="max-w-3xl space-y-5"
+          className="max-w-3xl space-y-4"
         >
           <motion.div variants={fadeUp}>
             <Breadcrumb items={breadcrumb} />

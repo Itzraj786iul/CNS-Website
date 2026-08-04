@@ -10,8 +10,8 @@ import { fadeUp } from "@/lib/motion";
 
 function DepartmentsGridSection() {
   return (
-    <Section variant="default" spacing="lg">
-      <AnimatedSection stagger className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+    <Section variant="default" spacing="default" className="!pt-6">
+      <AnimatedSection stagger className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
         {departmentsContent.departments.map((dept) => (
           <motion.div key={dept.title} variants={fadeUp}>
             <DepartmentDetailCard

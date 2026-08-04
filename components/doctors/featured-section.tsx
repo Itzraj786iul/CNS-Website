@@ -11,8 +11,8 @@ import { fadeUp } from "@/lib/motion";
 
 function FeaturedSection() {
   return (
-    <Section variant="white" spacing="lg">
-      <div className="space-y-12">
+    <Section variant="white" spacing="default">
+      <div className="space-y-8">
         <AnimatedSection className="mx-auto max-w-3xl text-center">
           <SectionHeading
             align="center"

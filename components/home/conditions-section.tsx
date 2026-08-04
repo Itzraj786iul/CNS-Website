@@ -13,8 +13,8 @@ import { fadeUp, hoverLift } from "@/lib/motion";
 
 function ConditionsSection() {
   return (
-    <Section variant="white" spacing="xl" divider>
-      <div className="space-y-14">
+    <Section variant="white" spacing="default" divider>
+      <div className="space-y-8">
         <AnimatedSection className="mx-auto max-w-3xl text-center">
           <SectionHeading
             align="center"
@@ -31,11 +31,10 @@ function ConditionsSection() {
                 initial="rest"
                 whileHover="hover"
                 variants={hoverLift}
-                className="h-full"
               >
                 <Link
                   href={condition.href}
-                  className="group flex h-full flex-col gap-4 rounded-2xl border border-cns-border/60 bg-background p-5 transition-colors hover:border-primary/20 hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+                  className="group flex flex-col gap-3 rounded-2xl border border-cns-border/60 bg-background p-4 transition-colors hover:border-primary/20 hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
                 >
                   <IconBox
                     icon={condition.icon}

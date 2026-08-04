@@ -14,8 +14,8 @@ import { fadeUp } from "@/lib/motion";
 
 function SpecialistsSection() {
   return (
-    <Section variant="default" spacing="xl" divider>
-      <div className="space-y-14">
+    <Section variant="default" spacing="default" divider>
+      <div className="space-y-8">
         <AnimatedSection className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
           <SectionHeading
             eyebrow="Our Physicians"

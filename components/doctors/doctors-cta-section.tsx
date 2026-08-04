@@ -17,7 +17,7 @@ function DoctorsCtaSection() {
     <section className="py-12 md:py-16">
       <Container>
         <AnimatedSection>
-          <div className="relative overflow-hidden rounded-3xl bg-linear-to-br from-primary via-[#2a8fd4] to-secondary px-6 py-14 sm:px-10 sm:py-16 lg:px-16">
+          <div className="relative overflow-hidden rounded-3xl bg-linear-to-br from-primary via-[#2a8fd4] to-secondary px-6 py-10 sm:px-10 sm:py-12 lg:px-14">
             <div
               aria-hidden="true"
               className="pointer-events-none absolute -left-20 -top-20 size-72 rounded-full bg-white/10 blur-3xl"

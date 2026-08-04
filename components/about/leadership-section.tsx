@@ -13,8 +13,8 @@ import { fadeUp, hoverLift } from "@/lib/motion";
 
 function LeadershipSection() {
   return (
-    <Section variant="white" spacing="lg">
-      <div className="space-y-12">
+    <Section variant="white" spacing="default">
+      <div className="space-y-8">
         <AnimatedSection className="mx-auto max-w-3xl text-center">
           <SectionHeading
             align="center"
@@ -31,9 +31,8 @@ function LeadershipSection() {
                 initial="rest"
                 whileHover="hover"
                 variants={hoverLift}
-                className="h-full"
               >
-                <Card className="card-premium card-premium-hover h-full overflow-hidden ring-0">
+                <Card className="card-premium card-premium-hover overflow-hidden ring-0">
                   <div className="photo-frame relative aspect-[5/6]">
                     <Image
                       src={leader.image.src}
@@ -43,7 +42,7 @@ function LeadershipSection() {
                       sizes="(max-width: 768px) 100vw, 33vw"
                     />
                   </div>
-                  <CardContent className="space-y-3 px-6 py-6">
+                  <CardContent className="space-y-3 px-5 py-5">
                     <Tag variant="blue">{leader.role}</Tag>
                     <h3 className="font-heading text-xl font-semibold text-cns-navy">
                       {leader.name}

@@ -31,8 +31,8 @@ const variantMap = {
 
 function ContactPreviewSection() {
   return (
-    <Section variant="muted" spacing="xl" className="!pb-20 md:!pb-24">
-      <div className="space-y-14">
+    <Section variant="muted" spacing="default">
+      <div className="space-y-8">
         <AnimatedSection className="mx-auto max-w-3xl text-center">
           <SectionHeading
             align="center"
@@ -53,10 +53,9 @@ function ContactPreviewSection() {
                   initial="rest"
                   whileHover="hover"
                   variants={hoverLift}
-                  className="h-full"
                 >
-                  <Card className="card-premium card-premium-hover h-full">
-                    <CardContent className="space-y-5 px-7 py-9">
+                  <Card className="card-premium card-premium-hover">
+                    <CardContent className="space-y-4 px-5 py-6 sm:px-6">
                       <IconBox icon={Icon} variant={variant} />
                       <div className="space-y-2">
                         <p className="text-sm font-semibold uppercase tracking-[0.12em] text-muted-foreground">
@@ -90,9 +89,9 @@ function ContactPreviewSection() {
         </AnimatedSection>
 
         <AnimatedSection>
-          <div className="grid gap-6 lg:grid-cols-2 lg:items-stretch">
+          <div className="grid gap-6 lg:grid-cols-2 lg:items-start">
             <div className="image-placeholder overflow-hidden rounded-3xl">
-              <div className="relative aspect-[4/3] w-full sm:aspect-[16/10] lg:aspect-auto lg:min-h-[320px] lg:h-full">
+              <div className="relative h-48 w-full sm:h-52">
                 <iframe
                   title="Center for Neuroscience location map"
                   src="https://maps.google.com/maps?q=Raipur+Chhattisgarh&output=embed"
@@ -104,8 +103,8 @@ function ContactPreviewSection() {
               </div>
             </div>
 
-            <Card className="card-premium card-premium-hover flex h-full ring-0">
-              <CardContent className="flex h-full flex-col justify-center space-y-6 px-6 py-8 sm:px-8">
+            <Card className="card-premium card-premium-hover ring-0">
+              <CardContent className="space-y-5 px-5 py-6 sm:px-6">
                 <div className="space-y-3">
                   <IconBox icon={MapPin} variant="orange" />
                   <h3 className="font-heading text-2xl font-semibold text-cns-navy">

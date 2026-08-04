@@ -28,10 +28,10 @@ function GalleryPageContent() {
           key={section.id}
           id={section.id}
           variant={index % 2 === 0 ? "white" : "default"}
-          spacing="lg"
+          spacing="default"
           divider={index > 0}
         >
-          <div className="space-y-10">
+          <div className="space-y-6">
             <AnimatedSection direction={index % 2 === 0 ? "up" : "fade"}>
               <SectionHeading
                 eyebrow={section.eyebrow}

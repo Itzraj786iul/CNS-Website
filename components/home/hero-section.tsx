@@ -181,8 +181,8 @@ function HeroSection() {
         className="pointer-events-none absolute inset-x-0 bottom-0 h-48 bg-linear-to-t from-background via-background/90 to-transparent"
       />
 
-      <Container className="relative flex min-h-[calc(100svh-5rem)] flex-col justify-center pb-40 pt-16 sm:pt-20 lg:min-h-[calc(100svh-6rem)] lg:pb-48 lg:pt-24">
-        <div className="grid items-center gap-16 lg:grid-cols-2 lg:gap-24 xl:gap-28">
+      <Container className="relative flex min-h-[calc(100svh-5rem)] flex-col justify-center pb-28 pt-12 sm:pt-16 lg:min-h-[calc(100svh-6rem)] lg:pb-32 lg:pt-20">
+        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
           <motion.div
             initial="hidden"
             animate="visible"

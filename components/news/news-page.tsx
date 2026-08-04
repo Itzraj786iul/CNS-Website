@@ -35,16 +35,16 @@ function NewsPageContent() {
         breadcrumb={[{ label: "Home", href: "/" }, { label: "News" }]}
       />
 
-      <Section variant="white" spacing="lg">
-        <div className="space-y-12">
+      <Section variant="white" spacing="default">
+        <div className="space-y-8">
           <AnimatedSection>
             <SectionHeading eyebrow="Latest Updates" title="News from CNS" description="Recent announcements and clinical milestones from across Center for Neuroscience." />
           </AnimatedSection>
           <AnimatedSection stagger className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             {news.map((item) => (
               <motion.article key={item.title} variants={fadeUp}>
-                <motion.div initial="rest" whileHover="hover" variants={hoverLift} className="h-full">
-                  <Card className="card-premium card-premium-hover h-full overflow-hidden ring-0">
+                <motion.div initial="rest" whileHover="hover" variants={hoverLift}>
+                  <Card className="card-premium card-premium-hover overflow-hidden ring-0">
                     <div className="image-placeholder relative aspect-[16/10]">
                       <Image src={item.image} alt={item.title} fill loading="lazy" className="img-zoom object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
                     </div>
@@ -93,9 +93,9 @@ function NewsPageContent() {
         </div>
       </Section>
 
-      <Section variant="default" spacing="lg" divider>
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
-          <div className="space-y-10">
+      <Section variant="default" spacing="default" divider>
+        <div className="grid gap-8 lg:grid-cols-2 lg:gap-10">
+          <div className="space-y-8">
             <AnimatedSection direction="left">
               <SectionHeading eyebrow="Calendar" title="Upcoming Events" description="Join us for community programs, support groups, and awareness initiatives." />
             </AnimatedSection>
@@ -122,7 +122,7 @@ function NewsPageContent() {
             </AnimatedSection>
           </div>
 
-          <div className="space-y-10">
+          <div className="space-y-8">
             <AnimatedSection direction="right">
               <SectionHeading eyebrow="Milestones" title="Recent Achievements" description="Highlights from our continued pursuit of excellence in neuroscience care." />
             </AnimatedSection>

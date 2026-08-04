@@ -201,7 +201,7 @@
   }
 
   .card-body {
-    @apply px-6 py-6 sm:px-7 sm:py-7;
+    @apply px-5 py-5 sm:px-6 sm:py-6;
   }
 
   .photo-frame {

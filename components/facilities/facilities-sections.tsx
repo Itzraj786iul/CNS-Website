@@ -26,10 +26,10 @@ function OverviewSection() {
 
 function GallerySection() {
   return (
-    <Section variant="default" spacing="lg" className="!pt-6">
-      <AnimatedSection stagger className="grid auto-rows-fr gap-5 md:grid-cols-3">
+    <Section variant="default" spacing="default" className="!pt-6">
+      <AnimatedSection stagger className="grid gap-4 md:grid-cols-3 md:items-start">
         {facilitiesContent.facilities.map((facility) => (
-          <motion.div key={facility.title} variants={fadeUp} className="h-full">
+          <motion.div key={facility.title} variants={fadeUp}>
             <FacilityGalleryCard facility={facility} />
           </motion.div>
         ))}
@@ -41,8 +41,8 @@ function GallerySection() {
 function TechnologySection() {
   const { technology } = facilitiesContent;
   return (
-    <Section variant="white" spacing="lg">
-      <div className="space-y-12">
+    <Section variant="white" spacing="default">
+      <div className="space-y-8">
         <AnimatedSection className="mx-auto max-w-3xl text-center">
           <SectionHeading align="center" eyebrow={technology.eyebrow} title={technology.title} description={technology.description} />
         </AnimatedSection>
@@ -61,17 +61,17 @@ function TechnologySection() {
 function PatientSafetySection() {
   const { safety } = facilitiesContent;
   return (
-    <Section variant="default" spacing="lg">
-      <div className="space-y-12">
+    <Section variant="default" spacing="default">
+      <div className="space-y-8">
         <AnimatedSection className="mx-auto max-w-3xl text-center">
           <SectionHeading align="center" eyebrow={safety.eyebrow} title={safety.title} description={safety.description} />
         </AnimatedSection>
         <AnimatedSection stagger className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {safety.items.map((item, index) => (
             <motion.div key={item.title} variants={fadeUp}>
-              <motion.div initial="rest" whileHover="hover" variants={hoverLift} className="h-full">
-                <Card className="h-full border-cns-border/80 bg-white shadow-soft ring-0">
-                  <CardContent className="space-y-4 px-6 py-8">
+              <motion.div initial="rest" whileHover="hover" variants={hoverLift}>
+                <Card className="border-cns-border/80 bg-white shadow-soft ring-0">
+                  <CardContent className="space-y-3 px-5 py-6">
                     <IconBox icon={item.icon} variant={(["blue", "green", "orange", "navy"] as const)[index % 4]} />
                     <h3 className="font-heading text-lg font-semibold text-cns-navy">{item.title}</h3>
                     <p className="text-sm leading-relaxed text-muted-foreground">{item.description}</p>

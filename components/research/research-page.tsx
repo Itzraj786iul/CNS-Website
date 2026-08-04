@@ -28,8 +28,8 @@ function ResearchPageContent() {
         breadcrumb={[{ label: "Home", href: "/" }, { label: "Research" }]}
       />
 
-      <Section variant="white" spacing="lg">
-        <div className="space-y-12">
+      <Section variant="white" spacing="default">
+        <div className="space-y-8">
           <AnimatedSection className="mx-auto max-w-3xl text-center">
             <SectionHeading
               align="center"
@@ -38,12 +38,12 @@ function ResearchPageContent() {
               description="Current areas of investigation led by CNS clinicians and research faculty."
             />
           </AnimatedSection>
-          <AnimatedSection stagger className="grid gap-5 sm:grid-cols-2">
+          <AnimatedSection stagger className="grid gap-4 sm:grid-cols-2">
             {highlights.map((item) => (
               <motion.div key={item.title} variants={fadeUp}>
-                <motion.div initial="rest" whileHover="hover" variants={hoverLift} className="h-full">
-                  <Card className="card-premium card-premium-hover h-full ring-0">
-                    <CardContent className="space-y-4 px-6 py-8">
+                <motion.div initial="rest" whileHover="hover" variants={hoverLift}>
+                  <Card className="card-premium card-premium-hover ring-0">
+                    <CardContent className="space-y-3 px-5 py-6">
                       <Tag variant="blue">{item.tag}</Tag>
                       <h3 className="font-heading text-lg font-semibold text-cns-navy">{item.title}</h3>
                       <p className="text-sm leading-relaxed text-muted-foreground">{item.description}</p>
@@ -56,8 +56,8 @@ function ResearchPageContent() {
         </div>
       </Section>
 
-      <Section variant="default" spacing="lg" divider>
-        <div className="space-y-12">
+      <Section variant="default" spacing="default" divider>
+        <div className="space-y-8">
           <AnimatedSection>
             <SectionHeading eyebrow="Publications" title="Recent Publications" description="Peer-reviewed contributions from our clinical and research teams." />
           </AnimatedSection>
@@ -65,7 +65,7 @@ function ResearchPageContent() {
             {publications.map((pub) => (
               <motion.div key={pub.title} variants={fadeUp}>
                 <Card className="card-premium card-premium-hover ring-0">
-                  <CardContent className="flex flex-col gap-3 px-6 py-6 sm:flex-row sm:items-center sm:justify-between">
+                  <CardContent className="flex flex-col gap-3 px-5 py-5 sm:flex-row sm:items-center sm:justify-between">
                     <div className="space-y-1.5">
                       <h3 className="font-heading text-base font-semibold text-cns-navy sm:text-lg">{pub.title}</h3>
                       <p className="text-sm text-primary">{pub.journal}</p>
@@ -83,8 +83,8 @@ function ResearchPageContent() {
         </div>
       </Section>
 
-      <Section variant="white" spacing="lg" divider>
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
+      <Section variant="white" spacing="default" divider>
+        <div className="grid gap-8 lg:grid-cols-2 lg:items-start lg:gap-10">
           <AnimatedSection direction="left">
             <SectionHeading eyebrow="Studies" title="Clinical Studies" description="Ongoing and completed trials advancing evidence-based neurological care." />
           </AnimatedSection>
@@ -92,7 +92,7 @@ function ResearchPageContent() {
             {studies.map((study) => (
               <motion.div key={study.title} variants={fadeUp}>
                 <Card className="card-premium card-premium-hover ring-0">
-                  <CardContent className="space-y-2 px-6 py-5">
+                  <CardContent className="space-y-2 px-5 py-5">
                     <div className="flex items-center gap-3">
                       <Tag variant={study.status === "Recruiting" ? "green" : study.status === "Active" ? "blue" : "default"}>
                         {study.status}
@@ -108,16 +108,16 @@ function ResearchPageContent() {
         </div>
       </Section>
 
-      <Section variant="default" spacing="lg" divider>
-        <div className="space-y-12">
+      <Section variant="default" spacing="default" divider>
+        <div className="space-y-8">
           <AnimatedSection className="mx-auto max-w-3xl text-center">
             <SectionHeading align="center" eyebrow="Recognition" title="Awards & Recognition" description="Honors reflecting our commitment to clinical excellence and research leadership." />
           </AnimatedSection>
           <AnimatedSection stagger className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {awards.map((award) => (
               <motion.div key={award.title} variants={fadeUp}>
-                <Card className="card-premium card-premium-hover h-full ring-0">
-                  <CardContent className="space-y-2 px-6 py-6">
+                <Card className="card-premium card-premium-hover ring-0">
+                  <CardContent className="space-y-2 px-5 py-5">
                     <p className="text-sm font-semibold text-primary">{award.year}</p>
                     <h3 className="font-heading text-base font-semibold text-cns-navy">{award.title}</h3>
                     <p className="text-sm text-muted-foreground">{award.organization}</p>
@@ -129,8 +129,8 @@ function ResearchPageContent() {
         </div>
       </Section>
 
-      <Section variant="white" spacing="lg" divider>
-        <div className="space-y-12">
+      <Section variant="white" spacing="default" divider>
+        <div className="space-y-8">
           <AnimatedSection className="mx-auto max-w-3xl text-center">
             <SectionHeading align="center" eyebrow="Impact" title="Research by the Numbers" description="Measurable contributions to neuroscience knowledge and patient care." />
           </AnimatedSection>

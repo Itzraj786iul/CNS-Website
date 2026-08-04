@@ -13,8 +13,8 @@ function JourneySection() {
   const items = aboutContent.timeline;
 
   return (
-    <Section variant="default" spacing="lg">
-      <div className="grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:gap-20">
+    <Section variant="default" spacing="default">
+      <div className="grid gap-8 lg:grid-cols-[1fr_1.4fr] lg:items-start lg:gap-12">
         <AnimatedSection className="lg:sticky lg:top-28 lg:self-start">
           <SectionHeading
             eyebrow="Our Journey"

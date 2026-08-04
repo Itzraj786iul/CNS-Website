@@ -12,9 +12,9 @@ import { Button } from "@/components/ui/button";
 
 function FaqPreviewSection() {
   return (
-    <Section variant="white" spacing="xl">
-      <div className="grid gap-14 lg:grid-cols-[1fr_1.2fr] lg:items-start lg:gap-20">
-        <AnimatedSection className="space-y-10 lg:sticky lg:top-28">
+    <Section variant="white" spacing="default">
+      <div className="grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:items-start lg:gap-12">
+        <AnimatedSection className="space-y-6 lg:sticky lg:top-28">
           <SectionHeading
             eyebrow="Your Questions Answered"
             title="Clear Guidance Before You Visit"

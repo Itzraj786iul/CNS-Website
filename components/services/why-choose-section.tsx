@@ -13,8 +13,8 @@ import { fadeUp } from "@/lib/motion";
 function WhyChooseSection() {
   const { whyChoose } = servicesContent;
   return (
-    <Section variant="default" spacing="lg">
-      <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+    <Section variant="default" spacing="default">
+      <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
         <AnimatedSection className="relative">
           <div className="relative image-placeholder aspect-[4/3]">
             <Image
@@ -26,7 +26,7 @@ function WhyChooseSection() {
             />
           </div>
         </AnimatedSection>
-        <div className="space-y-10">
+        <div className="space-y-8">
           <AnimatedSection>
             <SectionHeading eyebrow={whyChoose.eyebrow} title={whyChoose.title} description={whyChoose.description} />
           </AnimatedSection>

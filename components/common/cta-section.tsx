@@ -69,11 +69,11 @@ function CTASection({
   const isNavy = variant === "navy";
 
   return (
-    <section data-slot="cta-section" className={cn("py-20 md:py-28", className)}>
+    <section data-slot="cta-section" className={cn("py-12 md:py-16", className)}>
       <Container>
         <div
           className={cn(
-            "relative overflow-hidden rounded-3xl px-7 py-14 sm:px-12 sm:py-16 lg:px-16 lg:py-20",
+            "relative overflow-hidden rounded-3xl px-6 py-10 sm:px-10 sm:py-12 lg:px-14 lg:py-14",
             variantClasses[variant]
           )}
         >

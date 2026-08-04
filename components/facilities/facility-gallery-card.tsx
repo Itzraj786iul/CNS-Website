@@ -17,9 +17,9 @@ function FacilityGalleryCard({ facility }: { facility: FacilityItem }) {
   } as const;
 
   const aspectClasses = {
-    large: "min-h-[320px] md:min-h-[480px]",
-    medium: "min-h-[280px] md:min-h-[480px]",
-    small: "min-h-[240px]",
+    large: "min-h-[220px] md:min-h-[300px]",
+    medium: "min-h-[200px] md:min-h-[260px]",
+    small: "min-h-[180px]",
   } as const;
 
   return (
@@ -27,9 +27,9 @@ function FacilityGalleryCard({ facility }: { facility: FacilityItem }) {
       initial="rest"
       whileHover="hover"
       variants={hoverLift}
-      className={cn("h-full", sizeClasses[facility.size])}
+      className={cn(sizeClasses[facility.size])}
     >
-      <Card className="group relative h-full overflow-hidden rounded-3xl card-premium card-premium-hover ring-0">
+      <Card className="group relative overflow-hidden rounded-2xl card-premium card-premium-hover ring-0">
         <div className={cn("relative w-full overflow-hidden", aspectClasses[facility.size])}>
           <Image
             src={facility.image}
@@ -39,11 +39,11 @@ function FacilityGalleryCard({ facility }: { facility: FacilityItem }) {
             sizes="(max-width: 768px) 100vw, 50vw"
           />
           <div className="absolute inset-0 bg-linear-to-t from-cns-navy/85 via-cns-navy/30 to-transparent" />
-          <CardContent className="absolute inset-x-0 bottom-0 space-y-3 p-6">
+          <CardContent className="absolute inset-x-0 bottom-0 space-y-2 p-5">
             <IconBox icon={facility.icon} variant={facility.iconVariant} size="default" className="bg-white/15 text-white backdrop-blur-sm [&_svg]:text-white" />
             <div>
-              <h3 className="font-heading text-xl font-semibold text-white">{facility.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-white/80">{facility.description}</p>
+              <h3 className="font-heading text-lg font-semibold text-white">{facility.title}</h3>
+              <p className="mt-1.5 text-sm leading-relaxed text-white/80">{facility.description}</p>
             </div>
           </CardContent>
         </div>

@@ -74,7 +74,7 @@ function AppointmentPageContent() {
       />
 
       {submitted && formData ? (
-        <Section variant="white" spacing="lg">
+        <Section variant="white" spacing="default">
           <AnimatedSection>
             <div className="mx-auto max-w-2xl rounded-3xl border border-secondary/30 bg-secondary/5 p-8 text-center shadow-soft sm:p-12">
               <div className="mx-auto flex size-16 items-center justify-center rounded-full bg-secondary/15">
@@ -104,8 +104,8 @@ function AppointmentPageContent() {
           </AnimatedSection>
         </Section>
       ) : (
-        <Section variant="default" spacing="lg" className="!pt-6">
-          <div className="grid gap-12 lg:grid-cols-[1.3fr_0.7fr] lg:gap-16">
+        <Section variant="default" spacing="default" className="!pt-6">
+          <div className="grid gap-8 lg:grid-cols-[1.3fr_0.7fr] lg:items-start lg:gap-10">
             <AnimatedSection>
               <form
                 className="space-y-5 rounded-3xl border border-cns-border/80 bg-white p-6 shadow-soft sm:p-8"

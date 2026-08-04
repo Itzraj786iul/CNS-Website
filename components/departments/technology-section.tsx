@@ -13,8 +13,8 @@ function TechnologySection() {
   const { technology } = departmentsContent;
 
   return (
-    <Section variant="default" spacing="lg">
-      <div className="space-y-12">
+    <Section variant="default" spacing="default">
+      <div className="space-y-8">
         <AnimatedSection className="mx-auto max-w-3xl text-center">
           <SectionHeading
             align="center"
