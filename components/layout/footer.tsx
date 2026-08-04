@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Mail, MapPin, Phone, Siren } from "lucide-react";
 
 import { Container } from "@/components/common/container";
+import { LogoLink } from "@/components/common/logo";
 import {
   FacebookIcon,
   InstagramIcon,
@@ -94,9 +95,9 @@ function Footer() {
       <Container className="py-16 md:py-20">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
           <div className="space-y-5 sm:col-span-2 lg:col-span-1 xl:col-span-2">
-            <div>
-              <p className="font-heading text-2xl font-semibold">{siteConfig.shortName}</p>
-              <p className="mt-2 max-w-sm text-sm leading-relaxed text-white/70">
+            <div className="space-y-4">
+              <LogoLink size="lg" variant="footer" linkClassName="hover:scale-100" />
+              <p className="max-w-sm text-sm leading-relaxed text-white/70">
                 {siteConfig.name} — advancing brain and spine health through
                 clinical excellence, research, and compassionate care.
               </p>

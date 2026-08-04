@@ -12,6 +12,7 @@ export { FeatureCard } from "./feature-card";
 export { IconBox, iconBoxVariants } from "./icon-box";
 export { LightboxProvider, MasonryGallery, useLightbox } from "./lightbox";
 export type { LightboxImage } from "./lightbox";
+export { Logo, LogoLink } from "./logo";
 export { PageHero } from "./page-hero";
 export { Section } from "./section";
 export { SectionDivider } from "./section-divider";

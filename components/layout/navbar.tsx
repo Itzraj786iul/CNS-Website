@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu } from "lucide-react";
 
+import { Logo, LogoLink } from "@/components/common/logo";
 import { Container } from "@/components/common/container";
 import { Button } from "@/components/ui/button";
 import {
@@ -15,31 +16,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { ctaNavigation, mainNavigation } from "@/lib/constants/navigation";
-import { siteConfig } from "@/lib/constants/site";
 import { cn } from "@/lib/utils";
-
-function LogoMark({ className }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 40 40"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-      className={cn("size-9", className)}
-    >
-      <rect width="40" height="40" rx="12" className="fill-primary" />
-      <circle cx="20" cy="16" r="4" className="fill-white" />
-      <path
-        d="M12 28c2.5-4 5-6 8-6s5.5 2 8 6"
-        stroke="white"
-        strokeWidth="2"
-        strokeLinecap="round"
-      />
-      <circle cx="14" cy="22" r="1.5" className="fill-secondary" />
-      <circle cx="26" cy="22" r="1.5" className="fill-accent" />
-    </svg>
-  );
-}
 
 function NavLink({
   href,
@@ -105,20 +82,7 @@ function Navbar() {
     >
       <Container>
         <div className="flex h-[4.5rem] items-center justify-between gap-4 lg:h-20">
-          <Link
-            href="/"
-            className="group flex items-center gap-3 rounded-xl transition-transform duration-300 hover:scale-[1.01]"
-          >
-            <LogoMark className="transition-transform duration-300 group-hover:rotate-[-3deg]" />
-            <div className="hidden sm:block">
-              <p className="font-heading text-base font-semibold leading-none text-cns-navy">
-                {siteConfig.shortName}
-              </p>
-              <p className="mt-1 text-xs text-muted-foreground">
-                {siteConfig.name}
-              </p>
-            </div>
-          </Link>
+          <LogoLink size="md" priority />
 
           <nav
             aria-label="Main navigation"
@@ -158,9 +122,8 @@ function Navbar() {
               </SheetTrigger>
               <SheetContent side="right" className="w-full max-w-sm border-cns-border p-0">
                 <SheetHeader className="border-b border-cns-border px-6 py-5">
-                  <SheetTitle className="flex items-center gap-3">
-                    <LogoMark className="size-8" />
-                    <span>{siteConfig.shortName}</span>
+                  <SheetTitle className="flex items-center">
+                    <Logo size="sm" />
                   </SheetTitle>
                 </SheetHeader>
                 <nav

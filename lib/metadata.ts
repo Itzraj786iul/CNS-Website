@@ -48,7 +48,7 @@ export const baseMetadata: Metadata = {
   },
   icons: {
     icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
-    apple: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+    apple: [{ url: "/cns-logo.png", sizes: "512x512", type: "image/png" }],
   },
 };
 
