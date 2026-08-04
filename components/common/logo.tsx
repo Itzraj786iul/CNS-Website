@@ -12,47 +12,17 @@ type LogoProps = {
   priority?: boolean;
 };
 
-const frameSizes = {
-  sm: "h-9 w-[5.75rem]",
-  md: "h-10 w-[6.75rem] sm:h-11 sm:w-[7.5rem]",
-  lg: "h-14 w-[9.5rem] sm:h-16 sm:w-[11rem]",
+const sizeClasses = {
+  sm: "h-9 w-auto max-w-[7.5rem]",
+  md: "h-10 w-auto max-w-[8.5rem] sm:h-11 sm:max-w-[9.5rem]",
+  lg: "h-14 w-auto max-w-[12rem] sm:h-16 sm:max-w-[14rem]",
 } as const;
 
-function LogoFrame({
-  children,
-  size,
-  variant,
-  className,
-}: {
-  children: ReactNode;
-  size: NonNullable<LogoProps["size"]>;
-  variant: NonNullable<LogoProps["variant"]>;
-  className?: string;
-}) {
-  return (
-    <span
-      className={cn(
-        "relative inline-flex shrink-0 items-center justify-center overflow-hidden",
-        frameSizes[size],
-        variant === "nav" &&
-          cn(
-            "rounded-lg border border-border/70 bg-white shadow-soft",
-            "dark:border-white/12 dark:bg-linear-to-b dark:from-[#f8fbfd] dark:to-[#eef3f8] dark:shadow-[0_2px_10px_rgba(0,0,0,0.28)]"
-          ),
-        variant === "footer" &&
-          "rounded-xl border border-white/12 bg-white p-1.5 shadow-soft",
-        variant === "default" &&
-          cn(
-            "rounded-lg border border-border/60 bg-white shadow-soft",
-            "dark:border-white/10 dark:bg-[#f4f7fb] dark:shadow-soft"
-          ),
-        className
-      )}
-    >
-      {children}
-    </span>
-  );
-}
+const navFrameSizes = {
+  sm: "h-9 w-[6.75rem]",
+  md: "h-10 w-[7.75rem] sm:h-11 sm:w-[8.5rem]",
+  lg: "h-14 w-[10.5rem] sm:h-16 sm:w-[12rem]",
+} as const;
 
 function Logo({
   className,
@@ -60,23 +30,44 @@ function Logo({
   variant = "nav",
   priority = false,
 }: LogoProps) {
-  const imageScale =
-    variant === "footer" ? "scale-[1.38]" : size === "sm" ? "scale-[1.48]" : "scale-[1.42]";
+  if (variant === "nav") {
+    return (
+      <span
+        className={cn(
+          "relative inline-flex shrink-0 overflow-hidden rounded-md",
+          navFrameSizes[size],
+          className
+        )}
+      >
+        <Image
+          src="/cns-logo.png"
+          alt={`${siteConfig.name} logo`}
+          fill
+          priority={priority}
+          sizes="(max-width: 640px) 120px, 160px"
+          className="object-cover object-center scale-[1.32]"
+        />
+      </span>
+    );
+  }
 
   return (
-    <LogoFrame size={size} variant={variant} className={className}>
+    <span
+      className={cn(
+        "relative inline-flex shrink-0 items-center overflow-hidden rounded-lg bg-white px-2 py-1.5 shadow-soft",
+        variant === "footer" && "border border-white/10",
+        className
+      )}
+    >
       <Image
         src="/cns-logo.png"
         alt={`${siteConfig.name} logo`}
-        fill
+        width={512}
+        height={512}
         priority={priority}
-        sizes="(max-width: 640px) 120px, 180px"
-        className={cn(
-          "object-cover object-center transition-transform duration-300",
-          imageScale
-        )}
+        className={cn("w-auto object-contain object-left", sizeClasses[size], "scale-[1.08]")}
       />
-    </LogoFrame>
+    </span>
   );
 }
 
@@ -95,13 +86,19 @@ function LogoLink({
     <Link
       href="/"
       className={cn(
-        "inline-flex shrink-0 rounded-lg transition-transform duration-300 hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background active:scale-[0.99]",
+        "inline-flex shrink-0 transition-opacity duration-300 hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background",
         linkClassName
       )}
       aria-label={`${siteConfig.name} homepage`}
     >
       <Logo size={size} variant={variant} priority={priority} {...logoProps} />
     </Link>
+  );
+}
+
+function LogoFrame({ children, className }: { children: ReactNode; className?: string }) {
+  return (
+    <span className={cn("inline-flex shrink-0 items-center", className)}>{children}</span>
   );
 }
 
