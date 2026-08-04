@@ -14,7 +14,7 @@ function AppointmentCtaSection() {
   const appointmentHref = getAppointmentTelHref();
 
   return (
-    <section className="py-9 md:py-12">
+    <section className="py-8 md:py-10">
       <Container>
         <AnimatedSection>
           <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-linear-to-br from-primary via-primary to-secondary px-5 py-8 shadow-soft-lg sm:px-8 sm:py-9 lg:px-12 lg:py-10">

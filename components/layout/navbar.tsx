@@ -145,7 +145,7 @@ function Navbar() {
               >
                 <SheetHeader className="border-b border-cns-border px-6 py-5">
                   <SheetTitle className="flex items-center">
-                    <Logo size="sm" />
+                    <Logo size="sm" variant="nav" />
                   </SheetTitle>
                 </SheetHeader>
                 <NavMobileMenu

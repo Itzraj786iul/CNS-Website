@@ -82,7 +82,7 @@ function NavMoreMenu({
         aria-controls={open ? "nav-more-panel" : undefined}
         onClick={() => setOpen((value) => !value)}
         className={cn(
-          "relative inline-flex items-center gap-1.5 rounded-full px-3.5 py-2.5 text-sm font-medium transition-[color,background-color,box-shadow,transform] duration-300 active:scale-[0.98]",
+          "relative inline-flex items-center gap-1 rounded-full px-2.5 py-2 text-[13px] font-medium transition-[color,background-color,box-shadow,transform] duration-300 active:scale-[0.98] xl:px-3 xl:py-2.5 xl:text-sm",
           moreActive
             ? "text-primary"
             : "text-cns-navy/88 hover:bg-card/85 hover:text-cns-navy hover:shadow-soft dark:hover:bg-card/70"
@@ -116,27 +116,23 @@ function NavMoreMenu({
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 8, scale: 0.98 }}
             transition={{ duration: 0.24, ease: [0.22, 1, 0.36, 1] }}
-            className="absolute left-1/2 top-[calc(100%+0.75rem)] z-50 w-[min(calc(100vw-2rem),19.5rem)] -translate-x-1/2 overflow-hidden rounded-3xl border border-border bg-popover/95 p-3 shadow-soft-lg backdrop-blur-2xl backdrop-saturate-150"
+            className="absolute left-1/2 top-[calc(100%+0.375rem)] z-50 w-48 -translate-x-1/2 overflow-hidden rounded-xl border border-border bg-popover p-1.5 shadow-soft-lg backdrop-blur-xl"
             onMouseEnter={clearCloseTimer}
             onMouseLeave={scheduleClose}
           >
-            <div
-              aria-hidden="true"
-              className="pointer-events-none absolute inset-0 bg-linear-to-br from-primary/[0.04] via-transparent to-secondary/[0.05]"
-            />
-            <div className="relative space-y-4">
+            <div className="relative space-y-2">
               {groups.map((group, groupIndex) => (
                 <div key={group.title}>
                   {groupIndex > 0 ? (
                     <div
                       aria-hidden="true"
-                      className="mb-4 border-t border-cns-border/70"
+                      className="mb-2 border-t border-border"
                     />
                   ) : null}
-                  <p className="px-3 pb-1.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+                  <p className="px-2 pb-1 pt-0.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">
                     {group.title}
                   </p>
-                  <ul className="space-y-1">
+                  <ul className="space-y-0.5">
                     {group.items.map((item, index) => {
                       const Icon = item.icon;
                       const active = isActive(item.href);
@@ -144,11 +140,11 @@ function NavMoreMenu({
                       return (
                         <motion.li
                           key={item.href}
-                          initial={{ opacity: 0, x: -6 }}
+                          initial={{ opacity: 0, x: -4 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{
-                            delay: groupIndex * 0.04 + index * 0.03,
-                            duration: 0.22,
+                            delay: groupIndex * 0.03 + index * 0.02,
+                            duration: 0.18,
                           }}
                         >
                           <Link
@@ -156,25 +152,24 @@ function NavMoreMenu({
                             role="menuitem"
                             onClick={() => setOpen(false)}
                             className={cn(
-                              "group/item flex items-center gap-3 rounded-2xl px-3 py-3 text-sm font-medium transition-all duration-300 active:scale-[0.98]",
+                              "group/item flex h-9 items-center gap-2.5 rounded-lg px-2.5 text-sm transition-colors duration-200 active:scale-[0.98]",
                               active
-                                ? "bg-primary/8 text-primary shadow-soft"
-                                : "text-cns-navy hover:bg-muted hover:text-cns-navy hover:shadow-soft"
+                                ? "bg-primary/10 font-medium text-primary"
+                                : "text-foreground hover:bg-muted"
                             )}
                           >
                             {Icon ? (
-                              <span
+                              <Icon
                                 className={cn(
-                                  "flex size-9 shrink-0 items-center justify-center rounded-xl transition-all duration-300",
+                                  "size-3.5 shrink-0",
                                   active
-                                    ? "bg-primary/12 text-primary"
-                                    : "bg-muted/80 text-cns-navy/70 group-hover/item:scale-105 group-hover/item:bg-primary/8 group-hover/item:text-primary"
+                                    ? "text-primary"
+                                    : "text-muted-foreground group-hover/item:text-primary"
                                 )}
-                              >
-                                <Icon className="size-4" aria-hidden="true" />
-                              </span>
+                                aria-hidden="true"
+                              />
                             ) : null}
-                            <span className="leading-snug">{item.label}</span>
+                            <span className="truncate">{item.label}</span>
                           </Link>
                         </motion.li>
                       );

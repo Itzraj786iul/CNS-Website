@@ -33,7 +33,7 @@ function AnnouncementBar({ className }: AnnouncementBarProps) {
       data-slot="announcement-bar"
       className={cn("relative bg-primary text-white", className)}
     >
-      <Container className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 py-2.5 pr-10 text-center sm:gap-x-6">
+      <Container className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1.5 py-2 pr-10 text-center sm:gap-x-5">
         <a
           href={emergencyHref}
           className="inline-flex flex-wrap items-center justify-center gap-1.5 rounded-full bg-white/15 px-3 py-1 text-sm font-semibold text-white transition-colors hover:bg-white/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50"

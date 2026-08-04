@@ -181,13 +181,13 @@ function HeroSection() {
         className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-linear-to-t from-background via-background/90 to-transparent"
       />
 
-      <Container className="relative flex flex-col justify-center py-8 sm:py-9 lg:py-10 xl:py-11">
-        <div className="grid min-w-0 items-center gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-10">
+      <Container className="relative flex flex-col justify-center py-7 sm:py-8 lg:py-9 xl:py-10">
+        <div className="grid min-w-0 items-center gap-5 sm:gap-7 lg:grid-cols-2 lg:gap-9">
           <motion.div
             initial="hidden"
             animate="visible"
             variants={staggerContainer}
-            className="min-w-0 max-w-xl space-y-6"
+            className="min-w-0 max-w-xl space-y-5"
           >
             <motion.div variants={fadeUp}>
               <Tag variant="blue" className="px-4 py-1.5 text-sm shadow-soft">
@@ -195,8 +195,8 @@ function HeroSection() {
               </Tag>
             </motion.div>
 
-            <motion.div variants={fadeUp} className="space-y-4">
-              <h1 className="font-heading text-[1.75rem] font-semibold leading-[1.08] tracking-[-0.035em] text-cns-navy min-[375px]:text-[2rem] sm:text-[2.375rem] lg:text-[2.875rem] lg:leading-[1.04]">
+            <motion.div variants={fadeUp} className="space-y-3">
+              <h1 className="font-heading text-[1.75rem] font-semibold leading-[1.08] tracking-[-0.035em] text-cns-navy min-[375px]:text-[2rem] sm:text-[2.25rem] lg:text-[2.625rem] lg:leading-[1.05]">
                 Center for{" "}
                 <span className="text-gradient-brand">Neuroscience</span>
               </h1>
@@ -295,7 +295,7 @@ function HeroSection() {
         </div>
       </Container>
 
-      <div className="relative z-10 -mt-8 pb-8 sm:-mt-10 sm:pb-9 lg:-mt-14 lg:pb-10">
+      <div className="relative z-10 -mt-6 pb-7 sm:-mt-8 sm:pb-8 lg:-mt-10 lg:pb-9">
         <Container>
           <motion.div
             initial="hidden"

@@ -69,7 +69,7 @@ function CTASection({
   const isNavy = variant === "navy";
 
   return (
-    <section data-slot="cta-section" className={cn("py-9 md:py-12", className)}>
+    <section data-slot="cta-section" className={cn("py-8 md:py-10", className)}>
       <Container>
         <div
           className={cn(

@@ -25,7 +25,10 @@ function MainLayout({ children }: MainLayoutProps) {
       <AnnouncementBar />
       <Navbar />
       <RouteTransition className="flex flex-1 flex-col">
-        <main id="main-content" className="flex flex-1 flex-col pb-[calc(4.5rem+env(safe-area-inset-bottom))] md:pb-0">
+        <main
+          id="main-content"
+          className="flex flex-1 flex-col pb-[calc(4.25rem+max(0.5rem,env(safe-area-inset-bottom)))] md:pb-0"
+        >
           {children}
         </main>
       </RouteTransition>

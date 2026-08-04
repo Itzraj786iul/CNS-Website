@@ -102,7 +102,7 @@ function ThemeSwitcher({ className }: { className?: string }) {
         aria-controls={open ? "theme-switcher-panel" : undefined}
         onClick={() => setOpen((value) => !value)}
         className={cn(
-          "inline-flex h-10 shrink-0 items-center gap-1.5 rounded-full border border-border bg-card px-2.5 text-sm font-medium text-foreground shadow-soft transition-all duration-300 hover:border-primary/25 hover:shadow-soft-lg active:scale-[0.98] xl:px-3",
+          "inline-flex h-9 shrink-0 items-center gap-1.5 rounded-full border border-border bg-card px-2.5 text-[13px] font-medium text-foreground shadow-soft transition-all duration-300 hover:border-primary/25 hover:shadow-soft-lg active:scale-[0.98] xl:px-3",
           open && "border-primary/25 shadow-soft-lg"
         )}
       >
@@ -127,12 +127,12 @@ function ThemeSwitcher({ className }: { className?: string }) {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 6, scale: 0.98 }}
             transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
-            className="absolute right-0 top-[calc(100%+0.5rem)] z-50 w-56 overflow-hidden rounded-2xl border border-border bg-popover p-2 shadow-soft-lg backdrop-blur-xl"
+            className="absolute right-0 top-[calc(100%+0.375rem)] z-50 w-44 overflow-hidden rounded-xl border border-border bg-popover p-1.5 shadow-soft-lg backdrop-blur-xl"
           >
-            <p className="px-3 pb-2 pt-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+            <p className="px-2 pb-1 pt-0.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">
               Appearance
             </p>
-            <ul className="space-y-1">
+            <ul className="space-y-0.5">
               {themeOptions.map((option) => {
                 const Icon = option.icon;
                 const selected = theme === option.value;
@@ -143,38 +143,29 @@ function ThemeSwitcher({ className }: { className?: string }) {
                       type="button"
                       role="option"
                       aria-selected={selected}
+                      aria-label={`${option.label} — ${option.description}`}
                       onClick={() => {
                         setTheme(option.value);
                         setOpen(false);
                       }}
                       className={cn(
-                        "flex w-full items-start gap-3 rounded-xl px-3 py-2.5 text-left transition-all duration-300",
+                        "flex h-9 w-full items-center gap-2.5 rounded-lg px-2.5 text-left text-sm transition-colors duration-200",
                         selected
-                          ? "bg-primary/10 text-foreground"
+                          ? "bg-primary/10 font-medium text-foreground"
                           : "text-foreground hover:bg-muted"
                       )}
                     >
-                      <span
+                      <Icon
                         className={cn(
-                          "mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-lg",
-                          selected
-                            ? "bg-primary/15 text-primary"
-                            : "bg-muted text-muted-foreground"
+                          "size-3.5 shrink-0",
+                          selected ? "text-primary" : "text-muted-foreground"
                         )}
-                      >
-                        <Icon className="size-4" aria-hidden="true" />
-                      </span>
-                      <span className="min-w-0 flex-1">
-                        <span className="flex items-center gap-2 font-medium">
-                          {option.label}
-                          {selected ? (
-                            <Check className="size-3.5 text-primary" aria-hidden="true" />
-                          ) : null}
-                        </span>
-                        <span className="mt-0.5 block text-xs leading-relaxed text-muted-foreground">
-                          {option.description}
-                        </span>
-                      </span>
+                        aria-hidden="true"
+                      />
+                      <span className="min-w-0 flex-1 truncate">{option.label}</span>
+                      {selected ? (
+                        <Check className="size-3.5 shrink-0 text-primary" aria-hidden="true" />
+                      ) : null}
                     </button>
                   </li>
                 );
@@ -204,7 +195,7 @@ function ThemeSwitcherMobile({ className }: { className?: string }) {
       <p className="px-4 text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
         Appearance
       </p>
-      <div className="grid grid-cols-3 gap-2 px-4">
+      <div className="grid grid-cols-3 gap-1.5 px-4">
         {themeOptions.map((option) => {
           const Icon = option.icon;
           const selected = theme === option.value;
@@ -214,16 +205,17 @@ function ThemeSwitcherMobile({ className }: { className?: string }) {
               key={option.value}
               type="button"
               aria-pressed={selected}
+              aria-label={`${option.label} — ${option.description}`}
               onClick={() => setTheme(option.value)}
               className={cn(
-                "flex flex-col items-center gap-2 rounded-2xl border px-2 py-3 text-center transition-all duration-300 active:scale-[0.98]",
+                "flex flex-col items-center gap-1.5 rounded-xl border px-2 py-2 text-center transition-all duration-300 active:scale-[0.98]",
                 selected
                   ? "border-primary/30 bg-primary/10 text-primary"
                   : "border-border bg-card text-foreground hover:border-primary/20 hover:bg-muted"
               )}
             >
-              <Icon className="size-4" aria-hidden="true" />
-              <span className="text-xs font-medium">{option.label}</span>
+              <Icon className="size-3.5" aria-hidden="true" />
+              <span className="text-[11px] font-medium">{option.label}</span>
             </button>
           );
         })}
