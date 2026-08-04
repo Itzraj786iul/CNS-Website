@@ -151,7 +151,7 @@ function HeroSection() {
   ];
 
   return (
-    <section className="relative overflow-hidden section-surface-default">
+    <section className="relative overflow-hidden hero-surface">
       <div
         aria-hidden="true"
         className="hero-grid pointer-events-none absolute inset-0 opacity-70"

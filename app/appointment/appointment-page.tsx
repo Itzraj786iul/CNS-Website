@@ -192,7 +192,7 @@ function AppointmentPageContent() {
                 </CardContent>
               </Card>
 
-              <Card className="border-cns-border/80 bg-cns-navy shadow-soft ring-0">
+              <Card className="footer-surface border-white/10 shadow-soft ring-0">
                 <CardContent className="space-y-4 px-6 py-8">
                   <div className="flex items-center gap-3">
                     <Clock className="size-5 text-secondary" />

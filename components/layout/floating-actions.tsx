@@ -132,7 +132,7 @@ function FloatingActions() {
                           action.variant === "appointment" &&
                             "bg-secondary/10 text-secondary hover:bg-secondary/15",
                           action.variant === "default" &&
-                            "text-cns-navy hover:bg-muted"
+                            "text-foreground hover:bg-muted"
                         )}
                       >
                         {content}
@@ -146,7 +146,7 @@ function FloatingActions() {
                           action.variant === "appointment" &&
                             "bg-secondary/10 text-secondary hover:bg-secondary/15",
                           action.variant === "default" &&
-                            "text-cns-navy hover:bg-muted"
+                            "text-foreground hover:bg-muted"
                         )}
                       >
                         {content}
@@ -167,7 +167,7 @@ function FloatingActions() {
                       window.scrollTo({ top: 0, behavior: "smooth" });
                       setExpanded(false);
                     }}
-                    className="flex h-11 w-full items-center gap-3 rounded-xl px-3.5 text-sm font-medium text-cns-navy transition-all duration-300 hover:bg-muted"
+                    className="flex h-11 w-full items-center gap-3 rounded-xl px-3.5 text-sm font-medium text-foreground transition-all duration-300 hover:bg-muted"
                   >
                     <ChevronUp className="size-4 shrink-0" aria-hidden="true" />
                     Back to Top
@@ -175,7 +175,7 @@ function FloatingActions() {
                 </motion.li>
               ) : null}
             </ul>
-            <div className="mt-1 border-t border-cns-border/70 px-3.5 py-2">
+            <div className="mt-1 border-t border-border px-3.5 py-2">
               <a
                 href={getEmergencyTelHref()}
                 className="flex items-center gap-2 text-xs font-semibold text-destructive transition-colors hover:text-destructive/80"

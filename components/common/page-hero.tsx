@@ -36,7 +36,7 @@ function PageHero({ title, description, breadcrumb, eyebrow }: PageHeroProps) {
 
   return (
     <section
-      className="relative overflow-hidden border-b border-cns-border/40 brand-surface-page pb-8 pt-6 md:pb-10 md:pt-8"
+      className="relative overflow-hidden border-b border-cns-border/40 page-hero-surface pb-8 pt-6 md:pb-10 md:pt-8"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >

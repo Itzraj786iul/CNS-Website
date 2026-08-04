@@ -38,7 +38,7 @@ function FacilityGalleryCard({ facility }: { facility: FacilityItem }) {
             className="object-cover img-zoom"
             sizes="(max-width: 768px) 100vw, 50vw"
           />
-          <div className="absolute inset-0 bg-linear-to-t from-cns-navy/85 via-cns-navy/30 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-t from-black/85 via-black/30 to-transparent" />
           <CardContent className="absolute inset-x-0 bottom-0 space-y-2 p-5">
             <IconBox icon={facility.icon} variant={facility.iconVariant} size="default" className="bg-white/15 text-white backdrop-blur-sm [&_svg]:text-white" />
             <div>

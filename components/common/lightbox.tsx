@@ -83,7 +83,7 @@ function LightboxProvider({ children }: { children: React.ReactNode }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[200] flex items-center justify-center bg-cns-navy/90 p-4 backdrop-blur-sm"
+            className="fixed inset-0 z-[200] flex items-center justify-center bg-black/92 p-4 backdrop-blur-sm"
             onClick={close}
           >
             <button
@@ -141,7 +141,7 @@ function LightboxProvider({ children }: { children: React.ReactNode }) {
                 />
               </div>
               {(current.title || current.category) && (
-                <div className="border-t border-white/10 bg-cns-navy/95 px-6 py-4">
+                <div className="border-t border-white/10 bg-black/80 px-6 py-4">
                   {current.category ? (
                     <p className="text-xs font-semibold uppercase tracking-[0.12em] text-white/60">
                       {current.category}
@@ -199,10 +199,10 @@ function MasonryGallery({ images, className }: MasonryGalleryProps) {
               className="img-zoom object-cover"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
             />
-            <div className="absolute inset-0 bg-cns-navy/0 transition-colors duration-300 group-hover:bg-cns-navy/20" />
+            <div className="absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/25" />
           </div>
           {(image.title || image.category) && (
-            <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-cns-navy/85 via-cns-navy/40 to-transparent px-4 pb-4 pt-10">
+            <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-black/85 via-black/40 to-transparent px-4 pb-4 pt-10">
               {image.category ? (
                 <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-white/70">
                   {image.category}

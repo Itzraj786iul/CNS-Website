@@ -87,7 +87,7 @@ function Footer() {
   const emergencyHref = getEmergencyTelHref();
 
   return (
-    <footer data-slot="footer" className="relative bg-cns-navy text-white">
+    <footer data-slot="footer" className="footer-surface relative text-white">
       <div
         aria-hidden="true"
         className="neural-pattern pointer-events-none absolute inset-0 opacity-[0.12]"

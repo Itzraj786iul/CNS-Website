@@ -16,7 +16,7 @@ const variantClasses = {
   default: "section-surface-default",
   muted: "section-surface-muted",
   white: "section-surface-white",
-  navy: "bg-cns-navy text-white",
+  navy: "bg-cns-brand-navy text-white",
   gradient: "section-surface-gradient",
 } as const;
 

@@ -26,7 +26,7 @@ function TimelineCard({
       <div className="flex flex-col items-center">
         <div className="flex size-3 shrink-0 rounded-full bg-primary ring-4 ring-primary/15" />
         {!isLast ? (
-          <div className="mt-2 w-px flex-1 bg-cns-border" aria-hidden="true" />
+          <div className="mt-2 w-px flex-1 bg-border" aria-hidden="true" />
         ) : null}
       </div>
 

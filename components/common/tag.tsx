@@ -11,7 +11,8 @@ const tagVariants = cva(
         blue: "border-primary/25 bg-primary/10 text-primary",
         green: "border-secondary/25 bg-secondary/10 text-secondary dark:text-[#9fd04a]",
         orange: "border-accent/25 bg-accent/10 text-[#b45309] dark:text-[#f5b04a]",
-        navy: "border-cns-navy/15 bg-cns-navy/8 text-cns-navy",
+        navy:
+          "border-primary/20 bg-primary/10 text-primary dark:border-primary/25 dark:bg-primary/12",
       },
     },
     defaultVariants: {

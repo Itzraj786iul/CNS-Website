@@ -45,7 +45,7 @@ function DoctorProfileCard({ doctor, className }: DoctorProfileCardProps) {
               className="img-zoom object-cover object-top"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
-            <div className="absolute inset-x-0 bottom-0 h-2/5 bg-linear-to-t from-cns-navy/65 to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 h-2/5 bg-linear-to-t from-black/60 to-transparent" />
             <div className="absolute bottom-4 left-4 flex flex-col gap-2">
               <Tag variant="green" className="shadow-soft backdrop-blur-sm">
                 {doctor.experience}
@@ -55,13 +55,13 @@ function DoctorProfileCard({ doctor, className }: DoctorProfileCardProps) {
                   "inline-flex w-fit items-center gap-1.5 rounded-full px-2.5 py-1 text-[11px] font-semibold shadow-soft backdrop-blur-sm",
                   isAvailable
                     ? "bg-secondary/90 text-white"
-                    : "bg-white/90 text-muted-foreground"
+                    : "bg-card/90 text-muted-foreground"
                 )}
               >
                 <span
                   className={cn(
                     "size-1.5 rounded-full",
-                    isAvailable ? "bg-white" : "bg-muted-foreground"
+                    isAvailable ? "bg-white" : "bg-muted-foreground/80"
                   )}
                   aria-hidden="true"
                 />

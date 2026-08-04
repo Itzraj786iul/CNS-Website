@@ -6,9 +6,9 @@ type SectionDividerProps = {
 };
 
 const fillMap = {
-  default: "#f8fbfd",
-  white: "#ffffff",
-  muted: "#eef4f9",
+  default: "var(--wave-fill-default)",
+  white: "var(--wave-fill-white)",
+  muted: "var(--wave-fill-muted)",
 } as const;
 
 function SectionDivider({ variant = "default", className }: SectionDividerProps) {
@@ -30,10 +30,10 @@ function SectionDivider({ variant = "default", className }: SectionDividerProps)
         <path
           d="M0,32 C240,56 480,8 720,32 C960,56 1200,16 1440,36 L1440,64 L0,64 Z"
           fill={fill}
-          opacity="0.85"
+          opacity="0.92"
         />
       </svg>
-      <div className="absolute inset-x-[8%] top-1/2 h-px bg-linear-to-r from-transparent via-cns-border/60 to-transparent" />
+      <div className="wave-divider-line absolute inset-x-[8%] top-1/2 h-px" />
     </div>
   );
 }

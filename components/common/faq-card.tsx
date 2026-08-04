@@ -34,7 +34,7 @@ function FAQCard({ items, className }: FAQCardProps) {
           <AccordionItem
             key={`${item.question}-${index}`}
             value={`faq-${index}`}
-            className="border-cns-border px-5 last:border-b-0 sm:px-7"
+            className="border-border px-5 last:border-b-0 sm:px-7"
           >
             <AccordionTrigger className="py-5 text-left font-heading text-base font-semibold text-cns-navy transition-colors hover:text-primary hover:no-underline sm:py-6 [&[data-state=open]]:text-primary">
               {item.question}

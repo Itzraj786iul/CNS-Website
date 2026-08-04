@@ -12,8 +12,8 @@ const iconBoxVariants = cva(
         blue: "bg-primary/10 text-primary",
         green: "bg-secondary/10 text-secondary",
         orange: "bg-accent/10 text-accent",
-        navy: "bg-cns-navy/10 text-cns-navy",
-        white: "bg-white/10 text-white",
+        navy: "bg-primary/10 text-primary dark:bg-primary/15 dark:text-primary",
+        white: "bg-white/10 text-white dark:bg-white/10 dark:text-white",
       },
       size: {
         sm: "size-10 rounded-xl [&_svg]:size-4",

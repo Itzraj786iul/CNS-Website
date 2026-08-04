@@ -59,7 +59,7 @@ function DoctorCard({
             className="img-zoom object-cover object-top"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
-          <div className="absolute inset-x-0 bottom-0 h-2/5 bg-linear-to-t from-cns-navy/55 to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 h-2/5 bg-linear-to-t from-black/55 to-transparent" />
           {showQuickActions && available !== undefined ? (
             <div className="absolute left-4 top-4">
               <span
@@ -67,7 +67,7 @@ function DoctorCard({
                   "inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[11px] font-semibold shadow-soft backdrop-blur-sm",
                   available
                     ? "bg-secondary/90 text-white"
-                    : "bg-white/95 text-cns-navy/80"
+                    : "bg-card/90 text-muted-foreground"
                 )}
               >
                 <span

@@ -29,7 +29,7 @@ function AboutPreviewSection() {
             />
             <div
               aria-hidden="true"
-              className="absolute inset-0 bg-linear-to-t from-cns-navy/30 via-cns-navy/5 to-transparent"
+              className="absolute inset-0 bg-linear-to-t from-black/35 via-black/5 to-transparent"
             />
           </div>
           <div

@@ -95,12 +95,12 @@ export const hoverLift = {
   rest: {
     y: 0,
     scale: 1,
-    boxShadow: "0 1px 2px rgb(22 50 74 / 0.04), 0 8px 32px -8px rgb(22 50 74 / 0.1)",
+    boxShadow: "var(--shadow-card-value)",
   },
   hover: {
     y: -6,
     scale: 1.008,
-    boxShadow: "0 4px 16px -4px rgb(22 50 74 / 0.08), 0 24px 56px -16px rgb(22 50 74 / 0.14)",
+    boxShadow: "var(--shadow-card-hover-value)",
     transition: { duration: 0.35, ease: easeOut },
   },
 };

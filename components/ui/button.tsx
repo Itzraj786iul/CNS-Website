@@ -17,7 +17,7 @@ const buttonVariants = cva(
         accent:
           "bg-accent text-accent-foreground shadow-soft hover:bg-[#cf7609] hover:shadow-soft-lg",
         navy:
-          "bg-cns-navy text-white shadow-soft hover:bg-[#122a3f] hover:shadow-soft-lg",
+          "bg-cns-brand-navy text-white shadow-soft hover:bg-[#122a3f] hover:shadow-soft-lg dark:hover:bg-[#0d1a2e]",
         ghost:
           "font-medium text-foreground hover:bg-muted hover:text-foreground hover:shadow-none aria-expanded:bg-muted aria-expanded:text-foreground",
         destructive:
