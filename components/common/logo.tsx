@@ -5,10 +5,30 @@ import Link from "next/link";
 import { siteConfig } from "@/lib/constants/site";
 import { cn } from "@/lib/utils";
 
-/** Trimmed client logo with transparent background — generated via scripts/process-cns-logo.mjs */
-const LOGO_SRC = "/cns-logo-nav.png";
-const LOGO_WIDTH = 590;
-const LOGO_HEIGHT = 275;
+/** Generated via npm run process-logo from the client PNG */
+const LOGO_MARK_SRC = "/cns-logo-mark.png";
+const LOGO_FULL_SRC = "/cns-logo-full.png";
+
+const logoAssets = {
+  nav: {
+    src: LOGO_MARK_SRC,
+    width: 590,
+    height: 200,
+    sizes: "(max-width: 640px) 128px, (max-width: 1024px) 144px, 160px",
+  },
+  footer: {
+    src: LOGO_FULL_SRC,
+    width: 590,
+    height: 275,
+    sizes: "(max-width: 640px) 152px, 176px",
+  },
+  default: {
+    src: LOGO_FULL_SRC,
+    width: 590,
+    height: 275,
+    sizes: "(max-width: 640px) 152px, 176px",
+  },
+} as const;
 
 type LogoProps = {
   className?: string;
@@ -18,9 +38,9 @@ type LogoProps = {
 };
 
 const logoSizeClasses = {
-  sm: "h-8 w-auto max-w-[9.5rem] sm:h-9 sm:max-w-[10.5rem]",
-  md: "h-9 w-auto max-w-[10.5rem] sm:h-10 sm:max-w-[11.5rem] lg:h-11 lg:max-w-[12.5rem]",
-  lg: "h-11 w-auto max-w-[12rem] sm:h-12 sm:max-w-[14rem]",
+  sm: "h-8 w-auto max-w-[8.5rem] sm:h-9 sm:max-w-[9.5rem]",
+  md: "h-9 w-auto max-w-[9.5rem] sm:h-10 sm:max-w-[10.5rem] lg:h-11 lg:max-w-[11.5rem]",
+  lg: "h-11 w-auto max-w-[11rem] sm:h-12 sm:max-w-[12.5rem]",
 } as const;
 
 function Logo({
@@ -29,22 +49,28 @@ function Logo({
   variant = "nav",
   priority = false,
 }: LogoProps) {
+  const asset = logoAssets[variant];
+
   const image = (
     <Image
-      src={LOGO_SRC}
+      src={asset.src}
       alt={`${siteConfig.name} logo`}
-      width={LOGO_WIDTH}
-      height={LOGO_HEIGHT}
+      width={asset.width}
+      height={asset.height}
       priority={priority}
-      quality={95}
-      sizes="(max-width: 640px) 152px, (max-width: 1024px) 176px, 200px"
-      className={cn("w-auto object-contain object-left", logoSizeClasses[size], className)}
+      unoptimized
+      sizes={asset.sizes}
+      className={cn(
+        "block w-auto object-contain object-left",
+        logoSizeClasses[size],
+        className
+      )}
     />
   );
 
   if (variant === "footer") {
     return (
-      <span className="inline-flex shrink-0 items-center rounded-lg border border-white/10 bg-white px-2.5 py-1.5 shadow-soft">
+      <span className="inline-flex shrink-0 items-center rounded-lg border border-white/10 bg-white/95 px-2.5 py-1.5 shadow-soft">
         {image}
       </span>
     );
