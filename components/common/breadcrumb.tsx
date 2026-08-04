@@ -16,7 +16,7 @@ type BreadcrumbProps = {
 function Breadcrumb({ items, className }: BreadcrumbProps) {
   return (
     <nav aria-label="Breadcrumb" className={cn(className)}>
-      <ol className="inline-flex flex-wrap items-center gap-1 rounded-full border border-border bg-white/85 px-3 py-1.5 shadow-soft backdrop-blur-sm">
+      <ol className="inline-flex flex-wrap items-center gap-1 rounded-full border border-border bg-card/85 px-3 py-1.5 shadow-soft backdrop-blur-sm">
         {items.map((item, index) => {
           const isLast = index === items.length - 1;
           const isHome = index === 0 && item.href === "/";

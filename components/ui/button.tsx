@@ -11,7 +11,7 @@ const buttonVariants = cva(
         default:
           "bg-primary text-primary-foreground shadow-glow-blue hover:bg-[#14527a] hover:shadow-soft-lg",
         outline:
-          "border-border bg-white text-cns-navy shadow-soft hover:border-primary/35 hover:bg-primary/5 hover:text-cns-navy hover:shadow-soft-lg aria-expanded:bg-primary/5 aria-expanded:text-cns-navy",
+          "border-border bg-card text-foreground shadow-soft hover:border-primary/35 hover:bg-primary/5 hover:text-foreground hover:shadow-soft-lg aria-expanded:bg-primary/5 aria-expanded:text-foreground",
         secondary:
           "bg-secondary text-secondary-foreground shadow-glow-green hover:bg-[#527a14] hover:shadow-soft-lg aria-expanded:bg-secondary aria-expanded:text-secondary-foreground",
         accent:
@@ -19,7 +19,7 @@ const buttonVariants = cva(
         navy:
           "bg-cns-navy text-white shadow-soft hover:bg-[#122a3f] hover:shadow-soft-lg",
         ghost:
-          "font-medium text-cns-navy hover:bg-muted hover:text-cns-navy hover:shadow-none aria-expanded:bg-muted aria-expanded:text-cns-navy",
+          "font-medium text-foreground hover:bg-muted hover:text-foreground hover:shadow-none aria-expanded:bg-muted aria-expanded:text-foreground",
         destructive:
           "border border-destructive/20 bg-destructive/12 text-[#a61f1f] hover:border-destructive/30 hover:bg-destructive/18 focus-visible:ring-destructive/40",
         destructiveSolid:

@@ -6,6 +6,7 @@ import { MessageCircle, Siren } from "lucide-react";
 import { motion } from "framer-motion";
 
 import { NavAppointmentCta } from "@/components/layout/nav-appointment-cta";
+import { ThemeSwitcherMobile } from "@/components/layout/theme-switcher";
 import { Separator } from "@/components/ui/separator";
 import {
   moreNavigationGroups,
@@ -101,6 +102,10 @@ function NavMobileMenu({ isActive, onNavigate }: NavMobileMenuProps) {
             )}
           </ul>
         </div>
+
+        <Separator className="my-5" />
+
+        <ThemeSwitcherMobile />
       </nav>
 
       <div className="space-y-3 border-t border-cns-border bg-background/95 p-4 pb-[max(1rem,env(safe-area-inset-bottom))]">

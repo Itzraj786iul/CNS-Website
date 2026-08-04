@@ -11,6 +11,7 @@ import { Container } from "@/components/common/container";
 import { NavAppointmentCta } from "@/components/layout/nav-appointment-cta";
 import { NavMobileMenu } from "@/components/layout/nav-mobile-menu";
 import { NavMoreMenu } from "@/components/layout/nav-more-menu";
+import { ThemeSwitcher } from "@/components/layout/theme-switcher";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -42,7 +43,7 @@ function NavLink({
         compact ? "px-3 py-2 text-[13px]" : "px-3.5 py-2.5 text-sm",
         isActive
           ? "text-primary"
-          : "text-cns-navy/88 hover:bg-white/85 hover:text-cns-navy hover:shadow-soft"
+          : "text-cns-navy/88 hover:bg-card/85 hover:text-cns-navy hover:shadow-soft dark:hover:bg-card/70"
       )}
     >
       {label}
@@ -120,6 +121,7 @@ function Navbar() {
           </nav>
 
           <div className="flex shrink-0 items-center gap-2.5 lg:gap-3">
+            <ThemeSwitcher className="hidden lg:inline-flex" />
             <NavAppointmentCta />
 
             <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>

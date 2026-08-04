@@ -29,7 +29,7 @@ function StatisticsSection() {
                 value={stat.value}
                 suffix={stat.suffix}
                 label={stat.label}
-                className="rounded-2xl border border-cns-border/50 bg-white/90 shadow-card backdrop-blur-sm"
+                className="rounded-2xl border border-cns-border/50 bg-card/90 shadow-card backdrop-blur-sm"
               />
             </motion.div>
           ))}

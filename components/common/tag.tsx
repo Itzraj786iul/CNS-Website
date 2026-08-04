@@ -7,10 +7,10 @@ const tagVariants = cva(
   {
     variants: {
       variant: {
-        default: "border-border bg-white text-cns-navy",
+        default: "border-border bg-card text-foreground",
         blue: "border-primary/25 bg-primary/10 text-primary",
-        green: "border-secondary/25 bg-secondary/10 text-[#4d7512]",
-        orange: "border-accent/25 bg-accent/10 text-[#b45309]",
+        green: "border-secondary/25 bg-secondary/10 text-secondary dark:text-[#9fd04a]",
+        orange: "border-accent/25 bg-accent/10 text-[#b45309] dark:text-[#f5b04a]",
         navy: "border-cns-navy/15 bg-cns-navy/8 text-cns-navy",
       },
     },

@@ -48,7 +48,7 @@ function WhyChooseSection() {
               <motion.div
                 key={feature.title}
                 variants={fadeUp}
-                className="group flex gap-4 rounded-2xl border border-cns-border/60 bg-background p-5 transition-all duration-500 hover:-translate-y-0.5 hover:border-primary/15 hover:bg-white hover:shadow-soft"
+                className="group flex gap-4 rounded-2xl border border-cns-border/60 bg-background p-5 transition-all duration-500 hover:-translate-y-0.5 hover:border-primary/15 hover:bg-card hover:shadow-soft"
               >
                 <IconBox
                   icon={feature.icon}

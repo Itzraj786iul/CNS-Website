@@ -74,7 +74,7 @@ function ResourcesPageContent() {
               <SectionHeading eyebrow="Insurance" title={insurance.title} description={insurance.description} />
               <ul className="space-y-3">
                 {insurance.points.map((point) => (
-                  <li key={point} className="flex gap-3 rounded-xl border border-cns-border/60 bg-white px-4 py-3 text-sm leading-relaxed text-cns-navy/85 shadow-soft">
+                  <li key={point} className="flex gap-3 rounded-xl border border-cns-border/60 bg-card px-4 py-3 text-sm leading-relaxed text-cns-navy/85 shadow-soft">
                     <ShieldCheck className="mt-0.5 size-4 shrink-0 text-secondary" aria-hidden="true" />
                     {point}
                   </li>
@@ -109,7 +109,7 @@ function ResourcesPageContent() {
 
       <Section variant="white" spacing="default" divider>
         <AnimatedSection>
-          <div className="rounded-3xl border border-cns-border/80 bg-white p-6 shadow-soft sm:p-8">
+          <div className="rounded-3xl border border-cns-border/80 bg-card p-6 shadow-soft sm:p-8">
             <SectionHeading eyebrow="Visitor Information" title="Visitor Guidelines" description="Help us maintain a calm, healing environment for every patient and family." />
             <ul className="mt-8 space-y-3">
               {visitorGuidelines.map((rule) => (

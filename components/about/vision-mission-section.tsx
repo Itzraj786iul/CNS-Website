@@ -31,7 +31,7 @@ function VisionMissionSection() {
                 whileHover="hover"
                 variants={hoverLift}
               >
-                <Card className="border-cns-border/80 bg-white shadow-soft ring-0">
+                <Card className="border-cns-border/80 bg-card shadow-soft ring-0">
                   <CardContent className="space-y-4 px-5 py-6 sm:px-6">
                     <IconBox icon={item.icon} variant={item.variant} size="lg" />
                     <div className="space-y-3">

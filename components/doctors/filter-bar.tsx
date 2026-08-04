@@ -12,7 +12,7 @@ function FilterBar() {
   return (
     <Section variant="white" spacing="sm" className="!py-4 !pt-0">
       <AnimatedSection>
-        <div className="flex flex-col gap-4 rounded-2xl border border-border bg-white p-4 shadow-soft sm:flex-row sm:items-center sm:justify-between sm:p-5">
+        <div className="flex flex-col gap-4 rounded-2xl border border-border bg-card p-4 shadow-soft sm:flex-row sm:items-center sm:justify-between sm:p-5">
           <div className="relative flex-1">
             <Search
               className="absolute left-3.5 top-1/2 size-4 -translate-y-1/2 text-muted-foreground"

@@ -182,7 +182,7 @@ function MasonryGallery({ images, className }: MasonryGalleryProps) {
           key={`${image.src}-${index}`}
           type="button"
           onClick={() => open(images, index)}
-          className="group relative mb-4 block w-full break-inside-avoid overflow-hidden rounded-2xl border border-cns-border/80 bg-white text-left shadow-soft transition-all duration-300 hover:border-primary/20 hover:shadow-soft-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+          className="group relative mb-4 block w-full break-inside-avoid overflow-hidden rounded-2xl border border-cns-border/80 bg-card text-left shadow-soft transition-all duration-300 hover:border-primary/20 hover:shadow-soft-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
           aria-label={`View ${image.title ?? image.alt}`}
         >
           <div

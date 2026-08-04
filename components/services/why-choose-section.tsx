@@ -32,7 +32,7 @@ function WhyChooseSection() {
           </AnimatedSection>
           <AnimatedSection stagger className="space-y-4">
             {whyChoose.points.map((point) => (
-              <motion.div key={point} variants={fadeUp} className="flex gap-3 rounded-xl border border-cns-border/60 bg-white p-4 shadow-soft">
+              <motion.div key={point} variants={fadeUp} className="flex gap-3 rounded-xl border border-cns-border/60 bg-card p-4 shadow-soft">
                 <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-secondary" />
                 <p className="text-sm leading-relaxed text-cns-navy/85">{point}</p>
               </motion.div>

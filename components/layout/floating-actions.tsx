@@ -100,7 +100,7 @@ function FloatingActions() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 8, scale: 0.96 }}
             transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
-            className="w-[min(100vw-2rem,15rem)] overflow-hidden rounded-2xl border border-cns-border/80 bg-white/95 p-2 shadow-soft-lg backdrop-blur-xl"
+            className="w-[min(100vw-2rem,15rem)] overflow-hidden rounded-2xl border border-border bg-popover/95 p-2 shadow-soft-lg backdrop-blur-xl"
           >
             <ul className="space-y-1">
               {dockActions.map((action, index) => {
@@ -194,8 +194,8 @@ function FloatingActions() {
         onClick={() => setExpanded((value) => !value)}
         whileTap={{ scale: 0.98 }}
         className={cn(
-          "group relative flex h-12 items-center gap-2 overflow-hidden rounded-full border border-cns-border/80 bg-white/95 px-4 text-sm font-semibold text-cns-navy shadow-soft-lg backdrop-blur-xl transition-all duration-300 hover:border-primary/20 hover:shadow-glow-blue",
-          expanded && "border-primary/25 bg-white"
+          "group relative flex h-12 items-center gap-2 overflow-hidden rounded-full border border-border bg-card/95 px-4 text-sm font-semibold text-foreground shadow-soft-lg backdrop-blur-xl transition-all duration-300 hover:border-primary/20 hover:shadow-glow-blue",
+          expanded && "border-primary/25 bg-card"
         )}
       >
         <span

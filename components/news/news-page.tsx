@@ -129,7 +129,7 @@ function NewsPageContent() {
             <AnimatedSection stagger className="space-y-3">
               {achievements.map((item) => (
                 <motion.div key={item} variants={fadeUp}>
-                  <div className="rounded-xl border border-cns-border/60 bg-white px-5 py-4 shadow-soft">
+                  <div className="rounded-xl border border-cns-border/60 bg-card px-5 py-4 shadow-soft">
                     <p className="text-sm leading-relaxed text-cns-navy/85">{item}</p>
                   </div>
                 </motion.div>

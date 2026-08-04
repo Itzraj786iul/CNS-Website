@@ -70,7 +70,7 @@ function PatientSafetySection() {
           {safety.items.map((item, index) => (
             <motion.div key={item.title} variants={fadeUp}>
               <motion.div initial="rest" whileHover="hover" variants={hoverLift}>
-                <Card className="border-cns-border/80 bg-white shadow-soft ring-0">
+                <Card className="border-cns-border/80 bg-card shadow-soft ring-0">
                   <CardContent className="space-y-3 px-5 py-6">
                     <IconBox icon={item.icon} variant={(["blue", "green", "orange", "navy"] as const)[index % 4]} />
                     <h3 className="font-heading text-lg font-semibold text-cns-navy">{item.title}</h3>

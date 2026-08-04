@@ -1,12 +1,12 @@
 import { cn } from "@/lib/utils";
 
 const fieldClassName = cn(
-  "h-12 w-full rounded-xl border border-border bg-white px-4 text-sm text-cns-navy",
+  "h-12 w-full rounded-xl border border-border bg-card px-4 text-sm text-foreground",
   "placeholder:text-muted-foreground/90 outline-none transition-all duration-300",
   "focus:border-primary focus:ring-2 focus:ring-primary/25 focus:shadow-soft"
 );
 
-const labelClassName = "text-sm font-medium text-cns-navy";
+const labelClassName = "text-sm font-medium text-foreground";
 
 function FormField({
   label,

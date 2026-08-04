@@ -87,7 +87,7 @@ function ContactFormSection() {
             </a>
           </div>
           <form
-            className="space-y-4 rounded-2xl border border-border bg-white p-5 shadow-soft sm:p-6"
+            className="space-y-4 rounded-2xl border border-border bg-card p-5 shadow-soft sm:p-6"
             onSubmit={(e) => e.preventDefault()}
           >
             <div className="grid gap-4 sm:grid-cols-2">
@@ -125,7 +125,7 @@ function ContactFormSection() {
               />
             </div>
           </div>
-          <Card className="border-border bg-white shadow-soft ring-0">
+          <Card className="border-border bg-card shadow-soft ring-0">
             <CardContent className="space-y-3 px-5 py-5 sm:px-6">
               <h3 className="font-heading text-lg font-semibold text-cns-navy">{contactContent.timings.title}</h3>
               <ul className="space-y-2.5">
@@ -159,7 +159,7 @@ function DepartmentsContactSection() {
         <AnimatedSection stagger className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {contactContent.departments.map((dept) => (
             <motion.div key={dept.name} variants={fadeUp}>
-              <Card className="border-border bg-white shadow-soft ring-0">
+              <Card className="border-border bg-card shadow-soft ring-0">
                 <CardContent className="space-y-2 px-5 py-5">
                   <h3 className="font-heading text-base font-semibold text-cns-navy">{dept.name}</h3>
                   {isTelHref(dept.href) ? (

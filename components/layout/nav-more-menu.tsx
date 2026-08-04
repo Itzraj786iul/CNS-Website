@@ -85,7 +85,7 @@ function NavMoreMenu({
           "relative inline-flex items-center gap-1.5 rounded-full px-3.5 py-2.5 text-sm font-medium transition-[color,background-color,box-shadow,transform] duration-300 active:scale-[0.98]",
           moreActive
             ? "text-primary"
-            : "text-cns-navy/88 hover:bg-white/85 hover:text-cns-navy hover:shadow-soft"
+            : "text-cns-navy/88 hover:bg-card/85 hover:text-cns-navy hover:shadow-soft dark:hover:bg-card/70"
         )}
       >
         More
@@ -116,7 +116,7 @@ function NavMoreMenu({
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 8, scale: 0.98 }}
             transition={{ duration: 0.24, ease: [0.22, 1, 0.36, 1] }}
-            className="absolute left-1/2 top-[calc(100%+0.75rem)] z-50 w-[min(calc(100vw-2rem),19.5rem)] -translate-x-1/2 overflow-hidden rounded-3xl border border-white/70 bg-white/82 p-3 shadow-soft-lg backdrop-blur-2xl backdrop-saturate-150"
+            className="absolute left-1/2 top-[calc(100%+0.75rem)] z-50 w-[min(calc(100vw-2rem),19.5rem)] -translate-x-1/2 overflow-hidden rounded-3xl border border-border bg-popover/95 p-3 shadow-soft-lg backdrop-blur-2xl backdrop-saturate-150"
             onMouseEnter={clearCloseTimer}
             onMouseLeave={scheduleClose}
           >
@@ -159,7 +159,7 @@ function NavMoreMenu({
                               "group/item flex items-center gap-3 rounded-2xl px-3 py-3 text-sm font-medium transition-all duration-300 active:scale-[0.98]",
                               active
                                 ? "bg-primary/8 text-primary shadow-soft"
-                                : "text-cns-navy hover:bg-white hover:text-cns-navy hover:shadow-soft"
+                                : "text-cns-navy hover:bg-muted hover:text-cns-navy hover:shadow-soft"
                             )}
                           >
                             {Icon ? (

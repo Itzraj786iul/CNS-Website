@@ -21,7 +21,7 @@ function TreatmentProcessSection() {
           {process.steps.map((step) => (
             <motion.div key={step.step} variants={fadeUp}>
               <motion.div initial="rest" whileHover="hover" variants={hoverLift}>
-                <Card className="border-cns-border/80 bg-white shadow-soft ring-0">
+                <Card className="border-cns-border/80 bg-card shadow-soft ring-0">
                   <CardContent className="space-y-3 px-5 py-6">
                     <span className="font-heading text-3xl font-semibold text-primary/30">{step.step}</span>
                     <h3 className="font-heading text-lg font-semibold text-cns-navy">{step.title}</h3>

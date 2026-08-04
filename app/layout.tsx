@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Manrope } from "next/font/google";
 
 import { MainLayout } from "@/components/layout/main-layout";
+import { ThemeProvider } from "@/components/providers/theme-provider";
+import { ThemeTransition } from "@/components/providers/theme-transition";
 import { baseMetadata } from "@/lib/metadata";
 
 import "./globals.css";
@@ -23,7 +25,7 @@ export const metadata: Metadata = baseMetadata;
 export const viewport: Viewport = {
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#f8fbfd" },
-    { media: "(prefers-color-scheme: dark)", color: "#16324a" },
+    { media: "(prefers-color-scheme: dark)", color: "#0f172a" },
   ],
 };
 
@@ -36,9 +38,13 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${inter.variable} ${manrope.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
       <body className="flex min-h-full flex-col bg-background font-sans text-foreground">
-        <MainLayout>{children}</MainLayout>
+        <ThemeProvider>
+          <ThemeTransition />
+          <MainLayout>{children}</MainLayout>
+        </ThemeProvider>
       </body>
     </html>
   );

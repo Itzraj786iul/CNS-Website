@@ -34,7 +34,7 @@ function ConditionsSection() {
               >
                 <Link
                   href={condition.href}
-                  className="group flex flex-col gap-3 rounded-2xl border border-cns-border/60 bg-background p-4 transition-colors hover:border-primary/20 hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+                  className="group flex flex-col gap-3 rounded-2xl border border-cns-border/60 bg-background p-4 transition-colors hover:border-primary/20 hover:bg-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
                 >
                   <IconBox
                     icon={condition.icon}

@@ -233,7 +233,7 @@ function HeroSection() {
                   }
                   variant="outline"
                   size="lg"
-                  className="h-12 border-border bg-white px-7 font-semibold text-cns-navy shadow-soft hover:border-primary/35 hover:bg-primary/5"
+                  className="h-12 border-border bg-card px-7 font-semibold text-cns-navy shadow-soft hover:border-primary/35 hover:bg-primary/5"
                 />
               </div>
               {isTelHref(appointmentHref) ? (
@@ -241,7 +241,7 @@ function HeroSection() {
                   href={appointmentHref}
                   className="inline-flex items-center gap-2.5 text-sm font-medium text-cns-navy/88 transition-colors hover:text-primary"
                 >
-                  <span className="flex size-8 items-center justify-center rounded-full bg-white shadow-soft ring-1 ring-cns-border/60">
+                  <span className="flex size-8 items-center justify-center rounded-full bg-card shadow-soft ring-1 ring-cns-border/60">
                     <Phone className="size-3.5 text-primary" aria-hidden="true" />
                   </span>
                   <span>
@@ -256,7 +256,7 @@ function HeroSection() {
                   href={appointmentHref}
                   className="inline-flex items-center gap-2.5 text-sm font-medium text-cns-navy/88 transition-colors hover:text-primary"
                 >
-                  <span className="flex size-8 items-center justify-center rounded-full bg-white shadow-soft ring-1 ring-cns-border/60">
+                  <span className="flex size-8 items-center justify-center rounded-full bg-card shadow-soft ring-1 ring-cns-border/60">
                     <Phone className="size-3.5 text-primary" aria-hidden="true" />
                   </span>
                   <span className="font-semibold text-cns-navy">
@@ -275,7 +275,7 @@ function HeroSection() {
                   key={label}
                   className="flex items-center gap-3 text-sm font-medium text-cns-navy/90"
                 >
-                  <span className="flex size-10 items-center justify-center rounded-full bg-white/90 shadow-soft ring-1 ring-cns-border/50 text-primary">
+                  <span className="flex size-10 items-center justify-center rounded-full bg-card/90 shadow-soft ring-1 ring-cns-border/50 text-primary">
                     <Icon className="size-4" aria-hidden="true" />
                   </span>
                   {label}
@@ -317,7 +317,7 @@ function HeroSection() {
                     value={stat.value}
                     suffix={stat.suffix}
                     label={stat.label}
-                    className="rounded-2xl border border-white/70 bg-white/80 shadow-card ring-1 ring-cns-border/30 backdrop-blur-xl"
+                    className="rounded-2xl border border-border/70 bg-card/80 shadow-card ring-1 ring-cns-border/30 backdrop-blur-xl"
                   />
                 </motion.div>
               ))}

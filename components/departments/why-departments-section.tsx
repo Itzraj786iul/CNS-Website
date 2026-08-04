@@ -42,7 +42,7 @@ function WhyDepartmentsSection() {
               <motion.div
                 key={point.title}
                 variants={fadeUp}
-                className="flex gap-4 rounded-2xl border border-cns-border/60 bg-background p-5 transition-colors hover:border-primary/20 hover:bg-white hover:shadow-soft"
+                className="flex gap-4 rounded-2xl border border-cns-border/60 bg-background p-5 transition-colors hover:border-primary/20 hover:bg-card hover:shadow-soft"
               >
                 <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-secondary" />
                 <div className="space-y-1">

@@ -87,7 +87,7 @@ function AppointmentPageContent() {
                 Thank you, {formData.name}. We have received your request and will contact you at{" "}
                 <span className="font-medium text-cns-navy">{formData.phone}</span> within one business day to confirm your appointment.
               </p>
-              <div className="mt-8 rounded-2xl border border-cns-border/80 bg-white p-6 text-left">
+              <div className="mt-8 rounded-2xl border border-cns-border/80 bg-card p-6 text-left">
                 <h3 className="font-heading text-sm font-semibold uppercase tracking-[0.12em] text-muted-foreground">Request Summary</h3>
                 <dl className="mt-4 space-y-3 text-sm">
                   <div className="flex justify-between gap-4"><dt className="text-muted-foreground">Department</dt><dd className="font-medium text-cns-navy">{formData.department}</dd></div>
@@ -108,7 +108,7 @@ function AppointmentPageContent() {
           <div className="grid gap-8 lg:grid-cols-[1.3fr_0.7fr] lg:items-start lg:gap-10">
             <AnimatedSection>
               <form
-                className="space-y-5 rounded-3xl border border-cns-border/80 bg-white p-6 shadow-soft sm:p-8"
+                className="space-y-5 rounded-3xl border border-cns-border/80 bg-card p-6 shadow-soft sm:p-8"
                 onSubmit={handleSubmit}
                 aria-label="Appointment booking form"
               >
