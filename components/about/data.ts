@@ -16,7 +16,7 @@ export const aboutContent = {
   hero: {
     title: "About Us",
     description:
-      "Discover the story, values, and people behind the Center for Neuroscience — a institution dedicated to advancing brain and spine health through clinical excellence and compassionate care.",
+      "Discover the people, values, and clinical standards behind the Center for Neuroscience — where brain and spine care is delivered with precision and compassion.",
   },
   aboutCns: {
     title: "A Legacy of Neuroscience Excellence",

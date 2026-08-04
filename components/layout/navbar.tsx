@@ -104,7 +104,7 @@ function Navbar() {
               render={
                 <Link href={ctaNavigation.href}>{ctaNavigation.label}</Link>
               }
-              className="hidden h-10 rounded-full bg-secondary px-5 text-secondary-foreground shadow-glow-green hover:bg-secondary/90 sm:inline-flex"
+              className="hidden h-11 min-h-[44px] rounded-full bg-secondary px-5 text-secondary-foreground shadow-glow-green hover:bg-secondary/90 sm:inline-flex"
             />
 
             <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
@@ -154,7 +154,7 @@ function Navbar() {
                         {ctaNavigation.label}
                       </Link>
                     }
-                    className="h-11 w-full rounded-full bg-secondary text-secondary-foreground hover:bg-secondary/90"
+              className="hidden h-11 min-h-[44px] rounded-full bg-secondary text-secondary-foreground hover:bg-secondary/90"
                   />
                 </div>
               </SheetContent>

@@ -53,7 +53,7 @@ function DoctorCard({
         </div>
       </div>
       <CardHeader className="gap-3 px-6 pb-2 pt-5">
-        {department ? <Tag variant="blue">{department}</Tag> : null}
+        {department ? <Tag variant="green">{department}</Tag> : null}
         <CardTitle className="text-xl font-semibold tracking-tight text-cns-navy">
           {name}
         </CardTitle>

@@ -6,7 +6,7 @@ export const resourcesContent = {
   hero: {
     title: "Patient Resources",
     description:
-      "Everything you need to prepare for your visit — downloadable forms, insurance guidance, visitor policies, and emergency information.",
+      "Forms, insurance guidance, visitor policies, and practical information to help you prepare for care at CNS.",
   },
   downloads: [
     { title: "New Patient Registration Form", type: "PDF", size: "245 KB" },

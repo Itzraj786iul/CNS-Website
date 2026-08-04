@@ -189,6 +189,27 @@
     @apply overflow-hidden rounded-2xl bg-muted shadow-soft ring-1 ring-cns-border/60;
   }
 
+  .image-placeholder {
+    @apply relative overflow-hidden rounded-3xl bg-muted shadow-soft-lg ring-1 ring-cns-border/50;
+  }
+
+  .image-placeholder::after {
+    @apply pointer-events-none absolute inset-0 bg-linear-to-t from-cns-navy/15 via-transparent to-transparent content-[''];
+  }
+
+  .quote-mark {
+    @apply font-heading text-5xl leading-none text-primary/15 select-none;
+  }
+
+  .hero-light-beam {
+    background: linear-gradient(
+      105deg,
+      transparent 40%,
+      rgb(255 255 255 / 0.06) 50%,
+      transparent 60%
+    );
+  }
+
   .prose-lead {
     @apply text-base leading-[1.8] text-muted-foreground sm:text-lg;
   }

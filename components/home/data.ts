@@ -23,39 +23,39 @@ import { getAppointmentDisplay, getEmergencyTelHref, toTelHref } from "@/lib/con
 import { siteConfig } from "@/lib/constants/site";
 
 export const heroStats = [
-  { value: "20", suffix: "+", label: "Specialists" },
-  { value: "50,000", suffix: "+", label: "Patients Treated" },
-  { value: "24", suffix: "×7", label: "Emergency Care" },
-  { value: "95", suffix: "%", label: "Patient Satisfaction" },
+  { value: "20", suffix: "+", label: "Subspecialist Doctors" },
+  { value: "50,000", suffix: "+", label: "Lives Treated" },
+  { value: "24", suffix: "×7", label: "Emergency Neuro Care" },
+  { value: "95", suffix: "%", label: "Would Recommend CNS" },
 ] as const;
 
 export const aboutFeatures = [
   {
     icon: Stethoscope,
-    title: "Expert Doctors",
+    title: "Board-Certified Specialists",
     description:
-      "Board-certified neurologists, neurosurgeons, and psychiatrists with subspecialty training.",
+      "Neurologists, neurosurgeons, and psychiatrists with advanced fellowship training and years of clinical practice.",
     iconVariant: "blue" as const,
   },
   {
     icon: Microscope,
-    title: "Advanced Technology",
+    title: "Precision Diagnostics",
     description:
-      "3T MRI, digital EEG, and neuro-navigation systems for precise diagnosis and treatment.",
+      "3T MRI, digital EEG, and neuro-navigation for accurate diagnosis and surgical planning.",
     iconVariant: "green" as const,
   },
   {
     icon: HeartHandshake,
-    title: "Personalized Care",
+    title: "Care Built Around You",
     description:
-      "Individual treatment plans built around each patient's goals, lifestyle, and recovery timeline.",
+      "Treatment plans shaped by your goals, your family, and your recovery timeline — not a one-size-fits-all protocol.",
     iconVariant: "orange" as const,
   },
   {
     icon: Ambulance,
-    title: "24×7 Emergency",
+    title: "24×7 Neuro Emergency",
     description:
-      "Round-the-clock stroke and neurotrauma response with dedicated critical care teams.",
+      "Dedicated stroke pathway, neuro ICU beds, and on-call specialists — ready when minutes matter.",
     iconVariant: "navy" as const,
   },
 ];
@@ -119,23 +119,23 @@ export const whyChooseFeatures: {
 }[] = [
   {
     icon: Stethoscope,
-    title: "Experienced Specialists",
+    title: "Experienced Clinicians",
     description:
-      "A senior team with decades of combined experience across neurology and neurosurgery.",
+      "A senior team with decades of combined experience across neurology, neurosurgery, and psychiatry.",
     iconVariant: "blue",
   },
   {
     icon: Scan,
-    title: "Modern Equipment",
+    title: "Clinical Technology",
     description:
-      "State-of-the-art imaging, monitoring, and surgical technology under one roof.",
+      "Advanced imaging, monitoring, and surgical systems — integrated under one roof in Raipur.",
     iconVariant: "green",
   },
   {
     icon: HeartHandshake,
-    title: "Patient-Centered Care",
+    title: "Patient-First Approach",
     description:
-      "Clear communication, shared decision-making, and compassionate support at every step.",
+      "Plain-language explanations, shared decisions, and support for families at every stage of care.",
     iconVariant: "orange",
   },
   {
@@ -246,7 +246,7 @@ export const facilities = [
 export const testimonials = [
   {
     quote:
-      "After my stroke, the team at CNS guided me through every step of recovery. Their clarity and compassion made a difficult time manageable.",
+      "After my stroke, the CNS team explained every step clearly. Their clarity and compassion made a frightening time feel manageable.",
     author: "Meera Krishnan",
     role: "Stroke Recovery Patient",
     avatar:
@@ -255,7 +255,7 @@ export const testimonials = [
   },
   {
     quote:
-      "The neurosurgery team explained my options thoroughly. I felt confident going into surgery and the post-operative care was exceptional.",
+      "The neurosurgery team walked me through every option before surgery. I felt prepared, informed, and genuinely cared for throughout recovery.",
     author: "Arjun Desai",
     role: "Spine Surgery Patient",
     avatar:
@@ -264,7 +264,7 @@ export const testimonials = [
   },
   {
     quote:
-      "From diagnosis to rehabilitation, every department worked together seamlessly. CNS truly puts the patient at the center of care.",
+      "From diagnosis to rehabilitation, every department worked as one team. CNS made us feel heard — not just treated.",
     author: "Sunita Rao",
     role: "Epilepsy Care Patient",
     avatar:

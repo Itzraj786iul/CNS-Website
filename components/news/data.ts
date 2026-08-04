@@ -2,7 +2,7 @@ export const newsContent = {
   hero: {
     title: "News & Events",
     description:
-      "Stay informed about hospital announcements, health awareness campaigns, upcoming events, and recent achievements at the Center for Neuroscience.",
+      "Hospital updates, community health initiatives, and clinical milestones from the Center for Neuroscience.",
   },
   news: [
     {

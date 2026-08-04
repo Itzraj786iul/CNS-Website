@@ -29,12 +29,12 @@ function ServiceCard({
   return (
     <motion.div initial="rest" whileHover="hover" variants={hoverLift} className={cn("h-full", className)}>
       <Card className="group flex h-full flex-col card-premium card-premium-hover ring-0">
-        <CardHeader className="gap-4">
+        <CardHeader className="gap-5 px-6 pt-7 pb-2">
           <IconBox icon={icon} variant={iconVariant} size="lg" />
-          <CardTitle className="text-xl font-semibold text-cns-navy">{title}</CardTitle>
-          <CardDescription className="text-base leading-relaxed">{description}</CardDescription>
+          <CardTitle className="text-xl font-semibold tracking-tight text-cns-navy">{title}</CardTitle>
+          <CardDescription className="text-base leading-[1.75]">{description}</CardDescription>
         </CardHeader>
-        <CardContent className="mt-auto">
+        <CardContent className="mt-auto px-6 pb-7">
           <Button
             nativeButton={false}
             render={<Link href={href}>Learn More<ArrowRight /></Link>}

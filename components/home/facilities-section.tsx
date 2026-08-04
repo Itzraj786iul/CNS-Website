@@ -17,8 +17,8 @@ function FacilitiesSection() {
           <SectionHeading
             align="center"
             eyebrow="Facilities"
-            title="World-Class Infrastructure"
-            description="Our hospital is equipped with advanced diagnostic, surgical, and critical care facilities designed for complex neurological conditions."
+            title="Advanced Clinical Infrastructure"
+            description="Diagnostic, surgical, and critical care facilities purpose-built for complex brain and spine conditions."
           />
         </AnimatedSection>
 

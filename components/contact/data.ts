@@ -14,7 +14,7 @@ export const contactContent = {
   hero: {
     title: "Contact Us",
     description:
-      "Reach our team for appointments, referrals, billing inquiries, or general information. We are here to help you navigate your care.",
+      "Reach our team for appointments, referrals, or billing questions. We respond with clarity — because navigating care should never feel confusing.",
   },
   cards: [
     {

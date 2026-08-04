@@ -29,13 +29,13 @@ function FacilityGalleryCard({ facility }: { facility: FacilityItem }) {
       variants={hoverLift}
       className={cn("h-full", sizeClasses[facility.size])}
     >
-      <Card className="group relative h-full overflow-hidden border-cns-border/80 bg-white shadow-soft ring-0">
+      <Card className="group relative h-full overflow-hidden rounded-3xl card-premium card-premium-hover ring-0">
         <div className={cn("relative w-full overflow-hidden", aspectClasses[facility.size])}>
           <Image
             src={facility.image}
             alt={`${facility.title} facility at CNS`}
             fill
-            className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+            className="object-cover img-zoom"
             sizes="(max-width: 768px) 100vw, 50vw"
           />
           <div className="absolute inset-0 bg-linear-to-t from-cns-navy/85 via-cns-navy/30 to-transparent" />

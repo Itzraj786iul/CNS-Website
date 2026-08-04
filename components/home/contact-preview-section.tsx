@@ -37,8 +37,8 @@ function ContactPreviewSection() {
           <SectionHeading
             align="center"
             eyebrow="Contact"
-            title="Get in Touch"
-            description="Reach our team for appointments, referrals, or general inquiries. We are committed to responding promptly and clearly."
+            title="We're Here to Help"
+            description="Appointments, referrals, or questions about your care — our team responds promptly with clear, helpful guidance."
           />
         </AnimatedSection>
 

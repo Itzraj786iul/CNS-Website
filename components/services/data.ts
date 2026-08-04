@@ -17,7 +17,7 @@ export const servicesContent = {
   hero: {
     title: "Our Services",
     description:
-      "Comprehensive neurological services spanning diagnosis, acute treatment, surgery, mental health, and long-term rehabilitation — delivered by subspecialty experts.",
+      "Comprehensive neurological services — from urgent stroke care to long-term rehabilitation — delivered by subspecialty experts under one roof.",
   },
   overview: {
     eyebrow: "Overview",
@@ -61,8 +61,8 @@ export const servicesContent = {
     ],
   },
   cta: {
-    title: "Ready to Begin Your Care Journey?",
-    description: "Schedule a consultation with the appropriate specialist. Our coordinators will guide you every step of the way.",
+    title: "Begin Your Care Journey",
+    description: "Schedule with the right specialist. Our coordinators handle scheduling, records, and insurance verification — so you can focus on your health.",
     primaryLabel: "Book Appointment",
     primaryHref: "/appointment",
     secondaryLabel: "Contact Us",

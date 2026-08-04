@@ -58,7 +58,7 @@ function StatisticsCard({
               </span>
             ) : null}
           </p>
-          <p className="text-sm font-medium text-muted-foreground">{label}</p>
+          <p className="text-sm font-semibold tracking-wide text-muted-foreground">{label}</p>
         </CardContent>
       </Card>
     </motion.div>

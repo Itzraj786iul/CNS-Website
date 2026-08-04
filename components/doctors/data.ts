@@ -28,7 +28,7 @@ export const doctorsContent = {
   hero: {
     title: "Our Doctors",
     description:
-      "Meet the specialists behind CNS — experienced clinicians committed to precision diagnosis, advanced treatment, and compassionate patient care.",
+      "Meet the clinicians behind CNS — subspecialists committed to accurate diagnosis, evidence-based treatment, and care that respects every patient.",
   },
   introduction:
     "Our medical team includes board-certified neurologists, neurosurgeons, psychiatrists, and rehabilitation specialists. Each doctor brings subspecialty expertise and a patient-first approach to every consultation.",

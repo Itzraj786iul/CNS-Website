@@ -17,8 +17,8 @@ function FaqPreviewSection() {
         <AnimatedSection className="space-y-8 lg:sticky lg:top-28">
           <SectionHeading
             eyebrow="FAQ"
-            title="Questions We Hear Often"
-            description="Find quick answers to common questions about appointments, insurance, and our neurological services."
+            title="Common Questions, Clear Answers"
+            description="Quick guidance on appointments, insurance, emergency care, and what to expect at your first visit."
           />
           <Button
             nativeButton={false}

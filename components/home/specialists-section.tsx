@@ -19,8 +19,8 @@ function SpecialistsSection() {
         <AnimatedSection className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <SectionHeading
             eyebrow="Our Team"
-            title="Meet Our Specialists"
-            description="Experienced clinicians dedicated to advancing brain and spine health through precision medicine and patient-first care."
+            title="Physicians You Can Trust"
+            description="Board-certified specialists with advanced training — committed to precision medicine and patient-first care."
           />
           <Button
             nativeButton={false}

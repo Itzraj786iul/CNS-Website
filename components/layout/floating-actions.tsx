@@ -24,25 +24,36 @@ function FloatingActions() {
 
   return (
     <>
-      {/* Mobile sticky appointment bar */}
-      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-cns-border/80 bg-white/95 p-3 shadow-soft-lg backdrop-blur-xl md:hidden">
-        <Button
-          nativeButton={false}
-          render={
-            <Link href="/appointment">
-              <CalendarDays />
-              Book Appointment
-            </Link>
-          }
-          className="h-12 w-full rounded-full bg-secondary shadow-glow-green hover:bg-secondary/90"
-        />
+      {/* Mobile sticky conversion bar */}
+      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-cns-border/80 bg-white/95 p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] shadow-soft-lg backdrop-blur-xl md:hidden">
+        <div className="flex gap-2.5">
+          <Button
+            nativeButton={false}
+            render={
+              <Link href="/appointment">
+                <CalendarDays />
+                Book Appointment
+              </Link>
+            }
+            className="h-12 min-h-[48px] flex-1 rounded-full bg-secondary shadow-glow-green hover:bg-secondary/90"
+          />
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Chat on WhatsApp"
+            className="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#25D366] text-white shadow-soft transition-all duration-300 hover:scale-[1.02] hover:shadow-soft-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366]/50 focus-visible:ring-offset-2"
+          >
+            <MessageCircle className="size-5" aria-hidden="true" />
+          </a>
+        </div>
       </div>
 
       {/* Floating action buttons — desktop + tablet */}
       <div
         className={cn(
           "fixed z-40 flex flex-col items-end gap-3",
-          "bottom-20 right-4 md:bottom-6 md:right-6"
+          "bottom-6 right-4 md:bottom-6 md:right-6"
         )}
       >
         <AnimatePresence>
@@ -69,7 +80,7 @@ function FloatingActions() {
               <span className="hidden sm:inline">Book Appointment</span>
             </Link>
           }
-          className="hidden h-12 rounded-full bg-secondary px-5 shadow-glow-green hover:bg-secondary/90 sm:inline-flex"
+          className="hidden h-12 min-h-[48px] rounded-full bg-secondary px-5 shadow-glow-green hover:bg-secondary/90 sm:inline-flex"
         />
 
         <div className="group relative">

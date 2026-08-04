@@ -2,7 +2,15 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, CalendarDays, ShieldCheck, Stethoscope, Users } from "lucide-react";
+import {
+  ArrowRight,
+  CalendarDays,
+  Phone,
+  ShieldCheck,
+  Stethoscope,
+  Users,
+} from "lucide-react";
+import { getAppointmentDisplay, getAppointmentTelHref, isTelHref } from "@/lib/contact-links";
 
 import { heroStats } from "@/components/home/data";
 import { Container } from "@/components/common/container";
@@ -100,7 +108,7 @@ function HeroIllustration() {
           className="absolute bottom-8 left-4 rounded-2xl border border-cns-border/80 bg-white/90 px-4 py-3 shadow-soft backdrop-blur-sm"
         >
           <p className="text-xs font-medium text-muted-foreground">Neuro ICU</p>
-          <p className="font-heading text-sm font-semibold text-cns-navy">Always Ready</p>
+          <p className="font-heading text-sm font-semibold text-cns-navy">24×7 Critical Care</p>
         </motion.div>
 
         <motion.div
@@ -109,7 +117,7 @@ function HeroIllustration() {
           className="absolute right-0 top-16 rounded-2xl border border-cns-border/80 bg-white/90 px-4 py-3 shadow-soft backdrop-blur-sm"
         >
           <p className="text-xs font-medium text-muted-foreground">3T MRI</p>
-          <p className="font-heading text-sm font-semibold text-primary">Advanced Imaging</p>
+          <p className="font-heading text-sm font-semibold text-primary">Same-Day Imaging</p>
         </motion.div>
       </motion.div>
     </div>
@@ -117,10 +125,13 @@ function HeroIllustration() {
 }
 
 function HeroSection() {
+  const appointmentHref = getAppointmentTelHref();
+  const appointmentDisplay = getAppointmentDisplay();
+
   const trustItems = [
-    { icon: ShieldCheck, label: "24×7 Emergency Care" },
-    { icon: Stethoscope, label: "Advanced Neuroimaging" },
-    { icon: Users, label: "Multidisciplinary Team" },
+    { icon: ShieldCheck, label: "24×7 Stroke & Trauma Response" },
+    { icon: Stethoscope, label: "Subspecialist-Led Care" },
+    { icon: Users, label: "Integrated Neuro Team" },
   ];
 
   return (
@@ -143,7 +154,11 @@ function HeroSection() {
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-linear-to-t from-background to-transparent"
+        className="hero-light-beam pointer-events-none absolute inset-0 opacity-60"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-linear-to-t from-background via-background/80 to-transparent"
       />
 
       <Container className="relative flex min-h-[calc(100vh-5rem)] flex-col justify-center pb-36 pt-14 lg:min-h-[calc(100vh-6rem)] lg:pb-44 lg:pt-20">
@@ -156,49 +171,68 @@ function HeroSection() {
           >
             <motion.div variants={fadeUp}>
               <Tag variant="blue" className="px-4 py-1.5 text-sm shadow-soft">
-                Caring for Your Brain &amp; Spine
+                Raipur · Brain &amp; Spine Specialists
               </Tag>
             </motion.div>
 
             <motion.div variants={fadeUp} className="space-y-6">
-              <h1 className="font-heading text-4xl font-semibold leading-[1.06] tracking-[-0.03em] text-cns-navy sm:text-5xl lg:text-[3.5rem] lg:leading-[1.05]">
+              <h1 className="font-heading text-4xl font-semibold leading-[1.06] tracking-[-0.03em] text-cns-navy sm:text-5xl lg:text-[3.625rem] lg:leading-[1.04]">
                 Center for{" "}
                 <span className="text-gradient-brand">Neuroscience</span>
               </h1>
               <p className="prose-lead max-w-lg">
-                Integrated neurological, neurosurgical, and psychiatric care —
-                delivered by specialists who combine clinical excellence with
-                genuine compassion.
+                From stroke emergencies to complex neurosurgery — subspecialist
+                care, advanced imaging, and a team that sees the person behind
+                every diagnosis.
               </p>
             </motion.div>
 
-            <motion.div
-              variants={fadeUp}
-              className="flex flex-col gap-3 sm:flex-row sm:items-center"
-            >
-              <Button
-                nativeButton={false}
-                render={
-                  <Link href="/appointment">
-                    <CalendarDays />
-                    Book Appointment
-                  </Link>
-                }
-                size="lg"
-                className="h-12 bg-secondary px-6 shadow-glow-green hover:bg-secondary/90"
-              />
-              <Button
-                nativeButton={false}
-                render={
-                  <Link href="/departments">
-                    Explore Departments
-                    <ArrowRight />
-                  </Link>
-                }
-                variant="outline"
-                size="lg"
-                className="h-12 border-cns-border bg-white/80 px-6 shadow-soft backdrop-blur-sm"
-              />
+            <motion.div variants={fadeUp} className="space-y-4">
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+                <Button
+                  nativeButton={false}
+                  render={
+                    <Link href="/appointment">
+                      <CalendarDays />
+                      Book Appointment
+                    </Link>
+                  }
+                  size="lg"
+                  className="h-12 min-w-[11rem] bg-secondary px-6 shadow-glow-green hover:bg-secondary/90"
+                />
+                <Button
+                  nativeButton={false}
+                  render={
+                    <Link href="/departments">
+                      Explore Departments
+                      <ArrowRight />
+                    </Link>
+                  }
+                  variant="outline"
+                  size="lg"
+                  className="h-12 border-cns-border bg-white/80 px-6 shadow-soft backdrop-blur-sm"
+                />
+              </div>
+              {isTelHref(appointmentHref) ? (
+                <a
+                  href={appointmentHref}
+                  className="inline-flex items-center gap-2 text-sm font-medium text-cns-navy/75 transition-colors hover:text-primary"
+                >
+                  <Phone className="size-4 text-primary" aria-hidden="true" />
+                  <span>
+                    Or call{" "}
+                    <span className="font-semibold text-cns-navy">{appointmentDisplay}</span>
+                  </span>
+                </a>
+              ) : (
+                <Link
+                  href={appointmentHref}
+                  className="inline-flex items-center gap-2 text-sm font-medium text-cns-navy/75 transition-colors hover:text-primary"
+                >
+                  <Phone className="size-4 text-primary" aria-hidden="true" />
+                  <span className="font-semibold text-cns-navy">{appointmentDisplay}</span>
+                </Link>
+              )}
             </motion.div>
 
             <motion.ul
@@ -234,7 +268,7 @@ function HeroSection() {
             whileInView="visible"
             viewport={{ once: true, margin: "-40px" }}
             variants={staggerContainer}
-            className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4"
+            className="grid gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4"
           >
             {heroStats.map((stat) => (
               <motion.div key={stat.label} variants={fadeUp}>
@@ -242,7 +276,7 @@ function HeroSection() {
                   value={stat.value}
                   suffix={stat.suffix}
                   label={stat.label}
-                  className="glass rounded-2xl shadow-card ring-1 ring-white/60"
+                  className="glass rounded-2xl shadow-card ring-1 ring-white/70 backdrop-blur-md"
                 />
               </motion.div>
             ))}

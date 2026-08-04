@@ -16,12 +16,12 @@ function WhyChooseSection() {
     <Section variant="muted" spacing="lg">
       <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
         <AnimatedSection className="relative order-2 lg:order-1" direction="left">
-          <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-muted shadow-soft-lg">
+          <div className="relative image-placeholder aspect-[4/5]">
             <Image
               src="https://placehold.co/640x800/F8FBFD/1F7CC6/png?font=roboto&text=Advanced+Neuro+Care"
               alt="Advanced neuroscience care at CNS"
               fill
-              className="object-cover"
+              className="img-zoom object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
           </div>
@@ -35,8 +35,8 @@ function WhyChooseSection() {
           <AnimatedSection direction="right">
             <SectionHeading
               eyebrow="Why Choose CNS"
-              title="Trusted Excellence in Every Detail"
-              description="Patients choose us for the depth of our expertise, the precision of our technology, and the warmth of our care."
+              title="Why Patients Trust CNS"
+              description="Depth of expertise, precision technology, and care that treats you as an individual — not a case file."
             />
           </AnimatedSection>
 
@@ -46,7 +46,7 @@ function WhyChooseSection() {
                 key={feature.title}
                 variants={fadeUp}
                 className={cn(
-                  "group flex gap-4 rounded-2xl border border-cns-border/60 bg-background p-5 transition-colors hover:border-primary/20 hover:bg-white hover:shadow-soft",
+                  "group flex gap-4 rounded-2xl border border-cns-border/60 bg-background p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/20 hover:bg-white hover:shadow-soft",
                   index === whyChooseFeatures.length - 1 &&
                     "sm:col-span-2 sm:max-w-md"
                 )}

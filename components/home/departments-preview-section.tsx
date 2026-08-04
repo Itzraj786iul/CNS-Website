@@ -20,8 +20,8 @@ function DepartmentsPreviewSection() {
           <SectionHeading
             align="center"
             eyebrow="Departments"
-            title="Comprehensive Brain & Spine Specialties"
-            description="From diagnosis to rehabilitation, our integrated departments provide seamless, coordinated care under one trusted institution."
+            title="Integrated Brain & Spine Specialties"
+            description="From acute emergencies to long-term rehabilitation — coordinated care across every neuroscience discipline, under one trusted institution."
           />
         </AnimatedSection>
 

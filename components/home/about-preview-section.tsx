@@ -18,7 +18,7 @@ function AboutPreviewSection() {
     <Section variant="white" spacing="lg" divider>
       <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
         <AnimatedSection className="relative" direction="left">
-          <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-muted shadow-soft-lg">
+          <div className="relative image-placeholder aspect-[4/5]">
             <Image
               src="https://placehold.co/640x800/EEF4F9/16324A/png?font=roboto&text=CNS+Medical+Team"
               alt="Center for Neuroscience medical team"
@@ -42,8 +42,8 @@ function AboutPreviewSection() {
           <AnimatedSection>
             <SectionHeading
               eyebrow="About CNS"
-              title="Leading Neuroscience Care, Built Around You"
-              description="For over two decades, the Center for Neuroscience has united expert clinicians, advanced diagnostics, and compassionate support to treat the full range of brain and spine conditions."
+              title="Two Decades of Neuroscience Leadership"
+              description="For over twenty years, CNS has united expert clinicians, precision diagnostics, and compassionate support to treat the full spectrum of brain and spine conditions."
             />
           </AnimatedSection>
 
@@ -65,7 +65,7 @@ function AboutPreviewSection() {
               nativeButton={false}
               render={
                 <Link href="/about">
-                  Learn More
+                  Learn Our Story
                   <ArrowRight />
                 </Link>
               }

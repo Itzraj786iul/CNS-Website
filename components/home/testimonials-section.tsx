@@ -51,14 +51,19 @@ function HomeTestimonialCard({
       variants={hoverLift}
       className="h-full"
     >
-      <Card className="h-full border-cns-border/80 bg-white shadow-soft ring-0">
-        <CardContent className="flex h-full flex-col gap-6 px-6 py-8">
+      <Card className="h-full card-premium card-premium-hover ring-0">
+        <CardContent className="flex h-full flex-col gap-6 px-7 py-8 sm:px-8 sm:py-9">
           <StarRating rating={rating} />
-          <blockquote className="flex-1 text-base leading-relaxed text-cns-navy/90">
-            &ldquo;{quote}&rdquo;
+          <blockquote className="relative flex-1 space-y-3">
+            <span className="quote-mark" aria-hidden="true">
+              &ldquo;
+            </span>
+            <p className="text-base leading-[1.8] text-cns-navy/90">
+              {quote}
+            </p>
           </blockquote>
-          <footer className="flex items-center gap-4 border-t border-cns-border pt-5">
-            <div className="relative size-12 shrink-0 overflow-hidden rounded-full bg-muted">
+          <footer className="flex items-center gap-4 border-t border-cns-border/80 pt-5">
+            <div className="photo-frame relative size-12 shrink-0 rounded-full ring-2 ring-white">
               <Image
                 src={avatar}
                 alt={author}
@@ -90,8 +95,8 @@ function TestimonialsSection() {
           <SectionHeading
             align="center"
             eyebrow="Testimonials"
-            title="Stories from Our Patients"
-            description="Real experiences from individuals and families who trusted CNS with their neurological care and recovery."
+            title="Patient Stories"
+            description="Honest accounts from individuals and families who chose CNS for neurological care and recovery."
           />
         </AnimatedSection>
 

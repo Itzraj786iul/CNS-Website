@@ -15,7 +15,7 @@ type EmergencyBannerProps = {
 function EmergencyBanner({
   className,
   title = "24×7 Emergency Support",
-  description = "If you or someone you know is experiencing stroke symptoms, severe headache, seizures, or head trauma — call our emergency line immediately.",
+  description = "Stroke symptoms, severe headache, seizures, or head injury — call our emergency line immediately. Every minute counts in neurological emergencies.",
 }: EmergencyBannerProps) {
   const emergencyHref = getEmergencyTelHref();
 

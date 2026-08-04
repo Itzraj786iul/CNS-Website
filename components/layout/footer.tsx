@@ -97,9 +97,9 @@ function Footer() {
           <div className="space-y-5 sm:col-span-2 lg:col-span-1 xl:col-span-2">
             <div className="space-y-4">
               <LogoLink size="lg" variant="footer" linkClassName="hover:scale-100" />
-              <p className="max-w-sm text-sm leading-relaxed text-white/70">
-                {siteConfig.name} — advancing brain and spine health through
-                clinical excellence, research, and compassionate care.
+              <p className="max-w-sm text-sm leading-[1.75] text-white/70">
+                {siteConfig.name} — precision neurological care, advanced
+                diagnostics, and a team that puts patients and families first.
               </p>
             </div>
             <div className="flex flex-wrap gap-2">

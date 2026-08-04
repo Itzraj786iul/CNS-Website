@@ -23,7 +23,7 @@ export const mainNavigation: NavItem[] = [
 ];
 
 export const ctaNavigation: NavItem = {
-  label: "Appointment",
+  label: "Book Appointment",
   href: "/appointment",
 };
 
