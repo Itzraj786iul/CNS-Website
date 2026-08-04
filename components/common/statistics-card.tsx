@@ -44,21 +44,21 @@ function StatisticsCard({
       className={cn("h-full", className)}
     >
       <Card className="card-premium card-premium-hover h-full">
-        <CardContent className="flex flex-col gap-1.5 px-4 py-4 sm:gap-2 sm:px-5 sm:py-5">
+        <CardContent className="flex flex-col gap-1 px-4 py-3.5 sm:px-4 sm:py-4">
           <p
-            className="font-heading text-2xl font-semibold tracking-tight sm:text-3xl lg:text-[2rem]"
+            className="font-heading text-xl font-semibold tracking-tight sm:text-2xl"
             aria-label={`${value}${suffix ?? ""} ${label}`}
           >
             <span className="text-gradient-brand" aria-hidden="true">
               {displayValue}
             </span>
             {suffix ? (
-              <span className="text-xl text-primary sm:text-2xl" aria-hidden="true">
+              <span className="text-lg text-primary sm:text-xl" aria-hidden="true">
                 {suffix}
               </span>
             ) : null}
           </p>
-          <p className="text-sm font-semibold tracking-wide text-muted-foreground">{label}</p>
+          <p className="text-xs font-semibold tracking-wide text-muted-foreground">{label}</p>
         </CardContent>
       </Card>
     </motion.div>

@@ -6,7 +6,6 @@ import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 import { IconBox } from "@/components/common/icon-box";
-import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -43,43 +42,34 @@ function DepartmentDetailCard({
       variants={hoverLift}
       className={cn("h-full", className)}
     >
-      <Card className="group/dept flex h-full flex-col card-premium card-premium-hover ring-0">
-        <CardHeader className="gap-4">
-          <IconBox icon={icon} variant={iconVariant} size="lg" />
-          <CardTitle className="text-xl font-semibold text-cns-navy">
-            {title}
-          </CardTitle>
-          <CardDescription className="text-base leading-relaxed">
-            {description}
-          </CardDescription>
-        </CardHeader>
+      <Link href={href} className="group block h-full focus-visible:outline-none">
+        <Card className="flex h-full flex-col card-premium card-premium-hover ring-0">
+          <CardHeader className="gap-2 px-4 pt-4 pb-0">
+            <IconBox icon={icon} variant={iconVariant} size="sm" />
+            <CardTitle className="text-base font-semibold text-cns-navy">{title}</CardTitle>
+            <CardDescription className="card-desc-compact">{description}</CardDescription>
+          </CardHeader>
 
-        <CardContent className="flex flex-1 flex-col gap-5">
-          <ul className="space-y-2">
-            {treatments.map((treatment) => (
-              <li
-                key={treatment}
-                className="flex items-center gap-2.5 text-sm text-cns-navy/80"
-              >
-                <span className="size-1.5 shrink-0 rounded-full bg-secondary" />
-                {treatment}
-              </li>
-            ))}
-          </ul>
+          <CardContent className="flex flex-1 flex-col gap-3 px-4 pb-4 pt-2">
+            <ul className="space-y-1">
+              {treatments.slice(0, 4).map((treatment) => (
+                <li
+                  key={treatment}
+                  className="flex items-center gap-2 text-xs text-cns-navy/80"
+                >
+                  <span className="size-1 shrink-0 rounded-full bg-secondary" />
+                  {treatment}
+                </li>
+              ))}
+            </ul>
 
-          <Button
-            nativeButton={false}
-            render={
-              <Link href={href}>
-                Learn More
-                <ArrowRight />
-              </Link>
-            }
-            variant="ghost"
-            className="group/btn mt-auto -ml-2 h-auto w-fit px-2 py-1 text-primary hover:bg-primary/5"
-          />
-        </CardContent>
-      </Card>
+            <span className="mt-auto inline-flex items-center gap-1 text-xs font-semibold text-primary">
+              Learn more
+              <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" />
+            </span>
+          </CardContent>
+        </Card>
+      </Link>
     </motion.div>
   );
 }

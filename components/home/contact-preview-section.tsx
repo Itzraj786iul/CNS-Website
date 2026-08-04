@@ -41,7 +41,7 @@ function ContactPreviewSection() {
           />
         </AnimatedSection>
 
-        <AnimatedSection stagger className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <AnimatedSection stagger className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {contactCards.map((card) => {
             const Icon = iconMap[card.icon];
             const variant = variantMap[card.icon];
@@ -54,28 +54,28 @@ function ContactPreviewSection() {
                   variants={hoverLift}
                 >
                   <Card className="card-premium card-premium-hover">
-                    <CardContent className="space-y-3 px-4 py-5 sm:px-5">
-                      <IconBox icon={Icon} variant={variant} />
-                      <div className="space-y-2">
-                        <p className="text-sm font-semibold uppercase tracking-[0.12em] text-muted-foreground">
+                    <CardContent className="space-y-2 px-4 py-4">
+                      <IconBox icon={Icon} variant={variant} size="sm" />
+                      <div className="space-y-1">
+                        <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">
                           {card.title}
                         </p>
                         {isTelHref(card.href) || card.href.startsWith("mailto:") ? (
                           <a
                             href={card.href}
-                            className="block font-heading text-base font-semibold text-cns-navy transition-colors hover:text-primary"
+                            className="block font-heading text-sm font-semibold text-cns-navy transition-colors hover:text-primary"
                           >
                             {card.value}
                           </a>
                         ) : (
                           <Link
                             href={card.href}
-                            className="block font-heading text-base font-semibold text-cns-navy transition-colors hover:text-primary"
+                            className="block font-heading text-sm font-semibold text-cns-navy transition-colors hover:text-primary"
                           >
                             {card.value}
                           </Link>
                         )}
-                        <p className="text-sm text-muted-foreground">
+                        <p className="line-clamp-2 text-[13px] leading-snug text-muted-foreground">
                           {card.description}
                         </p>
                       </div>

@@ -173,7 +173,7 @@ function MasonryGallery({ images, className }: MasonryGalleryProps) {
   return (
     <div
       className={cn(
-        "columns-1 gap-4 space-y-4 sm:columns-2 lg:columns-3 xl:columns-4",
+        "columns-1 gap-3 space-y-3 sm:columns-2 lg:columns-3 xl:columns-4",
         className
       )}
     >
@@ -182,13 +182,13 @@ function MasonryGallery({ images, className }: MasonryGalleryProps) {
           key={`${image.src}-${index}`}
           type="button"
           onClick={() => open(images, index)}
-          className="group relative mb-4 block w-full break-inside-avoid overflow-hidden rounded-2xl border border-cns-border/80 bg-card text-left shadow-soft transition-all duration-300 hover:border-primary/20 hover:shadow-soft-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+          className="group relative mb-3 block w-full break-inside-avoid overflow-hidden rounded-[20px] border border-cns-border/80 bg-card text-left shadow-soft transition-all duration-300 hover:border-primary/20 hover:shadow-soft-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
           aria-label={`View ${image.title ?? image.alt}`}
         >
           <div
             className={cn(
               "relative w-full overflow-hidden bg-muted",
-              index % 3 === 0 ? "aspect-[4/5]" : index % 3 === 1 ? "aspect-square" : "aspect-[4/3]"
+              index % 3 === 0 ? "aspect-[4/5] max-h-[180px]" : index % 3 === 1 ? "aspect-square max-h-[160px]" : "aspect-[4/3] max-h-[170px]"
             )}
           >
             <Image
@@ -202,14 +202,14 @@ function MasonryGallery({ images, className }: MasonryGalleryProps) {
             <div className="absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/25" />
           </div>
           {(image.title || image.category) && (
-            <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-black/85 via-black/40 to-transparent px-4 pb-4 pt-10">
+            <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-black/85 via-black/40 to-transparent px-3 pb-3 pt-8">
               {image.category ? (
-                <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-white/70">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-white/70">
                   {image.category}
                 </p>
               ) : null}
               {image.title ? (
-                <p className="mt-0.5 font-heading text-sm font-semibold text-white sm:text-base">
+                <p className="mt-0.5 font-heading text-xs font-semibold text-white sm:text-sm">
                   {image.title}
                 </p>
               ) : null}

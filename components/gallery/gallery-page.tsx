@@ -31,7 +31,7 @@ function GalleryPageContent() {
           spacing="default"
           divider={index > 0}
         >
-          <div className="space-y-6">
+          <div className="space-y-4">
             <AnimatedSection direction={index % 2 === 0 ? "up" : "fade"}>
               <SectionHeading
                 eyebrow={section.eyebrow}

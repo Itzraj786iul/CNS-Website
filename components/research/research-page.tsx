@@ -43,10 +43,10 @@ function ResearchPageContent() {
               <motion.div key={item.title} variants={fadeUp}>
                 <motion.div initial="rest" whileHover="hover" variants={hoverLift}>
                   <Card className="card-premium card-premium-hover ring-0">
-                    <CardContent className="space-y-3 px-5 py-6">
-                      <Tag variant="blue">{item.tag}</Tag>
-                      <h3 className="font-heading text-lg font-semibold text-cns-navy">{item.title}</h3>
-                      <p className="text-sm leading-relaxed text-muted-foreground">{item.description}</p>
+                    <CardContent className="space-y-2 px-4 py-4">
+                      <Tag variant="blue" className="px-2 py-0.5 text-[10px]">{item.tag}</Tag>
+                      <h3 className="card-title-compact text-base">{item.title}</h3>
+                      <p className="card-desc-compact">{item.description}</p>
                     </CardContent>
                   </Card>
                 </motion.div>
@@ -65,13 +65,13 @@ function ResearchPageContent() {
             {publications.map((pub) => (
               <motion.div key={pub.title} variants={fadeUp}>
                 <Card className="card-premium card-premium-hover ring-0">
-                  <CardContent className="flex flex-col gap-3 px-5 py-5 sm:flex-row sm:items-center sm:justify-between">
-                    <div className="space-y-1.5">
-                      <h3 className="font-heading text-base font-semibold text-cns-navy sm:text-lg">{pub.title}</h3>
-                      <p className="text-sm text-primary">{pub.journal}</p>
-                      <p className="text-sm text-muted-foreground">{pub.authors}</p>
+                  <CardContent className="flex flex-col gap-2 px-4 py-3.5 sm:flex-row sm:items-center sm:justify-between">
+                    <div className="min-w-0 space-y-1">
+                      <h3 className="card-title-compact text-base">{pub.title}</h3>
+                      <p className="text-xs text-primary">{pub.journal}</p>
+                      <p className="text-xs text-muted-foreground">{pub.authors}</p>
                     </div>
-                    <Button variant="ghost" className="shrink-0 text-primary hover:bg-primary/5">
+                    <Button variant="ghost" size="sm" className="h-8 shrink-0 px-2 text-primary hover:bg-primary/5">
                       <ExternalLink />
                       View
                     </Button>
@@ -88,18 +88,16 @@ function ResearchPageContent() {
           <AnimatedSection className="mx-auto max-w-3xl text-center">
             <SectionHeading eyebrow="Studies" title="Clinical Studies" description="Ongoing and completed trials advancing evidence-based neurological care." />
           </AnimatedSection>
-          <AnimatedSection stagger className="grid gap-5 sm:grid-cols-2">
+          <AnimatedSection stagger className="grid gap-4 sm:grid-cols-2">
             {studies.map((study) => (
               <motion.div key={study.title} variants={fadeUp}>
                 <Card className="card-premium card-premium-hover ring-0">
-                  <CardContent className="space-y-2 px-5 py-5">
-                    <div className="flex items-center gap-3">
-                      <Tag variant={study.status === "Recruiting" ? "green" : study.status === "Active" ? "blue" : "default"}>
-                        {study.status}
-                      </Tag>
-                    </div>
-                    <h3 className="font-heading text-base font-semibold text-cns-navy">{study.title}</h3>
-                    <p className="text-sm leading-relaxed text-muted-foreground">{study.description}</p>
+                  <CardContent className="space-y-1.5 px-4 py-4">
+                    <Tag variant={study.status === "Recruiting" ? "green" : study.status === "Active" ? "blue" : "default"} className="px-2 py-0.5 text-[10px]">
+                      {study.status}
+                    </Tag>
+                    <h3 className="card-title-compact text-base">{study.title}</h3>
+                    <p className="card-desc-compact">{study.description}</p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -117,10 +115,10 @@ function ResearchPageContent() {
             {awards.map((award) => (
               <motion.div key={award.title} variants={fadeUp}>
                 <Card className="card-premium card-premium-hover ring-0">
-                  <CardContent className="space-y-2 px-5 py-5">
-                    <p className="text-sm font-semibold text-primary">{award.year}</p>
-                    <h3 className="font-heading text-base font-semibold text-cns-navy">{award.title}</h3>
-                    <p className="text-sm text-muted-foreground">{award.organization}</p>
+                  <CardContent className="space-y-1.5 px-4 py-4">
+                    <p className="text-xs font-semibold text-primary">{award.year}</p>
+                    <h3 className="card-title-compact text-base">{award.title}</h3>
+                    <p className="text-xs text-muted-foreground">{award.organization}</p>
                   </CardContent>
                 </Card>
               </motion.div>

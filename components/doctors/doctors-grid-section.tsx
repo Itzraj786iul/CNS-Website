@@ -27,7 +27,7 @@ function IntroductionSection() {
 function DoctorsGridSection() {
   return (
     <Section variant="default" spacing="default" className="!pt-6">
-      <AnimatedSection stagger className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+      <AnimatedSection stagger className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
         {doctorsContent.doctors.map((doctor) => (
           <motion.div key={doctor.id} id={doctor.id} variants={fadeUp}>
             <DoctorProfileCard doctor={doctor} />

@@ -32,11 +32,11 @@ function SpecialistsSection() {
             }
             variant="outline"
             size="lg"
-            className="hidden h-11 shrink-0 border-cns-border px-6 sm:inline-flex"
+            className="hidden shrink-0 border-cns-border px-5 sm:inline-flex"
           />
         </AnimatedSection>
 
-        <AnimatedSection stagger className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <AnimatedSection stagger className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {specialists.map((doctor) => (
             <motion.div key={doctor.name} variants={fadeUp}>
               <DoctorCard
@@ -65,7 +65,7 @@ function SpecialistsSection() {
             }
             variant="outline"
             size="lg"
-            className="h-11 border-cns-border px-6"
+            className="border-cns-border px-5"
           />
         </AnimatedSection>
       </div>

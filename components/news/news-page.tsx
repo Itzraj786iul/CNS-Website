@@ -40,28 +40,28 @@ function NewsPageContent() {
           <AnimatedSection>
             <SectionHeading eyebrow="Latest Updates" title="News from CNS" description="Recent announcements and clinical milestones from across Center for Neuroscience." />
           </AnimatedSection>
-          <AnimatedSection stagger className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          <AnimatedSection stagger className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
             {news.map((item) => (
               <motion.article key={item.title} variants={fadeUp}>
                 <motion.div initial="rest" whileHover="hover" variants={hoverLift}>
                   <Card className="card-premium card-premium-hover overflow-hidden ring-0">
-                    <div className="image-placeholder relative aspect-[16/10] max-h-[160px]">
+                    <div className="image-placeholder relative aspect-[16/10] max-h-[140px]">
                       <Image src={item.image} alt={item.title} fill loading="lazy" className="img-zoom object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
                     </div>
-                    <CardContent className="space-y-2.5 px-5 py-5">
-                      <div className="flex flex-wrap items-center gap-3">
-                        <Tag variant={categoryVariant[item.category as keyof typeof categoryVariant] ?? "default"}>{item.category}</Tag>
-                        <span className="inline-flex items-center gap-1.5 text-xs text-muted-foreground">
-                          <Calendar className="size-3.5" aria-hidden="true" />
+                    <CardContent className="space-y-2 px-4 py-4">
+                      <div className="flex flex-wrap items-center gap-2">
+                        <Tag variant={categoryVariant[item.category as keyof typeof categoryVariant] ?? "default"} className="px-2 py-0.5 text-[10px]">{item.category}</Tag>
+                        <span className="inline-flex items-center gap-1 text-[11px] text-muted-foreground">
+                          <Calendar className="size-3" aria-hidden="true" />
                           {item.date}
                         </span>
                       </div>
-                      <h3 className="font-heading text-lg font-semibold leading-snug text-cns-navy">{item.title}</h3>
-                      <p className="text-sm leading-relaxed text-muted-foreground">{item.excerpt}</p>
-                      <Button variant="ghost" className="-ml-2 h-auto px-2 py-1 text-primary hover:bg-primary/5">
-                        Read More
-                        <ArrowRight />
-                      </Button>
+                      <h3 className="card-title-compact text-base">{item.title}</h3>
+                      <p className="card-desc-compact">{item.excerpt}</p>
+                      <span className="inline-flex items-center gap-1 text-xs font-semibold text-primary">
+                        Read more
+                        <ArrowRight className="size-3.5" />
+                      </span>
                     </CardContent>
                   </Card>
                 </motion.div>
@@ -103,14 +103,14 @@ function NewsPageContent() {
               {upcomingEvents.map((event) => (
                 <motion.div key={event.title} variants={fadeUp}>
                   <Card className="card-premium card-premium-hover ring-0">
-                    <CardContent className="flex gap-4 px-6 py-5">
-                      <div className="flex size-12 shrink-0 flex-col items-center justify-center rounded-xl bg-primary/10 text-primary">
-                        <Calendar className="size-5" aria-hidden="true" />
+                    <CardContent className="flex gap-3 px-4 py-3.5">
+                      <div className="flex size-10 shrink-0 flex-col items-center justify-center rounded-xl bg-primary/10 text-primary">
+                        <Calendar className="size-4" aria-hidden="true" />
                       </div>
                       <div>
-                        <h3 className="font-heading text-base font-semibold text-cns-navy">{event.title}</h3>
-                        <p className="mt-1 text-sm text-primary">{event.date}</p>
-                        <p className="mt-1 inline-flex items-center gap-1 text-sm text-muted-foreground">
+                        <h3 className="card-title-compact">{event.title}</h3>
+                        <p className="mt-0.5 text-xs text-primary">{event.date}</p>
+                        <p className="mt-0.5 inline-flex items-center gap-1 text-xs text-muted-foreground">
                           <MapPin className="size-3.5" aria-hidden="true" />
                           {event.location}
                         </p>
@@ -129,8 +129,8 @@ function NewsPageContent() {
             <AnimatedSection stagger className="space-y-3">
               {achievements.map((item) => (
                 <motion.div key={item} variants={fadeUp}>
-                  <div className="rounded-xl border border-cns-border/60 bg-card px-5 py-4 shadow-soft">
-                    <p className="text-sm leading-relaxed text-cns-navy/85">{item}</p>
+                  <div className="rounded-xl border border-cns-border/60 bg-card px-4 py-3 shadow-soft">
+                    <p className="line-clamp-3 text-[13px] leading-snug text-cns-navy/85">{item}</p>
                   </div>
                 </motion.div>
               ))}

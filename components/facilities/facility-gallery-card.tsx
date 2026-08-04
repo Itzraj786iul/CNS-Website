@@ -17,9 +17,9 @@ function FacilityGalleryCard({ facility }: { facility: FacilityItem }) {
   } as const;
 
   const aspectClasses = {
-    large: "min-h-[140px] md:min-h-[195px]",
-    medium: "min-h-[130px] md:min-h-[170px]",
-    small: "min-h-[120px]",
+    large: "min-h-[120px] md:min-h-[160px]",
+    medium: "min-h-[110px] md:min-h-[140px]",
+    small: "min-h-[100px]",
   } as const;
 
   return (
@@ -39,11 +39,11 @@ function FacilityGalleryCard({ facility }: { facility: FacilityItem }) {
             sizes="(max-width: 768px) 100vw, 50vw"
           />
           <div className="absolute inset-0 bg-linear-to-t from-black/85 via-black/30 to-transparent" />
-          <CardContent className="absolute inset-x-0 bottom-0 space-y-2 p-4">
-            <IconBox icon={facility.icon} variant={facility.iconVariant} size="default" className="bg-white/15 text-white backdrop-blur-sm [&_svg]:text-white" />
+          <CardContent className="absolute inset-x-0 bottom-0 space-y-1.5 p-3.5">
+            <IconBox icon={facility.icon} variant={facility.iconVariant} size="sm" className="bg-white/15 text-white backdrop-blur-sm [&_svg]:text-white" />
             <div>
-              <h3 className="font-heading text-lg font-semibold text-white">{facility.title}</h3>
-              <p className="mt-1.5 text-sm leading-relaxed text-white/80">{facility.description}</p>
+              <h3 className="font-heading text-sm font-semibold text-white">{facility.title}</h3>
+              <p className="mt-1 line-clamp-2 text-xs leading-snug text-white/80">{facility.description}</p>
             </div>
           </CardContent>
         </div>

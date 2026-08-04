@@ -71,10 +71,10 @@ function PatientSafetySection() {
             <motion.div key={item.title} variants={fadeUp}>
               <motion.div initial="rest" whileHover="hover" variants={hoverLift}>
                 <Card className="border-cns-border/80 bg-card shadow-soft ring-0">
-                  <CardContent className="space-y-2.5 px-5 py-5">
+                  <CardContent className="space-y-2 px-4 py-3.5">
                     <IconBox icon={item.icon} variant={(["blue", "green", "orange", "navy"] as const)[index % 4]} size="sm" />
-                    <h3 className="font-heading text-base font-semibold text-cns-navy">{item.title}</h3>
-                    <p className="text-sm leading-relaxed text-muted-foreground">{item.description}</p>
+                    <h3 className="card-title-compact">{item.title}</h3>
+                    <p className="card-desc-compact">{item.description}</p>
                   </CardContent>
                 </Card>
               </motion.div>

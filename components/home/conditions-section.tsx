@@ -34,18 +34,16 @@ function ConditionsSection() {
               >
                 <Link
                   href={condition.href}
-                  className="group flex flex-col gap-2.5 rounded-2xl border border-cns-border/60 bg-background p-3.5 transition-colors hover:border-primary/20 hover:bg-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+                  className="group flex h-full flex-col gap-2 rounded-[20px] border border-cns-border/60 bg-background p-3 transition-colors hover:border-primary/20 hover:bg-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
                 >
                   <IconBox
                     icon={condition.icon}
                     variant={condition.iconVariant}
                     size="sm"
                   />
-                  <div className="flex flex-1 flex-col gap-1.5">
-                    <h3 className="font-heading text-base font-semibold text-cns-navy">
-                      {condition.title}
-                    </h3>
-                    <p className="text-sm leading-relaxed text-muted-foreground">
+                  <div className="flex flex-1 flex-col gap-1">
+                    <h3 className="card-title-compact">{condition.title}</h3>
+                    <p className="line-clamp-2 text-[13px] leading-snug text-muted-foreground">
                       {condition.description}
                     </p>
                   </div>

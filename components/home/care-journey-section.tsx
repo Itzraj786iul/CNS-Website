@@ -25,7 +25,7 @@ function CareJourneySection() {
           />
         </AnimatedSection>
 
-        <AnimatedSection stagger className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <AnimatedSection stagger className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {careJourneySteps.map((step, index) => (
             <motion.div key={step.title} variants={fadeUp}>
               <motion.div
@@ -35,9 +35,9 @@ function CareJourneySection() {
                 className="relative"
               >
                 <Card className="card-premium card-premium-hover ring-0">
-                  <CardContent className="space-y-3 px-4 py-5 sm:px-5">
-                    <div className="flex items-center gap-3">
-                      <span className="flex size-9 items-center justify-center rounded-full bg-primary/10 font-heading text-sm font-semibold text-primary">
+                  <CardContent className="space-y-2 px-4 py-4">
+                    <div className="flex items-center gap-2.5">
+                      <span className="flex size-7 items-center justify-center rounded-full bg-primary/10 font-heading text-xs font-semibold text-primary">
                         {step.step}
                       </span>
                       {index < careJourneySteps.length - 1 ? (
@@ -47,12 +47,8 @@ function CareJourneySection() {
                         />
                       ) : null}
                     </div>
-                    <h3 className="font-heading text-base font-semibold text-cns-navy">
-                      {step.title}
-                    </h3>
-                    <p className="text-sm leading-[1.75] text-muted-foreground">
-                      {step.description}
-                    </p>
+                    <h3 className="card-title-compact">{step.title}</h3>
+                    <p className="card-desc-compact">{step.description}</p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -70,7 +66,7 @@ function CareJourneySection() {
               </Link>
             }
             size="lg"
-            className="h-11 rounded-full bg-secondary px-7 shadow-glow-green hover:bg-secondary/90"
+            className="rounded-full bg-secondary px-6 shadow-glow-green hover:bg-secondary/90"
           />
         </AnimatedSection>
       </div>

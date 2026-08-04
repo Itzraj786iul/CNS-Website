@@ -38,17 +38,13 @@ function FeatureCard({
       className={cn("h-full", className)}
     >
       <Card className="h-full card-premium card-premium-hover ring-0">
-        <CardHeader className="gap-2 px-5 pt-5 pb-0">
+        <CardHeader className="gap-1.5 px-4 pt-4 pb-0">
           <IconBox icon={icon} variant={iconVariant} size="sm" />
-          <CardTitle className="text-sm font-semibold tracking-tight text-cns-navy">
-            {title}
-          </CardTitle>
+          <CardTitle className="card-title-compact">{title}</CardTitle>
         </CardHeader>
         {description ? (
-          <CardContent className="px-5 pb-5">
-            <CardDescription className="text-[13px] leading-[1.65]">
-              {description}
-            </CardDescription>
+          <CardContent className="px-4 pb-4 pt-1.5">
+            <CardDescription className="card-desc-compact">{description}</CardDescription>
           </CardContent>
         ) : null}
       </Card>

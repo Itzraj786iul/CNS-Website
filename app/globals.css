@@ -367,7 +367,15 @@
   }
 
   .card-body {
-    @apply px-5 py-5;
+    @apply px-4 py-4 sm:px-5 sm:py-4;
+  }
+
+  .card-desc-compact {
+    @apply text-[13px] leading-snug text-muted-foreground line-clamp-3;
+  }
+
+  .card-title-compact {
+    @apply font-heading text-sm font-semibold tracking-tight text-cns-navy;
   }
 
   .photo-frame {

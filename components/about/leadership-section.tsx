@@ -24,7 +24,7 @@ function LeadershipSection() {
           />
         </AnimatedSection>
 
-        <AnimatedSection stagger className="grid gap-5 md:grid-cols-3">
+        <AnimatedSection stagger className="grid gap-4 md:grid-cols-3">
           {aboutContent.leadership.map((leader) => (
             <motion.div key={leader.name} variants={fadeUp}>
               <motion.div
@@ -33,7 +33,7 @@ function LeadershipSection() {
                 variants={hoverLift}
               >
                 <Card className="card-premium card-premium-hover overflow-hidden ring-0">
-                  <div className="photo-frame relative aspect-[3/4] max-h-[180px]">
+                  <div className="photo-frame relative aspect-[3/4] max-h-[160px] sm:max-h-[180px]">
                     <Image
                       src={leader.image.src}
                       alt={leader.image.alt}
@@ -42,17 +42,13 @@ function LeadershipSection() {
                       sizes="(max-width: 768px) 100vw, 33vw"
                     />
                   </div>
-                  <CardContent className="space-y-2.5 px-5 py-5">
-                    <Tag variant="blue">{leader.role}</Tag>
-                    <h3 className="font-heading text-xl font-semibold text-cns-navy">
-                      {leader.name}
-                    </h3>
-                    <p className="text-sm font-medium text-primary">
-                      {leader.qualification}
-                    </p>
-                    <p className="text-sm leading-relaxed text-muted-foreground">
-                      {leader.bio}
-                    </p>
+                  <CardContent className="space-y-1.5 px-4 py-4">
+                    <Tag variant="blue" className="px-2 py-0.5 text-[10px]">
+                      {leader.role}
+                    </Tag>
+                    <h3 className="card-title-compact text-base">{leader.name}</h3>
+                    <p className="text-xs font-medium text-primary">{leader.qualification}</p>
+                    <p className="card-desc-compact">{leader.bio}</p>
                   </CardContent>
                 </Card>
               </motion.div>

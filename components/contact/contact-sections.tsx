@@ -43,16 +43,16 @@ function ContactCardsSection() {
             <motion.div key={card.title} variants={fadeUp}>
               <motion.div initial="rest" whileHover="hover" variants={hoverLift}>
                 <Card className="card-premium card-premium-hover ring-0">
-                  <CardContent className="space-y-3 px-4 py-5 sm:px-5">
-                    <IconBox icon={Icon} variant={variant} />
-                    <div className="space-y-1.5">
-                      <p className="text-sm font-semibold uppercase tracking-[0.12em] text-muted-foreground">{card.title}</p>
+                  <CardContent className="space-y-2 px-4 py-4">
+                    <IconBox icon={Icon} variant={variant} size="sm" />
+                    <div className="space-y-1">
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">{card.title}</p>
                       {isTelHref(card.href) || card.href.startsWith("mailto:") || card.href.startsWith("http") ? (
-                        <a href={card.href} className="block font-heading text-base font-semibold text-cns-navy transition-colors hover:text-primary">{card.value}</a>
+                        <a href={card.href} className="block font-heading text-sm font-semibold text-cns-navy transition-colors hover:text-primary">{card.value}</a>
                       ) : (
-                        <Link href={card.href} className="block font-heading text-base font-semibold text-cns-navy transition-colors hover:text-primary">{card.value}</Link>
+                        <Link href={card.href} className="block font-heading text-sm font-semibold text-cns-navy transition-colors hover:text-primary">{card.value}</Link>
                       )}
-                      <p className="text-sm text-muted-foreground">{card.description}</p>
+                      <p className="line-clamp-2 text-[13px] leading-snug text-muted-foreground">{card.description}</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -141,8 +141,8 @@ function DepartmentsContactSection() {
           {contactContent.departments.map((dept) => (
             <motion.div key={dept.name} variants={fadeUp}>
               <Card className="border-border bg-card shadow-soft ring-0">
-                <CardContent className="space-y-2 px-5 py-5">
-                  <h3 className="font-heading text-base font-semibold text-cns-navy">{dept.name}</h3>
+                <CardContent className="space-y-1.5 px-4 py-4">
+                  <h3 className="card-title-compact">{dept.name}</h3>
                   {isTelHref(dept.href) ? (
                     <a href={dept.href} className="block text-sm text-primary hover:underline">{dept.phone}</a>
                   ) : (

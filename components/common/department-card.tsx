@@ -7,7 +7,6 @@ import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 import { IconBox } from "@/components/common/icon-box";
-import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -37,28 +36,19 @@ function DepartmentCard({
 }: DepartmentCardProps) {
   const content = (
     <Card className="group/dept h-full card-premium card-premium-hover ring-0">
-      <CardHeader className="gap-2.5 px-4 pt-4 pb-0">
+      <CardHeader className="gap-1.5 px-4 pt-4 pb-0">
         <IconBox icon={icon} variant={iconVariant} size="sm" />
-        <CardTitle className="text-base font-semibold tracking-tight text-cns-navy">
-          {title}
-        </CardTitle>
+        <CardTitle className="card-title-compact">{title}</CardTitle>
       </CardHeader>
       {description ? (
-        <CardContent className="px-4 pb-0">
-          <CardDescription className="text-[13px] leading-[1.65]">
-            {description}
-          </CardDescription>
-        </CardContent>
-      ) : null}
-      {href ? (
-        <CardContent className="px-4 pb-4 pt-0">
-          <Button
-            variant="ghost"
-            className="group/btn -ml-2 h-9 rounded-full px-3 text-primary hover:bg-primary/5"
-          >
-            Explore
-            <ArrowUpRight className="transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
-          </Button>
+        <CardContent className="space-y-2 px-4 pb-4 pt-1.5">
+          <CardDescription className="card-desc-compact">{description}</CardDescription>
+          {href ? (
+            <span className="inline-flex items-center gap-1 text-xs font-semibold text-primary">
+              Explore
+              <ArrowUpRight className="size-3.5 transition-transform group-hover/dept:translate-x-0.5 group-hover/dept:-translate-y-0.5" />
+            </span>
+          ) : null}
         </CardContent>
       ) : null}
     </Card>
