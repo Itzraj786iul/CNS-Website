@@ -37,24 +37,24 @@ function DepartmentCard({
 }: DepartmentCardProps) {
   const content = (
     <Card className="group/dept h-full card-premium card-premium-hover ring-0">
-      <CardHeader className="gap-4 px-5 pt-5 pb-1">
-        <IconBox icon={icon} variant={iconVariant} size="default" />
-        <CardTitle className="text-lg font-semibold tracking-tight text-cns-navy">
+      <CardHeader className="gap-2.5 px-4 pt-4 pb-0">
+        <IconBox icon={icon} variant={iconVariant} size="sm" />
+        <CardTitle className="text-base font-semibold tracking-tight text-cns-navy">
           {title}
         </CardTitle>
       </CardHeader>
       {description ? (
-        <CardContent className="px-5 pb-1">
-          <CardDescription className="text-sm leading-[1.7]">
+        <CardContent className="px-4 pb-0">
+          <CardDescription className="text-[13px] leading-[1.65]">
             {description}
           </CardDescription>
         </CardContent>
       ) : null}
       {href ? (
-        <CardContent className="px-5 pb-5 pt-0">
+        <CardContent className="px-4 pb-4 pt-0">
           <Button
             variant="ghost"
-            className="group/btn -ml-2 h-10 rounded-full px-3 text-primary hover:bg-primary/5"
+            className="group/btn -ml-2 h-9 rounded-full px-3 text-primary hover:bg-primary/5"
           >
             Explore
             <ArrowUpRight className="transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />

@@ -16,10 +16,10 @@ export const brandColors = {
 
 export const spacing = {
   section: {
-    sm: "py-5 md:py-8",
-    default: "py-8 md:py-11",
-    lg: "py-10 md:py-14",
-    xl: "py-11 md:py-16",
+    sm: "py-4 md:py-6",
+    default: "py-5 md:py-7 lg:py-9",
+    lg: "py-7 md:py-9 lg:py-11",
+    xl: "py-8 md:py-10 lg:py-12",
   },
 } as const;
 

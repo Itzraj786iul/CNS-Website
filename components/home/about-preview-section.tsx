@@ -16,9 +16,9 @@ import { fadeUp } from "@/lib/motion";
 function AboutPreviewSection() {
   return (
     <Section variant="white" spacing="default" divider>
-      <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-10">
+      <div className="grid items-start gap-6 lg:grid-cols-2 lg:gap-8">
         <AnimatedSection className="relative" direction="left">
-          <div className="relative image-placeholder aspect-[4/3]">
+          <div className="relative image-placeholder aspect-[3/2] lg:max-h-[260px] lg:w-full">
             <Image
               src="https://placehold.co/640x800/EEF4F9/16324A/png?font=roboto&text=CNS+Medical+Team"
               alt="Center for Neuroscience medical team"
@@ -38,7 +38,7 @@ function AboutPreviewSection() {
           />
         </AnimatedSection>
 
-        <div className="space-y-6">
+        <div className="section-stack">
           <AnimatedSection>
             <SectionHeading
               eyebrow="Who We Are"
@@ -47,7 +47,7 @@ function AboutPreviewSection() {
             />
           </AnimatedSection>
 
-          <AnimatedSection stagger className="grid gap-5 sm:grid-cols-2">
+          <AnimatedSection stagger className="grid gap-4 sm:grid-cols-2">
             {aboutFeatures.map((feature) => (
               <motion.div key={feature.title} variants={fadeUp}>
                 <FeatureCard

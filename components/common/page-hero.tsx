@@ -36,7 +36,7 @@ function PageHero({ title, description, breadcrumb, eyebrow }: PageHeroProps) {
 
   return (
     <section
-      className="relative overflow-hidden border-b border-cns-border/40 page-hero-surface pb-6 pt-5 md:pb-8 md:pt-6"
+      className="relative overflow-hidden border-b border-cns-border/40 page-hero-surface pb-5 pt-4 md:pb-6 md:pt-5"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
@@ -94,7 +94,7 @@ function PageHero({ title, description, breadcrumb, eyebrow }: PageHeroProps) {
             <h1
               className={cn(
                 "font-heading font-semibold tracking-[-0.025em] text-cns-navy text-balance",
-                "text-[1.625rem] leading-[1.14] min-[375px]:text-[1.875rem] sm:text-[2.125rem] lg:text-[2.375rem] lg:leading-[1.1]"
+                "text-[1.5rem] leading-[1.14] min-[375px]:text-[1.75rem] sm:text-[1.875rem] lg:text-[2.125rem] lg:leading-[1.12]"
               )}
             >
               {title}

@@ -25,7 +25,7 @@ import { fadeUp, staggerContainer } from "@/lib/motion";
 
 function HeroIllustration() {
   return (
-    <div className="relative mx-auto aspect-[6/5] w-full max-w-sm sm:max-w-md lg:max-w-none lg:max-h-[380px]">
+    <div className="relative mx-auto aspect-[6/5] w-full max-w-sm sm:max-w-md lg:max-w-none lg:max-h-[300px]">
       <motion.div
         aria-hidden="true"
         animate={{ y: [0, -10, 0] }}
@@ -181,13 +181,13 @@ function HeroSection() {
         className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-linear-to-t from-background via-background/90 to-transparent"
       />
 
-      <Container className="relative flex flex-col justify-center py-7 sm:py-8 lg:py-9 xl:py-10">
-        <div className="grid min-w-0 items-center gap-5 sm:gap-7 lg:grid-cols-2 lg:gap-9">
+      <Container className="relative flex flex-col justify-center py-6 sm:py-7 lg:py-8">
+        <div className="grid min-w-0 items-center gap-4 sm:gap-6 lg:grid-cols-2 lg:gap-8">
           <motion.div
             initial="hidden"
             animate="visible"
             variants={staggerContainer}
-            className="min-w-0 max-w-xl space-y-5"
+            className="min-w-0 max-w-xl space-y-4"
           >
             <motion.div variants={fadeUp}>
               <Tag variant="blue" className="px-4 py-1.5 text-sm shadow-soft">
@@ -196,7 +196,7 @@ function HeroSection() {
             </motion.div>
 
             <motion.div variants={fadeUp} className="space-y-3">
-              <h1 className="font-heading text-[1.75rem] font-semibold leading-[1.08] tracking-[-0.035em] text-cns-navy min-[375px]:text-[2rem] sm:text-[2.25rem] lg:text-[2.625rem] lg:leading-[1.05]">
+              <h1 className="font-heading text-[1.625rem] font-semibold leading-[1.08] tracking-[-0.035em] text-cns-navy min-[375px]:text-[1.875rem] sm:text-[2rem] lg:text-[2.375rem] lg:leading-[1.06]">
                 Center for{" "}
                 <span className="text-gradient-brand">Neuroscience</span>
               </h1>
@@ -268,7 +268,7 @@ function HeroSection() {
 
             <motion.ul
               variants={fadeUp}
-              className="flex flex-col gap-3 border-t border-border/70 pt-6 sm:flex-row sm:flex-wrap sm:gap-x-8 sm:gap-y-3"
+              className="flex flex-col gap-2.5 border-t border-border/70 pt-4 sm:flex-row sm:flex-wrap sm:gap-x-6 sm:gap-y-2"
             >
               {trustItems.map(({ icon: Icon, label }) => (
                 <li
@@ -295,7 +295,7 @@ function HeroSection() {
         </div>
       </Container>
 
-      <div className="relative z-10 -mt-6 pb-7 sm:-mt-8 sm:pb-8 lg:-mt-10 lg:pb-9">
+      <div className="relative z-10 -mt-5 pb-6 sm:-mt-6 sm:pb-7 lg:-mt-8 lg:pb-8">
         <Container>
           <motion.div
             initial="hidden"

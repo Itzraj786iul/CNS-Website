@@ -14,9 +14,9 @@ function AboutCnsSection() {
 
   return (
     <Section variant="white" spacing="default">
-      <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-10">
+      <div className="grid items-start gap-6 lg:grid-cols-2 lg:gap-8">
         <AnimatedSection className="relative order-2 lg:order-1">
-          <div className="relative image-placeholder aspect-[4/3]">
+          <div className="relative image-placeholder aspect-[3/2] lg:max-h-[260px] lg:w-full">
             <Image
               src={aboutCns.image.src}
               alt={aboutCns.image.alt}

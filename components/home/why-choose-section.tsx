@@ -13,9 +13,9 @@ import { fadeUp } from "@/lib/motion";
 function WhyChooseSection() {
   return (
     <Section variant="muted" spacing="default">
-      <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-10">
+      <div className="grid items-start gap-6 lg:grid-cols-2 lg:gap-8">
         <AnimatedSection className="relative order-2 lg:order-1" direction="left">
-          <div className="relative image-placeholder aspect-[4/3]">
+          <div className="relative image-placeholder aspect-[3/2] lg:max-h-[260px] lg:w-full">
             <Image
               src="https://placehold.co/640x800/F8FBFD/1F7CC6/png?font=roboto&text=Advanced+Neuro+Care"
               alt="Advanced neuroscience care at CNS"
@@ -34,7 +34,7 @@ function WhyChooseSection() {
           />
         </AnimatedSection>
 
-        <div className="order-1 space-y-6 lg:order-2">
+        <div className="section-stack order-1 lg:order-2">
           <AnimatedSection direction="right">
             <SectionHeading
               eyebrow="Why Patients Choose CNS"
@@ -43,17 +43,17 @@ function WhyChooseSection() {
             />
           </AnimatedSection>
 
-          <AnimatedSection stagger className="grid gap-5 sm:grid-cols-2">
+          <AnimatedSection stagger className="grid gap-3.5 sm:grid-cols-2">
             {whyChooseFeatures.map((feature) => (
               <motion.div
                 key={feature.title}
                 variants={fadeUp}
-                className="group flex gap-3.5 rounded-2xl border border-cns-border/60 bg-background p-4 transition-all duration-500 hover:-translate-y-0.5 hover:border-primary/15 hover:bg-card hover:shadow-soft"
+                className="group flex gap-3 rounded-xl border border-cns-border/60 bg-background p-3.5 transition-all duration-500 hover:-translate-y-0.5 hover:border-primary/15 hover:bg-card hover:shadow-soft"
               >
                 <IconBox
                   icon={feature.icon}
                   variant={feature.iconVariant}
-                  size="default"
+                  size="sm"
                   className="shrink-0"
                 />
                 <div className="space-y-1.5">

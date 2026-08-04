@@ -367,7 +367,7 @@
   }
 
   .card-body {
-    @apply px-4 py-4 sm:px-5 sm:py-5;
+    @apply px-3.5 py-3 sm:px-4 sm:py-4;
   }
 
   .photo-frame {
@@ -450,7 +450,7 @@
   }
 
   .section-stack {
-    @apply space-y-5;
+    @apply space-y-4;
   }
 
   .section-surface-white {

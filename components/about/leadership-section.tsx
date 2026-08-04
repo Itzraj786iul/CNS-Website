@@ -33,7 +33,7 @@ function LeadershipSection() {
                 variants={hoverLift}
               >
                 <Card className="card-premium card-premium-hover overflow-hidden ring-0">
-                  <div className="photo-frame relative aspect-[5/6]">
+                  <div className="photo-frame relative aspect-[3/4] max-h-[280px]">
                     <Image
                       src={leader.image.src}
                       alt={leader.image.alt}

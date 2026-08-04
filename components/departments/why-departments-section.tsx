@@ -17,7 +17,7 @@ function WhyDepartmentsSection() {
     <Section variant="white" spacing="default">
       <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
         <AnimatedSection className="relative">
-          <div className="relative image-placeholder aspect-[4/3]">
+          <div className="relative image-placeholder aspect-[3/2] lg:max-h-[240px] lg:w-full">
             <Image
               src="https://placehold.co/720x540/F8FBFD/1F7CC6/png?font=roboto&text=Multidisciplinary+Care"
               alt="Multidisciplinary neuroscience team at CNS"

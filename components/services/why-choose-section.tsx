@@ -16,7 +16,7 @@ function WhyChooseSection() {
     <Section variant="default" spacing="default">
       <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
         <AnimatedSection className="relative">
-          <div className="relative image-placeholder aspect-[4/3]">
+          <div className="relative image-placeholder aspect-[3/2] lg:max-h-[240px] lg:w-full">
             <Image
               src="https://placehold.co/720x540/EEF4F9/16324A/png?font=roboto&text=Patient+Care"
               alt="Patient receiving neurological care at CNS"

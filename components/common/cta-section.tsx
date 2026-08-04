@@ -69,19 +69,19 @@ function CTASection({
   const isNavy = variant === "navy";
 
   return (
-    <section data-slot="cta-section" className={cn("py-8 md:py-10", className)}>
+    <section data-slot="cta-section" className={cn("py-5 md:py-7 lg:py-9", className)}>
       <Container>
         <div
           className={cn(
-            "relative overflow-hidden rounded-3xl px-5 py-8 sm:px-8 sm:py-9 lg:px-12 lg:py-10",
+            "relative overflow-hidden rounded-2xl px-4 py-6 sm:px-6 sm:py-7 lg:px-10 lg:py-8",
             variantClasses[variant]
           )}
         >
-          <div className="relative z-10 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-            <div className="max-w-2xl space-y-3">
+          <div className="relative z-10 flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+            <div className="max-w-2xl space-y-2">
               <h2
                 className={cn(
-                  "font-heading text-2xl font-semibold tracking-tight text-balance sm:text-[1.75rem]",
+                  "font-heading text-xl font-semibold tracking-tight text-balance sm:text-[1.375rem]",
                   isNavy ? "text-white" : "text-cns-navy"
                 )}
               >
