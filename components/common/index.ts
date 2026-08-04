@@ -1,5 +1,7 @@
 export { AnimatedSection } from "./animated-section";
 export { BlogCard } from "./blog-card";
+export { Breadcrumb } from "./breadcrumb";
+export type { BreadcrumbItem } from "./breadcrumb";
 export { Container } from "./container";
 export { CTASection } from "./cta-section";
 export { DepartmentCard } from "./department-card";
@@ -9,6 +11,9 @@ export type { FAQItem } from "./faq-card";
 export { FeatureCard } from "./feature-card";
 export { GalleryCard } from "./gallery-card";
 export { IconBox, iconBoxVariants } from "./icon-box";
+export { LightboxProvider, MasonryGallery, useLightbox } from "./lightbox";
+export type { LightboxImage } from "./lightbox";
+export { PageHero } from "./page-hero";
 export { PageTransition } from "./page-transition";
 export { Section } from "./section";
 export { SectionDivider } from "./section-divider";

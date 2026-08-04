@@ -1,12 +1,13 @@
+import { GalleryPageContent } from "@/components/gallery/gallery-page";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
   title: "Gallery",
   description:
-    "View the Center for Neuroscience facilities, technology, and care environment through our photo gallery.",
+    "Explore the Center for Neuroscience through photos of our infrastructure, operation theatres, diagnostics, patient care, and events.",
   path: "/gallery",
 });
 
 export default function GalleryPage() {
-  return null;
+  return <GalleryPageContent />;
 }

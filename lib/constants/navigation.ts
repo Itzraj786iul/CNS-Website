@@ -16,8 +16,9 @@ export const mainNavigation: NavItem[] = [
   { label: "Services", href: "/services" },
   { label: "Facilities", href: "/facilities" },
   { label: "Gallery", href: "/gallery" },
-  { label: "Careers", href: "/careers" },
-  { label: "Blog", href: "/blog" },
+  { label: "Research", href: "/research" },
+  { label: "News", href: "/news" },
+  { label: "Resources", href: "/resources" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -26,6 +27,35 @@ export const ctaNavigation: NavItem = {
   href: "/appointment",
 };
 
+export const footerQuickLinks = [
+  { label: "About Us", href: "/about" },
+  { label: "Our Doctors", href: "/doctors" },
+  { label: "Gallery", href: "/gallery" },
+  { label: "Research", href: "/research" },
+  { label: "News & Events", href: "/news" },
+  { label: "Patient Resources", href: "/resources" },
+  { label: "Careers", href: "/careers" },
+  { label: "Contact", href: "/contact" },
+];
+
+export const footerDepartments = [
+  { label: "Neurology", href: "/departments" },
+  { label: "Neurosurgery", href: "/departments" },
+  { label: "Psychiatry", href: "/departments" },
+  { label: "Neuro Rehabilitation", href: "/departments" },
+  { label: "Pain Medicine", href: "/departments" },
+  { label: "Diagnostics", href: "/departments" },
+];
+
+export const footerServices = [
+  { label: "Stroke Care", href: "/services" },
+  { label: "Epilepsy", href: "/services" },
+  { label: "Brain Disorders", href: "/services" },
+  { label: "Spine Disorders", href: "/services" },
+  { label: "Mental Health", href: "/services" },
+  { label: "Rehabilitation", href: "/services" },
+];
+
 export const footerNavigation = {
   explore: mainNavigation.filter((item) =>
     ["/about", "/departments", "/doctors", "/services", "/facilities"].includes(
@@ -33,6 +63,6 @@ export const footerNavigation = {
     )
   ),
   resources: mainNavigation.filter((item) =>
-    ["/gallery", "/careers", "/blog", "/contact"].includes(item.href)
+    ["/gallery", "/research", "/news", "/resources", "/contact"].includes(item.href)
   ),
 } as const;
