@@ -100,10 +100,7 @@ function Navbar() {
           <LogoLink
             size={isCompact ? "sm" : "md"}
             priority
-            linkClassName={cn(
-              "shrink-0 transition-transform duration-500",
-              isCompact ? "scale-[0.96]" : "scale-100"
-            )}
+            linkClassName="shrink-0"
           />
 
           <nav
