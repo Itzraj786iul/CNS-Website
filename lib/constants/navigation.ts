@@ -1,4 +1,12 @@
 import type { LucideIcon } from "lucide-react";
+import {
+  BookOpen,
+  Briefcase,
+  Building2,
+  FlaskConical,
+  Images,
+  Newspaper,
+} from "lucide-react";
 
 export type NavItem = {
   label: string;
@@ -6,6 +14,11 @@ export type NavItem = {
   description?: string;
   icon?: LucideIcon;
   external?: boolean;
+};
+
+export type NavGroup = {
+  title: string;
+  items: NavItem[];
 };
 
 export const primaryNavigation: NavItem[] = [
@@ -17,19 +30,37 @@ export const primaryNavigation: NavItem[] = [
   { label: "Contact", href: "/contact" },
 ];
 
-export const moreNavigation: NavItem[] = [
-  { label: "Facilities", href: "/facilities" },
-  { label: "Gallery", href: "/gallery" },
-  { label: "Research", href: "/research" },
-  { label: "News", href: "/news" },
-  { label: "Resources", href: "/resources" },
+export const moreNavigationGroups: NavGroup[] = [
+  {
+    title: "Hospital",
+    items: [
+      { label: "Facilities", href: "/facilities", icon: Building2 },
+      { label: "Gallery", href: "/gallery", icon: Images },
+      { label: "Careers", href: "/careers", icon: Briefcase },
+    ],
+  },
+  {
+    title: "Knowledge",
+    items: [
+      { label: "Research", href: "/research", icon: FlaskConical },
+      { label: "News", href: "/news", icon: Newspaper },
+      {
+        label: "Patient Resources",
+        href: "/resources",
+        icon: BookOpen,
+      },
+    ],
+  },
 ];
 
-/** Full list for mobile menu and footer references */
+export const moreNavigation: NavItem[] = moreNavigationGroups.flatMap(
+  (group) => group.items
+);
+
+/** Full flat list — footer and legacy references */
 export const mainNavigation: NavItem[] = [
-  ...primaryNavigation.slice(0, -1),
+  ...primaryNavigation,
   ...moreNavigation,
-  primaryNavigation[primaryNavigation.length - 1]!,
 ];
 
 export const ctaNavigation: NavItem = {
@@ -65,4 +96,3 @@ export const footerServices = [
   { label: "Mental Health", href: "/services" },
   { label: "Rehabilitation", href: "/services" },
 ];
-
