@@ -29,11 +29,7 @@ function SectionHeading({
       )}
       {...props}
     >
-      {eyebrow ? (
-        <p className="text-sm font-semibold uppercase tracking-[0.14em] text-primary">
-          {eyebrow}
-        </p>
-      ) : null}
+      {eyebrow ? <p className="eyebrow-pill w-fit">{eyebrow}</p> : null}
       <h2
         className={cn(
           "font-heading font-semibold tracking-tight text-cns-navy",
@@ -44,7 +40,7 @@ function SectionHeading({
         {title}
       </h2>
       {description ? (
-        <p className="text-base leading-[1.7] text-muted-foreground sm:text-lg">
+        <p className="max-w-2xl text-base leading-[1.75] text-muted-foreground sm:text-lg">
           {description}
         </p>
       ) : null}

@@ -3,7 +3,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const tagVariants = cva(
-  "inline-flex items-center rounded-full border px-3 py-1 text-xs font-medium tracking-wide transition-colors",
+  "inline-flex items-center rounded-full border px-3 py-1 text-xs font-semibold tracking-wide shadow-soft transition-all duration-300",
   {
     variants: {
       variant: {

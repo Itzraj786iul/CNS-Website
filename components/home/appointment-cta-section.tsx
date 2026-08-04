@@ -14,7 +14,7 @@ function AppointmentCtaSection() {
     <section className="py-16 md:py-20">
       <Container>
         <AnimatedSection>
-          <div className="relative overflow-hidden rounded-3xl bg-linear-to-br from-primary via-[#2a8fd4] to-secondary px-6 py-14 sm:px-10 sm:py-16 lg:px-16">
+          <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-linear-to-br from-primary via-primary to-secondary px-6 py-14 shadow-soft-lg sm:px-10 sm:py-16 lg:px-16">
             <div
               aria-hidden="true"
               className="pointer-events-none absolute -left-20 -top-20 size-72 rounded-full bg-white/10 blur-3xl"
@@ -47,7 +47,7 @@ function AppointmentCtaSection() {
                   </Link>
                 }
                 size="lg"
-                className="h-12 bg-white px-8 text-primary hover:bg-white/90"
+                className="h-12 rounded-full bg-white px-8 text-primary shadow-soft hover:bg-white/90"
               />
             </motion.div>
           </div>

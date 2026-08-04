@@ -14,7 +14,7 @@ type SectionProps = React.ComponentProps<"section"> & {
 
 const variantClasses = {
   default: "bg-background",
-  muted: "bg-muted/50",
+  muted: "bg-muted/40",
   white: "bg-white",
   navy: "bg-cns-navy text-white",
   gradient: "bg-gradient-brand",
@@ -62,10 +62,16 @@ function Section({
         {...props}
       >
         {variant !== "navy" ? (
-          <div
-            aria-hidden="true"
-            className="section-blob -right-24 top-0 size-64 bg-primary/5"
-          />
+          <>
+            <div
+              aria-hidden="true"
+              className="section-blob -right-24 top-0 size-72 bg-primary/[0.04]"
+            />
+            <div
+              aria-hidden="true"
+              className="section-blob -left-24 bottom-0 size-64 bg-secondary/[0.05]"
+            />
+          </>
         ) : null}
         {contained ? (
           <Container size={containerSize} className="relative">

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, CalendarDays } from "lucide-react";
+import { ArrowRight, CalendarDays, ShieldCheck, Stethoscope, Users } from "lucide-react";
 
 import { heroStats } from "@/components/home/data";
 import { Container } from "@/components/common/container";
@@ -117,11 +117,21 @@ function HeroIllustration() {
 }
 
 function HeroSection() {
+  const trustItems = [
+    { icon: ShieldCheck, label: "24×7 Emergency Care" },
+    { icon: Stethoscope, label: "Advanced Neuroimaging" },
+    { icon: Users, label: "Multidisciplinary Team" },
+  ];
+
   return (
     <section className="relative overflow-hidden bg-background">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-linear-to-br from-primary/5 via-transparent to-secondary/5"
+        className="hero-grid pointer-events-none absolute inset-0 opacity-70"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-linear-to-br from-primary/[0.05] via-transparent to-secondary/[0.05]"
       />
       <div
         aria-hidden="true"
@@ -137,17 +147,17 @@ function HeroSection() {
             className="max-w-xl space-y-8"
           >
             <motion.div variants={fadeUp}>
-              <Tag variant="blue" className="px-4 py-1.5 text-sm">
+              <Tag variant="blue" className="px-4 py-1.5 text-sm shadow-soft">
                 Caring for Your Brain &amp; Spine
               </Tag>
             </motion.div>
 
             <motion.div variants={fadeUp} className="space-y-5">
-              <h1 className="font-heading text-4xl font-semibold leading-[1.1] tracking-tight text-cns-navy sm:text-5xl lg:text-6xl">
+              <h1 className="font-heading text-4xl font-semibold leading-[1.08] tracking-tight text-cns-navy sm:text-5xl lg:text-6xl">
                 Center for{" "}
-                <span className="text-primary">Neuroscience</span>
+                <span className="text-gradient-brand">Neuroscience</span>
               </h1>
-              <p className="max-w-lg text-base leading-relaxed text-muted-foreground sm:text-lg">
+              <p className="max-w-lg text-base leading-[1.75] text-muted-foreground sm:text-lg">
                 Integrated neurological, neurosurgical, and psychiatric care —
                 delivered by specialists who combine clinical excellence with
                 genuine compassion.
@@ -179,9 +189,23 @@ function HeroSection() {
                 }
                 variant="outline"
                 size="lg"
-                className="h-12 border-cns-border px-6"
+                className="h-12 border-cns-border bg-white/80 px-6 shadow-soft backdrop-blur-sm"
               />
             </motion.div>
+
+            <motion.ul
+              variants={fadeUp}
+              className="flex flex-col gap-3 border-t border-cns-border/60 pt-6 sm:flex-row sm:flex-wrap sm:gap-x-6 sm:gap-y-2"
+            >
+              {trustItems.map(({ icon: Icon, label }) => (
+                <li key={label} className="flex items-center gap-2 text-sm text-cns-navy/80">
+                  <span className="flex size-8 items-center justify-center rounded-full bg-primary/8 text-primary">
+                    <Icon className="size-4" aria-hidden="true" />
+                  </span>
+                  {label}
+                </li>
+              ))}
+            </motion.ul>
           </motion.div>
 
           <motion.div
@@ -210,7 +234,7 @@ function HeroSection() {
                   value={stat.value}
                   suffix={stat.suffix}
                   label={stat.label}
-                  className="glass shadow-soft-lg"
+                  className="glass rounded-2xl shadow-soft-lg ring-1 ring-white/50"
                 />
               </motion.div>
             ))}

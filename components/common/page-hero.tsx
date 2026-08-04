@@ -14,14 +14,18 @@ type PageHeroProps = {
 
 function PageHero({ title, description, breadcrumb }: PageHeroProps) {
   return (
-    <section className="relative overflow-hidden bg-background pb-16 pt-8 md:pb-20 md:pt-10">
+    <section className="relative overflow-hidden border-b border-cns-border/50 bg-background pb-16 pt-8 md:pb-20 md:pt-10">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-linear-to-br from-primary/5 via-transparent to-secondary/5"
+        className="hero-grid pointer-events-none absolute inset-0 opacity-80"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-24 top-0 size-96 rounded-full bg-primary/5 blur-3xl"
+        className="pointer-events-none absolute inset-0 bg-linear-to-br from-primary/[0.04] via-transparent to-secondary/[0.04]"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-24 top-0 size-96 rounded-full bg-primary/[0.06] blur-3xl"
       />
       <Container className="relative">
         <motion.div
@@ -41,7 +45,7 @@ function PageHero({ title, description, breadcrumb }: PageHeroProps) {
           </motion.h1>
           <motion.p
             variants={fadeUp}
-            className="max-w-2xl text-base leading-[1.7] text-muted-foreground sm:text-lg"
+            className="max-w-2xl text-base leading-[1.75] text-muted-foreground sm:text-lg"
           >
             {description}
           </motion.p>

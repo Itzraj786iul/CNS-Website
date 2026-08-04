@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { CalendarDays, Mail, MapPin, MessageCircle, Phone, Siren } from "lucide-react";
+import { Mail, MapPin, Phone, Siren } from "lucide-react";
 
 import { Container } from "@/components/common/container";
 import {
@@ -19,17 +19,17 @@ import {
   footerServices,
 } from "@/lib/constants/navigation";
 import {
-  WHATSAPP_URL,
-  getAppointmentTelHref,
   getEmergencyTelHref,
-  isTelHref,
   toTelHref,
 } from "@/lib/contact-links";
 import { siteConfig } from "@/lib/constants/site";
 
 function FooterLink({ href, children }: { href: string; children: React.ReactNode }) {
   return (
-    <Link href={href} className="text-sm text-white/70 transition-colors hover:text-white">
+    <Link
+      href={href}
+      className="text-sm text-white/70 transition-all duration-200 hover:translate-x-0.5 hover:text-white"
+    >
       {children}
     </Link>
   );
@@ -84,10 +84,13 @@ function SocialLink({
 function Footer() {
   const { contact, social, hours } = siteConfig;
   const emergencyHref = getEmergencyTelHref();
-  const appointmentHref = getAppointmentTelHref();
 
   return (
-    <footer data-slot="footer" className="bg-cns-navy text-white">
+    <footer data-slot="footer" className="relative bg-cns-navy text-white">
+      <div
+        aria-hidden="true"
+        className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-primary/40 to-transparent"
+      />
       <Container className="py-16 md:py-20">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
           <div className="space-y-5 sm:col-span-2 lg:col-span-1 xl:col-span-2">
@@ -179,43 +182,6 @@ function Footer() {
                   {hours.diagnostics}
                 </li>
               </ul>
-            </div>
-
-            <div className="flex flex-col gap-2">
-              <a
-                href={emergencyHref}
-                className="inline-flex h-10 items-center justify-center gap-2 rounded-full bg-destructive px-5 text-sm font-medium text-white transition-all duration-300 hover:scale-[1.02] hover:bg-destructive/90"
-              >
-                <Siren className="size-4" />
-                Call Now
-              </a>
-              <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Contact us on WhatsApp"
-                className="inline-flex h-10 items-center justify-center gap-2 rounded-full bg-[#25D366] px-5 text-sm font-medium text-white transition-all duration-300 hover:scale-[1.02] hover:bg-[#22c55e]"
-              >
-                <MessageCircle className="size-4" />
-                WhatsApp
-              </a>
-              {isTelHref(appointmentHref) ? (
-                <a
-                  href={appointmentHref}
-                  className="inline-flex h-10 items-center justify-center gap-2 rounded-full bg-secondary px-5 text-sm font-medium text-secondary-foreground transition-all duration-300 hover:scale-[1.02] hover:bg-secondary/90"
-                >
-                  <CalendarDays className="size-4" />
-                  Book Appointment
-                </a>
-              ) : (
-                <Link
-                  href={appointmentHref}
-                  className="inline-flex h-10 items-center justify-center gap-2 rounded-full bg-secondary px-5 text-sm font-medium text-secondary-foreground transition-all duration-300 hover:scale-[1.02] hover:bg-secondary/90"
-                >
-                  <CalendarDays className="size-4" />
-                  Book Appointment
-                </Link>
-              )}
             </div>
           </div>
         </div>

@@ -99,17 +99,17 @@ function Navbar() {
       className={cn(
         "sticky top-0 z-50 transition-all duration-500 ease-out",
         isScrolled
-          ? "glass border-b border-cns-border/50 shadow-soft backdrop-saturate-150"
-          : "bg-transparent"
+          ? "glass border-b border-cns-border/40 shadow-soft backdrop-saturate-150"
+          : "border-b border-transparent bg-background/50 backdrop-blur-sm"
       )}
     >
       <Container>
         <div className="flex h-[4.5rem] items-center justify-between gap-4 lg:h-20">
           <Link
             href="/"
-            className="group flex items-center gap-3 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+            className="group flex items-center gap-3 rounded-xl transition-transform duration-300 hover:scale-[1.01]"
           >
-            <LogoMark />
+            <LogoMark className="transition-transform duration-300 group-hover:rotate-[-3deg]" />
             <div className="hidden sm:block">
               <p className="font-heading text-base font-semibold leading-none text-cns-navy">
                 {siteConfig.shortName}

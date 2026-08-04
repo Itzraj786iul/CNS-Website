@@ -21,9 +21,9 @@ type CTASectionProps = {
 };
 
 const variantClasses = {
-  default: "bg-white border border-cns-border shadow-soft",
-  navy: "bg-gradient-navy text-white",
-  gradient: "bg-gradient-brand border border-cns-border/60",
+  default: "surface-elevated",
+  navy: "border border-white/10 bg-gradient-navy text-white shadow-soft-lg",
+  gradient: "border border-cns-border/60 bg-gradient-brand shadow-soft",
 } as const;
 
 function CTASection({
@@ -49,7 +49,7 @@ function CTASection({
             <div className="max-w-2xl space-y-3">
               <h2
                 className={cn(
-                  "font-heading text-3xl font-semibold tracking-tight sm:text-4xl",
+                  "font-heading text-3xl font-semibold tracking-tight text-balance sm:text-4xl",
                   isNavy ? "text-white" : "text-cns-navy"
                 )}
               >
@@ -58,7 +58,7 @@ function CTASection({
               {description ? (
                 <p
                   className={cn(
-                    "text-base leading-relaxed sm:text-lg",
+                    "text-base leading-[1.75] sm:text-lg",
                     isNavy ? "text-white/75" : "text-muted-foreground"
                   )}
                 >
@@ -79,7 +79,7 @@ function CTASection({
                     className={cn(
                       "h-11 rounded-full px-6",
                       isNavy &&
-                        "bg-secondary text-secondary-foreground hover:bg-secondary/90"
+                        "bg-secondary text-secondary-foreground shadow-glow-green hover:bg-secondary/90"
                     )}
                   />
                 ) : null}
@@ -91,7 +91,7 @@ function CTASection({
                         {secondaryAction.label}
                       </Link>
                     }
-                    variant={isNavy ? "outline" : "outline"}
+                    variant="outline"
                     size="lg"
                     className={cn(
                       "h-11 rounded-full px-6",
@@ -105,10 +105,16 @@ function CTASection({
           </div>
 
           {isNavy ? (
-            <div
-              aria-hidden="true"
-              className="pointer-events-none absolute -right-16 -top-16 size-64 rounded-full bg-primary/20 blur-3xl"
-            />
+            <>
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute -right-16 -top-16 size-64 rounded-full bg-primary/20 blur-3xl"
+              />
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute -bottom-20 -left-10 size-56 rounded-full bg-secondary/15 blur-3xl"
+              />
+            </>
           ) : null}
         </div>
       </Container>

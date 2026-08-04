@@ -1,8 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { isTelHref } from "@/lib/contact-links";
-import { Mail, MapPin, Phone, Siren } from "lucide-react";
+import { ArrowRight, Mail, MapPin, Phone, Siren } from "lucide-react";
 import { motion } from "framer-motion";
 
 import { contactCards } from "@/components/home/data";
@@ -11,6 +10,9 @@ import { IconBox } from "@/components/common/icon-box";
 import { Section } from "@/components/common/section";
 import { SectionHeading } from "@/components/common/section-heading";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { isTelHref } from "@/lib/contact-links";
+import { siteConfig } from "@/lib/constants/site";
 import { fadeUp, hoverLift } from "@/lib/motion";
 
 const iconMap = {
@@ -53,7 +55,7 @@ function ContactPreviewSection() {
                   variants={hoverLift}
                   className="h-full"
                 >
-                  <Card className="h-full border-cns-border/80 bg-white shadow-soft ring-0">
+                  <Card className="card-premium card-premium-hover h-full">
                     <CardContent className="space-y-4 px-6 py-8">
                       <IconBox icon={Icon} variant={variant} />
                       <div className="space-y-2">
@@ -88,17 +90,57 @@ function ContactPreviewSection() {
         </AnimatedSection>
 
         <AnimatedSection>
-          <div className="overflow-hidden rounded-3xl border border-cns-border/80 bg-muted shadow-soft">
-            <div className="relative aspect-[16/7] w-full">
-              <iframe
-                title="Center for Neuroscience location map"
-                src="https://maps.google.com/maps?q=Raipur+Chhattisgarh&output=embed"
-                className="absolute inset-0 h-full w-full border-0 grayscale-[30%]"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
-              <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-cns-border/40" />
+          <div className="grid gap-6 lg:grid-cols-2 lg:items-stretch">
+            <div className="overflow-hidden rounded-3xl border border-cns-border/80 bg-muted shadow-soft">
+              <div className="relative aspect-[4/3] w-full sm:aspect-[16/10] lg:aspect-auto lg:min-h-[320px] lg:h-full">
+                <iframe
+                  title="Center for Neuroscience location map"
+                  src="https://maps.google.com/maps?q=Raipur+Chhattisgarh&output=embed"
+                  className="absolute inset-0 h-full w-full border-0 grayscale-[30%]"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+                <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-cns-border/40" />
+              </div>
             </div>
+
+            <Card className="card-premium card-premium-hover flex h-full ring-0">
+              <CardContent className="flex h-full flex-col justify-center space-y-6 px-6 py-8 sm:px-8">
+                <div className="space-y-3">
+                  <IconBox icon={MapPin} variant="orange" />
+                  <h3 className="font-heading text-2xl font-semibold text-cns-navy">
+                    Visit {siteConfig.shortName}
+                  </h3>
+                  <p className="text-base leading-relaxed text-muted-foreground">
+                    {siteConfig.contact.address}
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    {siteConfig.location} · Parking and wheelchair access available
+                  </p>
+                </div>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li>
+                    <span className="font-medium text-cns-navy">Outpatient:</span>{" "}
+                    {siteConfig.hours.outpatient}
+                  </li>
+                  <li>
+                    <span className="font-medium text-cns-navy">Emergency:</span>{" "}
+                    {siteConfig.hours.emergency}
+                  </li>
+                </ul>
+                <Button
+                  nativeButton={false}
+                  render={
+                    <Link href="/contact">
+                      Contact & Directions
+                      <ArrowRight />
+                    </Link>
+                  }
+                  variant="outline"
+                  className="h-11 w-fit rounded-full border-cns-border px-6"
+                />
+              </CardContent>
+            </Card>
           </div>
         </AnimatedSection>
       </div>

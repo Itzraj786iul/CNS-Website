@@ -109,6 +109,14 @@
 
   body {
     @apply bg-background text-foreground overflow-x-hidden;
+    background-image:
+      radial-gradient(ellipse 80% 60% at 50% -20%, rgb(31 124 198 / 0.06), transparent),
+      radial-gradient(ellipse 50% 40% at 100% 0%, rgb(125 189 36 / 0.04), transparent);
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    @apply bg-primary/15 text-cns-navy;
   }
 
   h1,
@@ -117,7 +125,7 @@
   h4,
   h5,
   h6 {
-    @apply font-heading tracking-tight text-foreground;
+    @apply font-heading tracking-tight text-foreground text-balance;
   }
 
   :focus-visible {
@@ -141,7 +149,31 @@
 
 @layer utilities {
   .text-gradient-brand {
-    @apply bg-linear-to-r from-cns-blue via-cns-green to-cns-blue bg-clip-text text-transparent;
+    @apply bg-linear-to-r from-cns-blue via-[#3a9ad8] to-cns-green bg-clip-text text-transparent;
+  }
+
+  .eyebrow-pill {
+    @apply inline-flex items-center gap-2 rounded-full border border-primary/15 bg-primary/5 px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-primary;
+  }
+
+  .eyebrow-pill::before {
+    @apply size-1.5 shrink-0 rounded-full bg-primary content-[''];
+  }
+
+  .surface-elevated {
+    @apply rounded-3xl border border-cns-border/70 bg-white/90 shadow-soft backdrop-blur-sm;
+  }
+
+  .hero-grid {
+    background-image:
+      linear-gradient(rgb(31 124 198 / 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(31 124 198 / 0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black, transparent);
+  }
+
+  .card-premium {
+    @apply rounded-2xl border border-cns-border/80 bg-white shadow-soft ring-0 transition-all duration-300 ease-out;
   }
 
   .bg-gradient-brand {
@@ -153,7 +185,7 @@
   }
 
   .glass {
-    @apply border border-cns-border/60 bg-white/80 backdrop-blur-xl;
+    @apply border border-white/60 bg-white/75 shadow-soft backdrop-blur-xl;
   }
 
   .shadow-soft {
@@ -172,12 +204,8 @@
     box-shadow: var(--shadow-glow-green);
   }
 
-  .card-premium {
-    @apply border-cns-border/80 bg-white shadow-soft ring-0 transition-all duration-300 ease-out;
-  }
-
   .card-premium-hover {
-    @apply hover:border-primary/15 hover:shadow-soft-lg;
+    @apply hover:-translate-y-0.5 hover:border-primary/20 hover:shadow-soft-lg;
   }
 
   .link-underline {

@@ -46,10 +46,12 @@ function StatisticsCard({
       <Card className="card-premium card-premium-hover h-full">
         <CardContent className="flex flex-col gap-2 px-6 py-8">
           <p
-            className="font-heading text-4xl font-semibold tracking-tight text-cns-navy sm:text-5xl"
+            className="font-heading text-4xl font-semibold tracking-tight sm:text-5xl"
             aria-label={`${value}${suffix ?? ""} ${label}`}
           >
-            <span aria-hidden="true">{displayValue}</span>
+            <span className="text-gradient-brand" aria-hidden="true">
+              {displayValue}
+            </span>
             {suffix ? (
               <span className="text-2xl text-primary sm:text-3xl" aria-hidden="true">
                 {suffix}
