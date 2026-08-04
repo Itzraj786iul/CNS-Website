@@ -138,7 +138,6 @@ function LightboxProvider({ children }: { children: React.ReactNode }) {
                   fill
                   className="object-contain"
                   sizes="(max-width: 1200px) 100vw, 1024px"
-                  priority
                 />
               </div>
               {(current.title || current.category) && (

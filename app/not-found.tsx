@@ -3,6 +3,15 @@ import { ArrowLeft, Home } from "lucide-react";
 
 import { Container } from "@/components/common/container";
 import { Button } from "@/components/ui/button";
+import { createPageMetadata } from "@/lib/metadata";
+
+export const metadata = createPageMetadata({
+  title: "Page Not Found",
+  description:
+    "The page you requested could not be found at the Center for Neuroscience website.",
+  path: "/404",
+  noIndex: true,
+});
 
 export default function NotFound() {
   return (

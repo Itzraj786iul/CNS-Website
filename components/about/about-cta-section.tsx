@@ -1,7 +1,3 @@
-"use client";
-
-import Link from "next/link";
-
 import { aboutContent } from "@/components/about/data";
 import { CTASection } from "@/components/common/cta-section";
 

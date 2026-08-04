@@ -58,7 +58,7 @@ function NavLink({
       onClick={onClick}
       aria-current={isActive ? "page" : undefined}
       className={cn(
-        "relative rounded-full px-3.5 py-2 text-sm font-medium transition-all duration-300",
+        "relative rounded-full px-2.5 py-2 text-xs font-medium transition-all duration-300 xl:px-3 xl:text-sm 2xl:px-3.5",
         isActive
           ? "bg-primary/8 text-primary shadow-soft"
           : "text-cns-navy/75 hover:bg-muted/80 hover:text-cns-navy"
@@ -89,10 +89,6 @@ function Navbar() {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  React.useEffect(() => {
-    setMobileOpen(false);
-  }, [pathname]);
 
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
@@ -175,6 +171,7 @@ function Navbar() {
                     <Link
                       key={item.href}
                       href={item.href}
+                      onClick={() => setMobileOpen(false)}
                       className={cn(
                         "rounded-xl px-4 py-3 text-base font-medium transition-colors",
                         isActive(item.href)

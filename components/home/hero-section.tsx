@@ -43,7 +43,7 @@ function HeroIllustration() {
           viewBox="0 0 480 480"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="h-full w-full drop-shadow-soft-lg"
+          className="h-full w-full [filter:drop-shadow(0_20px_40px_rgba(31,124,198,0.15))]"
           aria-hidden="true"
         >
           <circle cx="240" cy="240" r="200" fill="url(#heroGradient)" opacity="0.12" />

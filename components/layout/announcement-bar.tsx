@@ -19,13 +19,11 @@ function AnnouncementBar({
   href,
   className,
 }: AnnouncementBarProps) {
-  const [isVisible, setIsVisible] = React.useState(Boolean(message));
+  const [dismissedMessage, setDismissedMessage] = React.useState<string | null>(
+    null
+  );
 
-  React.useEffect(() => {
-    setIsVisible(Boolean(message));
-  }, [message]);
-
-  if (!message || !isVisible) {
+  if (!message || dismissedMessage === message) {
     return null;
   }
 
@@ -51,7 +49,7 @@ function AnnouncementBar({
         )}
         <button
           type="button"
-          onClick={() => setIsVisible(false)}
+          onClick={() => setDismissedMessage(message)}
           className="absolute right-4 rounded-full p-1 text-white/80 transition-colors hover:bg-white/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
           aria-label="Dismiss announcement"
         >

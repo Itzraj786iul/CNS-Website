@@ -6,7 +6,7 @@ import {
 } from "@/components/doctors/doctors-grid-section";
 import { FeaturedSection } from "@/components/doctors/featured-section";
 import { FilterBar } from "@/components/doctors/filter-bar";
-import { PageHero } from "@/components/doctors/page-hero";
+import { PageHero } from "@/components/common/page-hero";
 import { StatisticsSection } from "@/components/doctors/statistics-section";
 
 function DoctorsPageContent() {
@@ -15,6 +15,7 @@ function DoctorsPageContent() {
       <PageHero
         title={doctorsContent.hero.title}
         description={doctorsContent.hero.description}
+        breadcrumb={[{ label: "Home", href: "/" }, { label: "Doctors" }]}
       />
       <IntroductionSection />
       <FilterBar />

@@ -2,10 +2,9 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { CalendarDays, CheckCircle2, Clock, FileText, Phone } from "lucide-react";
 
-import { Breadcrumb } from "@/app/appointment/breadcrumb";
+import { PageHero } from "@/components/common/page-hero";
 import {
   appointmentDepartments,
   appointmentDoctors,
@@ -13,12 +12,10 @@ import {
 } from "@/components/contact/data";
 import { FormField, FormInput, FormSelect, FormTextarea } from "@/components/contact/form-fields";
 import { AnimatedSection } from "@/components/common/animated-section";
-import { Container } from "@/components/common/container";
 import { IconBox } from "@/components/common/icon-box";
 import { Section } from "@/components/common/section";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { fadeUp, staggerContainer } from "@/lib/motion";
 
 type FormData = {
   name: string;
@@ -66,22 +63,11 @@ function AppointmentPageContent() {
 
   return (
     <>
-      <section className="relative overflow-hidden bg-background pb-12 pt-8 md:pb-16 md:pt-10">
-        <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-linear-to-br from-primary/5 via-transparent to-secondary/5" />
-        <Container className="relative">
-          <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="max-w-3xl space-y-6">
-            <motion.div variants={fadeUp}>
-              <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Appointment" }]} />
-            </motion.div>
-            <motion.h1 variants={fadeUp} className="font-heading text-4xl font-semibold tracking-tight text-cns-navy sm:text-5xl lg:text-6xl">
-              Book an Appointment
-            </motion.h1>
-            <motion.p variants={fadeUp} className="max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-              Schedule a consultation with our neuroscience specialists. Complete the form below and our team will confirm your appointment promptly.
-            </motion.p>
-          </motion.div>
-        </Container>
-      </section>
+      <PageHero
+        title="Book an Appointment"
+        description="Schedule a consultation with our neuroscience specialists. Complete the form below and our team will confirm your appointment promptly."
+        breadcrumb={[{ label: "Home", href: "/" }, { label: "Appointment" }]}
+      />
 
       {submitted && formData ? (
         <Section variant="white" spacing="lg">
@@ -120,6 +106,7 @@ function AppointmentPageContent() {
               <form
                 className="space-y-5 rounded-3xl border border-cns-border/80 bg-white p-6 shadow-soft sm:p-8"
                 onSubmit={handleSubmit}
+                aria-label="Appointment booking form"
               >
                 <div className="grid gap-5 sm:grid-cols-2">
                   <FormField label="Patient Name" htmlFor="appt-name" required>

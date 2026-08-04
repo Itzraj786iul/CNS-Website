@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import type { LucideIcon } from "lucide-react";
 import { motion } from "framer-motion";
 
 import type { FacilityItem } from "@/components/facilities/data";

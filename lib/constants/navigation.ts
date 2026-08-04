@@ -56,13 +56,3 @@ export const footerServices = [
   { label: "Rehabilitation", href: "/services" },
 ];
 
-export const footerNavigation = {
-  explore: mainNavigation.filter((item) =>
-    ["/about", "/departments", "/doctors", "/services", "/facilities"].includes(
-      item.href
-    )
-  ),
-  resources: mainNavigation.filter((item) =>
-    ["/gallery", "/research", "/news", "/resources", "/contact"].includes(item.href)
-  ),
-} as const;

@@ -1,5 +1,3 @@
-"use client";
-
 import { departmentsContent } from "@/components/departments/data";
 import { CTASection } from "@/components/common/cta-section";
 
