@@ -14,8 +14,8 @@ function JourneySection() {
 
   return (
     <Section variant="default" spacing="default">
-      <div className="grid gap-8 lg:grid-cols-[1fr_1.4fr] lg:items-start lg:gap-12">
-        <AnimatedSection className="lg:sticky lg:top-28 lg:self-start">
+      <div className="grid gap-5 lg:grid-cols-[1fr_1.4fr] lg:items-stretch lg:gap-6">
+        <AnimatedSection className="flex flex-col justify-center">
           <SectionHeading
             eyebrow="Our Journey"
             title="Two Decades of Growth"

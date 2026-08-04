@@ -16,9 +16,9 @@ import { fadeUp } from "@/lib/motion";
 function AboutPreviewSection() {
   return (
     <Section variant="white" spacing="default" divider>
-      <div className="grid items-start gap-6 lg:grid-cols-2 lg:gap-8">
-        <AnimatedSection className="relative" direction="left">
-          <div className="relative image-placeholder aspect-[3/2] lg:max-h-[260px] lg:w-full">
+      <div className="grid items-start gap-5 lg:grid-cols-2 lg:gap-6">
+        <AnimatedSection className="relative lg:flex lg:flex-col lg:justify-center" direction="left">
+          <div className="relative image-placeholder aspect-[3/2] lg:max-h-[170px] lg:w-full">
             <Image
               src="https://placehold.co/640x800/EEF4F9/16324A/png?font=roboto&text=CNS+Medical+Team"
               alt="Center for Neuroscience medical team"
@@ -34,7 +34,7 @@ function AboutPreviewSection() {
           </div>
           <div
             aria-hidden="true"
-            className="absolute -bottom-6 -right-6 -z-10 size-48 rounded-full bg-secondary/10 blur-2xl"
+            className="absolute -bottom-4 -right-4 -z-10 size-32 rounded-full bg-secondary/10 blur-2xl"
           />
         </AnimatedSection>
 
@@ -47,7 +47,7 @@ function AboutPreviewSection() {
             />
           </AnimatedSection>
 
-          <AnimatedSection stagger className="grid gap-4 sm:grid-cols-2">
+          <AnimatedSection stagger className="grid gap-5 sm:grid-cols-2">
             {aboutFeatures.map((feature) => (
               <motion.div key={feature.title} variants={fadeUp}>
                 <FeatureCard
@@ -70,7 +70,7 @@ function AboutPreviewSection() {
                 </Link>
               }
               size="lg"
-              className="h-11 px-6"
+              className="px-6"
             />
           </AnimatedSection>
         </div>

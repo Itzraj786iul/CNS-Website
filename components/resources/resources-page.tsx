@@ -68,13 +68,13 @@ function ResourcesPageContent() {
       </Section>
 
       <Section variant="default" spacing="default" divider>
-        <div className="grid gap-8 lg:grid-cols-2 lg:gap-10">
-          <AnimatedSection direction="left">
-            <div className="space-y-6">
+        <div className="grid gap-5 lg:grid-cols-2 lg:items-stretch lg:gap-6">
+          <AnimatedSection direction="left" className="flex flex-col justify-center">
+            <div className="space-y-4">
               <SectionHeading eyebrow="Insurance" title={insurance.title} description={insurance.description} />
               <ul className="space-y-3">
                 {insurance.points.map((point) => (
-                  <li key={point} className="flex gap-3 rounded-xl border border-cns-border/60 bg-card px-4 py-3 text-sm leading-relaxed text-cns-navy/85 shadow-soft">
+                  <li key={point} className="flex gap-3 rounded-xl border border-cns-border/60 bg-card px-4 py-2.5 text-sm leading-relaxed text-cns-navy/85 shadow-soft">
                     <ShieldCheck className="mt-0.5 size-4 shrink-0 text-secondary" aria-hidden="true" />
                     {point}
                   </li>
@@ -82,11 +82,11 @@ function ResourcesPageContent() {
               </ul>
             </div>
           </AnimatedSection>
-          <AnimatedSection direction="right" stagger className="space-y-6">
+          <AnimatedSection direction="right" stagger className="space-y-4">
             {patientGuidelines.map((section) => (
               <motion.div key={section.title} variants={fadeUp}>
                 <Card className="card-premium card-premium-hover ring-0">
-                  <CardContent className="space-y-4 px-6 py-6">
+                  <CardContent className="space-y-3 px-5 py-5">
                     <div className="flex items-center gap-3">
                       <IconBox icon={Users} variant="green" size="sm" />
                       <h3 className="font-heading text-lg font-semibold text-cns-navy">{section.title}</h3>
@@ -109,9 +109,9 @@ function ResourcesPageContent() {
 
       <Section variant="white" spacing="default" divider>
         <AnimatedSection>
-          <div className="rounded-3xl border border-cns-border/80 bg-card p-6 shadow-soft sm:p-8">
+          <div className="rounded-[20px] border border-cns-border/80 bg-card p-5 shadow-soft sm:p-6">
             <SectionHeading eyebrow="Visitor Information" title="Visitor Guidelines" description="Help us maintain a calm, healing environment for every patient and family." />
-            <ul className="mt-8 space-y-3">
+            <ul className="mt-5 space-y-2.5">
               {visitorGuidelines.map((rule) => (
                 <li key={rule} className="flex gap-3 text-sm leading-relaxed text-cns-navy/85">
                   <span className="mt-2 size-1.5 shrink-0 rounded-full bg-secondary" />
@@ -124,10 +124,10 @@ function ResourcesPageContent() {
       </Section>
 
       <Section variant="default" spacing="default" divider>
-        <div className="rounded-3xl border border-destructive/20 bg-destructive/5 p-6 sm:p-10">
+        <div className="rounded-[20px] border border-destructive/20 bg-destructive/5 p-5 sm:p-6">
           <AnimatedSection>
-            <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
-              <div className="max-w-2xl space-y-4">
+            <div className="flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between">
+              <div className="max-w-2xl space-y-3">
                 <div className="flex items-center gap-3">
                   <IconBox icon={Siren} variant="orange" />
                   <h2 className="font-heading text-2xl font-semibold text-cns-navy">{emergency.title}</h2>
@@ -153,8 +153,8 @@ function ResourcesPageContent() {
       </Section>
 
       <Section variant="white" spacing="default" divider>
-        <div className="grid gap-8 lg:grid-cols-[1fr_1.2fr] lg:items-start lg:gap-10">
-          <AnimatedSection className="lg:sticky lg:top-28">
+        <div className="grid gap-5 lg:grid-cols-[1fr_1.2fr] lg:items-stretch lg:gap-6">
+          <AnimatedSection className="flex flex-col justify-center">
             <SectionHeading eyebrow="Your Questions" title="Clear Guidance Before You Visit" description="Practical answers about visits, medical records, insurance, and hospital policies at CNS." />
           </AnimatedSection>
           <AnimatedSection>

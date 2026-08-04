@@ -367,7 +367,7 @@
   }
 
   .card-body {
-    @apply px-3.5 py-3 sm:px-4 sm:py-4;
+    @apply px-5 py-5;
   }
 
   .photo-frame {
@@ -377,7 +377,7 @@
   }
 
   .image-placeholder {
-    @apply relative overflow-hidden rounded-3xl border shadow-soft-lg;
+    @apply relative overflow-hidden rounded-[20px] border shadow-soft-lg;
     background: linear-gradient(145deg, var(--placeholder-from), var(--placeholder-to));
     border-color: var(--border);
   }
@@ -450,7 +450,7 @@
   }
 
   .section-stack {
-    @apply space-y-4;
+    @apply space-y-3.5;
   }
 
   .section-surface-white {

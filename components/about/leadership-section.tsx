@@ -24,7 +24,7 @@ function LeadershipSection() {
           />
         </AnimatedSection>
 
-        <AnimatedSection stagger className="grid gap-6 md:grid-cols-3">
+        <AnimatedSection stagger className="grid gap-5 md:grid-cols-3">
           {aboutContent.leadership.map((leader) => (
             <motion.div key={leader.name} variants={fadeUp}>
               <motion.div
@@ -33,7 +33,7 @@ function LeadershipSection() {
                 variants={hoverLift}
               >
                 <Card className="card-premium card-premium-hover overflow-hidden ring-0">
-                  <div className="photo-frame relative aspect-[3/4] max-h-[280px]">
+                  <div className="photo-frame relative aspect-[3/4] max-h-[180px]">
                     <Image
                       src={leader.image.src}
                       alt={leader.image.alt}
@@ -42,7 +42,7 @@ function LeadershipSection() {
                       sizes="(max-width: 768px) 100vw, 33vw"
                     />
                   </div>
-                  <CardContent className="space-y-3 px-5 py-5">
+                  <CardContent className="space-y-2.5 px-5 py-5">
                     <Tag variant="blue">{leader.role}</Tag>
                     <h3 className="font-heading text-xl font-semibold text-cns-navy">
                       {leader.name}

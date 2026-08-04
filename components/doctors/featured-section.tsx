@@ -22,7 +22,7 @@ function FeaturedSection() {
           />
         </AnimatedSection>
 
-        <AnimatedSection stagger className="grid gap-6 md:grid-cols-3">
+        <AnimatedSection stagger className="grid gap-5 md:grid-cols-3">
           {featuredDoctors.map((doctor) => (
             <motion.div key={doctor.id} variants={fadeUp}>
               <DoctorProfileCard doctor={doctor} />

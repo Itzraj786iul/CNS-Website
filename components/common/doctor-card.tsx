@@ -51,7 +51,7 @@ function DoctorCard({
   const content = (
     <Card className="group/doctor flex h-full flex-col overflow-hidden card-premium card-premium-hover ring-0">
       <div className="p-3 pb-0">
-        <div className="photo-frame relative aspect-[3/4] max-h-[220px] sm:max-h-[240px]">
+        <div className="photo-frame relative aspect-[3/4] max-h-[150px] sm:max-h-[165px]">
           <Image
             src={image.src}
             alt={image.alt}

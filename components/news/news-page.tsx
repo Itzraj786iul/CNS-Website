@@ -40,15 +40,15 @@ function NewsPageContent() {
           <AnimatedSection>
             <SectionHeading eyebrow="Latest Updates" title="News from CNS" description="Recent announcements and clinical milestones from across Center for Neuroscience." />
           </AnimatedSection>
-          <AnimatedSection stagger className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          <AnimatedSection stagger className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {news.map((item) => (
               <motion.article key={item.title} variants={fadeUp}>
                 <motion.div initial="rest" whileHover="hover" variants={hoverLift}>
                   <Card className="card-premium card-premium-hover overflow-hidden ring-0">
-                    <div className="image-placeholder relative aspect-[16/10]">
+                    <div className="image-placeholder relative aspect-[16/10] max-h-[160px]">
                       <Image src={item.image} alt={item.title} fill loading="lazy" className="img-zoom object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
                     </div>
-                    <CardContent className="space-y-3 px-6 py-6">
+                    <CardContent className="space-y-2.5 px-5 py-5">
                       <div className="flex flex-wrap items-center gap-3">
                         <Tag variant={categoryVariant[item.category as keyof typeof categoryVariant] ?? "default"}>{item.category}</Tag>
                         <span className="inline-flex items-center gap-1.5 text-xs text-muted-foreground">
@@ -94,7 +94,7 @@ function NewsPageContent() {
       </Section>
 
       <Section variant="default" spacing="default" divider>
-        <div className="grid gap-8 lg:grid-cols-2 lg:gap-10">
+        <div className="grid gap-5 lg:grid-cols-2 lg:items-start lg:gap-6">
           <div className="section-stack">
             <AnimatedSection direction="left">
               <SectionHeading eyebrow="Calendar" title="Upcoming Events" description="Join us for community programs, support groups, and awareness initiatives." />

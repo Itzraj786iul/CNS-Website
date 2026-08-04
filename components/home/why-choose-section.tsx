@@ -13,9 +13,9 @@ import { fadeUp } from "@/lib/motion";
 function WhyChooseSection() {
   return (
     <Section variant="muted" spacing="default">
-      <div className="grid items-start gap-6 lg:grid-cols-2 lg:gap-8">
-        <AnimatedSection className="relative order-2 lg:order-1" direction="left">
-          <div className="relative image-placeholder aspect-[3/2] lg:max-h-[260px] lg:w-full">
+      <div className="grid items-start gap-5 lg:grid-cols-2 lg:gap-6">
+        <AnimatedSection className="relative order-2 lg:order-1 lg:flex lg:flex-col lg:justify-center" direction="left">
+          <div className="relative image-placeholder aspect-[3/2] lg:max-h-[170px] lg:w-full">
             <Image
               src="https://placehold.co/640x800/F8FBFD/1F7CC6/png?font=roboto&text=Advanced+Neuro+Care"
               alt="Advanced neuroscience care at CNS"
@@ -30,7 +30,7 @@ function WhyChooseSection() {
           </div>
           <div
             aria-hidden="true"
-            className="absolute -left-6 -top-6 -z-10 size-40 rounded-full bg-primary/10 blur-2xl"
+            className="absolute -left-4 -top-4 -z-10 size-28 rounded-full bg-primary/10 blur-2xl"
           />
         </AnimatedSection>
 

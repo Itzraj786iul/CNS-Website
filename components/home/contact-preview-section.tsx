@@ -1,18 +1,17 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, Mail, MapPin, Phone, Siren } from "lucide-react";
+import { Mail, MapPin, Phone, Siren } from "lucide-react";
 import { motion } from "framer-motion";
 
 import { contactCards } from "@/components/home/data";
 import { AnimatedSection } from "@/components/common/animated-section";
 import { IconBox } from "@/components/common/icon-box";
+import { LocationMapPanel } from "@/components/common/location-map-panel";
 import { Section } from "@/components/common/section";
 import { SectionHeading } from "@/components/common/section-heading";
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { isTelHref } from "@/lib/contact-links";
-import { siteConfig } from "@/lib/constants/site";
 import { fadeUp, hoverLift } from "@/lib/motion";
 
 const iconMap = {
@@ -89,58 +88,7 @@ function ContactPreviewSection() {
         </AnimatedSection>
 
         <AnimatedSection>
-          <div className="grid gap-5 lg:grid-cols-2 lg:items-start">
-            <div className="image-placeholder overflow-hidden rounded-3xl">
-              <div className="relative h-40 w-full sm:h-44">
-                <iframe
-                  title="Center for Neuroscience location map"
-                  src="https://maps.google.com/maps?q=Raipur+Chhattisgarh&output=embed"
-                  className="absolute inset-0 h-full w-full border-0 grayscale-[30%]"
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                />
-                <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-cns-border/40" />
-              </div>
-            </div>
-
-            <Card className="card-premium card-premium-hover ring-0">
-              <CardContent className="space-y-4 px-4 py-5 sm:px-5">
-                <div className="space-y-2.5">
-                  <IconBox icon={MapPin} variant="orange" />
-                  <h3 className="font-heading text-xl font-semibold text-cns-navy">
-                    Visit {siteConfig.shortName}
-                  </h3>
-                  <p className="text-base leading-relaxed text-muted-foreground">
-                    {siteConfig.contact.address}
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    {siteConfig.location} · Parking and wheelchair access available
-                  </p>
-                </div>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li>
-                    <span className="font-medium text-cns-navy">Outpatient:</span>{" "}
-                    {siteConfig.hours.outpatient}
-                  </li>
-                  <li>
-                    <span className="font-medium text-cns-navy">Emergency:</span>{" "}
-                    {siteConfig.hours.emergency}
-                  </li>
-                </ul>
-                <Button
-                  nativeButton={false}
-                  render={
-                    <Link href="/contact">
-                      Get Directions
-                      <ArrowRight />
-                    </Link>
-                  }
-                  variant="outline"
-                    className="h-11 w-fit rounded-full border-border px-6 font-semibold text-cns-navy hover:border-primary/35 hover:bg-primary/5"
-                />
-              </CardContent>
-            </Card>
-          </div>
+          <LocationMapPanel showDirections directionsHref="/contact" />
         </AnimatedSection>
       </div>
     </Section>

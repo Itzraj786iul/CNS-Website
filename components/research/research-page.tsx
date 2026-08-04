@@ -84,11 +84,11 @@ function ResearchPageContent() {
       </Section>
 
       <Section variant="white" spacing="default" divider>
-        <div className="grid gap-8 lg:grid-cols-2 lg:items-start lg:gap-10">
-          <AnimatedSection direction="left">
+        <div className="section-stack">
+          <AnimatedSection className="mx-auto max-w-3xl text-center">
             <SectionHeading eyebrow="Studies" title="Clinical Studies" description="Ongoing and completed trials advancing evidence-based neurological care." />
           </AnimatedSection>
-          <AnimatedSection stagger className="space-y-4">
+          <AnimatedSection stagger className="grid gap-5 sm:grid-cols-2">
             {studies.map((study) => (
               <motion.div key={study.title} variants={fadeUp}>
                 <Card className="card-premium card-premium-hover ring-0">

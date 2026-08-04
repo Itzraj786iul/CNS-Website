@@ -26,7 +26,7 @@ function FooterLink({ href, children }: { href: string; children: React.ReactNod
   return (
     <Link
       href={href}
-      className="text-[13px] text-white/78 transition-colors duration-200 hover:text-white"
+      className="text-[13px] leading-snug text-white/78 transition-colors duration-200 hover:text-white"
     >
       {children}
     </Link>
@@ -45,7 +45,7 @@ function FooterSection({
       <h3 className="font-heading text-[10px] font-semibold uppercase tracking-[0.14em] text-white/88">
         {title}
       </h3>
-      <ul className="mt-2.5 space-y-2">
+      <ul className="mt-2 space-y-1.5">
         {links.map((link) => (
           <li key={`${title}-${link.label}`}>
             <FooterLink href={link.href}>{link.label}</FooterLink>
@@ -72,7 +72,7 @@ function SocialLink({
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
-      className="inline-flex size-8 items-center justify-center rounded-full border border-white/12 text-white/75 transition-all duration-300 hover:border-white/25 hover:bg-white/10 hover:text-white"
+      className="inline-flex size-7 items-center justify-center rounded-full border border-white/12 text-white/75 transition-all duration-300 hover:border-white/25 hover:bg-white/10 hover:text-white"
     >
       <Icon className="size-3.5 stroke-[1.75]" />
     </a>
@@ -93,14 +93,14 @@ function Footer() {
         aria-hidden="true"
         className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-primary/50 to-transparent"
       />
-      <Container className="relative py-6 md:py-7">
-        <div className="grid min-w-0 gap-6 sm:grid-cols-2 lg:grid-cols-12 lg:gap-x-6 lg:gap-y-5">
-          <div className="min-w-0 space-y-3 sm:col-span-2 lg:col-span-4">
-            <LogoLink size="md" variant="footer" linkClassName="hover:scale-100" />
+      <Container className="relative py-5 md:py-6">
+        <div className="grid min-w-0 gap-5 sm:grid-cols-2 lg:grid-cols-12 lg:gap-x-5 lg:gap-y-4">
+          <div className="min-w-0 space-y-2.5 sm:col-span-2 lg:col-span-4">
+            <LogoLink size="sm" variant="footer" linkClassName="hover:scale-100" />
             <p className="max-w-xs text-[11px] font-semibold uppercase tracking-[0.12em] text-secondary">
               Center for Neuroscience · Raipur
             </p>
-            <p className="max-w-sm text-[13px] leading-relaxed text-white/75">
+            <p className="max-w-sm text-[13px] leading-snug text-white/75">
               Integrated neurology, neurosurgery, psychiatry, and rehabilitation under one trusted institution.
             </p>
             <div className="flex flex-wrap gap-2">
@@ -113,7 +113,7 @@ function Footer() {
                   </Link>
                 }
                 size="sm"
-                className="h-9 rounded-full bg-secondary font-semibold text-secondary-foreground shadow-glow-green hover:bg-secondary/90"
+                className="h-8 rounded-full bg-secondary px-3.5 text-xs font-semibold text-secondary-foreground shadow-glow-green hover:bg-secondary/90"
               />
               <Button
                 nativeButton={false}
@@ -125,10 +125,10 @@ function Footer() {
                 }
                 variant="outline"
                 size="sm"
-                className="h-9 rounded-full border-white/20 bg-white/5 text-white hover:border-white/30 hover:bg-white/10 hover:text-white"
+                className="h-8 rounded-full border-white/20 bg-white/5 px-3.5 text-xs text-white hover:border-white/30 hover:bg-white/10 hover:text-white"
               />
             </div>
-            <div className="flex flex-wrap gap-2 pt-0.5">
+            <div className="flex flex-wrap gap-1.5">
               <SocialLink href={social.facebook} label="Facebook" icon={FacebookIcon} />
               <SocialLink href={social.instagram} label="Instagram" icon={InstagramIcon} />
               <SocialLink href={social.linkedin} label="LinkedIn" icon={LinkedInIcon} />
@@ -146,19 +146,19 @@ function Footer() {
             <FooterSection title="Services" links={footerServices} />
           </div>
 
-          <div className="space-y-3 sm:col-span-2 lg:col-span-2">
-            <div className="rounded-xl border border-destructive/25 bg-destructive/[0.06] p-3.5 ring-1 ring-destructive/10">
+          <div className="space-y-2.5 sm:col-span-2 lg:col-span-2">
+            <div className="rounded-[20px] border border-destructive/25 bg-destructive/[0.06] p-3 ring-1 ring-destructive/10">
               <h3 className="font-heading text-[10px] font-semibold uppercase tracking-[0.14em] text-white/95">
-                Emergency
+                Emergency & Contact
               </h3>
               <a
                 href={emergencyHref}
-                className="mt-1.5 inline-flex items-center gap-2 font-heading text-sm font-semibold text-white hover:text-white/90"
+                className="mt-1 inline-flex items-center gap-1.5 font-heading text-sm font-semibold text-white hover:text-white/90"
               >
                 <Siren className="size-3.5 shrink-0 text-destructive" />
                 {contact.emergency}
               </a>
-              <ul className="mt-2.5 space-y-1.5 text-[13px] text-white/75">
+              <ul className="mt-2 space-y-1 text-[13px] leading-snug text-white/75">
                 <li className="flex items-start gap-2">
                   <Mail className="mt-0.5 size-3.5 shrink-0 text-secondary" />
                   <a href={`mailto:${contact.email}`} className="hover:text-white">
@@ -178,32 +178,28 @@ function Footer() {
                   </li>
                 ) : null}
               </ul>
-            </div>
-
-            <div>
-              <h3 className="font-heading text-[10px] font-semibold uppercase tracking-[0.14em] text-white/88">
-                Working Hours
-              </h3>
-              <ul className="mt-2 space-y-1 text-[13px] leading-snug text-white/75">
-                <li>
-                  <span className="font-medium text-white/85">Outpatient:</span> {hours.outpatient}
-                </li>
-                <li>
-                  <span className="font-medium text-white/85">Emergency:</span> {hours.emergency}
-                </li>
-                <li>
-                  <span className="font-medium text-white/85">Diagnostics:</span> {hours.diagnostics}
-                </li>
-              </ul>
+              <div className="mt-2.5 border-t border-white/10 pt-2.5">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-white/70">
+                  Hours
+                </p>
+                <ul className="mt-1 space-y-0.5 text-[12px] leading-snug text-white/70">
+                  <li>
+                    <span className="text-white/85">OPD:</span> {hours.outpatient}
+                  </li>
+                  <li>
+                    <span className="text-white/85">ER:</span> {hours.emergency}
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
 
-        <Separator className="my-5 bg-white/10" />
+        <Separator className="my-4 bg-white/10" />
 
-        <div className="flex flex-col gap-2 text-[13px] text-white/60 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex flex-col gap-1.5 text-[12px] text-white/60 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-3">
             <FooterLink href="/resources">Patient Resources</FooterLink>
             <FooterLink href="/contact">Privacy Policy</FooterLink>
             <FooterLink href="/contact">Terms of Use</FooterLink>

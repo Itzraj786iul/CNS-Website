@@ -71,9 +71,9 @@ function PatientSafetySection() {
             <motion.div key={item.title} variants={fadeUp}>
               <motion.div initial="rest" whileHover="hover" variants={hoverLift}>
                 <Card className="border-cns-border/80 bg-card shadow-soft ring-0">
-                  <CardContent className="space-y-3 px-5 py-6">
-                    <IconBox icon={item.icon} variant={(["blue", "green", "orange", "navy"] as const)[index % 4]} />
-                    <h3 className="font-heading text-lg font-semibold text-cns-navy">{item.title}</h3>
+                  <CardContent className="space-y-2.5 px-5 py-5">
+                    <IconBox icon={item.icon} variant={(["blue", "green", "orange", "navy"] as const)[index % 4]} size="sm" />
+                    <h3 className="font-heading text-base font-semibold text-cns-navy">{item.title}</h3>
                     <p className="text-sm leading-relaxed text-muted-foreground">{item.description}</p>
                   </CardContent>
                 </Card>

@@ -111,7 +111,7 @@ function CTASection({
                     }
                     size="lg"
                     className={cn(
-                      "h-11 rounded-full px-6",
+                      "rounded-full px-6",
                       isNavy &&
                         "bg-secondary text-secondary-foreground shadow-glow-green hover:bg-secondary/90"
                     )}
@@ -128,7 +128,7 @@ function CTASection({
                     variant="outline"
                     size="lg"
                     className={cn(
-                      "h-11 rounded-full px-6",
+                      "rounded-full px-6",
                       isNavy &&
                         "border-white/35 bg-white/5 text-white hover:border-white/50 hover:bg-white/12 hover:text-white"
                     )}

@@ -9,6 +9,7 @@ import { FormField, FormInput, FormTextarea } from "@/components/contact/form-fi
 import { AnimatedSection } from "@/components/common/animated-section";
 import { EmergencyBanner } from "@/components/common/emergency-banner";
 import { IconBox } from "@/components/common/icon-box";
+import { LocationMapPanel } from "@/components/common/location-map-panel";
 import { Section } from "@/components/common/section";
 import { SectionHeading } from "@/components/common/section-heading";
 import { FAQCard } from "@/components/common/faq-card";
@@ -67,9 +68,9 @@ function ContactCardsSection() {
 function ContactFormSection() {
   return (
     <Section variant="default" spacing="default">
-      <div className="grid gap-6 lg:grid-cols-12 lg:items-start lg:gap-8">
+      <div className="grid gap-5 lg:grid-cols-12 lg:items-start lg:gap-6">
         <AnimatedSection className="lg:col-span-7">
-          <div className="mb-6 space-y-4">
+          <div className="mb-5 space-y-3">
             <SectionHeading
               eyebrow="Get in Touch"
               title="Send Us a Message"
@@ -79,7 +80,7 @@ function ContactFormSection() {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex h-11 items-center justify-center gap-2 rounded-full bg-[#25D366] px-5 text-sm font-semibold text-white shadow-soft transition-all duration-300 hover:scale-[1.02] hover:shadow-soft-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366]/50 focus-visible:ring-offset-2"
+              className="inline-flex h-[46px] items-center justify-center gap-2 rounded-full bg-[#25D366] px-5 text-sm font-semibold text-white shadow-soft transition-all duration-300 hover:scale-[1.02] hover:shadow-soft-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366]/50 focus-visible:ring-offset-2"
               aria-label="Chat on WhatsApp with Center for Neuroscience"
             >
               <MessageCircle className="size-4" aria-hidden="true" />
@@ -87,7 +88,7 @@ function ContactFormSection() {
             </a>
           </div>
           <form
-            className="space-y-4 rounded-2xl border border-border bg-card p-5 shadow-soft sm:p-6"
+            className="space-y-4 rounded-[20px] border border-border bg-card p-5 shadow-soft sm:p-6"
             onSubmit={(e) => e.preventDefault()}
           >
             <div className="grid gap-4 sm:grid-cols-2">
@@ -107,37 +108,17 @@ function ContactFormSection() {
             <FormField label="Message" htmlFor="contact-message" required>
               <FormTextarea id="contact-message" name="message" placeholder="Describe your inquiry..." rows={4} />
             </FormField>
-            <Button type="submit" size="lg" className="h-11 w-full sm:w-auto sm:px-8">
+            <Button type="submit" size="lg" className="w-full sm:w-auto sm:px-8">
               Send Message
             </Button>
           </form>
         </AnimatedSection>
 
-        <AnimatedSection className="flex flex-col gap-4 lg:col-span-5">
-          <div className="overflow-hidden rounded-2xl border border-border bg-muted shadow-soft">
-            <div className="relative h-40 w-full sm:h-44">
-              <iframe
-                title="Center for Neuroscience location"
-                src="https://maps.google.com/maps?q=Raipur+Chhattisgarh&output=embed"
-                className="absolute inset-0 h-full w-full border-0 grayscale-[30%]"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
-            </div>
-          </div>
-          <Card className="border-border bg-card shadow-soft ring-0">
-            <CardContent className="space-y-3 px-5 py-5 sm:px-6">
-              <h3 className="font-heading text-lg font-semibold text-cns-navy">{contactContent.timings.title}</h3>
-              <ul className="space-y-2.5">
-                {contactContent.timings.schedules.map((item) => (
-                  <li key={item.label} className="flex flex-col gap-0.5 border-b border-border/70 pb-2.5 last:border-0 last:pb-0">
-                    <span className="text-sm font-medium text-cns-navy">{item.label}</span>
-                    <span className="text-sm text-muted-foreground">{item.hours}</span>
-                  </li>
-                ))}
-              </ul>
-            </CardContent>
-          </Card>
+        <AnimatedSection className="lg:col-span-5 lg:self-stretch">
+          <LocationMapPanel
+            className="h-full"
+            hours={contactContent.timings.schedules}
+          />
         </AnimatedSection>
       </div>
     </Section>
@@ -191,8 +172,8 @@ function EmergencyBannerSection() {
 function FaqSection() {
   return (
     <Section variant="white" spacing="default">
-      <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-start lg:gap-8">
-        <AnimatedSection>
+      <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr] lg:items-stretch lg:gap-6">
+        <AnimatedSection className="flex flex-col justify-center">
           <SectionHeading
             eyebrow="Your Questions"
             title="Clear Guidance Before You Visit"

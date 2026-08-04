@@ -14,9 +14,9 @@ function WhyChooseSection() {
   const { whyChoose } = servicesContent;
   return (
     <Section variant="default" spacing="default">
-      <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
-        <AnimatedSection className="relative">
-          <div className="relative image-placeholder aspect-[3/2] lg:max-h-[240px] lg:w-full">
+      <div className="grid items-center gap-5 lg:grid-cols-2 lg:gap-6">
+        <AnimatedSection className="relative lg:flex lg:flex-col lg:justify-center">
+          <div className="relative image-placeholder aspect-[3/2] lg:max-h-[160px] lg:w-full">
             <Image
               src="https://placehold.co/720x540/EEF4F9/16324A/png?font=roboto&text=Patient+Care"
               alt="Patient receiving neurological care at CNS"
@@ -30,9 +30,9 @@ function WhyChooseSection() {
           <AnimatedSection>
             <SectionHeading eyebrow={whyChoose.eyebrow} title={whyChoose.title} description={whyChoose.description} />
           </AnimatedSection>
-          <AnimatedSection stagger className="space-y-4">
+          <AnimatedSection stagger className="space-y-3">
             {whyChoose.points.map((point) => (
-              <motion.div key={point} variants={fadeUp} className="flex gap-3 rounded-xl border border-cns-border/60 bg-card p-4 shadow-soft">
+              <motion.div key={point} variants={fadeUp} className="flex gap-3 rounded-xl border border-cns-border/60 bg-card p-3.5 shadow-soft">
                 <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-secondary" />
                 <p className="text-sm leading-relaxed text-cns-navy/85">{point}</p>
               </motion.div>

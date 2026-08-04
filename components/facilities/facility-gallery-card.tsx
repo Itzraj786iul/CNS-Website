@@ -17,9 +17,9 @@ function FacilityGalleryCard({ facility }: { facility: FacilityItem }) {
   } as const;
 
   const aspectClasses = {
-    large: "min-h-[220px] md:min-h-[300px]",
-    medium: "min-h-[200px] md:min-h-[260px]",
-    small: "min-h-[180px]",
+    large: "min-h-[140px] md:min-h-[195px]",
+    medium: "min-h-[130px] md:min-h-[170px]",
+    small: "min-h-[120px]",
   } as const;
 
   return (
@@ -39,7 +39,7 @@ function FacilityGalleryCard({ facility }: { facility: FacilityItem }) {
             sizes="(max-width: 768px) 100vw, 50vw"
           />
           <div className="absolute inset-0 bg-linear-to-t from-black/85 via-black/30 to-transparent" />
-          <CardContent className="absolute inset-x-0 bottom-0 space-y-2 p-5">
+          <CardContent className="absolute inset-x-0 bottom-0 space-y-2 p-4">
             <IconBox icon={facility.icon} variant={facility.iconVariant} size="default" className="bg-white/15 text-white backdrop-blur-sm [&_svg]:text-white" />
             <div>
               <h3 className="font-heading text-lg font-semibold text-white">{facility.title}</h3>

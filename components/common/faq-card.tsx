@@ -25,7 +25,7 @@ function FAQCard({ items, className }: FAQCardProps) {
     <div
       data-slot="faq-card"
       className={cn(
-        "overflow-hidden rounded-3xl card-premium card-premium-hover",
+        "overflow-hidden rounded-[20px] card-premium card-premium-hover",
         className
       )}
     >
@@ -36,7 +36,7 @@ function FAQCard({ items, className }: FAQCardProps) {
             value={`faq-${index}`}
             className="border-border px-5 last:border-b-0 sm:px-6"
           >
-            <AccordionTrigger className="py-4 text-left font-heading text-[15px] font-semibold text-cns-navy transition-colors hover:text-primary hover:no-underline sm:py-4 [&[data-state=open]]:text-primary">
+            <AccordionTrigger className="py-3.5 text-left font-heading text-[15px] font-semibold text-cns-navy transition-colors hover:text-primary hover:no-underline sm:py-3.5 [&[data-state=open]]:text-primary">
               {item.question}
             </AccordionTrigger>
             <AccordionContent className="pb-4 text-sm leading-[1.75] text-muted-foreground sm:pb-5">

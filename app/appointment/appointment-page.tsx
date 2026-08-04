@@ -105,10 +105,10 @@ function AppointmentPageContent() {
         </Section>
       ) : (
         <Section variant="default" spacing="default" className="!pt-6">
-          <div className="grid gap-8 lg:grid-cols-[1.3fr_0.7fr] lg:items-start lg:gap-10">
+          <div className="grid gap-5 lg:grid-cols-[1.3fr_0.7fr] lg:items-start lg:gap-6">
             <AnimatedSection>
               <form
-                className="space-y-5 rounded-3xl border border-cns-border/80 bg-card p-6 shadow-soft sm:p-8"
+                className="space-y-4 rounded-[20px] border border-cns-border/80 bg-card p-5 shadow-soft sm:p-6"
                 onSubmit={handleSubmit}
                 aria-label="Appointment booking form"
               >
@@ -169,16 +169,16 @@ function AppointmentPageContent() {
               </form>
             </AnimatedSection>
 
-            <AnimatedSection className="space-y-6">
+            <AnimatedSection className="space-y-5">
               <Card className="card-premium card-premium-hover ring-0">
-                <CardContent className="space-y-6 px-6 py-8">
+                <CardContent className="space-y-4 px-5 py-5">
                   <div>
-                    <h2 className="font-heading text-xl font-semibold text-cns-navy">How It Works</h2>
-                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                    <h2 className="font-heading text-lg font-semibold text-cns-navy">How It Works</h2>
+                    <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
                       Booking an appointment at CNS is simple. Follow these steps for a smooth experience.
                     </p>
                   </div>
-                  <ol className="space-y-5">
+                  <ol className="space-y-3.5">
                     {processSteps.map((step, index) => (
                       <li key={step.title} className="flex gap-4">
                         <IconBox icon={step.icon} variant={(["blue", "green", "orange", "navy"] as const)[index % 4]} size="sm" className="shrink-0" />
@@ -193,7 +193,7 @@ function AppointmentPageContent() {
               </Card>
 
               <Card className="footer-surface border-white/10 shadow-soft ring-0">
-                <CardContent className="space-y-4 px-6 py-8">
+                <CardContent className="space-y-3 px-5 py-5">
                   <div className="flex items-center gap-3">
                     <Clock className="size-5 text-secondary" />
                     <h3 className="font-heading text-base font-semibold text-white">Outpatient Hours</h3>
@@ -208,7 +208,7 @@ function AppointmentPageContent() {
                       </Link>
                     }
                     variant="outline"
-                    className="mt-2 h-10 w-full rounded-full border-white/35 bg-white/5 font-semibold text-white hover:border-white/50 hover:bg-white/12 hover:text-white"
+                    className="mt-1 h-[46px] w-full rounded-full border-white/35 bg-white/5 font-semibold text-white hover:border-white/50 hover:bg-white/12 hover:text-white"
                   />
                 </CardContent>
               </Card>

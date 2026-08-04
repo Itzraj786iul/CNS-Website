@@ -15,9 +15,9 @@ function WhyDepartmentsSection() {
 
   return (
     <Section variant="white" spacing="default">
-      <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
-        <AnimatedSection className="relative">
-          <div className="relative image-placeholder aspect-[3/2] lg:max-h-[240px] lg:w-full">
+      <div className="grid items-center gap-5 lg:grid-cols-2 lg:gap-6">
+        <AnimatedSection className="relative lg:flex lg:flex-col lg:justify-center">
+          <div className="relative image-placeholder aspect-[3/2] lg:max-h-[160px] lg:w-full">
             <Image
               src="https://placehold.co/720x540/F8FBFD/1F7CC6/png?font=roboto&text=Multidisciplinary+Care"
               alt="Multidisciplinary neuroscience team at CNS"
@@ -37,12 +37,12 @@ function WhyDepartmentsSection() {
             />
           </AnimatedSection>
 
-          <AnimatedSection stagger className="space-y-5">
+          <AnimatedSection stagger className="space-y-3">
             {whyDepartments.points.map((point) => (
               <motion.div
                 key={point.title}
                 variants={fadeUp}
-                className="flex gap-4 rounded-2xl border border-cns-border/60 bg-background p-5 transition-colors hover:border-primary/20 hover:bg-card hover:shadow-soft"
+                className="flex gap-3 rounded-[20px] border border-cns-border/60 bg-background p-3.5 transition-colors hover:border-primary/20 hover:bg-card hover:shadow-soft"
               >
                 <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-secondary" />
                 <div className="space-y-1">

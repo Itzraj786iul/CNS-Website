@@ -25,7 +25,7 @@ import { fadeUp, staggerContainer } from "@/lib/motion";
 
 function HeroIllustration() {
   return (
-    <div className="relative mx-auto aspect-[6/5] w-full max-w-sm sm:max-w-md lg:max-w-none lg:max-h-[300px]">
+    <div className="relative mx-auto aspect-[6/5] w-full max-w-sm sm:max-w-md lg:max-w-none lg:max-h-[195px]">
       <motion.div
         aria-hidden="true"
         animate={{ y: [0, -10, 0] }}

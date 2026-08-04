@@ -14,9 +14,9 @@ function AboutCnsSection() {
 
   return (
     <Section variant="white" spacing="default">
-      <div className="grid items-start gap-6 lg:grid-cols-2 lg:gap-8">
-        <AnimatedSection className="relative order-2 lg:order-1">
-          <div className="relative image-placeholder aspect-[3/2] lg:max-h-[260px] lg:w-full">
+      <div className="grid items-start gap-5 lg:grid-cols-2 lg:gap-6">
+        <AnimatedSection className="relative order-2 lg:order-1 lg:flex lg:flex-col lg:justify-center">
+          <div className="relative image-placeholder aspect-[3/2] lg:max-h-[170px] lg:w-full">
             <Image
               src={aboutCns.image.src}
               alt={aboutCns.image.alt}
@@ -27,11 +27,11 @@ function AboutCnsSection() {
           </div>
           <div
             aria-hidden="true"
-            className="absolute -bottom-6 -right-6 -z-10 size-48 rounded-full bg-primary/10 blur-2xl"
+            className="absolute -bottom-4 -right-4 -z-10 size-32 rounded-full bg-primary/10 blur-2xl"
           />
         </AnimatedSection>
 
-        <AnimatedSection className="order-1 space-y-6 lg:order-2">
+        <AnimatedSection className="order-1 space-y-4 lg:order-2 lg:flex lg:flex-col lg:justify-center">
           <SectionHeading
             eyebrow="Our Story"
             title={aboutCns.title}
