@@ -34,7 +34,7 @@ export const facilitiesContent = {
     eyebrow: "Clinical Infrastructure",
     title: "Technology Supporting Better Outcomes",
     description:
-      "Every scan, monitor, and surgical tool exists for one reason — to help us find answers faster and treat you with greater precision and safety.",
+      "Advanced imaging, neuro ICU, modular operating theatres, and 24×7 emergency infrastructure on one campus.",
   },
   overview: {
     eyebrow: "Clinical Excellence",

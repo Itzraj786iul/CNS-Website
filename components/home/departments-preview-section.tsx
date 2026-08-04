@@ -6,20 +6,21 @@ import { ArrowRight } from "lucide-react";
 import { DepartmentCard } from "@/components/common/department-card";
 import { CardGridItem, CardGridSection } from "@/components/common/sections";
 import { Button } from "@/components/ui/button";
-import { departments } from "@/components/home/data";
+import { homepageDepartments } from "@/components/home/data";
 
 function DepartmentsPreviewSection() {
   return (
     <CardGridSection
       variant="default"
-      spacing="default"
+      spacing="sm"
+      divider
       density="preview"
       heading={{
         align: "center",
-        eyebrow: "Comprehensive Neuroscience Care",
+        eyebrow: "Comprehensive Care",
         title: "Integrated Brain & Spine Specialties",
         description:
-          "From acute emergencies to long-term rehabilitation — every discipline works together under one roof, so your care never falls through the gaps.",
+          "Neurology, neurosurgery, psychiatry, and rehabilitation — one coordinated team.",
       }}
       footer={
         <div className="flex justify-center">
@@ -32,13 +33,13 @@ function DepartmentsPreviewSection() {
               </Link>
             }
             variant="outline"
-            size="lg"
-            className="border-cns-border px-6"
+            size="default"
+            className="border-cns-border px-5"
           />
         </div>
       }
     >
-      {departments.map((dept) => (
+      {homepageDepartments.map((dept) => (
         <CardGridItem key={dept.title}>
           <DepartmentCard
             variant="compact"

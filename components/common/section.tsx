@@ -21,10 +21,10 @@ const variantClasses = {
 } as const;
 
 const spacingClasses = {
-  sm: "py-4 md:py-6",
-  default: "py-5 md:py-7 lg:py-9",
-  lg: "py-7 md:py-9 lg:py-11",
-  xl: "py-8 md:py-10 lg:py-12",
+  sm: "py-3 md:py-5",
+  default: "py-4 md:py-6 lg:py-7",
+  lg: "py-6 md:py-8 lg:py-9",
+  xl: "py-7 md:py-9 lg:py-10",
 } as const;
 
 const dividerVariantMap = {

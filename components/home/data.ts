@@ -50,70 +50,70 @@ export const conditionsWeTreat = [
     title: "Stroke",
     description: "Rapid diagnosis and treatment when every minute protects brain function.",
     icon: Zap,
-    href: "/departments",
+    href: "/services/stroke-care",
     iconVariant: "blue" as const,
   },
   {
     title: "Epilepsy",
     description: "Specialist care to reduce seizures and restore daily confidence.",
     icon: Activity,
-    href: "/departments",
+    href: "/services/epilepsy",
     iconVariant: "green" as const,
   },
   {
     title: "Migraine",
     description: "Relief for chronic and severe headaches that disrupt your life.",
     icon: Brain,
-    href: "/services",
+    href: "/services/headache-clinic",
     iconVariant: "orange" as const,
   },
   {
     title: "Parkinson's Disease",
     description: "Movement disorder care to help you stay independent longer.",
     icon: Activity,
-    href: "/departments",
+    href: "/services/movement-disorders",
     iconVariant: "navy" as const,
   },
   {
     title: "Memory Disorders",
     description: "Compassionate evaluation and support for dementia and cognitive decline.",
     icon: BrainCircuit,
-    href: "/departments",
+    href: "/services/brain-disorders",
     iconVariant: "blue" as const,
   },
   {
     title: "Brain Tumors",
     description: "Multidisciplinary planning from diagnosis through treatment and recovery.",
     icon: Scan,
-    href: "/departments",
+    href: "/services/brain-disorders",
     iconVariant: "green" as const,
   },
   {
     title: "Spine Disorders",
     description: "Medical and surgical options for back pain, disc disease, and cord compression.",
     icon: ScanLine,
-    href: "/departments",
+    href: "/services/spine-disorders",
     iconVariant: "orange" as const,
   },
   {
     title: "Vertigo",
     description: "Specialist assessment to find the cause of dizziness and restore balance.",
     icon: Wind,
-    href: "/services",
+    href: "/departments/neurology",
     iconVariant: "navy" as const,
   },
   {
     title: "Balance Disorders",
     description: "Rehabilitation and treatment to help you move safely again.",
     icon: HeartPulse,
-    href: "/departments",
+    href: "/services/rehabilitation",
     iconVariant: "blue" as const,
   },
   {
     title: "Nerve Pain",
     description: "Targeted relief for neuropathic and chronic nerve-related pain.",
     icon: Pill,
-    href: "/departments",
+    href: "/services/pain-management",
     iconVariant: "green" as const,
   },
 ];
@@ -194,23 +194,23 @@ export const departments = [
     description:
       "Comprehensive care for stroke, epilepsy, movement disorders, and neurodegenerative conditions.",
     icon: Brain,
-    href: "/departments",
+    href: "/departments/neurology",
     iconVariant: "blue" as const,
   },
   {
     title: "Neurosurgery",
     description:
-      "Minimally invasive and complex brain and spine surgery with advanced intraoperative imaging.",
+      "Minimally invasive and complex brain and spine surgery with advanced imaging.",
     icon: BrainCircuit,
-    href: "/departments",
+    href: "/departments/neurosurgery",
     iconVariant: "green" as const,
   },
   {
     title: "Psychiatry",
     description:
-      "Evidence-based treatment for mood disorders, anxiety, and complex psychiatric conditions.",
+      "Evidence-based treatment for mood disorders, anxiety, and psychiatric conditions.",
     icon: Heart,
-    href: "/departments",
+    href: "/departments/psychiatry",
     iconVariant: "orange" as const,
   },
   {
@@ -218,7 +218,7 @@ export const departments = [
     description:
       "Cognitive assessments, psychotherapy, and rehabilitation support for neurological patients.",
     icon: Users,
-    href: "/departments",
+    href: "/departments/clinical-psychology",
     iconVariant: "navy" as const,
   },
   {
@@ -226,7 +226,7 @@ export const departments = [
     description:
       "Multidisciplinary programs to restore mobility, speech, and independence after injury.",
     icon: Activity,
-    href: "/departments",
+    href: "/departments/neuro-rehabilitation",
     iconVariant: "blue" as const,
   },
   {
@@ -234,7 +234,7 @@ export const departments = [
     description:
       "Interventional and medical management for chronic neuropathic and spine-related pain.",
     icon: Pill,
-    href: "/departments",
+    href: "/departments/pain-medicine",
     iconVariant: "green" as const,
   },
 ];
@@ -310,8 +310,7 @@ export const specialists = [
     title: "MD, DM (Neurology)",
     department: "Neurology",
     specializations: ["Stroke", "Epilepsy", "Movement Disorders"],
-    intro:
-      "Walks patients and families through stroke and epilepsy care with clarity, patience, and compassion.",
+    intro: "Clear, compassionate stroke and epilepsy care for patients and families.",
     available: true,
     image: hospitalImage(
       doctorImagePath(1),
@@ -325,8 +324,7 @@ export const specialists = [
     title: "MCh (Neurosurgery)",
     department: "Neurosurgery",
     specializations: ["Brain Tumors", "Spine Surgery", "Vascular"],
-    intro:
-      "Explains every surgical option in plain language so you feel informed and confident before treatment.",
+    intro: "Explains surgical options in plain language before every procedure.",
     available: true,
     image: hospitalImage(
       doctorImagePath(2),
@@ -340,8 +338,7 @@ export const specialists = [
     title: "MD (Psychiatry)",
     department: "Psychiatry",
     specializations: ["Mood Disorders", "Anxiety", "Neuropsychiatry"],
-    intro:
-      "Creates a safe space for patients and families navigating mental health alongside neurological conditions.",
+    intro: "Supportive psychiatric care alongside neurological treatment.",
     available: true,
     image: hospitalImage(
       doctorImagePath(3),
@@ -366,6 +363,11 @@ export const specialists = [
     href: "/doctors#dr-patel",
   },
 ];
+
+/** Homepage previews — full lists live on inner pages */
+export const homepageConditions = conditionsWeTreat.slice(0, 6);
+export const homepageDepartments = departments.slice(0, 4);
+export const homepageSpecialists = specialists.slice(0, 3);
 
 export const facilities = [
   {

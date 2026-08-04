@@ -199,8 +199,11 @@ function Footer() {
 
         <Separator className="my-4 bg-white/10" />
 
-        <div className="flex flex-col gap-1.5 text-[12px] text-white/60 sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
+        <div className="flex flex-col gap-2 text-[12px] text-white/60 sm:flex-row sm:items-center sm:justify-between">
+          <div className="space-y-1">
+            <p>© {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
+            <p className="text-[11px] text-white/40">Designed &amp; Developed by STAR MedSol</p>
+          </div>
           <div className="flex flex-wrap gap-3">
             <FooterLink href="/resources">Patient Resources</FooterLink>
             <FooterLink href="/contact">Privacy Policy</FooterLink>

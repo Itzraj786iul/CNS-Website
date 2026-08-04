@@ -6,20 +6,19 @@ import { ArrowRight } from "lucide-react";
 import { DoctorCard } from "@/components/common/doctor-card";
 import { CardGridItem, CardGridSection } from "@/components/common/sections";
 import { Button } from "@/components/ui/button";
-import { specialists } from "@/components/home/data";
+import { homepageSpecialists } from "@/components/home/data";
 
 function SpecialistsSection() {
   return (
     <CardGridSection
       variant="default"
-      spacing="default"
+      spacing="sm"
       divider
       density="preview"
       heading={{
         eyebrow: "Our Physicians",
-        title: "Meet Our Neuroscience Specialists",
-        description:
-          "Board-certified clinicians with advanced fellowship training — chosen for their expertise, and remembered for how they treat people.",
+        title: "Meet Our Specialists",
+        description: "Board-certified experts who listen, explain clearly, and treat you with respect.",
         align: "left",
       }}
       headerAction={
@@ -27,13 +26,13 @@ function SpecialistsSection() {
           nativeButton={false}
           render={
             <Link href="/doctors">
-              Consult Our Experts
+              View All Doctors
               <ArrowRight />
             </Link>
           }
           variant="outline"
-          size="lg"
-          className="hidden shrink-0 border-cns-border px-5 sm:inline-flex"
+          size="default"
+          className="hidden shrink-0 border-cns-border px-4 sm:inline-flex"
         />
       }
       footer={
@@ -42,18 +41,18 @@ function SpecialistsSection() {
             nativeButton={false}
             render={
               <Link href="/doctors">
-                Consult Our Experts
+                View All Doctors
                 <ArrowRight />
               </Link>
             }
             variant="outline"
-            size="lg"
-            className="border-cns-border px-5"
+            size="default"
+            className="border-cns-border px-4"
           />
         </div>
       }
     >
-      {specialists.map((doctor) => (
+      {homepageSpecialists.map((doctor) => (
         <CardGridItem key={doctor.name}>
           <DoctorCard
             variant="compact"

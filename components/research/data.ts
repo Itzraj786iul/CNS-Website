@@ -5,7 +5,7 @@ export const researchContent = {
     eyebrow: "Research Driven Care",
     title: "Research & Publications",
     description:
-      "Advancing neuroscience through clinical research, peer-reviewed publications, and collaborative studies that translate discovery into better patient outcomes.",
+      "Clinical research, peer-reviewed publications, and studies that improve patient outcomes.",
   },
   highlights: [
     {

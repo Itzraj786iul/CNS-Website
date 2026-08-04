@@ -76,6 +76,7 @@ function NewsPageContent() {
               image={item.image}
               date={item.date}
               category={item.category}
+              href={item.href}
               categoryVariant={
                 categoryVariant[item.category as keyof typeof categoryVariant] ?? "default"
               }

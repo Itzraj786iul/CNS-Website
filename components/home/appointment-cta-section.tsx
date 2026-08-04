@@ -11,10 +11,10 @@ function AppointmentCtaSection() {
   return (
     <CTASection
       variant="brand"
-      size="hero"
+      size="compact"
       align="center"
       title="Book Your Consultation"
-      description="A care coordinator will help you find the right specialist, prepare your records, and answer any questions — usually within one business day."
+      description="Our care coordinator will connect you with the right specialist — usually within one business day."
       primaryAction={{
         label: "Book Your Consultation",
         href: "/appointment",

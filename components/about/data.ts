@@ -24,7 +24,7 @@ export const aboutContent = {
     eyebrow: "Our Institution",
     title: "About Center for Neuroscience",
     description:
-      "The people, values, and clinical standards behind Raipur's trusted centre for brain and spine care — where precision medicine meets genuine compassion.",
+      "The people, values, and clinical standards behind Raipur's trusted centre for brain and spine care.",
   },
   aboutCns: {
     title: "A Legacy of Neuroscience Excellence",

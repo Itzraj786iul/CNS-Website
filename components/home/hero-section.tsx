@@ -25,7 +25,7 @@ import { fadeUp, staggerContainer } from "@/lib/motion";
 
 function HeroIllustration() {
   return (
-    <div className="relative mx-auto aspect-[6/5] w-full max-w-sm sm:max-w-md lg:max-w-none lg:max-h-[195px]">
+    <div className="relative mx-auto aspect-[6/5] w-full max-w-sm sm:max-w-md lg:max-w-none lg:max-h-[170px]">
       <motion.div
         aria-hidden="true"
         animate={{ y: [0, -10, 0] }}
@@ -181,13 +181,13 @@ function HeroSection() {
         className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-linear-to-t from-background via-background/90 to-transparent"
       />
 
-      <Container className="relative flex flex-col justify-center py-6 sm:py-7 lg:py-8">
-        <div className="grid min-w-0 items-center gap-4 sm:gap-6 lg:grid-cols-2 lg:gap-8">
+      <Container className="relative flex flex-col justify-center py-5 sm:py-6 lg:py-7">
+        <div className="grid min-w-0 items-center gap-3 sm:gap-5 lg:grid-cols-2 lg:gap-6">
           <motion.div
             initial="hidden"
             animate="visible"
             variants={staggerContainer}
-            className="min-w-0 max-w-xl space-y-4"
+            className="min-w-0 max-w-xl space-y-3"
           >
             <motion.div variants={fadeUp}>
               <Tag variant="blue" className="px-4 py-1.5 text-sm shadow-soft">
@@ -195,18 +195,14 @@ function HeroSection() {
               </Tag>
             </motion.div>
 
-            <motion.div variants={fadeUp} className="space-y-3">
-              <h1 className="font-heading text-[1.625rem] font-semibold leading-[1.08] tracking-[-0.035em] text-cns-navy min-[375px]:text-[1.875rem] sm:text-[2rem] lg:text-[2.375rem] lg:leading-[1.06]">
+            <motion.div variants={fadeUp} className="space-y-2">
+              <h1 className="font-heading text-[1.625rem] font-semibold leading-[1.08] tracking-[-0.035em] text-cns-navy min-[375px]:text-[1.875rem] sm:text-[2rem] lg:text-[2.25rem] lg:leading-[1.06]">
                 Center for{" "}
                 <span className="text-gradient-brand">Neuroscience</span>
               </h1>
-              <p className="font-heading text-base font-medium tracking-tight text-cns-navy/90 sm:text-lg">
-                Your health is in safe hands.
-              </p>
               <p className="prose-lead max-w-lg">
-                Subspecialist-led care for stroke, brain, and spine conditions —
-                with advanced imaging, round-the-clock emergency support, and
-                clinicians who take time to listen.
+                Subspecialist stroke, brain, and spine care — with 24×7 emergency
+                support and clinicians who take time to listen.
               </p>
             </motion.div>
 
@@ -295,20 +291,17 @@ function HeroSection() {
         </div>
       </Container>
 
-      <div className="relative z-10 -mt-5 pb-6 sm:-mt-6 sm:pb-7 lg:-mt-8 lg:pb-8">
+      <div className="relative z-10 -mt-4 pb-5 sm:-mt-5 sm:pb-6 lg:-mt-6 lg:pb-7">
         <Container>
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-40px" }}
             variants={staggerContainer}
-            className="space-y-4"
+            className="space-y-3"
           >
             <motion.div variants={fadeUp} className="text-center">
               <p className="eyebrow-pill mx-auto">Clinical Credibility</p>
-              <p className="mt-3 font-heading text-base font-medium text-cns-navy/85 sm:text-lg">
-                Trusted by families across Chhattisgarh
-              </p>
             </motion.div>
             <div className="grid gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4">
               {heroStatistics.map((stat) => (

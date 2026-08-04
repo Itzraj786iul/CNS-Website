@@ -16,7 +16,7 @@ export const contactContent = {
     eyebrow: "Reach Our Care Team",
     title: "Contact Center for Neuroscience",
     description:
-      "Appointments, referrals, or billing questions — our team responds with clarity, because navigating care should never feel confusing.",
+      "Appointments, referrals, or billing — our team responds quickly and clearly.",
   },
   cards: [
     {

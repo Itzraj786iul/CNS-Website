@@ -5,19 +5,22 @@ import { CardGridItem, CardGridSection } from "@/components/common/sections";
 import { getPublishedTestimonials } from "@/lib/content/testimonials";
 
 function TestimonialsSection() {
-  const items = getPublishedTestimonials();
+  const items = getPublishedTestimonials().slice(0, 2);
+
+  if (items.length === 0) {
+    return null;
+  }
 
   return (
     <CardGridSection
       variant="default"
-      spacing="default"
+      spacing="sm"
       density="preview"
       heading={{
         align: "center",
         eyebrow: "Patient Voices",
         title: "Stories of Recovery & Trust",
-        description:
-          "Patient and family experiences — shared with consent. Replace sample entries in lib/content/testimonials.ts with verified stories.",
+        description: "Experiences shared with patient consent.",
       }}
     >
       {items.map((testimonial) => (

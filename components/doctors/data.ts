@@ -36,7 +36,7 @@ export const doctorsContent = {
     eyebrow: "Our Physicians",
     title: "Meet Our Neuroscience Specialists",
     description:
-      "When you or someone you love needs neurological care, you deserve specialists who listen, explain clearly, and treat you like family — not a case file.",
+      "Board-certified neurologists, neurosurgeons, and psychiatrists — chosen for expertise and compassionate care.",
   },
   introduction:
     "Our team includes neurologists, neurosurgeons, psychiatrists, and rehabilitation specialists. Each doctor brings deep subspecialty expertise — and the patience to walk you through every step of your care.",

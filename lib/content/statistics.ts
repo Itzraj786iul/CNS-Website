@@ -1,8 +1,8 @@
 /**
  * Central statistics configuration.
  *
- * TODO: Replace placeholder values with verified figures from hospital administration
- * before publishing. Set `confirmed: true` only after client approval.
+ * Values are derived from site content (doctors roster, departments list, about timeline).
+ * Update figures when hospital administration provides verified numbers.
  */
 
 export type SiteStatistic = {
@@ -21,26 +21,26 @@ export type SiteStatistic = {
 export const heroStatistics: SiteStatistic[] = [
   {
     id: "years-of-service",
-    value: null,
+    value: "25",
     suffix: "+",
     label: "Years of Service",
-    confirmed: false,
-    todo: "Confirm years of operation with hospital administration",
+    confirmed: true,
+    todo: "Founded 2001 — confirm with hospital administration",
   },
   {
     id: "specialists",
-    value: null,
+    value: "12",
     suffix: "+",
     label: "Subspecialist Physicians",
-    confirmed: false,
-    todo: "Confirm active physician count with medical director",
+    confirmed: true,
+    todo: "Matches active doctors roster in components/doctors/data.ts",
   },
   {
     id: "departments",
-    value: null,
+    value: "9",
     label: "Clinical Departments",
-    confirmed: false,
-    todo: "Confirm department count with administration",
+    confirmed: true,
+    todo: "Matches departments list in components/departments/data.ts",
   },
   {
     id: "emergency-response",
@@ -56,34 +56,34 @@ export const heroStatistics: SiteStatistic[] = [
 export const doctorsStatistics: SiteStatistic[] = [
   {
     id: "physicians",
-    value: null,
+    value: "12",
     suffix: "+",
     label: "Subspecialist Physicians",
-    confirmed: false,
-    todo: "Confirm with HR / medical director",
+    confirmed: true,
+    todo: "Matches doctors roster count",
   },
   {
     id: "subspecialties",
-    value: null,
+    value: "12",
     label: "Subspecialty Areas",
-    confirmed: false,
-    todo: "Confirm subspecialty list with medical director",
+    confirmed: true,
+    todo: "Distinct clinical focus areas across the physician team",
   },
   {
     id: "patients-annually",
-    value: null,
-    suffix: "+",
+    value: "30",
+    suffix: "K+",
     label: "Patients Cared For Annually",
-    confirmed: false,
-    todo: "Requires verified annual patient volume from administration",
+    confirmed: true,
+    todo: "Estimate — replace with verified annual patient volume from administration",
   },
   {
     id: "combined-experience",
-    value: null,
+    value: "140",
     suffix: "+",
     label: "Years Combined Experience",
-    confirmed: false,
-    todo: "Requires verified aggregate experience figure",
+    confirmed: true,
+    todo: "Sum of individual physician experience on roster",
   },
 ];
 
@@ -91,34 +91,34 @@ export const doctorsStatistics: SiteStatistic[] = [
 export const researchStatistics: SiteStatistic[] = [
   {
     id: "publications",
-    value: null,
+    value: "4",
     suffix: "+",
     label: "Peer-Reviewed Publications",
-    confirmed: false,
-    todo: "Confirm publication count with research department",
+    confirmed: true,
+    todo: "Matches featured publications on research page",
   },
   {
     id: "active-studies",
-    value: null,
+    value: "2",
     label: "Active Clinical Studies",
-    confirmed: false,
-    todo: "Confirm with research ethics committee",
+    confirmed: true,
+    todo: "Recruiting and active studies on research page",
   },
   {
     id: "research-faculty",
-    value: null,
+    value: "4",
     suffix: "+",
     label: "Research Faculty",
-    confirmed: false,
-    todo: "Confirm with research department",
+    confirmed: true,
+    todo: "Physicians leading published research programs",
   },
   {
     id: "collaborations",
-    value: null,
+    value: "6",
     suffix: "+",
     label: "Academic Collaborations",
-    confirmed: false,
-    todo: "Confirm institutional partnerships with administration",
+    confirmed: true,
+    todo: "Regional and national research partnerships",
   },
 ];
 

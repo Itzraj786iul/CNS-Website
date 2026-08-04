@@ -35,9 +35,9 @@ export function resolveContentDensity(
 
 /** Shared image ratios for split / media sections */
 export const mediaImageClasses = {
-  preview: "relative image-placeholder aspect-[3/2] lg:max-h-[170px] lg:w-full",
-  listing: "relative image-placeholder aspect-[3/2] lg:max-h-[220px] lg:w-full",
-  detail: "relative image-placeholder aspect-[3/2] lg:max-h-[280px] lg:w-full",
+  preview: "relative image-placeholder aspect-[3/2] lg:max-h-[150px] lg:w-full",
+  listing: "relative image-placeholder aspect-[3/2] lg:max-h-[190px] lg:w-full",
+  detail: "relative image-placeholder aspect-[3/2] lg:max-h-[240px] lg:w-full",
 } as const;
 
 /** Split column ratios for SplitContentSection */

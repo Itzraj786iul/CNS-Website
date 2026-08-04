@@ -1,14 +1,18 @@
 "use client";
 
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+
 import { ConditionCard } from "@/components/common/condition-card";
 import { CardGridItem, CardGridSection } from "@/components/common/sections";
-import { conditionsWeTreat } from "@/components/home/data";
+import { Button } from "@/components/ui/button";
+import { homepageConditions } from "@/components/home/data";
 
 function ConditionsSection() {
   return (
     <CardGridSection
       variant="white"
-      spacing="default"
+      spacing="sm"
       divider
       density="preview"
       heading={{
@@ -16,10 +20,26 @@ function ConditionsSection() {
         eyebrow: "Can We Help You?",
         title: "Conditions We Treat",
         description:
-          "If you or someone you love is facing a brain or spine concern — you are in the right place. Our specialists treat a wide range of neurological conditions under one roof.",
+          "Stroke, epilepsy, spine disorders, and more — subspecialist care under one roof.",
       }}
+      footer={
+        <div className="flex justify-center">
+          <Button
+            nativeButton={false}
+            render={
+              <Link href="/services">
+                View All Services
+                <ArrowRight />
+              </Link>
+            }
+            variant="outline"
+            size="default"
+            className="border-cns-border px-5"
+          />
+        </div>
+      }
     >
-      {conditionsWeTreat.map((condition) => (
+      {homepageConditions.map((condition) => (
         <CardGridItem key={condition.title}>
           <ConditionCard
             variant="compact"

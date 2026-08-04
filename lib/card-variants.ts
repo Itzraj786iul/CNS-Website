@@ -4,23 +4,23 @@ export const CARD_VARIANT_DEFAULT: CardVariant = "standard";
 
 /** Responsive grid columns per variant (mobile 1, tablet 2, desktop per spec). */
 export const cardGridClasses: Record<CardVariant, string> = {
-  compact: "grid gap-4 sm:grid-cols-2 lg:grid-cols-4",
-  standard: "grid gap-4 sm:grid-cols-2 lg:grid-cols-3",
+  compact: "grid gap-3 sm:grid-cols-2 lg:grid-cols-4",
+  standard: "grid gap-3.5 sm:grid-cols-2 lg:grid-cols-3",
   detailed: "grid gap-4 sm:grid-cols-2 xl:grid-cols-3",
 };
 
 /** Portrait image max-heights per variant (px). */
 export const cardImageHeights: Record<CardVariant, string> = {
-  compact: "max-h-[160px] sm:max-h-[180px]",
-  standard: "max-h-[200px] sm:max-h-[220px]",
-  detailed: "max-h-[240px] sm:max-h-[280px]",
+  compact: "max-h-[140px] sm:max-h-[160px]",
+  standard: "max-h-[170px] sm:max-h-[190px]",
+  detailed: "max-h-[210px] sm:max-h-[240px]",
 };
 
 /** Landscape / news image max-heights per variant. */
 export const cardLandscapeImageHeights: Record<CardVariant, string> = {
-  compact: "max-h-[120px] sm:max-h-[140px]",
-  standard: "max-h-[160px] sm:max-h-[180px]",
-  detailed: "max-h-[200px] sm:max-h-[220px]",
+  compact: "max-h-[100px] sm:max-h-[120px]",
+  standard: "max-h-[130px] sm:max-h-[150px]",
+  detailed: "max-h-[170px] sm:max-h-[190px]",
 };
 
 export const cardDescClamp: Record<CardVariant, string> = {

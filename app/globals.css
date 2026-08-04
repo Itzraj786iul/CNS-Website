@@ -458,7 +458,7 @@
   }
 
   .section-stack {
-    @apply space-y-3.5;
+    @apply space-y-3;
   }
 
   .section-surface-white {
