@@ -40,29 +40,33 @@ function DoctorCard({
 }: DoctorCardProps) {
   const content = (
     <Card className="group/doctor h-full overflow-hidden card-premium card-premium-hover ring-0">
-      <div className="relative aspect-[4/5] overflow-hidden bg-muted">
-        <Image
-          src={image.src}
-          alt={image.alt}
-          fill
-          className="img-zoom object-cover transition-transform duration-500 group-hover/doctor:scale-[1.03]"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        />
-        <div className="absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-cns-navy/50 to-transparent" />
+      <div className="p-4 pb-0">
+        <div className="photo-frame relative aspect-[4/5]">
+          <Image
+            src={image.src}
+            alt={image.alt}
+            fill
+            className="img-zoom object-cover object-top"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
+          <div className="absolute inset-x-0 bottom-0 h-2/5 bg-linear-to-t from-cns-navy/55 to-transparent" />
+        </div>
       </div>
-      <CardHeader className="gap-3">
+      <CardHeader className="gap-3 px-6 pb-2 pt-5">
         {department ? <Tag variant="blue">{department}</Tag> : null}
-        <CardTitle className="text-xl font-semibold text-cns-navy">{name}</CardTitle>
-        <CardDescription className="text-base">{title}</CardDescription>
+        <CardTitle className="text-xl font-semibold tracking-tight text-cns-navy">
+          {name}
+        </CardTitle>
+        <CardDescription className="text-base leading-relaxed">{title}</CardDescription>
       </CardHeader>
       {href ? (
-        <CardFooter className="border-t-0 bg-transparent pt-0">
+        <CardFooter className="border-t-0 bg-transparent px-6 pb-6 pt-0">
           <Button
             variant="ghost"
-            className="group/btn -ml-2 h-auto px-2 py-1 text-primary hover:bg-primary/5"
+            className="group/btn -ml-2 h-10 rounded-full px-3 text-primary hover:bg-primary/5"
           >
             View Profile
-            <ArrowUpRight className="transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+            <ArrowUpRight className="transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
           </Button>
         </CardFooter>
       ) : null}

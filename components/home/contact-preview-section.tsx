@@ -31,7 +31,7 @@ const variantMap = {
 
 function ContactPreviewSection() {
   return (
-    <Section variant="default" spacing="lg">
+    <Section variant="muted" spacing="lg">
       <div className="space-y-12">
         <AnimatedSection className="mx-auto max-w-3xl text-center">
           <SectionHeading

@@ -44,7 +44,7 @@ function StatisticsCard({
       className={cn("h-full", className)}
     >
       <Card className="card-premium card-premium-hover h-full">
-        <CardContent className="flex flex-col gap-2 px-6 py-8">
+        <CardContent className="flex flex-col gap-2.5 px-7 py-8 sm:px-8 sm:py-9">
           <p
             className="font-heading text-4xl font-semibold tracking-tight sm:text-5xl"
             aria-label={`${value}${suffix ?? ""} ${label}`}

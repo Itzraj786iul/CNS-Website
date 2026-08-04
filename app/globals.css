@@ -57,10 +57,11 @@
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
 
-  --shadow-soft: 0 4px 24px -4px rgb(22 50 74 / 0.08);
-  --shadow-soft-lg: 0 12px 40px -8px rgb(22 50 74 / 0.12);
-  --shadow-glow-blue: 0 8px 32px -8px rgb(31 124 198 / 0.25);
-  --shadow-glow-green: 0 8px 32px -8px rgb(125 189 36 / 0.25);
+  --shadow-soft: 0 2px 8px -2px rgb(22 50 74 / 0.06), 0 8px 24px -6px rgb(22 50 74 / 0.08);
+  --shadow-soft-lg: 0 4px 16px -4px rgb(22 50 74 / 0.08), 0 20px 48px -12px rgb(22 50 74 / 0.12);
+  --shadow-card: 0 1px 2px rgb(22 50 74 / 0.04), 0 8px 32px -8px rgb(22 50 74 / 0.1);
+  --shadow-glow-blue: 0 8px 32px -8px rgb(31 124 198 / 0.28);
+  --shadow-glow-green: 0 8px 32px -8px rgb(125 189 36 / 0.28);
 }
 
 :root {
@@ -128,6 +129,10 @@
     @apply font-heading tracking-tight text-foreground text-balance;
   }
 
+  p {
+    @apply leading-[1.75];
+  }
+
   :focus-visible {
     @apply outline-none ring-2 ring-primary/40 ring-offset-2 ring-offset-background;
   }
@@ -173,7 +178,44 @@
   }
 
   .card-premium {
-    @apply rounded-2xl border border-cns-border/80 bg-white shadow-soft ring-0 transition-all duration-300 ease-out;
+    @apply rounded-2xl border border-cns-border/70 bg-white shadow-card ring-0 transition-all duration-500 ease-out;
+  }
+
+  .card-body {
+    @apply px-6 py-6 sm:px-7 sm:py-7;
+  }
+
+  .photo-frame {
+    @apply overflow-hidden rounded-2xl bg-muted shadow-soft ring-1 ring-cns-border/60;
+  }
+
+  .prose-lead {
+    @apply text-base leading-[1.8] text-muted-foreground sm:text-lg;
+  }
+
+  .section-surface-white {
+    background:
+      radial-gradient(ellipse 80% 50% at 50% 0%, rgb(31 124 198 / 0.04), transparent 70%),
+      #ffffff;
+  }
+
+  .section-surface-muted {
+    background:
+      radial-gradient(ellipse 70% 60% at 0% 100%, rgb(125 189 36 / 0.05), transparent 60%),
+      linear-gradient(180deg, rgb(238 244 249 / 0.85) 0%, rgb(248 251 253 / 1) 100%);
+  }
+
+  .section-surface-default {
+    background:
+      radial-gradient(ellipse 60% 50% at 100% 0%, rgb(31 124 198 / 0.05), transparent 65%),
+      #f8fbfd;
+  }
+
+  .section-surface-gradient {
+    background:
+      radial-gradient(ellipse 80% 60% at 20% 0%, rgb(31 124 198 / 0.07), transparent 60%),
+      radial-gradient(ellipse 60% 50% at 100% 100%, rgb(125 189 36 / 0.06), transparent 55%),
+      linear-gradient(135deg, rgb(31 124 198 / 0.04) 0%, transparent 50%, rgb(125 189 36 / 0.04) 100%);
   }
 
   .bg-gradient-brand {
@@ -196,6 +238,10 @@
     box-shadow: var(--shadow-soft-lg);
   }
 
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
   .shadow-glow-blue {
     box-shadow: var(--shadow-glow-blue);
   }
@@ -205,7 +251,7 @@
   }
 
   .card-premium-hover {
-    @apply hover:-translate-y-0.5 hover:border-primary/20 hover:shadow-soft-lg;
+    @apply hover:-translate-y-1 hover:border-primary/15 hover:shadow-soft-lg;
   }
 
   .link-underline {

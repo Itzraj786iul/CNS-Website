@@ -92,8 +92,8 @@ function Footer() {
         aria-hidden="true"
         className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-primary/40 to-transparent"
       />
-      <Container className="py-16 md:py-20">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
+      <Container className="py-20 md:py-24">
+        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 xl:gap-14">
           <div className="space-y-5 sm:col-span-2 lg:col-span-1 xl:col-span-2">
             <div className="space-y-4">
               <LogoLink size="lg" variant="footer" linkClassName="hover:scale-100" />
@@ -109,19 +109,19 @@ function Footer() {
               <SocialLink href={social.youtube} label="YouTube" icon={YouTubeIcon} />
             </div>
             <form
-              className="space-y-3"
+              className="space-y-3.5 rounded-2xl border border-white/10 bg-white/[0.03] p-4"
               onSubmit={(e) => e.preventDefault()}
               aria-label="Newsletter signup"
             >
               <p className="text-sm font-semibold text-white/90">Stay Updated</p>
-              <div className="flex flex-col gap-2 sm:flex-row">
+              <div className="flex flex-col gap-2.5 sm:flex-row">
                 <input
                   type="email"
                   placeholder="Your email address"
                   aria-label="Email for newsletter"
-                  className="h-10 flex-1 rounded-full border border-white/15 bg-white/5 px-4 text-sm text-white placeholder:text-white/40 outline-none transition-colors focus:border-primary/50 focus:ring-2 focus:ring-primary/30"
+                  className="h-11 flex-1 rounded-full border border-white/15 bg-white/5 px-4 text-sm text-white placeholder:text-white/40 outline-none transition-all duration-300 focus:border-primary/50 focus:ring-2 focus:ring-primary/30"
                 />
-                <Button type="submit" size="sm" className="h-10 rounded-full bg-secondary px-5 hover:bg-secondary/90">
+                <Button type="submit" size="sm" className="h-11 rounded-full bg-secondary px-6 shadow-glow-green hover:bg-secondary/90">
                   Subscribe
                 </Button>
               </div>
@@ -132,12 +132,12 @@ function Footer() {
           <FooterSection title="Departments" links={footerDepartments} />
           <FooterSection title="Services" links={footerServices} />
 
-          <div className="space-y-6">
-            <div>
+          <div className="space-y-8">
+            <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
               <h3 className="font-heading text-sm font-semibold uppercase tracking-[0.12em] text-white/90">
                 Emergency Contact
               </h3>
-              <ul className="mt-4 space-y-3">
+              <ul className="mt-4 space-y-3.5">
                 <li className="flex items-start gap-3 text-sm text-white/70">
                   <Siren className="mt-0.5 size-4 shrink-0 text-destructive" />
                   <a href={emergencyHref} className="hover:text-white">
@@ -165,11 +165,11 @@ function Footer() {
               </ul>
             </div>
 
-            <div>
+            <div className="space-y-3">
               <h3 className="font-heading text-sm font-semibold uppercase tracking-[0.12em] text-white/90">
                 Working Hours
               </h3>
-              <ul className="mt-4 space-y-2 text-sm text-white/70">
+              <ul className="space-y-2.5 text-sm leading-relaxed text-white/70">
                 <li>
                   <span className="font-medium text-white/85">Outpatient:</span>{" "}
                   {hours.outpatient}

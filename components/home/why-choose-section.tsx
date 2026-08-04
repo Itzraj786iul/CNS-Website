@@ -13,7 +13,7 @@ import { cn } from "@/lib/utils";
 
 function WhyChooseSection() {
   return (
-    <Section variant="white" spacing="lg">
+    <Section variant="muted" spacing="lg">
       <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
         <AnimatedSection className="relative order-2 lg:order-1" direction="left">
           <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-muted shadow-soft-lg">

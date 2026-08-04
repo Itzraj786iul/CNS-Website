@@ -124,27 +124,35 @@ function HeroSection() {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-background">
+    <section className="relative overflow-hidden section-surface-default">
       <div
         aria-hidden="true"
-        className="hero-grid pointer-events-none absolute inset-0 opacity-70"
+        className="hero-grid pointer-events-none absolute inset-0 opacity-80"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-linear-to-br from-primary/[0.05] via-transparent to-secondary/[0.05]"
+        className="pointer-events-none absolute inset-0 bg-linear-to-br from-primary/[0.06] via-transparent to-secondary/[0.05]"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-32 top-0 size-[32rem] rounded-full bg-primary/5 blur-3xl"
+        className="pointer-events-none absolute -right-32 top-0 size-[36rem] rounded-full bg-primary/[0.06] blur-3xl"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -left-24 bottom-0 size-80 rounded-full bg-secondary/[0.05] blur-3xl"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-linear-to-t from-background to-transparent"
       />
 
-      <Container className="relative flex min-h-[calc(100vh-5rem)] flex-col justify-center pb-32 pt-12 lg:min-h-[calc(100vh-6rem)] lg:pb-40 lg:pt-16">
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+      <Container className="relative flex min-h-[calc(100vh-5rem)] flex-col justify-center pb-36 pt-14 lg:min-h-[calc(100vh-6rem)] lg:pb-44 lg:pt-20">
+        <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
           <motion.div
             initial="hidden"
             animate="visible"
             variants={staggerContainer}
-            className="max-w-xl space-y-8"
+            className="max-w-xl space-y-9"
           >
             <motion.div variants={fadeUp}>
               <Tag variant="blue" className="px-4 py-1.5 text-sm shadow-soft">
@@ -152,12 +160,12 @@ function HeroSection() {
               </Tag>
             </motion.div>
 
-            <motion.div variants={fadeUp} className="space-y-5">
-              <h1 className="font-heading text-4xl font-semibold leading-[1.08] tracking-tight text-cns-navy sm:text-5xl lg:text-6xl">
+            <motion.div variants={fadeUp} className="space-y-6">
+              <h1 className="font-heading text-4xl font-semibold leading-[1.06] tracking-[-0.03em] text-cns-navy sm:text-5xl lg:text-[3.5rem] lg:leading-[1.05]">
                 Center for{" "}
                 <span className="text-gradient-brand">Neuroscience</span>
               </h1>
-              <p className="max-w-lg text-base leading-[1.75] text-muted-foreground sm:text-lg">
+              <p className="prose-lead max-w-lg">
                 Integrated neurological, neurosurgical, and psychiatric care —
                 delivered by specialists who combine clinical excellence with
                 genuine compassion.
@@ -195,11 +203,11 @@ function HeroSection() {
 
             <motion.ul
               variants={fadeUp}
-              className="flex flex-col gap-3 border-t border-cns-border/60 pt-6 sm:flex-row sm:flex-wrap sm:gap-x-6 sm:gap-y-2"
+              className="flex flex-col gap-3.5 border-t border-cns-border/50 pt-7 sm:flex-row sm:flex-wrap sm:gap-x-8 sm:gap-y-3"
             >
               {trustItems.map(({ icon: Icon, label }) => (
-                <li key={label} className="flex items-center gap-2 text-sm text-cns-navy/80">
-                  <span className="flex size-8 items-center justify-center rounded-full bg-primary/8 text-primary">
+                <li key={label} className="flex items-center gap-2.5 text-sm font-medium text-cns-navy/80">
+                  <span className="flex size-9 items-center justify-center rounded-full bg-white shadow-soft ring-1 ring-cns-border/60 text-primary">
                     <Icon className="size-4" aria-hidden="true" />
                   </span>
                   {label}
@@ -219,14 +227,14 @@ function HeroSection() {
         </div>
       </Container>
 
-      <div className="relative z-10 -mt-20 pb-8 lg:-mt-24">
+      <div className="relative z-10 -mt-24 pb-10 lg:-mt-28">
         <Container>
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-40px" }}
             variants={staggerContainer}
-            className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
+            className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4"
           >
             {heroStats.map((stat) => (
               <motion.div key={stat.label} variants={fadeUp}>
@@ -234,7 +242,7 @@ function HeroSection() {
                   value={stat.value}
                   suffix={stat.suffix}
                   label={stat.label}
-                  className="glass rounded-2xl shadow-soft-lg ring-1 ring-white/50"
+                  className="glass rounded-2xl shadow-card ring-1 ring-white/60"
                 />
               </motion.div>
             ))}

@@ -13,18 +13,18 @@ type SectionProps = React.ComponentProps<"section"> & {
 };
 
 const variantClasses = {
-  default: "bg-background",
-  muted: "bg-muted/40",
-  white: "bg-white",
+  default: "section-surface-default",
+  muted: "section-surface-muted",
+  white: "section-surface-white",
   navy: "bg-cns-navy text-white",
-  gradient: "bg-gradient-brand",
+  gradient: "section-surface-gradient",
 } as const;
 
 const spacingClasses = {
-  sm: "py-12 md:py-16",
-  default: "py-16 md:py-24",
-  lg: "py-20 md:py-28",
-  xl: "py-24 md:py-32",
+  sm: "py-14 md:py-20",
+  default: "py-20 md:py-28",
+  lg: "py-24 md:py-32",
+  xl: "py-28 md:py-36",
 } as const;
 
 const dividerVariantMap = {
@@ -65,12 +65,18 @@ function Section({
           <>
             <div
               aria-hidden="true"
-              className="section-blob -right-24 top-0 size-72 bg-primary/[0.04]"
+              className="section-blob -right-32 top-0 size-80 bg-primary/[0.035]"
             />
             <div
               aria-hidden="true"
-              className="section-blob -left-24 bottom-0 size-64 bg-secondary/[0.05]"
+              className="section-blob -left-32 bottom-0 size-72 bg-secondary/[0.04]"
             />
+            {variant === "gradient" || variant === "white" ? (
+              <div
+                aria-hidden="true"
+                className="section-blob left-1/2 top-1/2 size-96 -translate-x-1/2 -translate-y-1/2 bg-primary/[0.03]"
+              />
+            ) : null}
           </>
         ) : null}
         {contained ? (

@@ -14,7 +14,7 @@ type PageHeroProps = {
 
 function PageHero({ title, description, breadcrumb }: PageHeroProps) {
   return (
-    <section className="relative overflow-hidden border-b border-cns-border/50 bg-background pb-16 pt-8 md:pb-20 md:pt-10">
+    <section className="relative overflow-hidden border-b border-cns-border/40 bg-background pb-20 pt-10 md:pb-24 md:pt-12">
       <div
         aria-hidden="true"
         className="hero-grid pointer-events-none absolute inset-0 opacity-80"

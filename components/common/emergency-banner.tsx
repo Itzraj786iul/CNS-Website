@@ -23,7 +23,7 @@ function EmergencyBanner({
     <div
       data-slot="emergency-banner"
       className={cn(
-        "relative overflow-hidden rounded-3xl bg-cns-navy px-6 py-8 sm:px-10 sm:py-10",
+        "relative overflow-hidden rounded-3xl border border-white/10 bg-cns-navy px-6 py-8 shadow-soft-lg sm:px-10 sm:py-10",
         className
       )}
     >

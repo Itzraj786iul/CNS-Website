@@ -23,24 +23,28 @@ function SectionHeading({
     <div
       data-slot="section-heading"
       className={cn(
-        "max-w-3xl space-y-4",
+        "max-w-3xl space-y-5",
         align === "center" && "mx-auto text-center",
         className
       )}
       {...props}
     >
-      {eyebrow ? <p className="eyebrow-pill w-fit">{eyebrow}</p> : null}
+      {eyebrow ? (
+        <p className={cn("eyebrow-pill w-fit", align === "center" && "mx-auto")}>
+          {eyebrow}
+        </p>
+      ) : null}
       <h2
         className={cn(
-          "font-heading font-semibold tracking-tight text-cns-navy",
-          size === "default" && "text-3xl sm:text-4xl",
-          size === "lg" && "text-4xl sm:text-5xl"
+          "font-heading font-semibold tracking-[-0.02em] text-cns-navy",
+          size === "default" && "text-3xl sm:text-4xl lg:text-[2.5rem] lg:leading-[1.15]",
+          size === "lg" && "text-4xl sm:text-5xl lg:text-[3rem] lg:leading-[1.1]"
         )}
       >
         {title}
       </h2>
       {description ? (
-        <p className="max-w-2xl text-base leading-[1.75] text-muted-foreground sm:text-lg">
+        <p className={cn("prose-lead max-w-2xl", align === "center" && "mx-auto")}>
           {description}
         </p>
       ) : null}
