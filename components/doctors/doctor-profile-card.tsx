@@ -104,7 +104,7 @@ function DoctorProfileCard({ doctor, className }: DoctorProfileCardProps) {
               </Link>
             }
             variant="ghost"
-            className="group/btn h-10 w-full justify-start rounded-full px-3 text-primary hover:bg-primary/5"
+            className="group/btn h-10 w-full justify-start rounded-full px-3 font-semibold text-primary hover:bg-primary/10"
           />
           <div className="flex w-full flex-col gap-2 sm:flex-row">
             <Button
@@ -116,7 +116,7 @@ function DoctorProfileCard({ doctor, className }: DoctorProfileCardProps) {
                 </Link>
               }
               size="sm"
-              className="h-10 flex-1 rounded-full bg-secondary text-secondary-foreground shadow-glow-green hover:bg-secondary/90"
+              className="h-10 flex-1 rounded-full bg-secondary font-semibold text-secondary-foreground shadow-glow-green hover:bg-[#527a14]"
             />
             <Button
               nativeButton={false}
@@ -128,7 +128,7 @@ function DoctorProfileCard({ doctor, className }: DoctorProfileCardProps) {
               }
               variant="outline"
               size="sm"
-              className="h-10 flex-1 rounded-full border-cns-border"
+              className="h-10 flex-1 rounded-full border-border font-semibold text-cns-navy hover:border-primary/35 hover:bg-primary/5"
             />
           </div>
         </CardFooter>

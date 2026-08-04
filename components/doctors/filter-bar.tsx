@@ -12,7 +12,7 @@ function FilterBar() {
   return (
     <Section variant="white" spacing="sm" className="!py-5">
       <AnimatedSection>
-        <div className="flex flex-col gap-4 rounded-2xl border border-cns-border/80 bg-white p-4 shadow-soft sm:flex-row sm:items-center sm:justify-between sm:p-5">
+        <div className="flex flex-col gap-4 rounded-2xl border border-border bg-white p-4 shadow-soft sm:flex-row sm:items-center sm:justify-between sm:p-5">
           <div className="relative flex-1">
             <Search
               className="absolute left-3.5 top-1/2 size-4 -translate-y-1/2 text-muted-foreground"
@@ -23,8 +23,8 @@ function FilterBar() {
               placeholder="Search by name or specialization..."
               aria-label="Search doctors"
               className={cn(
-                "h-11 w-full rounded-full border border-cns-border bg-background pl-10 pr-4 text-sm",
-                "text-cns-navy placeholder:text-muted-foreground",
+                "h-11 w-full rounded-full border border-border bg-background pl-10 pr-4 text-sm",
+                "text-cns-navy placeholder:text-muted-foreground/90",
                 "outline-none transition-colors focus:border-primary focus:ring-2 focus:ring-primary/20"
               )}
               readOnly
@@ -40,7 +40,7 @@ function FilterBar() {
                   "rounded-full px-4 py-2 text-sm font-medium transition-colors",
                   index === 0
                     ? "bg-primary text-primary-foreground"
-                    : "border border-cns-border bg-background text-cns-navy hover:border-primary/30 hover:bg-primary/5"
+                    : "border border-border bg-background text-cns-navy hover:border-primary/35 hover:bg-primary/8"
                 )}
               >
                 {dept}
@@ -51,7 +51,7 @@ function FilterBar() {
           <Button
             variant="outline"
             size="sm"
-            className="hidden h-11 shrink-0 rounded-full border-cns-border px-4 lg:inline-flex"
+            className="hidden h-11 shrink-0 rounded-full border-border px-4 font-semibold text-cns-navy lg:inline-flex"
           >
             <SlidersHorizontal />
             Filters

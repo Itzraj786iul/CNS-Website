@@ -137,7 +137,7 @@ function ContactPreviewSection() {
                     </Link>
                   }
                   variant="outline"
-                  className="h-11 w-fit rounded-full border-cns-border px-6"
+                    className="h-11 w-fit rounded-full border-border px-6 font-semibold text-cns-navy hover:border-primary/35 hover:bg-primary/5"
                 />
               </CardContent>
             </Card>

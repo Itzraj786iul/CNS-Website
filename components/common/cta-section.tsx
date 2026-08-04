@@ -91,7 +91,7 @@ function CTASection({
                 <p
                   className={cn(
                     "text-base leading-[1.75] sm:text-lg",
-                    isNavy ? "text-white/75" : "text-muted-foreground"
+                    isNavy ? "text-white/88" : "text-muted-foreground"
                   )}
                 >
                   {description}
@@ -130,7 +130,7 @@ function CTASection({
                     className={cn(
                       "h-11 rounded-full px-6",
                       isNavy &&
-                        "border-white/20 bg-transparent text-white hover:bg-white/10 hover:text-white"
+                        "border-white/35 bg-white/5 text-white hover:border-white/50 hover:bg-white/12 hover:text-white"
                     )}
                   />
                 ) : null}

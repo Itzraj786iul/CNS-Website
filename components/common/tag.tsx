@@ -7,11 +7,11 @@ const tagVariants = cva(
   {
     variants: {
       variant: {
-        default: "border-cns-border bg-white text-cns-navy",
-        blue: "border-primary/20 bg-primary/5 text-primary",
-        green: "border-secondary/20 bg-secondary/5 text-secondary",
-        orange: "border-accent/20 bg-accent/5 text-accent",
-        navy: "border-cns-navy/10 bg-cns-navy/5 text-cns-navy",
+        default: "border-border bg-white text-cns-navy",
+        blue: "border-primary/25 bg-primary/10 text-primary",
+        green: "border-secondary/25 bg-secondary/10 text-[#4d7512]",
+        orange: "border-accent/25 bg-accent/10 text-[#b45309]",
+        navy: "border-cns-navy/15 bg-cns-navy/8 text-cns-navy",
       },
     },
     defaultVariants: {

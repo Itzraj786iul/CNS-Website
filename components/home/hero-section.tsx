@@ -221,7 +221,7 @@ function HeroSection() {
                     </Link>
                   }
                   size="lg"
-                  className="h-12 min-w-[12rem] bg-secondary px-7 shadow-glow-green hover:bg-secondary/90"
+                  className="h-12 min-w-[12rem] bg-secondary font-semibold shadow-glow-green hover:bg-[#527a14]"
                 />
                 <Button
                   nativeButton={false}
@@ -233,13 +233,13 @@ function HeroSection() {
                   }
                   variant="outline"
                   size="lg"
-                  className="h-12 border-cns-border/80 bg-white/85 px-7 shadow-soft backdrop-blur-sm"
+                  className="h-12 border-border bg-white px-7 font-semibold text-cns-navy shadow-soft hover:border-primary/35 hover:bg-primary/5"
                 />
               </div>
               {isTelHref(appointmentHref) ? (
                 <a
                   href={appointmentHref}
-                  className="inline-flex items-center gap-2.5 text-sm font-medium text-cns-navy/70 transition-colors hover:text-primary"
+                  className="inline-flex items-center gap-2.5 text-sm font-medium text-cns-navy/88 transition-colors hover:text-primary"
                 >
                   <span className="flex size-8 items-center justify-center rounded-full bg-white shadow-soft ring-1 ring-cns-border/60">
                     <Phone className="size-3.5 text-primary" aria-hidden="true" />
@@ -254,7 +254,7 @@ function HeroSection() {
               ) : (
                 <Link
                   href={appointmentHref}
-                  className="inline-flex items-center gap-2.5 text-sm font-medium text-cns-navy/70 transition-colors hover:text-primary"
+                  className="inline-flex items-center gap-2.5 text-sm font-medium text-cns-navy/88 transition-colors hover:text-primary"
                 >
                   <span className="flex size-8 items-center justify-center rounded-full bg-white shadow-soft ring-1 ring-cns-border/60">
                     <Phone className="size-3.5 text-primary" aria-hidden="true" />
@@ -268,12 +268,12 @@ function HeroSection() {
 
             <motion.ul
               variants={fadeUp}
-              className="flex flex-col gap-4 border-t border-cns-border/40 pt-8 sm:flex-row sm:flex-wrap sm:gap-x-10 sm:gap-y-4"
+              className="flex flex-col gap-4 border-t border-border/70 pt-8 sm:flex-row sm:flex-wrap sm:gap-x-10 sm:gap-y-4"
             >
               {trustItems.map(({ icon: Icon, label }) => (
                 <li
                   key={label}
-                  className="flex items-center gap-3 text-sm font-medium text-cns-navy/80"
+                  className="flex items-center gap-3 text-sm font-medium text-cns-navy/90"
                 >
                   <span className="flex size-10 items-center justify-center rounded-full bg-white/90 shadow-soft ring-1 ring-cns-border/50 text-primary">
                     <Icon className="size-4" aria-hidden="true" />

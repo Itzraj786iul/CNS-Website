@@ -44,7 +44,7 @@ function EmergencyBanner({
             <h2 className="font-heading text-xl font-semibold text-white sm:text-2xl">
               {title}
             </h2>
-            <p className="mt-2 max-w-xl text-sm leading-relaxed text-white/75 sm:text-base">
+            <p className="mt-2 max-w-xl text-sm leading-relaxed text-white/88 sm:text-base">
               {description}
             </p>
             <a
@@ -63,7 +63,8 @@ function EmergencyBanner({
               Emergency Assistance
             </a>
           }
-          className="h-12 shrink-0 rounded-full bg-destructive px-6 text-white hover:bg-destructive/90"
+          variant="destructiveSolid"
+          className="h-12 shrink-0 rounded-full px-6"
         />
       </div>
     </div>

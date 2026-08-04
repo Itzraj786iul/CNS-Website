@@ -17,8 +17,8 @@
   --color-cns-navy: #16324a;
   --color-cns-bg: #f8fbfd;
   --color-cns-white: #ffffff;
-  --color-cns-border: #e7eef5;
-  --color-cns-muted: #6b7b8c;
+  --color-cns-border: #c5d4e0;
+  --color-cns-muted: #4f6275;
 
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -71,18 +71,18 @@
   --card-foreground: #16324a;
   --popover: #ffffff;
   --popover-foreground: #16324a;
-  --primary: #1f7cc6;
+  --primary: #186299;
   --primary-foreground: #ffffff;
-  --secondary: #7dbd24;
+  --secondary: #5f9418;
   --secondary-foreground: #ffffff;
   --muted: #eef4f9;
-  --muted-foreground: #6b7b8c;
-  --accent: #f7941d;
+  --muted-foreground: #4f6275;
+  --accent: #e8850a;
   --accent-foreground: #ffffff;
-  --destructive: #dc2626;
-  --border: #e7eef5;
-  --input: #e7eef5;
-  --ring: #1f7cc6;
+  --destructive: #c62828;
+  --border: #c5d4e0;
+  --input: #c5d4e0;
+  --ring: #186299;
   --chart-1: #1f7cc6;
   --chart-2: #7dbd24;
   --chart-3: #f7941d;
@@ -134,7 +134,7 @@
   }
 
   :focus-visible {
-    @apply outline-none ring-2 ring-primary/40 ring-offset-2 ring-offset-background;
+    @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-background;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -177,7 +177,7 @@
   }
 
   .eyebrow-pill {
-    @apply inline-flex items-center gap-2 rounded-full border border-primary/15 bg-primary/5 px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-primary;
+    @apply inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/8 px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-primary;
   }
 
   .eyebrow-pill::before {
@@ -197,7 +197,7 @@
   }
 
   .card-premium {
-    @apply rounded-2xl border border-cns-border/70 bg-white shadow-card ring-0 transition-[transform,box-shadow,border-color] duration-500 ease-out;
+    @apply rounded-2xl border border-border bg-white shadow-card ring-0 transition-[transform,box-shadow,border-color] duration-500 ease-out;
   }
 
   .card-body {
@@ -318,7 +318,7 @@
   }
 
   .link-underline {
-    @apply relative inline-flex text-primary transition-colors hover:text-primary/80;
+    @apply relative inline-flex text-primary transition-colors hover:text-[#14527a];
   }
 
   .link-underline::after {

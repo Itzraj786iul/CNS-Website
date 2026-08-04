@@ -42,7 +42,7 @@ function NavLink({
         compact ? "px-3 py-2 text-[13px]" : "px-3.5 py-2.5 text-sm",
         isActive
           ? "text-primary"
-          : "text-cns-navy/75 hover:bg-white/85 hover:text-cns-navy hover:shadow-soft"
+          : "text-cns-navy/88 hover:bg-white/85 hover:text-cns-navy hover:shadow-soft"
       )}
     >
       {label}
@@ -128,7 +128,7 @@ function Navbar() {
                   <Button
                     variant="outline"
                     size="icon"
-                    className="rounded-full border-cns-border lg:hidden"
+                    className="rounded-full border-border lg:hidden"
                     aria-label="Open menu"
                   />
                 }

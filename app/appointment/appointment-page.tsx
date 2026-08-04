@@ -148,7 +148,7 @@ function AppointmentPageContent() {
                   size="lg"
                   aria-busy={isSubmitting}
                   disabled={isSubmitting}
-                  className="h-12 w-full bg-secondary shadow-glow-green hover:bg-secondary/90 sm:w-auto sm:px-10"
+                  className="h-12 w-full bg-secondary font-semibold shadow-glow-green hover:bg-[#527a14] sm:w-auto sm:px-10"
                 >
                   <CalendarDays />
                   {isSubmitting ? "Submitting..." : "Book Appointment"}
@@ -161,9 +161,9 @@ function AppointmentPageContent() {
                       Need Immediate Help? Call Emergency
                     </Link>
                   }
-                  variant="outline"
+                  variant="destructive"
                   size="lg"
-                  className="h-12 w-full border-destructive/30 text-destructive hover:bg-destructive/5 sm:w-auto sm:px-8"
+                  className="h-12 w-full font-semibold sm:w-auto sm:px-8"
                 />
                 </div>
               </form>
@@ -198,8 +198,8 @@ function AppointmentPageContent() {
                     <Clock className="size-5 text-secondary" />
                     <h3 className="font-heading text-base font-semibold text-white">Outpatient Hours</h3>
                   </div>
-                  <p className="text-sm leading-relaxed text-white/75">Mon – Sat, 8:00 AM – 8:00 PM</p>
-                  <p className="text-sm text-white/60">Emergency care available 24×7</p>
+                  <p className="text-sm leading-relaxed text-white/88">Mon – Sat, 8:00 AM – 8:00 PM</p>
+                  <p className="text-sm text-white/75">Emergency care available 24×7</p>
                   <Button
                     nativeButton={false}
                     render={
@@ -208,7 +208,7 @@ function AppointmentPageContent() {
                       </Link>
                     }
                     variant="outline"
-                    className="mt-2 h-10 w-full rounded-full border-white/20 text-white hover:bg-white/10 hover:text-white"
+                    className="mt-2 h-10 w-full rounded-full border-white/35 bg-white/5 font-semibold text-white hover:border-white/50 hover:bg-white/12 hover:text-white"
                   />
                 </CardContent>
               </Card>

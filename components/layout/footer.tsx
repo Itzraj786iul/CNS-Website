@@ -29,7 +29,7 @@ function FooterLink({ href, children }: { href: string; children: React.ReactNod
   return (
     <Link
       href={href}
-      className="text-sm text-white/70 transition-all duration-200 hover:translate-x-0.5 hover:text-white"
+      className="text-sm text-white/80 transition-all duration-200 hover:translate-x-0.5 hover:text-white"
     >
       {children}
     </Link>
@@ -75,7 +75,7 @@ function SocialLink({
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
-      className="inline-flex size-10 items-center justify-center rounded-full border border-white/10 text-white/70 transition-all duration-300 hover:scale-[1.02] hover:border-white/25 hover:bg-white/10 hover:text-white"
+      className="inline-flex size-10 items-center justify-center rounded-full border border-white/15 text-white/80 transition-all duration-300 hover:scale-[1.02] hover:border-white/30 hover:bg-white/10 hover:text-white"
     >
       <Icon className="size-4 stroke-[1.75]" />
     </a>
@@ -104,7 +104,7 @@ function Footer() {
               <p className="max-w-xs text-xs font-semibold uppercase tracking-[0.12em] text-secondary">
                 Center for Neuroscience · Raipur
               </p>
-              <p className="max-w-sm text-sm leading-[1.8] text-white/70">
+              <p className="max-w-sm text-sm leading-[1.8] text-white/80">
                 Patient-centred neuroscience care — integrating neurology,
                 neurosurgery, psychiatry, and rehabilitation under one trusted
                 institution.
@@ -122,7 +122,7 @@ function Footer() {
               aria-label="Newsletter signup"
             >
               <p className="text-sm font-semibold text-white/95">Clinical Updates & News</p>
-              <p className="text-xs leading-relaxed text-white/50">
+              <p className="text-xs leading-relaxed text-white/70">
                 Health insights and hospital announcements from CNS.
               </p>
               <div className="grid min-w-0 grid-cols-1 gap-2.5 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-stretch">
@@ -130,7 +130,7 @@ function Footer() {
                   type="email"
                   placeholder="Your email address"
                   aria-label="Email for newsletter"
-                  className="h-11 min-w-0 w-full rounded-full border border-white/15 bg-white/5 px-4 text-sm text-white placeholder:text-white/40 outline-none transition-all duration-300 focus:border-primary/50 focus:ring-2 focus:ring-primary/30"
+                  className="h-11 min-w-0 w-full rounded-full border border-white/20 bg-white/8 px-4 text-sm text-white placeholder:text-white/55 outline-none transition-all duration-300 focus:border-primary/60 focus:ring-2 focus:ring-primary/40"
                 />
                 <Button
                   type="submit"
@@ -151,7 +151,7 @@ function Footer() {
               <h3 className="font-heading text-xs font-semibold uppercase tracking-[0.14em] text-white/95">
                 Emergency Assistance
               </h3>
-              <p className="mt-2 text-xs leading-relaxed text-white/55">
+              <p className="mt-2 text-xs leading-relaxed text-white/75">
                 Stroke, seizures, or head injury — call immediately.
               </p>
               <ul className="mt-4 space-y-3.5">
@@ -165,20 +165,20 @@ function Footer() {
                   </a>
                 </li>
                 {contact.phone ? (
-                  <li className="flex items-start gap-3 text-sm text-white/70">
+                  <li className="flex items-start gap-3 text-sm text-white/80">
                     <Phone className="mt-0.5 size-4 shrink-0 text-secondary" />
                     <a href={toTelHref(contact.phone)} className="hover:text-white">
                       {contact.phone}
                     </a>
                   </li>
                 ) : null}
-                <li className="flex items-start gap-3 text-sm text-white/70">
+                <li className="flex items-start gap-3 text-sm text-white/80">
                   <Mail className="mt-0.5 size-4 shrink-0 text-secondary" />
                   <a href={`mailto:${contact.email}`} className="hover:text-white">
                     {contact.email}
                   </a>
                 </li>
-                <li className="flex items-start gap-3 text-sm text-white/70">
+                <li className="flex items-start gap-3 text-sm text-white/80">
                   <MapPin className="mt-0.5 size-4 shrink-0 text-secondary" />
                   <span>{contact.address}</span>
                 </li>
@@ -189,7 +189,7 @@ function Footer() {
               <h3 className="font-heading text-xs font-semibold uppercase tracking-[0.14em] text-white/90">
                 Working Hours
               </h3>
-              <ul className="space-y-2.5 text-sm leading-relaxed text-white/70">
+              <ul className="space-y-2.5 text-sm leading-relaxed text-white/80">
                 <li>
                   <span className="font-medium text-white/85">Outpatient:</span>{" "}
                   {hours.outpatient}
@@ -209,7 +209,7 @@ function Footer() {
 
         <Separator className="my-12 bg-white/10" />
 
-        <div className="flex flex-col gap-4 text-sm text-white/50 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex flex-col gap-4 text-sm text-white/65 sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
           </p>

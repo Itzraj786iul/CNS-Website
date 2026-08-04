@@ -85,7 +85,7 @@ function NavMoreMenu({
           "relative inline-flex items-center gap-1.5 rounded-full px-3.5 py-2.5 text-sm font-medium transition-[color,background-color,box-shadow,transform] duration-300 active:scale-[0.98]",
           moreActive
             ? "text-primary"
-            : "text-cns-navy/75 hover:bg-white/85 hover:text-cns-navy hover:shadow-soft"
+            : "text-cns-navy/88 hover:bg-white/85 hover:text-cns-navy hover:shadow-soft"
         )}
       >
         More
@@ -159,7 +159,7 @@ function NavMoreMenu({
                               "group/item flex items-center gap-3 rounded-2xl px-3 py-3 text-sm font-medium transition-all duration-300 active:scale-[0.98]",
                               active
                                 ? "bg-primary/8 text-primary shadow-soft"
-                                : "text-cns-navy/85 hover:bg-white hover:text-cns-navy hover:shadow-soft"
+                                : "text-cns-navy hover:bg-white hover:text-cns-navy hover:shadow-soft"
                             )}
                           >
                             {Icon ? (

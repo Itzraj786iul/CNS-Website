@@ -51,7 +51,7 @@ function NavAppointmentCta({
         </Link>
       }
       className={cn(
-        "group/cta relative overflow-hidden rounded-full bg-secondary text-secondary-foreground shadow-glow-green transition-[transform,box-shadow,background-color] duration-300 hover:scale-[1.02] hover:bg-secondary/90 hover:shadow-[0_10px_36px_-8px_rgb(125_189_36_/_0.45)] focus-visible:ring-secondary/40 active:scale-[0.98]",
+        "group/cta relative overflow-hidden rounded-full bg-secondary font-semibold text-secondary-foreground shadow-glow-green transition-[transform,box-shadow,background-color] duration-300 hover:scale-[1.02] hover:bg-[#527a14] hover:shadow-[0_10px_36px_-8px_rgb(125_189_36_/_0.45)] focus-visible:ring-secondary/50 active:scale-[0.98]",
         size === "default" && "hidden h-11 min-h-[44px] px-6 sm:inline-flex",
         size === "large" && "inline-flex h-12 w-full px-6",
         loading && "pointer-events-none opacity-90",

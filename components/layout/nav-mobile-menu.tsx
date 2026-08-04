@@ -109,7 +109,7 @@ function NavMobileMenu({ isActive, onNavigate }: NavMobileMenuProps) {
         <a
           href={getEmergencyTelHref()}
           onClick={onNavigate}
-          className="flex h-12 w-full items-center justify-center gap-2 rounded-full border border-destructive/25 bg-destructive/5 text-sm font-semibold text-destructive transition-all duration-300 hover:bg-destructive/10 active:scale-[0.98]"
+          className="flex h-12 w-full items-center justify-center gap-2 rounded-full border border-destructive/30 bg-destructive/10 text-sm font-semibold text-[#a61f1f] transition-all duration-300 hover:bg-destructive/15 active:scale-[0.98]"
         >
           <Siren className="size-4" aria-hidden="true" />
           Emergency Call
@@ -120,7 +120,7 @@ function NavMobileMenu({ isActive, onNavigate }: NavMobileMenuProps) {
           target="_blank"
           rel="noopener noreferrer"
           onClick={onNavigate}
-          className="flex h-12 w-full items-center justify-center gap-2 rounded-full border border-[#25D366]/25 bg-[#25D366]/8 text-sm font-semibold text-[#128C7E] transition-all duration-300 hover:bg-[#25D366]/12 active:scale-[0.98]"
+          className="flex h-12 w-full items-center justify-center gap-2 rounded-full border border-[#25D366]/30 bg-[#25D366]/10 text-sm font-semibold text-[#0d5c52] transition-all duration-300 hover:bg-[#25D366]/15 active:scale-[0.98]"
         >
           <MessageCircle className="size-4" aria-hidden="true" />
           WhatsApp

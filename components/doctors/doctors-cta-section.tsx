@@ -67,7 +67,7 @@ function DoctorsCtaSection() {
                     }
                     variant="outline"
                     size="lg"
-                    className="h-12 border-white/30 bg-transparent px-8 text-white hover:bg-white/10 hover:text-white"
+                    className="h-12 border-white/35 bg-white/5 px-8 font-semibold text-white hover:border-white/50 hover:bg-white/12 hover:text-white"
                   />
                 ) : null}
               </div>

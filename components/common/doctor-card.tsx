@@ -67,7 +67,7 @@ function DoctorCard({
                   "inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[11px] font-semibold shadow-soft backdrop-blur-sm",
                   available
                     ? "bg-secondary/90 text-white"
-                    : "bg-white/90 text-muted-foreground"
+                    : "bg-white/95 text-cns-navy/80"
                 )}
               >
                 <span
@@ -88,7 +88,9 @@ function DoctorCard({
         <CardTitle className="text-xl font-semibold tracking-tight text-cns-navy">
           {name}
         </CardTitle>
-        <CardDescription className="text-base leading-relaxed">{title}</CardDescription>
+        <CardDescription className="text-base font-medium leading-relaxed text-primary">
+          {title}
+        </CardDescription>
       </CardHeader>
       {specializations?.length || intro ? (
         <CardContent className="flex flex-1 flex-col gap-3 px-6 pb-2 pt-0">
@@ -118,7 +120,7 @@ function DoctorCard({
                 </Link>
               }
               variant="ghost"
-              className="group/btn h-10 w-full justify-start rounded-full px-3 text-primary hover:bg-primary/5"
+              className="group/btn h-10 w-full justify-start rounded-full px-3 font-semibold text-primary hover:bg-primary/10"
             />
           ) : null}
           <div className="flex w-full flex-col gap-2 sm:flex-row">
@@ -131,7 +133,7 @@ function DoctorCard({
                 </Link>
               }
               size="sm"
-              className="h-10 flex-1 rounded-full bg-secondary text-secondary-foreground shadow-glow-green hover:bg-secondary/90"
+              className="h-10 flex-1 rounded-full bg-secondary font-semibold text-secondary-foreground shadow-glow-green hover:bg-[#527a14]"
             />
             <Button
               nativeButton={false}
@@ -143,7 +145,7 @@ function DoctorCard({
               }
               variant="outline"
               size="sm"
-              className="h-10 flex-1 rounded-full border-cns-border"
+              className="h-10 flex-1 rounded-full border-border font-semibold text-cns-navy hover:border-primary/35 hover:bg-primary/5"
             />
           </div>
         </CardFooter>
@@ -151,7 +153,7 @@ function DoctorCard({
         <CardFooter className="border-t-0 bg-transparent px-6 pb-6 pt-0">
           <Button
             variant="ghost"
-            className="group/btn -ml-2 h-10 rounded-full px-3 text-primary hover:bg-primary/5"
+            className="group/btn -ml-2 h-10 rounded-full px-3 font-semibold text-primary hover:bg-primary/10"
           >
             View Profile
             <ArrowUpRight className="transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
