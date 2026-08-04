@@ -14,6 +14,7 @@ import { Section } from "@/components/common/section";
 import { SectionHeading } from "@/components/common/section-heading";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { getEmergencyTelHref } from "@/lib/contact-links";
 import { fadeUp, hoverLift } from "@/lib/motion";
 
 function ResourcesPageContent() {
@@ -142,7 +143,7 @@ function ResourcesPageContent() {
               </div>
               <Button
                 nativeButton={false}
-                render={<Link href={`tel:${emergency.phone.replace(/\s/g, "")}`}>{emergency.phone}</Link>}
+                render={<Link href={getEmergencyTelHref()}>{emergency.phone}</Link>}
                 className="h-12 shrink-0 rounded-full bg-destructive px-6 hover:bg-destructive/90"
               />
             </div>

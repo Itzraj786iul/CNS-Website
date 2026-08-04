@@ -1,18 +1,20 @@
 "use client";
 
 import Link from "next/link";
-import { Mail, MapPin, Phone, Siren } from "lucide-react";
+import { Mail, MapPin, MessageCircle, Phone, Siren } from "lucide-react";
 import { motion } from "framer-motion";
 
 import { contactContent } from "@/components/contact/data";
 import { FormField, FormInput, FormTextarea } from "@/components/contact/form-fields";
 import { AnimatedSection } from "@/components/common/animated-section";
+import { EmergencyBanner } from "@/components/common/emergency-banner";
 import { IconBox } from "@/components/common/icon-box";
 import { Section } from "@/components/common/section";
 import { SectionHeading } from "@/components/common/section-heading";
 import { FAQCard } from "@/components/common/faq-card";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { WHATSAPP_URL, isTelHref } from "@/lib/contact-links";
 import { fadeUp, hoverLift } from "@/lib/motion";
 
 const iconMap = {
@@ -44,7 +46,11 @@ function ContactCardsSection() {
                     <IconBox icon={Icon} variant={variant} />
                     <div className="space-y-2">
                       <p className="text-sm font-semibold uppercase tracking-[0.12em] text-muted-foreground">{card.title}</p>
-                      <Link href={card.href} className="block font-heading text-base font-semibold text-cns-navy transition-colors hover:text-primary">{card.value}</Link>
+                      {isTelHref(card.href) || card.href.startsWith("mailto:") || card.href.startsWith("http") ? (
+                        <a href={card.href} className="block font-heading text-base font-semibold text-cns-navy transition-colors hover:text-primary">{card.value}</a>
+                      ) : (
+                        <Link href={card.href} className="block font-heading text-base font-semibold text-cns-navy transition-colors hover:text-primary">{card.value}</Link>
+                      )}
                       <p className="text-sm text-muted-foreground">{card.description}</p>
                     </div>
                   </CardContent>
@@ -63,8 +69,18 @@ function ContactFormSection() {
     <Section variant="default" spacing="lg">
       <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:gap-16">
         <AnimatedSection>
-          <div className="mb-8">
+          <div className="mb-8 space-y-5">
             <SectionHeading eyebrow="Send a Message" title="Contact Form" description="Fill out the form below and our team will respond within one business day." />
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#25D366] px-6 text-sm font-semibold text-white shadow-soft transition-all duration-300 hover:scale-[1.02] hover:shadow-soft-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366]/50 focus-visible:ring-offset-2"
+              aria-label="Chat on WhatsApp with Center for Neuroscience"
+            >
+              <MessageCircle className="size-5" aria-hidden="true" />
+              Chat on WhatsApp
+            </a>
           </div>
           <form
             className="space-y-5 rounded-3xl border border-cns-border/80 bg-white p-6 shadow-soft sm:p-8"
@@ -96,7 +112,7 @@ function ContactFormSection() {
             <div className="relative aspect-square w-full lg:aspect-auto lg:min-h-[360px]">
               <iframe
                 title="Center for Neuroscience location"
-                src="https://maps.google.com/maps?q=medical+district+bengaluru&output=embed"
+                src="https://maps.google.com/maps?q=Raipur+Chhattisgarh&output=embed"
                 className="absolute inset-0 h-full w-full border-0 grayscale-[30%]"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
@@ -135,7 +151,11 @@ function DepartmentsContactSection() {
               <Card className="h-full border-cns-border/80 bg-white shadow-soft ring-0">
                 <CardContent className="space-y-3 px-6 py-6">
                   <h3 className="font-heading text-base font-semibold text-cns-navy">{dept.name}</h3>
-                  <Link href={`tel:${dept.phone.replace(/\s/g, "")}`} className="block text-sm text-primary hover:underline">{dept.phone}</Link>
+                  {isTelHref(dept.href) ? (
+                    <a href={dept.href} className="block text-sm text-primary hover:underline">{dept.phone}</a>
+                  ) : (
+                    <Link href={dept.href} className="block text-sm text-primary hover:underline">{dept.phone}</Link>
+                  )}
                   <Link href={`mailto:${dept.email}`} className="block text-sm text-muted-foreground hover:text-primary">{dept.email}</Link>
                 </CardContent>
               </Card>
@@ -148,27 +168,10 @@ function DepartmentsContactSection() {
 }
 
 function EmergencyBannerSection() {
-  const { emergencyBanner } = contactContent;
   return (
     <Section variant="default" spacing="sm" contained={true}>
       <AnimatedSection>
-        <div className="relative overflow-hidden rounded-3xl bg-cns-navy px-6 py-8 sm:px-10 sm:py-10">
-          <div aria-hidden="true" className="pointer-events-none absolute -right-12 -top-12 size-48 rounded-full bg-destructive/20 blur-3xl" />
-          <div className="relative z-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <div className="flex items-start gap-4">
-              <IconBox icon={Siren} variant="white" className="bg-destructive/20 text-white" />
-              <div>
-                <h2 className="font-heading text-xl font-semibold text-white sm:text-2xl">{emergencyBanner.title}</h2>
-                <p className="mt-2 max-w-xl text-sm leading-relaxed text-white/75 sm:text-base">{emergencyBanner.description}</p>
-              </div>
-            </div>
-            <Button
-              nativeButton={false}
-              render={<Link href={emergencyBanner.href}>{emergencyBanner.phone}</Link>}
-              className="h-12 shrink-0 rounded-full bg-destructive px-6 text-white hover:bg-destructive/90"
-            />
-          </div>
-        </div>
+        <EmergencyBanner title="Neurological Emergency?" />
       </AnimatedSection>
     </Section>
   );

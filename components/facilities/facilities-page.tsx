@@ -6,7 +6,9 @@ import {
   PatientSafetySection,
   TechnologySection,
 } from "@/components/facilities/facilities-sections";
+import { EmergencyBanner } from "@/components/common/emergency-banner";
 import { PageHero } from "@/components/common/page-hero";
+import { Section } from "@/components/common/section";
 
 function FacilitiesPageContent() {
   return (
@@ -20,6 +22,9 @@ function FacilitiesPageContent() {
       <GallerySection />
       <TechnologySection />
       <PatientSafetySection />
+      <Section variant="default" spacing="sm" contained={true}>
+        <EmergencyBanner />
+      </Section>
       <FacilitiesCtaSection />
     </>
   );

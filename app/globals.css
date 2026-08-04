@@ -207,4 +207,18 @@
   .section-blob {
     @apply pointer-events-none absolute rounded-full blur-3xl;
   }
+
+  @keyframes whatsapp-pulse {
+    0%,
+    100% {
+      box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.45);
+    }
+    50% {
+      box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+    }
+  }
+
+  .animate-whatsapp-pulse {
+    animation: whatsapp-pulse 2s ease-in-out infinite;
+  }
 }

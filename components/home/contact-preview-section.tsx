@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { isTelHref } from "@/lib/contact-links";
+import { Mail, MapPin, Phone, Siren } from "lucide-react";
 import { motion } from "framer-motion";
 
 import { contactCards } from "@/components/home/data";
@@ -16,12 +17,14 @@ const iconMap = {
   phone: Phone,
   email: Mail,
   location: MapPin,
+  emergency: Siren,
 } as const;
 
 const variantMap = {
   phone: "blue",
   email: "green",
   location: "orange",
+  emergency: "orange",
 } as const;
 
 function ContactPreviewSection() {
@@ -37,7 +40,7 @@ function ContactPreviewSection() {
           />
         </AnimatedSection>
 
-        <AnimatedSection stagger className="grid gap-5 md:grid-cols-3">
+        <AnimatedSection stagger className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {contactCards.map((card) => {
             const Icon = iconMap[card.icon];
             const variant = variantMap[card.icon];
@@ -57,12 +60,21 @@ function ContactPreviewSection() {
                         <p className="text-sm font-semibold uppercase tracking-[0.12em] text-muted-foreground">
                           {card.title}
                         </p>
-                        <Link
-                          href={card.href}
-                          className="block font-heading text-lg font-semibold text-cns-navy transition-colors hover:text-primary"
-                        >
-                          {card.value}
-                        </Link>
+                        {isTelHref(card.href) || card.href.startsWith("mailto:") ? (
+                          <a
+                            href={card.href}
+                            className="block font-heading text-lg font-semibold text-cns-navy transition-colors hover:text-primary"
+                          >
+                            {card.value}
+                          </a>
+                        ) : (
+                          <Link
+                            href={card.href}
+                            className="block font-heading text-lg font-semibold text-cns-navy transition-colors hover:text-primary"
+                          >
+                            {card.value}
+                          </Link>
+                        )}
                         <p className="text-sm text-muted-foreground">
                           {card.description}
                         </p>
@@ -80,7 +92,7 @@ function ContactPreviewSection() {
             <div className="relative aspect-[16/7] w-full">
               <iframe
                 title="Center for Neuroscience location map"
-                src="https://maps.google.com/maps?q=medical+district&output=embed"
+                src="https://maps.google.com/maps?q=Raipur+Chhattisgarh&output=embed"
                 className="absolute inset-0 h-full w-full border-0 grayscale-[30%]"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"

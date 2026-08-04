@@ -19,6 +19,8 @@ import {
 } from "lucide-react";
 
 import type { FAQItem } from "@/components/common/faq-card";
+import { getAppointmentDisplay, getEmergencyTelHref, toTelHref } from "@/lib/contact-links";
+import { siteConfig } from "@/lib/constants/site";
 
 export const heroStats = [
   { value: "20", suffix: "+", label: "Specialists" },
@@ -303,22 +305,31 @@ export const contactCards = [
   {
     icon: "phone" as const,
     title: "Phone",
-    value: "+91 80 0000 0000",
-    href: "tel:+918000000000",
+    value: getAppointmentDisplay(),
+    href: siteConfig.contact.phone
+      ? toTelHref(siteConfig.contact.phone)
+      : "/appointment",
     description: "Mon–Sat, 8:00 AM – 8:00 PM",
   },
   {
     icon: "email" as const,
     title: "Email",
-    value: "care@cns.org",
-    href: "mailto:care@cns.org",
+    value: siteConfig.contact.email,
+    href: `mailto:${siteConfig.contact.email}`,
     description: "We respond within one business day",
   },
   {
     icon: "location" as const,
     title: "Location",
-    value: "Center for Neuroscience, Medical District",
+    value: siteConfig.location,
     href: "/contact",
     description: "Parking and wheelchair access available",
+  },
+  {
+    icon: "emergency" as const,
+    title: "Emergency",
+    value: siteConfig.contact.emergency,
+    href: getEmergencyTelHref(),
+    description: "24×7 neurological emergency line",
   },
 ];

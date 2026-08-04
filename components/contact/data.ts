@@ -1,4 +1,14 @@
 import type { FAQItem } from "@/components/common/faq-card";
+import {
+  getAppointmentDisplay,
+  getEmergencyTelHref,
+  toTelHref,
+} from "@/lib/contact-links";
+import { siteConfig } from "@/lib/constants/site";
+
+const emergencyPhone = siteConfig.contact.emergency;
+const emergencyHref = getEmergencyTelHref();
+const appointmentDisplay = getAppointmentDisplay();
 
 export const contactContent = {
   hero: {
@@ -10,29 +20,31 @@ export const contactContent = {
     {
       type: "phone" as const,
       title: "Phone",
-      value: "+91 80 4567 8900",
-      href: "tel:+918045678900",
+      value: appointmentDisplay,
+      href: siteConfig.contact.phone
+        ? toTelHref(siteConfig.contact.phone)
+        : "/appointment",
       description: "Mon–Sat, 8:00 AM – 8:00 PM",
     },
     {
       type: "email" as const,
       title: "Email",
-      value: "care@cns.org",
-      href: "mailto:care@cns.org",
+      value: siteConfig.contact.email,
+      href: `mailto:${siteConfig.contact.email}`,
       description: "Response within one business day",
     },
     {
       type: "emergency" as const,
       title: "Emergency",
-      value: "+91 80 4567 8911",
-      href: "tel:+918045678911",
+      value: emergencyPhone,
+      href: emergencyHref,
       description: "24×7 stroke & neurotrauma line",
     },
     {
       type: "address" as const,
       title: "Address",
-      value: "Center for Neuroscience, Medical District, Bengaluru 560001",
-      href: "https://maps.google.com",
+      value: siteConfig.contact.address,
+      href: "https://maps.google.com/maps?q=Raipur+Chhattisgarh",
       description: "Parking & wheelchair access available",
     },
   ],
@@ -48,19 +60,13 @@ export const contactContent = {
     ],
   },
   departments: [
-    { name: "Appointments", phone: "+91 80 4567 8900", email: "appointments@cns.org" },
-    { name: "Neurology OPD", phone: "+91 80 4567 8901", email: "neurology@cns.org" },
-    { name: "Neurosurgery", phone: "+91 80 4567 8902", email: "neurosurgery@cns.org" },
-    { name: "Psychiatry", phone: "+91 80 4567 8903", email: "psychiatry@cns.org" },
-    { name: "Billing & Insurance", phone: "+91 80 4567 8904", email: "billing@cns.org" },
-    { name: "Medical Records", phone: "+91 80 4567 8905", email: "records@cns.org" },
+    { name: "Appointments", phone: appointmentDisplay, email: "appointments@cns.org", href: siteConfig.contact.phone ? toTelHref(siteConfig.contact.phone) : "/appointment" },
+    { name: "Neurology OPD", phone: emergencyPhone, email: "neurology@cns.org", href: emergencyHref },
+    { name: "Neurosurgery", phone: emergencyPhone, email: "neurosurgery@cns.org", href: emergencyHref },
+    { name: "Psychiatry", phone: emergencyPhone, email: "psychiatry@cns.org", href: emergencyHref },
+    { name: "Billing & Insurance", phone: emergencyPhone, email: "billing@cns.org", href: emergencyHref },
+    { name: "Medical Records", phone: emergencyPhone, email: "records@cns.org", href: emergencyHref },
   ],
-  emergencyBanner: {
-    title: "Neurological Emergency?",
-    description: "If you or someone you know is experiencing stroke symptoms, severe headache, seizures, or head trauma — call our emergency line immediately.",
-    phone: "+91 80 4567 8911",
-    href: "tel:+918045678911",
-  },
   faq: [
     {
       question: "How do I schedule an appointment?",

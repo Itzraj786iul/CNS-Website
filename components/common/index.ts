@@ -5,6 +5,7 @@ export { Container } from "./container";
 export { CTASection } from "./cta-section";
 export { DepartmentCard } from "./department-card";
 export { DoctorCard } from "./doctor-card";
+export { EmergencyBanner } from "./emergency-banner";
 export { FAQCard } from "./faq-card";
 export type { FAQItem } from "./faq-card";
 export { FeatureCard } from "./feature-card";

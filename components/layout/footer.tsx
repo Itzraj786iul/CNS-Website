@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { Mail, MapPin, Phone, Siren } from "lucide-react";
+import { CalendarDays, Mail, MapPin, MessageCircle, Phone, Siren } from "lucide-react";
 
 import { Container } from "@/components/common/container";
 import {
@@ -14,11 +14,17 @@ import {
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import {
-  ctaNavigation,
   footerDepartments,
   footerQuickLinks,
   footerServices,
 } from "@/lib/constants/navigation";
+import {
+  WHATSAPP_URL,
+  getAppointmentTelHref,
+  getEmergencyTelHref,
+  isTelHref,
+  toTelHref,
+} from "@/lib/contact-links";
 import { siteConfig } from "@/lib/constants/site";
 
 function FooterLink({ href, children }: { href: string; children: React.ReactNode }) {
@@ -77,6 +83,8 @@ function SocialLink({
 
 function Footer() {
   const { contact, social, hours } = siteConfig;
+  const emergencyHref = getEmergencyTelHref();
+  const appointmentHref = getAppointmentTelHref();
 
   return (
     <footer data-slot="footer" className="bg-cns-navy text-white">
@@ -128,16 +136,18 @@ function Footer() {
               <ul className="mt-4 space-y-3">
                 <li className="flex items-start gap-3 text-sm text-white/70">
                   <Siren className="mt-0.5 size-4 shrink-0 text-destructive" />
-                  <a href={`tel:${contact.emergency.replace(/\s/g, "")}`} className="hover:text-white">
+                  <a href={emergencyHref} className="hover:text-white">
                     {contact.emergency}
                   </a>
                 </li>
-                <li className="flex items-start gap-3 text-sm text-white/70">
-                  <Phone className="mt-0.5 size-4 shrink-0 text-secondary" />
-                  <a href={`tel:${contact.phone.replace(/\s/g, "")}`} className="hover:text-white">
-                    {contact.phone}
-                  </a>
-                </li>
+                {contact.phone ? (
+                  <li className="flex items-start gap-3 text-sm text-white/70">
+                    <Phone className="mt-0.5 size-4 shrink-0 text-secondary" />
+                    <a href={toTelHref(contact.phone)} className="hover:text-white">
+                      {contact.phone}
+                    </a>
+                  </li>
+                ) : null}
                 <li className="flex items-start gap-3 text-sm text-white/70">
                   <Mail className="mt-0.5 size-4 shrink-0 text-secondary" />
                   <a href={`mailto:${contact.email}`} className="hover:text-white">
@@ -171,12 +181,42 @@ function Footer() {
               </ul>
             </div>
 
-            <Link
-              href={ctaNavigation.href}
-              className="inline-flex h-10 items-center justify-center rounded-full bg-secondary px-5 text-sm font-medium text-secondary-foreground transition-all duration-300 hover:scale-[1.02] hover:bg-secondary/90"
-            >
-              {ctaNavigation.label}
-            </Link>
+            <div className="flex flex-col gap-2">
+              <a
+                href={emergencyHref}
+                className="inline-flex h-10 items-center justify-center gap-2 rounded-full bg-destructive px-5 text-sm font-medium text-white transition-all duration-300 hover:scale-[1.02] hover:bg-destructive/90"
+              >
+                <Siren className="size-4" />
+                Call Now
+              </a>
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Contact us on WhatsApp"
+                className="inline-flex h-10 items-center justify-center gap-2 rounded-full bg-[#25D366] px-5 text-sm font-medium text-white transition-all duration-300 hover:scale-[1.02] hover:bg-[#22c55e]"
+              >
+                <MessageCircle className="size-4" />
+                WhatsApp
+              </a>
+              {isTelHref(appointmentHref) ? (
+                <a
+                  href={appointmentHref}
+                  className="inline-flex h-10 items-center justify-center gap-2 rounded-full bg-secondary px-5 text-sm font-medium text-secondary-foreground transition-all duration-300 hover:scale-[1.02] hover:bg-secondary/90"
+                >
+                  <CalendarDays className="size-4" />
+                  Book Appointment
+                </a>
+              ) : (
+                <Link
+                  href={appointmentHref}
+                  className="inline-flex h-10 items-center justify-center gap-2 rounded-full bg-secondary px-5 text-sm font-medium text-secondary-foreground transition-all duration-300 hover:scale-[1.02] hover:bg-secondary/90"
+                >
+                  <CalendarDays className="size-4" />
+                  Book Appointment
+                </Link>
+              )}
+            </div>
           </div>
         </div>
 

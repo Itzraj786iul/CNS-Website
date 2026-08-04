@@ -1,5 +1,7 @@
 import type { FAQItem } from "@/components/common/faq-card";
 
+import { siteConfig } from "@/lib/constants/site";
+
 export const resourcesContent = {
   hero: {
     title: "Patient Resources",
@@ -42,7 +44,7 @@ export const resourcesContent = {
     },
     {
       question: "What insurance plans do you accept?",
-      answer: "We work with most major public and private insurance providers. Contact our billing desk at +91 80 4567 8904 to verify your specific plan coverage.",
+      answer: `We work with most major public and private insurance providers. Contact our billing desk at ${siteConfig.contact.emergency} to verify your specific plan coverage.`,
     },
     {
       question: "Can I request a specific doctor?",
@@ -57,7 +59,7 @@ export const resourcesContent = {
     title: "Emergency Information",
     description:
       "For stroke symptoms, severe head injury, seizures, or sudden neurological changes — do not wait. Call our emergency line or proceed directly to the emergency department.",
-    phone: "+91 80 4567 8911",
+    phone: siteConfig.contact.emergency,
     signs: [
       "Sudden weakness or numbness on one side",
       "Difficulty speaking or understanding speech",

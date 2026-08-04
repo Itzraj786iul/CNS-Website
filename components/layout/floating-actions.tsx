@@ -6,7 +6,7 @@ import { CalendarDays, ChevronUp, MessageCircle } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 
 import { Button } from "@/components/ui/button";
-import { siteConfig } from "@/lib/constants/site";
+import { WHATSAPP_URL } from "@/lib/contact-links";
 import { cn } from "@/lib/utils";
 
 function FloatingActions() {
@@ -21,8 +21,6 @@ function FloatingActions() {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const whatsappUrl = `https://wa.me/${siteConfig.contact.whatsapp.replace(/\D/g, "")}?text=${encodeURIComponent("Hello, I would like to inquire about an appointment at CNS.")}`;
 
   return (
     <>
@@ -63,16 +61,6 @@ function FloatingActions() {
           ) : null}
         </AnimatePresence>
 
-        <a
-          href={whatsappUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Contact us on WhatsApp"
-          className="flex size-12 items-center justify-center rounded-full bg-[#25D366] text-white shadow-soft transition-all duration-300 hover:scale-[1.02] hover:shadow-soft-lg"
-        >
-          <MessageCircle className="size-5" />
-        </a>
-
         <Button
           nativeButton={false}
           render={
@@ -83,6 +71,24 @@ function FloatingActions() {
           }
           className="hidden h-12 rounded-full bg-secondary px-5 shadow-glow-green hover:bg-secondary/90 sm:inline-flex"
         />
+
+        <div className="group relative">
+          <span
+            role="tooltip"
+            className="pointer-events-none absolute right-full top-1/2 mr-3 -translate-y-1/2 whitespace-nowrap rounded-full bg-cns-navy px-3 py-1.5 text-xs font-medium text-white opacity-0 shadow-soft transition-opacity duration-200 group-hover:opacity-100 group-focus-within:opacity-100"
+          >
+            Chat on WhatsApp
+          </span>
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Chat with Center for Neuroscience on WhatsApp"
+            className="animate-whatsapp-pulse relative flex size-12 items-center justify-center rounded-full bg-[#25D366] text-white shadow-soft transition-all duration-300 hover:scale-[1.02] hover:shadow-soft-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366]/50 focus-visible:ring-offset-2"
+          >
+            <MessageCircle className="size-5" aria-hidden="true" />
+          </a>
+        </div>
       </div>
     </>
   );

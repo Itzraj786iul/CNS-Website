@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { CalendarDays, CheckCircle2, Clock, FileText, Phone } from "lucide-react";
+import { CalendarDays, CheckCircle2, Clock, FileText, Phone, Siren } from "lucide-react";
 
 import { PageHero } from "@/components/common/page-hero";
 import {
@@ -16,6 +16,8 @@ import { IconBox } from "@/components/common/icon-box";
 import { Section } from "@/components/common/section";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { getEmergencyTelHref } from "@/lib/contact-links";
+import { siteConfig } from "@/lib/constants/site";
 
 type FormData = {
   name: string;
@@ -138,6 +140,7 @@ function AppointmentPageContent() {
                 <FormField label="Message" htmlFor="appt-message">
                   <FormTextarea id="appt-message" name="message" placeholder="Brief description of your symptoms or reason for visit..." rows={4} />
                 </FormField>
+                <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <Button
                   type="submit"
                   size="lg"
@@ -148,6 +151,19 @@ function AppointmentPageContent() {
                   <CalendarDays />
                   {isSubmitting ? "Submitting..." : "Book Appointment"}
                 </Button>
+                <Button
+                  nativeButton={false}
+                  render={
+                    <Link href={getEmergencyTelHref()}>
+                      <Siren />
+                      Need Immediate Help? Call Emergency
+                    </Link>
+                  }
+                  variant="outline"
+                  size="lg"
+                  className="h-12 w-full border-destructive/30 text-destructive hover:bg-destructive/5 sm:w-auto sm:px-8"
+                />
+                </div>
               </form>
             </AnimatedSection>
 
@@ -184,7 +200,11 @@ function AppointmentPageContent() {
                   <p className="text-sm text-white/60">Emergency care available 24×7</p>
                   <Button
                     nativeButton={false}
-                    render={<Link href="tel:+918045678911">Emergency: +91 80 4567 8911</Link>}
+                    render={
+                      <Link href={getEmergencyTelHref()}>
+                        Emergency: {siteConfig.contact.emergency}
+                      </Link>
+                    }
                     variant="outline"
                     className="mt-2 h-10 w-full rounded-full border-white/20 text-white hover:bg-white/10 hover:text-white"
                   />

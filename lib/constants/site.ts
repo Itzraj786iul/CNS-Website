@@ -6,12 +6,13 @@ export const siteConfig = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://cns.org",
   locale: "en_US",
   announcement: null as string | null,
+  location: "Raipur, Chhattisgarh",
   contact: {
-    phone: "+91 80 4567 8900",
-    emergency: "+91 80 4567 8911",
+    phone: null as string | null,
+    emergency: "+91 73893 21886",
     email: "care@cns.org",
-    address: "Center for Neuroscience, Medical District, Bengaluru 560001",
-    whatsapp: "+9180000000000",
+    address: "Center for Neuroscience, Raipur, Chhattisgarh 492001",
+    whatsapp: "917389321886",
   },
   hours: {
     outpatient: "Mon – Sat, 8:00 AM – 8:00 PM",
